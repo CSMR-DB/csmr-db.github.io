@@ -5,3 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+
+require('typeface-open-sans-condensed')
+require('typeface-merriweather')
+require('typeface-fira-sans')
+require('firacode')
