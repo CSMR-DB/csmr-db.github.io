@@ -15,14 +15,14 @@ export interface ISkills {
 export const skills: ISkills = {
   programming: [
     {
-      title: 'HTML(5)',
+      title: 'HTML',
       level: 4,
       description:
         "HTML, along with CSS, is obviously used in any front-end JavaScript framework. Either plainly, or through JSX. I find HTML's default margins on elements stupidly annoying and always require some sort of a 'reset' CSS file. Also: article-header-main-aside-footer. I'm just glad I wasn't around during the whole table-layout-everything-fad.",
       time: 3000,
     },
     {
-      title: 'CSS(3)',
+      title: 'CSS',
       level: 4,
       description:
         "I love CSS and everything you can do with it nowadays without having to resort to JavaScript. Most notably, the CSS Grid, Flex and Filter specs. But also clip-path seems pretty cool. I always use some sort of preprocessor, be it Stylus or something like styled-components or Emotion for React (or whatever is available CSS-in-JS-wise. I don't like having to worry about naming things following any naming scheme like BEM). Not a big fan of using UI frameworks like Bootstrap or Material UI, as I feel it limits creativity.",

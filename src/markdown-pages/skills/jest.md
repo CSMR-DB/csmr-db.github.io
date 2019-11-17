@@ -1,0 +1,7 @@
+---
+level: 2
+time: 400
+path: '/tag/'
+title: 'Jest'
+excerpt: "Let's just say that thus far I've only really used Jest as my JavaScript testing framework, extended by ts-jest. Other frameworks might work just as well, I would imagine. Thus far, I have mainly used it to test business logic. Not much in the front-end world."
+---

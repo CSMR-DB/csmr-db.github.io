@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react'
-// tslint:disable-next-line: no-implicit-dependencies
+
 import { ColorProperty, BackgroundColorProperty } from 'csstype'
 import { Relative } from './Relative'
 import { DynamicIcon } from './DynamicIcon'
 import { AbsoluteCenter } from './Absolute'
 import { ClippedBtn } from './ClippedBtn'
-import { Flex } from './flex'
+import { Flex } from './Flex'
 import styled, { StyledComponent } from 'styled-components'
+import { StyledA } from './StyledLink'
 
 interface ISocialButtonsProps {
   children: ReactNode
@@ -34,7 +35,7 @@ export const SocialButton: ({
   href,
   iconPath,
 }: ISocialButtonsProps): JSX.Element => (
-  <a href={href} target="blank">
+  <StyledA href={href} target="blank">
     <Relative>
       <StyledDynamicIcon>
         <DynamicIcon path={iconPath} />
@@ -47,5 +48,5 @@ export const SocialButton: ({
         </ClippedBtn>
       </AbsoluteCenter>
     </Relative>
-  </a>
+  </StyledA>
 )

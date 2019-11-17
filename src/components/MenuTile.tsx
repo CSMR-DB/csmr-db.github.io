@@ -1,10 +1,10 @@
 import React from 'react'
-// tslint:disable-next-line: no-implicit-dependencies
 import { BackgroundColorProperty, BlendMode } from 'csstype'
-import { Blend } from './blend'
-import { DynamicImage } from './dynamicimage'
+import { Blend } from './Blend'
+import { DynamicImage } from './DynamicImage'
 import { StyledLink } from './StyledLink'
-import { Flex } from './flex'
+import { Flex } from './Flex'
+import styled, { StyledComponent } from 'styled-components'
 
 interface IMenuTileProps {
   blendMode: BlendMode
@@ -13,6 +13,11 @@ interface IMenuTileProps {
   background: BackgroundColorProperty
   title: string
 }
+
+const StyledMenuTileH1: StyledComponent<'h1', any, {}, never> = styled.h1`
+  margin: 0;
+  padding: 0.5em;
+`
 
 export const MenuTile: ({
   blendMode,
@@ -29,9 +34,9 @@ export const MenuTile: ({
 }: IMenuTileProps): JSX.Element => (
   <Blend mode={blendMode} isolation={true}>
     {imagePath ? <DynamicImage path={imagePath} /> : null}
-    <StyledLink color="white" to={to}>
+    <StyledLink color="white" to={to} activeClassName="active" partiallyActive>
       <Flex background={background}>
-        <h1>{title}</h1>
+        <StyledMenuTileH1>{title}</StyledMenuTileH1>
       </Flex>
     </StyledLink>
   </Blend>

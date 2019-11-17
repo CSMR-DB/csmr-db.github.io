@@ -185,7 +185,8 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  /* font: 112.5%/1.45em georgia, serif; */
+  font: 100%/1em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -602,23 +603,31 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
+  /* font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+    "Liberation Mono", Menlo, Courier, monospace; */
+  font-family: 'Fira Code' !important;
+  font-size: .75em !important;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
-pre code {
-  background: none;
-  line-height: 1.42;
+pre[class*="language-"] {
+  /* background: none; */
+  line-height: 1.2 !important;
+  padding: 1rem;
 }
-code:before,
+p code {
+  padding: .125rem .25rem !important;
+  font-size: .75rem !important;
+  font-style: italic;
+}
+/* code:before,
 code:after,
 tt:before,
 tt:after {
   letter-spacing: -0.2em;
   content: " ";
-}
+} */
 pre code:before,
 pre code:after,
 pre tt:before,

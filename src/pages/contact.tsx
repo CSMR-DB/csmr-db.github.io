@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout } from '../components/layout'
-import { SEO } from '../components/seo'
-import { Grid } from '../components/grid'
+import { Layout } from '../components/Layout'
+import { SEO } from '../components/SEO'
+import { Grid } from '../components/Grid'
 import { SocialButton } from '../components/SocialButton'
 import { CenteredBlock } from '../components/CenteredBlock'
-// tslint:disable-next-line: no-implicit-dependencies
+
 import { BackgroundColorProperty } from 'csstype'
 
 interface IContact {

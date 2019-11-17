@@ -11,9 +11,14 @@ const Styler: (
 )`
   text-decoration: none;
   color: ${theme.primary};
+  display: inline-block;
 
   & :hover {
-    color: ${theme.primary_hover};
+    color: ${theme.primaryHover};
+  }
+
+  &.active {
+    color: ${theme.primaryHover};
   }
 `
 

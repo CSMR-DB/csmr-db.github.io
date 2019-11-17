@@ -1,6 +1,6 @@
 import styled, { StyledComponent } from 'styled-components'
-// tslint:disable-next-line: no-implicit-dependencies
 import { ColorProperty, BackgroundColorProperty } from 'csstype'
+import { theme } from '../data/theme'
 
 interface IClippedBtnProps {
   color?: ColorProperty
@@ -13,20 +13,31 @@ export const ClippedBtn: StyledComponent<
   IClippedBtnProps,
   never
 > = styled.div`
-  color: transparent;
   height: 100%;
-  font-size: 2rem;
-  clip-path: circle(1em at 50% 50%);
   background: transparent;
   border-radius: 0.25rem;
   transition: color 0.1s ease-in 0.1s;
-  transition: all 0.25s ease-in-out;
 
-  :hover {
+  @media ${theme.breakpoints.max.tablet} {
     color: ${(props: IClippedBtnProps): ColorProperty =>
       props.color || 'white'};
-    clip-path: circle(8em at 50% 50%);
+    clip-path: circle(16em at 50% 50%);
     background: ${(props: IClippedBtnProps): BackgroundColorProperty =>
       props.background || 'grey'};
+  }
+
+  @media ${theme.breakpoints.min.desktop} {
+    transition: all 0.25s ease-in-out;
+    clip-path: circle(1em at 50% 50%);
+    font-size: 2rem;
+    color: transparent;
+
+    :hover {
+      color: ${(props: IClippedBtnProps): ColorProperty =>
+        props.color || 'white'};
+      clip-path: circle(8em at 50% 50%);
+      background: ${(props: IClippedBtnProps): BackgroundColorProperty =>
+        props.background || 'grey'};
+    }
   }
 `

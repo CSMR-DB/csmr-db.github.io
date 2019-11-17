@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-// tslint:disable-next-line: no-implicit-dependencies
 import {
   HeightProperty,
   MaxWidthProperty,
@@ -8,6 +7,7 @@ import {
   GridTemplateColumnsProperty,
   GridTemplateRowsProperty,
 } from 'csstype'
+import { theme } from '../data/theme'
 
 interface IGridMenuProps {
   children: ReactNode
@@ -47,8 +47,8 @@ const GridElement: StyledComponent<
   );
   margin: 0 auto;
 
-  @media screen and (max-width: 40rem) {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  @media ${theme.breakpoints.max.smartphone} {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   }
 `
 

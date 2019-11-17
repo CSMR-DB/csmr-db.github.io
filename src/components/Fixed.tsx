@@ -5,10 +5,9 @@ import {
   HeightProperty,
   TopProperty,
   LeftProperty,
-  // tslint:disable-next-line: no-implicit-dependencies
 } from 'csstype'
 
-interface IFixedElementProps {
+export interface IFixedElementProps {
   children: ReactNode
   top?: TopProperty<1>
   left?: LeftProperty<1>

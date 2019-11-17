@@ -1,9 +1,8 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-// tslint:disable-next-line: no-implicit-dependencies
 import { BackgroundColorProperty, JustifyContentProperty } from 'csstype'
 
-interface IFlexProps {
+export interface IFlexProps {
   children: ReactNode
   background?: BackgroundColorProperty
   justifyContent?: JustifyContentProperty

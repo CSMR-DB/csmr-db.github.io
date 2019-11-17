@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Layout } from '../components/layout'
-import { SEO } from '../components/seo'
-import { Grid } from '../components/grid'
-import { DynamicImage } from '../components/dynamicimage'
+import { Layout } from '../components/Layout'
+import { SEO } from '../components/SEO'
+import { Grid } from '../components/Grid'
+import { DynamicImage } from '../components/DynamicImage'
 
 const SecondPage: () => JSX.Element = (): JSX.Element => (
   <Layout>

@@ -5,3 +5,108 @@
  */
 
 // You can delete this file if you're not using it
+const path = require(`path`)
+
+exports.createPages = async ({
+  actions: { createPage },
+  graphql,
+  reporter,
+}) => {
+  /**
+   * TEMPLATE IMPORTS
+   */
+  const ProjectTemplate = path.resolve(`src/templates/ProjectTemplate.tsx`)
+  const SkillsetTemplate = path.resolve(`src/templates/SkillsetTemplate.tsx`)
+  const TagTemplate = path.resolve(`src/templates/TagTemplate.tsx`)
+  const { errors, data } = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+              tags
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  // Handle errors
+  if (errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  data.allMarkdownRemark.edges.forEach(
+    ({
+      node: {
+        frontmatter: { path },
+      },
+    }) => {
+      let category = path.match(/\/[a-z]*\/+/)[0]
+
+      const pagesToCreate = {
+        '/projects/': () =>
+          createPage({
+            path: path,
+            component: ProjectTemplate,
+            context: {}, // additional data can be passed via context
+          }),
+        '/skillset/': () =>
+          createPage({
+            path: path,
+            component: SkillsetTemplate,
+            context: {}, // additional data can be passed via context
+          }),
+        '/blog/': () =>
+          createPage({
+            path: path,
+            component: SkillsetTemplate,
+            context: {}, // additional data can be passed via context
+          }),
+        '/tag/': () => null,
+        '/experiences/': () => null,
+      }
+
+      pagesToCreate[category]()
+    }
+  )
+
+  const tagsArray = [
+    ...data.allMarkdownRemark.edges
+      .filter(({ node: { frontmatter: { path } } }) => path.includes('project'))
+      .map(
+        ({
+          node: {
+            frontmatter: { tags },
+          },
+        }) => tags
+      ),
+    ...data.allMarkdownRemark.edges
+      .filter(({ node: { frontmatter: { path } } }) => path.includes('tag'))
+      .map(
+        ({
+          node: {
+            frontmatter: { title },
+          },
+        }) => title
+      ),
+  ]
+
+  const flatTagsArray = [].concat.apply([], tagsArray)
+  const uniqueTags = Array.from(new Set(flatTagsArray))
+
+  uniqueTags.map(tag =>
+    createPage({
+      path: `/tag/${tag.toLocaleLowerCase().replace(/\s+/gi, '_')}`,
+      component: TagTemplate,
+      context: { tag },
+    })
+  )
+}

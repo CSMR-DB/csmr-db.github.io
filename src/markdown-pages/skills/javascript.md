@@ -1,0 +1,7 @@
+---
+level: 4
+time: 2000
+path: '/tag/'
+title: 'JavaScript'
+excerpt: 'I feel adequate using everything above ES6, but not about working with polyfills / older versions of JavaScript. I can work with the class syntax, or just plain Objects and Functions. I get Promises and Async / Await, but I feel like I could still learn how to apply it in better ways. I have played with Web Components and I like the idea. There just needs to be 1 definitive spec & implementation across (modern) browsers.'
+---

@@ -1,19 +1,19 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { Card, CardBody } from './Card'
-import { Flex } from './flex'
-import { DynamicImage } from './dynamicimage'
-import { StyledA } from './StyledLink'
+import { Flex } from './Flex'
+import { DynamicImage } from './DynamicImage'
+import { StyledA, StyledLink } from './StyledLink'
 import { StringOrUrlObject, StringOrUrlArray } from '../types/StringOrUrlObject'
-// tslint:disable-next-line: no-implicit-dependencies
 import { BackgroundColorProperty } from 'csstype'
+import { theme } from '../data/theme'
 
 interface ISkillCardProps {
   children?: ReactNode
   level: number
   title: string
   description: StringOrUrlArray
-  time: number
+  time?: number
 }
 
 interface IStyledIndicator {
@@ -33,7 +33,7 @@ const StyledIndicator: StyledComponent<
   height: 1rem;
   border-radius: 1rem;
   background: ${(props: IStyledIndicator): BackgroundColorProperty =>
-    props.lit ? '#ffb74d' : 'lightgrey'};
+    props.lit ? theme.activeIndicator : theme.inactiveIndicator};
 `
 
 const StyledIndicatorGrid: StyledComponent<'div', any, {}, never> = styled.div`
@@ -91,6 +91,7 @@ export const SkillCard: ({
     <CardBody>
       <StyledSkillCardHeader>
         <Flex justifyContent="space-between">
+          {/* {level && level >= -1 && ( */}
           <StyledIndicatorGrid>
             <StyledIndicator lit={level >= 1}></StyledIndicator>
             <StyledIndicator lit={level >= 2}></StyledIndicator>
@@ -98,9 +99,16 @@ export const SkillCard: ({
             <StyledIndicator lit={level >= 4}></StyledIndicator>
             <StyledIndicator lit={level === 5}></StyledIndicator>
           </StyledIndicatorGrid>
-          <h1>{title}</h1>
+          {/* )} */}
+          <h1>
+            <StyledLink
+              to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
+            >
+              {title}
+            </StyledLink>
+          </h1>
         </Flex>
-        <h2>(time spent: ~{time} hours)</h2>
+        <h2>(time spent: ~{time || 0} hours)</h2>
       </StyledSkillCardHeader>
 
       <p>

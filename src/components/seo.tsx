@@ -9,11 +9,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface ISiteProps {
+type SEOProps = {
   description?: string
   lang?: string
   meta?: any
   title: string
+  image?: string
 }
 
 interface ISiteMetadata {
@@ -32,7 +33,8 @@ export function SEO({
   description,
   lang = 'en-US',
   title,
-}: ISiteProps): JSX.Element {
+  image,
+}: SEOProps): JSX.Element {
   const { site }: ISiteMetadata = useStaticQuery(
     // tslint:disable-next-line: no-void-expression
     graphql`
@@ -42,8 +44,8 @@ export function SEO({
             title
             description
             author
-            defaultImage: image
-            siteUrl: url
+            image
+            url
           }
         }
       }
@@ -51,21 +53,30 @@ export function SEO({
   )
 
   const metaDescription: string = description || site.siteMetadata.description
+  const metaImage: string = image || site.siteMetadata.image
+
+  console.log(metaDescription)
+  console.log(site.siteMetadata.image)
 
   return (
     <Helmet title={title} titleTemplate={`%s · ${site.siteMetadata.title}`}>
-      <meta name="description" content={metaDescription} />
-      <meta name="image" content={site.siteMetadata.image} />
       <meta name="lang" content={lang} />
+      <meta property="og:type" content="website"></meta>
       {site.siteMetadata.title && (
         <meta property="og:title" content={site.siteMetadata.title} />
       )}
-      {metaDescription && (
-        <meta property="og:description" content={metaDescription} />
-      )}
-      {site.siteMetadata.image && (
-        <meta property="og:image" content={site.siteMetadata.image} />
-      )}
+      {/* {metaDescription && (
+        <> */}
+      <meta name="description" content={metaDescription} />
+      <meta property="og:description" content={metaDescription} />
+      {/* </>
+      )} */}
+      {/* {metaImage && (
+        <> */}
+      <meta name="image" content={metaImage} />
+      <meta property="og:image" content={metaImage} />
+      {/* </>
+      )} */}
       {site.siteMetadata.url && (
         <meta property="og:url" content={site.siteMetadata.url} />
       )}

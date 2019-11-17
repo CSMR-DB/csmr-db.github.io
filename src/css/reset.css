@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html {
+  font: 100%/1em georgia, serif;
+}
+
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    line-height: 100%;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  p, a,pre,code {
+    font-family: 'Fira Code';
+  }
+
+  p,
+  pre,
+  code {
+    font-size: 0.75rem;
+  }

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
-import { theme } from '../data/theme'
 import { CenteredBlock } from './CenteredBlock'
-// tslint:disable-next-line: no-implicit-dependencies
 import { PaddingProperty } from 'csstype'
+import { StyledA } from './StyledLink'
+import { theme } from '../data/theme'
 
 const StyledFooter: StyledComponent<'footer', any, {}, never> = styled.footer`
   position: fixed;
@@ -14,16 +14,11 @@ const StyledFooter: StyledComponent<'footer', any, {}, never> = styled.footer`
   padding: 2rem;
   background: black;
   color: white;
-  height: 32rem;
+  height: 48rem;
   z-index: -1;
-`
 
-const StyledA: StyledComponent<'a', any, {}, never> = styled.a`
-  color: ${theme.primary};
-  text-decoration: none;
-
-  &:hover {
-    color: ${theme.primary_hover};
+  @media ${theme.breakpoints.max.smartphone} {
+    height: 100vh;
   }
 `
 
@@ -48,93 +43,87 @@ const ProgramLine: StyledComponent<
 > = styled.p`
   padding-left: ${(props: IProgramLineProps): PaddingProperty<1> | number =>
     props.padding + 'rem' || 0};
+  margin: 0 !important;
 `
 
-const Gatsby: JSX.Element = (
-  <StyledA href="https://www.gatsbyjs.org" target="blank">
-    Gatsby
+type CreditFn = (href: string, title: string) => JSX.Element
+
+const Credit: CreditFn = (href: string, title: string): JSX.Element => (
+  <StyledA href={href} target="blank">
+    {title}
   </StyledA>
 )
-const StyledComponents: JSX.Element = (
-  <StyledA href="https://www.styled-components.com/" target="blank">
-    styled-components
-  </StyledA>
-)
-const VSCodeIcons: JSX.Element = (
-  <StyledA
-    href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
-    target="blank"
-  >
-    vscode-icons
-  </StyledA>
-)
-const FiraCode: JSX.Element = (
-  <StyledA href="https://www.npmjs.com/package/firacode" target="blank">
-    Fira Code
-  </StyledA>
-)
-const GHPages: JSX.Element = (
-  <StyledA href="https://www.npmjs.com/package/gh-pages" target="blank">
-    gh-pages
-  </StyledA>
-)
-const Prettier: JSX.Element = (
-  <StyledA href="https://prettier.io/" target="blank">
-    prettier
-  </StyledA>
-)
-const AdobeIcons: JSX.Element = (
-  <StyledA href="https://www.iconfinder.com/graphiqa" target="blank">
-    Graphiqa Studio
-  </StyledA>
-)
+
+const CREDITS: { [key: string]: JSX.Element } = {
+  gatsby: Credit('https://www.gatsbyjs.org', 'Gatsby'),
+  styledComponents: Credit(
+    'https://www.styled-components.com/',
+    'styled-components'
+  ),
+  firaCode: Credit('https://www.npmjs.com/package/firacode', 'Fira Code'),
+  vsCodeIcons: Credit(
+    'https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons',
+    'vscode-icons'
+  ),
+  adobeIcons: Credit('https://www.iconfinder.com/graphiqa', 'Graphiqa Studio'),
+  prettier: Credit('https://prettier.io/', 'Prettier'),
+  carbon: Credit('https://carbon.now.sh/', 'Carbon'),
+  ghPages: Credit('https://www.npmjs.com/package/gh-pages', 'gh-pages'),
+}
+
+const FooterQuote: StyledComponent<'h6', any, {}, never> = styled.h6`
+  line-height: 1.2rem !important;
+`
 
 export const Footer: () => JSX.Element = (): JSX.Element => (
   <StyledFooter>
-    <h6>
+    <FooterQuote>
       "Success is 1% inspiration, 98% perspiration and 2% attention to detail."
       - Phil Dunphy
-    </h6>
+    </FooterQuote>
     <CenteredBlock>
       <ProgramContainer>
-        <ProgramLine>
-          type Requirements {`{ essentialIngredients: emoji[] }`}
-        </ProgramLine>
-        <ProgramLine>
-          interface IWebsite = {`{ url: string, visit: () => WebPage }`}
-        </ProgramLine>
+        <ProgramLine>type Requirements = {`{ essence: emoji[] }`}</ProgramLine>
+        <ProgramLine>type DevWebsite = {`{ typescript: boolean }`}</ProgramLine>
+        <ProgramLine>interface IWebsite {'{'}</ProgramLine>
+        <ProgramLine padding={1}>{`url: string`}</ProgramLine>
+        <ProgramLine padding={1}>{`visit: () => WebPage`}</ProgramLine>
+        <ProgramLine>{'}'}</ProgramLine>
         <br />
-        <ProgramLine>{`const WebsitePromise: Promise<IWebsite> = async ({ essentialIngredient }: Requirements) => {`}</ProgramLine>
+        <ProgramLine>{`async function websitePromise({ essence }: Requirements): Promise<IWebsite> {`}</ProgramLine>
         <ProgramLine padding={1}>
-          const build: Website = await start({Gatsby})
+          return await start({CREDITS.gatsby})
         </ProgramLine>
-        <ProgramLine padding={2}>.then(</ProgramLine>
+        <ProgramLine padding={2}>.then((dev: DevWebsite) => </ProgramLine>
         <ProgramLine padding={3}>pipe(</ProgramLine>
-        <ProgramLine padding={4}>addStyle({StyledComponents}),</ProgramLine>
         <ProgramLine padding={4}>
-          writePersonalStoryUsing({FiraCode}),
+          addStyle({CREDITS.styledComponents}),
+        </ProgramLine>
+        <ProgramLine padding={4}>useFont({CREDITS.firaCode}),</ProgramLine>
+        <ProgramLine padding={4}>sprinkleWith(essence),</ProgramLine>
+        <ProgramLine padding={4}>
+          addCodeIcons({CREDITS.vsCodeIcons}),
         </ProgramLine>
         <ProgramLine padding={4}>
-          sprinkleWith(essentialIngredient),
+          addAdobeIcons({CREDITS.adobeIcons})
         </ProgramLine>
         <ProgramLine padding={4}>
-          giveCreditForCodeIcons({VSCodeIcons}),
+          prettifyCodeUsing({CREDITS.prettier}),
         </ProgramLine>
         <ProgramLine padding={4}>
-          giveCreditForAdobeIcons({AdobeIcons})
+          makeCodeImagesUsing({CREDITS.carbon}),
         </ProgramLine>
-        <ProgramLine padding={4}>prettifyCodeUsing({Prettier}),</ProgramLine>
-        <ProgramLine padding={4}>deployUsing({GHPages})</ProgramLine>
-        <ProgramLine padding={3}>)</ProgramLine>
+        <ProgramLine padding={4}>deployUsing({CREDITS.ghPages})</ProgramLine>
+        <ProgramLine padding={3}>)(dev)</ProgramLine>
         <ProgramLine padding={2}>)</ProgramLine>
-        <br />
-        <ProgramLine padding={1}>return build</ProgramLine>
         <ProgramLine>{`}`}</ProgramLine>
         <br />
         <ProgramLine>
-          WebsitePromise({`{ essentialIngredients: [ ❤️, ✨, 🎆 ] }`}
-          ).then((website: Website) => website.visit())
+          websitePromise({`{ essence: [ ❤️, ✨, 🎆 ] }`})
         </ProgramLine>
+        <ProgramLine padding={1}>.then((website: IWebsite) =></ProgramLine>
+        <ProgramLine padding={2}>website.visit())</ProgramLine>
+        <ProgramLine padding={1}>)</ProgramLine>
       </ProgramContainer>
     </CenteredBlock>
   </StyledFooter>

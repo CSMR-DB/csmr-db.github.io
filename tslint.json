@@ -1,16 +1,9 @@
 {
   "rules": {
     "no-submodule-imports": [true, "~root", "~src"],
-    "no-implicit-dependencies": [true, ["~root", "~src"]],
+    "no-implicit-dependencies": [true, "dev"],
     "newline-before-return": true,
     "arrow-return-shorthand": true,
-    "array-bracket-spacing": [
-      true,
-      "always",
-      {
-        "arraysInArrays": true
-      }
-    ],
     "no-inferrable-types": false,
     "no-default-export": true,
     "typedef": [

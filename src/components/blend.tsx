@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-// tslint:disable-next-line: no-implicit-dependencies
 import { MixBlendModeProperty, IsolationProperty } from 'csstype'
 
 interface IBlend {
@@ -26,7 +25,7 @@ const StyledDiv: StyledComponent<'div', any, IBlend, never> = styled.div`
 
   & > * {
     mix-blend-mode: ${(props: IBlend): MixBlendModeProperty => props.mode};
-    position: absolute !important; /** to work with gatsby-image, adding !important is a required override */
+    position: absolute !important; /** to work with gatsby-image, adding !important is a necessary override */
     width: 100%;
     height: 100%;
     top: 0;

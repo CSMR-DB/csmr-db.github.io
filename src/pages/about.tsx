@@ -1,9 +1,9 @@
 import React from 'react'
-import { Layout } from '../components/layout'
-import { SEO } from '../components/seo'
+import { Layout } from '../components/Layout'
+import { SEO } from '../components/SEO'
 import { StyledLink, StyledA } from '../components/StyledLink'
 import { CenteredBlock } from '../components/CenteredBlock'
-import { DynamicImage } from '../components/dynamicimage'
+import { DynamicImage } from '../components/DynamicImage'
 import { ImageContainerCircle } from '../components/ImageContainerCircle'
 
 const AboutMe: () => JSX.Element = (): JSX.Element => (

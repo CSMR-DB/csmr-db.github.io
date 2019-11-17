@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { theme } from '../data/theme'
-// tslint:disable-next-line: no-implicit-dependencies
 import {
   BackgroundColorProperty,
   BorderProperty,

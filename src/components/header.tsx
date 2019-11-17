@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
-import { Logo } from './logo'
+import { Logo } from './Logo'
 import { routes, IRouteObject } from '../data/routes'
 import { theme } from '../data/theme'
 
@@ -13,13 +13,22 @@ const StyledHeader: StyledComponent<'header', any, {}, never> = styled.header({
   background: theme.background,
   paddingBottom: '2rem',
   paddingTop: '2rem',
+
+  '@media screen and (max-width: 600px)': {
+    paddingBottom: 0,
+    paddingTop: 0,
+  },
 })
 
-const StyledHeaderDiv: StyledComponent<'div', any, {}, never> = styled.div({
-  margin: '0 auto',
-  maxWidth: 960,
-  padding: '2rem',
-})
+const StyledHeaderDiv: StyledComponent<'div', any, {}, never> = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 2rem;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+`
 
 const StyledNav: StyledComponent<'nav', any, {}, never> = styled.nav({
   display: 'grid',
@@ -46,12 +55,12 @@ const StyledLink: StyledComponent<typeof Link, any, {}, never> = styled(Link)({
   borderRadius: '.25rem',
 
   ':hover': {
-    color: theme.primary_hover,
+    color: theme.primaryHover,
   },
 
   '&.active': {
     color: 'white',
-    background: theme.primary_hover,
+    background: theme.primaryHover,
   },
 })
 
