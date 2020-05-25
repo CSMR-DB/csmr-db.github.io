@@ -142,7 +142,7 @@ const SkillsetPage: () => JSX.Element = (): JSX.Element => (
             with code, eventually a solution will come. I also know that
             becoming an expert in any field takes at least 10.000 hours of
             practise. More often than not, I'll be browsing Medium to look for
-            new blogposts regarding JS. Always trying to imrpove. Most
+            new blogposts regarding JS. Always trying to improve. Most
             importantly investing more time in JavaScript / TypeScript than any
             specific framework, so that it'll be easier to pick up whatever
             comes next.
