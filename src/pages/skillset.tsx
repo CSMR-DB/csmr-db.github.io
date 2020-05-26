@@ -87,7 +87,7 @@ const SkillsetPage: () => JSX.Element = (): JSX.Element => (
         </CenteredBlock>
         <ContentSeparator>
           <Grid
-            columns="repeat(auto-fill, minmax(20rem, 1fr))"
+            columns="repeat(auto-fill, minmax(25rem, 1fr))"
             maxWidth="160rem"
           >
             {skillsetData.edges.map(
