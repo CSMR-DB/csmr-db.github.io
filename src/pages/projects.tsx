@@ -79,11 +79,12 @@ const ProjectsList: () => JSX.Element = (): JSX.Element => {
                   tags={frontmatter.tags}
                   video={frontmatter.featuredVideo}
                   image={frontmatter.featuredImage}
-                  key={i}
                   body={frontmatter.excerpt}
                   timeToRead={timeToRead}
                   path={frontmatter.path}
                   date={frontmatter.date}
+                  key={i}
+                  index={i}
                 />
               )
             )
