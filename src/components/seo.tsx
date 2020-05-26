@@ -55,9 +55,6 @@ export function SEO({
   const metaDescription: string = description || site.siteMetadata.description
   const metaImage: string = image || site.siteMetadata.image
 
-  console.log(metaDescription)
-  console.log(site.siteMetadata.image)
-
   return (
     <Helmet title={title} titleTemplate={`%s · ${site.siteMetadata.title}`}>
       <meta name="lang" content={lang} />
