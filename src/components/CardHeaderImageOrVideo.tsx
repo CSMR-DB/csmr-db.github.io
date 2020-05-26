@@ -30,12 +30,11 @@ export const CardHeaderImageOrVideo: ({
       )) ||
       (video && (
         <StyledIFrame
-          width="960"
-          height="340"
-          src={video}
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          opts={{
+            width: '960',
+            height: '290',
+          }}
+          videoId={video.replace('https://www.youtube.com/embed/', '')}
         ></StyledIFrame>
       ))
     )}

@@ -1,17 +1,18 @@
 import styled, { StyledComponent } from 'styled-components'
+import YouTube from 'react-youtube'
 
-interface IStyledIFrameProps {
-  frameborder: string
-  allow: string
-  allowfullscreen: boolean
-}
+// interface IStyledIFrameProps {
+//   frameborder: string
+//   allow: string
+//   allowfullscreen: boolean
+// }
 
 export const StyledIFrame: StyledComponent<
-  'iframe',
+  typeof YouTube,
   any,
-  IStyledIFrameProps,
+  {},
   never
-> = styled.iframe`
+> = styled(YouTube)`
   max-width: 100%;
   border: none;
   width: 100%;

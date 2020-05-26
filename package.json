@@ -28,6 +28,7 @@
     "react-dom": "^16.13.1",
     "react-gsap": "^2.2.1",
     "react-helmet": "^6.0.0",
+    "react-youtube": "^7.11.2",
     "styled-components": "^5.1.0",
     "typeface-fira-sans": "0.0.75",
     "typeface-merriweather": "0.0.72",
