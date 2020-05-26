@@ -63,6 +63,7 @@ export const pageQuery: void = graphql`
       html
       frontmatter {
         date
+        category
         path
         title
         tags

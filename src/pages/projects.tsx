@@ -18,6 +18,7 @@ const PAGE_QUERY: void = graphql`
         node {
           frontmatter {
             path
+            category
             title
             featuredVideo
             featuredImage {

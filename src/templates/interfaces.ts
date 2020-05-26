@@ -89,6 +89,7 @@ export interface ISkillsetAllMarkdownRemark {
 
 export interface IProjectsFrontmatter {
   title: string
+  category: 'Programming' | 'Graphic Design'
   date: string
   path: string
   excerpt: string
