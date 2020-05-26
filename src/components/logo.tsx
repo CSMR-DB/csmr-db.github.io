@@ -31,12 +31,17 @@ const StyledLogoBase: StyledComponent<
   ILogoBaseProps,
   never
 > = styled.div`
+  float: left;
   border-radius: 999rem;
-  padding: 2rem;
-  display: inline-block;
+  /* padding: 2rem; */
+  display: block;
   border: ${(props: ILogoBaseProps): BorderProperty<1> =>
     props.bordered ? `1px solid ${theme.primary}` : 'none'};
   z-index: 999;
+
+  & svg {
+    float: left;
+  }
 `
 
 const StyledPath: StyledComponent<
