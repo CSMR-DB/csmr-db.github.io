@@ -1,5 +1,6 @@
 ---
 path: '/projects/lindsey'
+category: 'Graphic Design'
 date: 2017-04-23
 title: 'Lindsey Poster'
 featuredImage: '../../images/projects/lindsey.png'

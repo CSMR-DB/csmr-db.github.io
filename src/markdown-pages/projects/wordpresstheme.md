@@ -1,5 +1,6 @@
 ---
 path: '/projects/wordpresstheme'
+category: 'Graphic Design'
 date: 2017-01-01
 title: 'Wordpress Theme'
 featuredImage: '../../images/projects/wpthemeexample.png'

@@ -1,5 +1,6 @@
 ---
 path: '/projects/cloudcademy'
+category: 'Programming'
 date: 2016-01-30
 title: 'Cloudcademy'
 featuredImage: '../../images/projects/cloudcademy_code.png'

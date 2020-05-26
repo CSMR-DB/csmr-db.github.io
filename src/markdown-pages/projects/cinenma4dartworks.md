@@ -1,5 +1,6 @@
 ---
 path: '/projects/cinema4dartworks'
+category: 'Graphic Design'
 date: 2016-12-27
 title: 'Cinema4D Low-poly'
 featuredImage: '../../images/projects/spacecamp.png'

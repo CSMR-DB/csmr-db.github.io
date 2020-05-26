@@ -1,5 +1,6 @@
 ---
 path: '/projects/modernfamily'
+category: 'Programming'
 date: 2015-10-01
 title: 'Modern Family Fansite'
 featuredImage: '../../images/projects/modernfamily.png'

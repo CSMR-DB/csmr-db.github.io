@@ -1,5 +1,6 @@
 ---
 path: '/projects/portfolio'
+category: 'Programming'
 date: 2019-09-23
 title: 'Portfolio'
 featuredImage: '../../images/projects/portfolio.png'

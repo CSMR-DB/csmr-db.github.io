@@ -1,5 +1,6 @@
 ---
 path: '/projects/dataroute'
+category: 'Graphic Design'
 date: 2019-01-04
 title: 'Dataroute'
 featuredImage: '../../images/projects/dataroute.png'

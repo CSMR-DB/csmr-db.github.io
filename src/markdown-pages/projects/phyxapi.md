@@ -1,5 +1,6 @@
 ---
 path: '/projects/phyxapi'
+category: 'Programming'
 date: 2019-03-01
 title: 'PHYX API'
 featuredImage: '../../images/projects/phyx_api.png'

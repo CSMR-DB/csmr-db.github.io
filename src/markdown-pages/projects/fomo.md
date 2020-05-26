@@ -1,5 +1,6 @@
 ---
 path: '/projects/fomo'
+category: 'Graphic Design'
 date: 2016-01-01
 title: 'FOMO'
 featuredVideo: 'https://www.youtube.com/embed/ZbANrSn5ZB0'

@@ -1,5 +1,6 @@
 ---
 path: '/projects/vumc'
+category: 'Graphic Design'
 date: 2019-01-18
 title: 'VUMC Video Project'
 featuredVideo: 'https://www.youtube.com/embed/OYVxTuwnx-c'
