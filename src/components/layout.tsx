@@ -40,12 +40,12 @@ export const StyledLayout: StyledComponent<
   never
 > = styled.div`
   background: ${theme.background};
-  margin: 0 auto;
-  width: 100vw;
-  padding: 0;
+  /* margin: 0 auto; */
+  /* width: 100vw; */
+  /* padding: 0; */
   margin-bottom: ${(props: IStyledLayoutProps): string | number =>
     props.hasFooter ? '48rem' : 0};
-  z-index: 999;
+  /* z-index: 999; */
 
   @media ${theme.breakpoints.max.smartphone} {
     margin-bottom: ${(props: IStyledLayoutProps): string | number =>
