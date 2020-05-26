@@ -22,13 +22,8 @@ const AboutMe: () => JSX.Element = (): JSX.Element => (
         prefer using English (and actually understand the difference between
         there, their and they're). What is there to tell about myself? I am a
         gamer, Netflix-fanatic, Spotify-enthousiast, perfectionist and
-        predominantly-self-taught programmer. Full disclosure: I was also
-        diagnosed with high-functioning autism relatively late, at age 18. This
-        is not a huge deal, but I've decided to be completely up front with it.
-        Mental health is a serious issue worldwide, and I feel raising awareness
-        in any way can only be helpful. It poses challenges, but also makes me
-        very detail-oriented. If you are still interested in learning more about
-        me, read along!
+        predominantly self-taught programmer. If you are interested in learning
+        more about me, read along!
       </p>
       <p>
         My journey started a few years ago, when I was first introduced to
