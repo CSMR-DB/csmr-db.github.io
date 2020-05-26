@@ -7,7 +7,7 @@ import { StyledA, StyledLink } from './StyledLink'
 import { StringOrUrlObject, StringOrUrlArray } from '../types/StringOrUrlObject'
 import { BackgroundColorProperty } from 'csstype'
 import { theme } from '../data/theme'
-import { Timeline, Tween, Reveal } from 'react-gsap'
+import { Timeline, Tween } from 'react-gsap'
 
 interface ISkillCardProps {
   index: number
@@ -82,13 +82,37 @@ const StyledSkillCardBackdrop: StyledComponent<'div', any, {}, never> = styled.d
   /* filter: opacity(0.075); */
 `
 
-function SkillCardBackdrop({children}: { children: ReactNode }): JSX.Element {
+function SkillCardBackdrop({children, index}: { children: ReactNode, index: number }): JSX.Element {
   return (
     <Timeline>
-      <Tween to={{ opacity: .075 }} duration={1} delay={.5} ease="power1">
+      <Tween to={{ opacity: .075 }} duration={1} delay={1 + index * .125} ease="power1">
         <StyledSkillCardBackdrop>
           {children}
         </StyledSkillCardBackdrop>
+      </Tween>
+    </Timeline>
+  )
+}
+
+function SkillCardBody({ description, index }: { description: StringOrUrlArray, index: number }): JSX.Element {
+  return (
+    <Timeline>
+      <Tween from={{ opacity: 0 }} duration={1} delay={1 + index * .125} ease="power1">
+        <p>
+          {Array.isArray(description)
+            ? description.map((string: StringOrUrlObject, i: number) => {
+                if (typeof string !== 'string' && string.url !== '') {
+                  return (
+                    <StyledA href={string.url} target="blank" key={i}>
+                      {string.text}
+                    </StyledA>
+                  )
+                }
+
+                return string
+              })
+            : description}
+        </p>
       </Tween>
     </Timeline>
   )
@@ -110,7 +134,7 @@ export const SkillCard: ({
 }: ISkillCardProps): JSX.Element => (
   <Tween from={{ x: '-400px', opacity: 0 }} duration={1} delay={.25 + index * .125} ease="elastic">
     <Card>
-      <SkillCardBackdrop>
+      <SkillCardBackdrop index={index}>
         <DynamicImage
           path={`code-icons/${title
             .replace(/\([0-9]*\)|\s+/gi, '')
@@ -141,22 +165,7 @@ export const SkillCard: ({
         </StyledSkillCardHeader>
       </CardHeader>
       <CardBody>
-
-        <p>
-          {Array.isArray(description)
-            ? description.map((string: StringOrUrlObject, i: number) => {
-                if (typeof string !== 'string' && string.url !== '') {
-                  return (
-                    <StyledA href={string.url} target="blank" key={i}>
-                      {string.text}
-                    </StyledA>
-                  )
-                }
-
-                return string
-              })
-            : description}
-        </p>
+        <SkillCardBody description={description} index={index} />
       </CardBody>
     </Card>
   </Tween>
