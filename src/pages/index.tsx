@@ -11,6 +11,7 @@ import styled, { StyledComponent } from 'styled-components'
 import { AbsoluteCenter } from '../components/Absolute'
 import { MainNav } from '../components/MainNav'
 import { StyledLayout } from '../components/Layout'
+import { IONavigator } from '../hooks/IONavigator'
 
 const StyledIndexPage: StyledComponent<'div', any, {}, never> = styled.div`
   .gatsby-image-wrapper {
@@ -92,47 +93,49 @@ const StyledHomepageImageWrapper: StyledComponent<
 `
 
 const IndexPage: () => JSX.Element = (): JSX.Element => (
-  <StyledIndexPage>
-    <StyledLayout hasFooter={false}>
-      <SEO title="Homepage" />
-      <Fixed top={'0px'} left={'0px'} height="100vh" width="100vw">
-        <Filter>
-          <DynamicImage path="wallpaper/code.jpg" />
-        </Filter>
-      </Fixed>
-      <StyledHomepageLayoutWrapper>
-        <StyledHomepageMenuWrapper>
-          <StyledHomepageMenuGrid>
-            {routes.map((route: IRouteObject, i: number) => (
-              <MenuTile
-                key={i}
-                blendMode="overlay"
-                to={route.path}
-                background="rgba(66, 66, 66, .2)"
-                title={route.title}
+  <IONavigator routes={routes}>
+    <StyledIndexPage>
+      <StyledLayout hasFooter={false}>
+        <SEO title="Homepage" />
+        <Fixed top={'0px'} left={'0px'} height="100vh" width="100vw">
+          <Filter>
+            <DynamicImage path="wallpaper/code.jpg" />
+          </Filter>
+        </Fixed>
+        <StyledHomepageLayoutWrapper>
+          <StyledHomepageMenuWrapper>
+            <StyledHomepageMenuGrid>
+              {routes.map((route: IRouteObject, i: number): JSX.Element => (
+                <MenuTile
+                  key={i}
+                  blendMode="overlay"
+                  to={route.path}
+                  background="rgba(66, 66, 66, .2)"
+                  title={route.title}
+                />
+              ))}
+            </StyledHomepageMenuGrid>
+          </StyledHomepageMenuWrapper>
+          <StyledHomepageImageWrapper>
+            <Flex>
+              <AbsoluteCenter>
+                <StyledIndexLogoImageContainer>
+                  <DynamicImage path="wallpaper/me.jpg" />
+                </StyledIndexLogoImageContainer>
+              </AbsoluteCenter>
+              <Logo
+                size={128}
+                strokeColor="white"
+                strokeSize={4}
+                fill="transparent"
               />
-            ))}
-          </StyledHomepageMenuGrid>
-        </StyledHomepageMenuWrapper>
-        <StyledHomepageImageWrapper>
-          <Flex>
-            <AbsoluteCenter>
-              <StyledIndexLogoImageContainer>
-                <DynamicImage path="wallpaper/me.jpg" />
-              </StyledIndexLogoImageContainer>
-            </AbsoluteCenter>
-            <Logo
-              size={128}
-              strokeColor="white"
-              strokeSize={4}
-              fill="transparent"
-            />
-          </Flex>
-        </StyledHomepageImageWrapper>
-      </StyledHomepageLayoutWrapper>
-      <MainNav />
-    </StyledLayout>
-  </StyledIndexPage>
+            </Flex>
+          </StyledHomepageImageWrapper>
+        </StyledHomepageLayoutWrapper>
+        <MainNav />
+      </StyledLayout>
+    </StyledIndexPage>
+  </IONavigator>
 )
 
 // tslint:disable-next-line: no-default-export

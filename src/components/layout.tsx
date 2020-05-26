@@ -15,6 +15,8 @@ import styled, { StyledComponent } from 'styled-components'
 import { Footer } from './Footer'
 import { theme } from '../data/theme'
 import { MainNav } from './MainNav'
+import { routes } from '../data/routes'
+import { IONavigator } from '../hooks/IONavigator'
 
 interface IChildren {
   children: ReactNode
@@ -88,12 +90,14 @@ export const Layout: ({ children, hasFooter }: IChildren) => JSX.Element = ({
 
   return (
     // <>
-    <StyledLayout hasFooter={hasFooter}>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <StyledMain>{children}</StyledMain>
-      {hasFooter && <Footer />}
-      <MainNav />
-    </StyledLayout>
+    <IONavigator routes={routes}>
+      <StyledLayout hasFooter={hasFooter}>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <StyledMain>{children}</StyledMain>
+        {hasFooter && <Footer />}
+        <MainNav />
+      </StyledLayout>
+    </IONavigator>
     // </>
   )
 }
