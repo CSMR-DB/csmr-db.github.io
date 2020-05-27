@@ -1,5 +1,6 @@
 ---
 level: 4
+skillColor: '#1572B6'
 time: 3000
 path: '/tag/'
 title: 'CSS'

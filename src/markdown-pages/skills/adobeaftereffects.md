@@ -1,5 +1,6 @@
 ---
 level: 2
+skillColor: '#312963'
 time: 400
 path: '/tag/'
 title: 'Adobe After Effects'

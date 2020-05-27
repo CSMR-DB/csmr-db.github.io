@@ -1,5 +1,6 @@
 ---
 level: 1
+skillColor: '#041C6B'
 time: 200
 path: '/tag/'
 title: 'Cinema4D'

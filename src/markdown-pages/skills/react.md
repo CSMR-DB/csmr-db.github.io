@@ -1,5 +1,6 @@
 ---
 level: 3
+skillColor: '#00D8FF'
 time: 1000
 path: '/tag/'
 title: 'React'

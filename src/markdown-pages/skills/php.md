@@ -1,5 +1,6 @@
 ---
 level: 1
+skillColor: '#8993BE'
 time: 200
 path: '/tag/'
 title: 'PHP'

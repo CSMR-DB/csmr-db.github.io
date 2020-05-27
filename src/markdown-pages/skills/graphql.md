@@ -1,5 +1,6 @@
 ---
 level: 2
+skillColor: '#E10098'
 time: 400
 path: '/tag/'
 title: 'GraphQL'

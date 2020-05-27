@@ -1,5 +1,6 @@
 ---
 level: 4
+skillColor: '#F5DE19'
 time: 2000
 path: '/tag/'
 title: 'JavaScript'

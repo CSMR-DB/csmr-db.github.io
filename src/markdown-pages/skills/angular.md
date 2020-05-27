@@ -1,5 +1,6 @@
 ---
 level: 2
+skillColor: '#C3002F'
 time: 200
 path: '/tag/'
 title: 'Angular'

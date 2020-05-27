@@ -1,5 +1,6 @@
 ---
 level: 2
+skillColor: '#429744'
 time: 400
 path: '/tag/'
 title: 'MongoDB'

@@ -1,5 +1,6 @@
 ---
 level: 2
+skillColor: '#C63D14'
 time: 400
 path: '/tag/'
 title: 'Jest'

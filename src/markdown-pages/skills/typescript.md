@@ -1,5 +1,6 @@
 ---
 level: 3
+skillColor: '#007ACC'
 time: 600
 path: '/tag/'
 title: 'TypeScript'

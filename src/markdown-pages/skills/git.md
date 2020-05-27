@@ -1,5 +1,6 @@
 ---
 level: 1
+skillColor: '#DD4C35'
 time: 100
 path: '/tag/'
 title: 'Git'
