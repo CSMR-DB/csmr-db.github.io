@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-import { Card, CardBody, CardHeader } from './Card'
+import { Card, CardBody, CardHeader, CardFooter } from './Card'
 import { Flex } from './Flex'
 import { DynamicImage } from './DynamicImage'
 import { StyledA, StyledLink } from './StyledLink'
@@ -118,19 +118,13 @@ function SkillCardBody({ description, index }: { description: StringOrUrlArray, 
   )
 }
 
-export const SkillCard: ({
-  index,
-  level,
-  title,
-  description,
-  time,
-}: ISkillCardProps) => JSX.Element = ({
+export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
   // children,
   index,
   level,
   title,
   description,
-  time,
+  time = 0,
 }: ISkillCardProps): JSX.Element => (
   <Tween from={{ x: '-400px', opacity: 0 }} duration={1} delay={.25 + index * .125} ease="elastic">
     <Card>
@@ -161,16 +155,18 @@ export const SkillCard: ({
               </StyledLink>
             </h1>
           </Flex>
-          <h2>(time spent: {' '}
-          <Tween to={{ count: time }} ease="none" duration={2}>
-            <span>0</span>
-          </Tween>
-          {' '} hours)</h2>
         </StyledSkillCardHeader>
       </CardHeader>
       <CardBody>
         <SkillCardBody description={description} index={index} />
       </CardBody>
+      <CardFooter>
+        <p>(time spent: {' '}
+        <Tween to={{ count: time }} ease="none" duration={Math.sqrt(Math.sqrt(time)) * .5}>
+          <span>0</span>
+        </Tween>
+        {' '} hours)</p>
+      </CardFooter>
     </Card>
   </Tween>
 )
