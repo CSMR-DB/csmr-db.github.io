@@ -100,7 +100,7 @@ function SkillCardBody({ description, index }: { description: StringOrUrlArray, 
       <Tween from={{ opacity: 0 }} duration={1} delay={1 + index * .125} ease="power1">
         <p>
           {Array.isArray(description)
-            ? description.map((string: StringOrUrlObject, i: number) => {
+            ? description.map((string: StringOrUrlObject, i: number): JSX.Element | string => {
                 if (typeof string !== 'string' && string.url !== '') {
                   return (
                     <StyledA href={string.url} target="blank" key={i}>
@@ -109,7 +109,7 @@ function SkillCardBody({ description, index }: { description: StringOrUrlArray, 
                   )
                 }
 
-                return string
+                return string as string
               })
             : description}
         </p>
@@ -161,7 +161,11 @@ export const SkillCard: ({
               </StyledLink>
             </h1>
           </Flex>
-          <h2>(time spent: ~{time || 0} hours)</h2>
+          <h2>(time spent: {' '}
+          <Tween to={{ count: time }} ease="none" duration={2}>
+            <span>0</span>
+          </Tween>
+          {' '} hours)</h2>
         </StyledSkillCardHeader>
       </CardHeader>
       <CardBody>
