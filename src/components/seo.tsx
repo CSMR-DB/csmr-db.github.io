@@ -62,18 +62,10 @@ export function SEO({
       {site.siteMetadata.title && (
         <meta property="og:title" content={site.siteMetadata.title} />
       )}
-      {/* {metaDescription && (
-        <> */}
       <meta name="description" content={metaDescription} />
       <meta property="og:description" content={metaDescription} />
-      {/* </>
-      )} */}
-      {/* {metaImage && (
-        <> */}
       <meta name="image" content={metaImage} />
       <meta property="og:image" content={metaImage} />
-      {/* </>
-      )} */}
       {site.siteMetadata.url && (
         <meta property="og:url" content={site.siteMetadata.url} />
       )}
