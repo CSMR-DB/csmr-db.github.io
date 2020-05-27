@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "csmr-db",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Gatsby-based Portfolio Project",
+  "version": "0.2.0",
+  "author": "Casimir de Bruijn <casimir.db@outlook.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "date-fns": "^2.14.0",
