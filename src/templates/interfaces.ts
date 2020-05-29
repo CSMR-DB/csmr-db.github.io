@@ -1,3 +1,4 @@
+import { ColorProperty } from 'csstype';
 import { FluidObject } from 'gatsby-image'
 
 export interface IAllMarkdownRemark {
@@ -68,6 +69,7 @@ export interface ISkillsetFrontmatter {
   excerpt: string
   time?: number
   level?: number
+  skillColor: ColorProperty
 }
 
 export interface ISkillsetEdge {
