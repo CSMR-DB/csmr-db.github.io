@@ -11,16 +11,19 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Header } from './Header'
 // tslint:disable-next-line: no-import-side-effect
 import '../css/reset.css'
-import styled, { StyledComponent } from 'styled-components'
+import styled, { StyledComponent, CSSObject } from 'styled-components'
 import { Footer } from './Footer'
 import { theme } from '../data/theme'
-import { MainNav } from './MainNav'
-import { routes } from '../data/routes'
+// import { DesktopNav } from './DesktopNav'
 import { IONavigator } from '../hooks/IONavigator'
+import { HeightProperty } from 'csstype'
 
-interface IChildren {
-  children: ReactNode
+interface ILayoutProps {
+  children?: ReactNode
+  fixed?: boolean
   hasFooter?: boolean
+  showImage?: boolean
+  headerHeight?: HeightProperty<1>
 }
 
 interface ISiteQuery {
@@ -32,6 +35,7 @@ interface ISiteQuery {
 }
 
 interface IStyledLayoutProps {
+  fixed: boolean
   hasFooter: boolean
 }
 
@@ -42,12 +46,18 @@ export const StyledLayout: StyledComponent<
   never
 > = styled.div`
   background: ${theme.background};
-  /* margin: 0 auto; */
-  /* width: 100vw; */
-  /* padding: 0; */
+  min-height: 100vh;
   margin-bottom: ${(props: IStyledLayoutProps): string | number =>
     props.hasFooter ? '48rem' : 0};
-  /* z-index: 999; */
+
+  ${(props: IStyledLayoutProps): CSSObject => props.fixed && {
+    background: 'transparent',
+    position: "fixed",
+    display: "flex",
+    alignItems: 'center',
+    width: '100vw',
+    height: '100vh'
+  } || {}}
 
   @media ${theme.breakpoints.max.smartphone} {
     margin-bottom: ${(props: IStyledLayoutProps): string | number =>
@@ -73,10 +83,13 @@ const StyledMain: StyledComponent<'main', any, {}, never> = styled.main`
   }
 `
 
-export const Layout: ({ children, hasFooter }: IChildren) => JSX.Element = ({
+export const Layout: (props: ILayoutProps) => JSX.Element = ({
   children,
   hasFooter = true,
-}: IChildren): JSX.Element => {
+  fixed = false,
+  showImage = true,
+  headerHeight = '24rem'
+}: ILayoutProps): JSX.Element => {
   // tslint:disable-next-line: no-void-expression
   const data: ISiteQuery = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -89,15 +102,14 @@ export const Layout: ({ children, hasFooter }: IChildren) => JSX.Element = ({
   `)
 
   return (
-    // <>
-    <IONavigator routes={routes}>
-      <StyledLayout hasFooter={hasFooter}>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <StyledMain>{children}</StyledMain>
+    <IONavigator>
+      <StyledLayout hasFooter={hasFooter} fixed={fixed}>
+        <Header height={headerHeight} siteTitle={data.site.siteMetadata.title} showImage={showImage} color={'white'}/>
+        {children && <StyledMain>{children}</StyledMain>}
         {hasFooter && <Footer />}
-        <MainNav />
+        {/* <DesktopNav routes={routes} /> */}
+        {/* ^^^^ Has to be MobileNav ^^^^ */}
       </StyledLayout>
     </IONavigator>
-    // </>
   )
 }
