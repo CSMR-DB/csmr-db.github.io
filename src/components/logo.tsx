@@ -55,13 +55,7 @@ const StyledPath: StyledComponent<
   stroke: ${(props: ILogoPathProps): StrokeProperty => props.stroke || 'white'};
 `
 
-export const Logo: ({
-  size,
-  strokeColor,
-  strokeSize,
-  fill,
-  background,
-}: ILogoProps & ILogoBaseProps) => JSX.Element = ({
+export const Logo: (props: ILogoProps & ILogoBaseProps) => JSX.Element = ({
   size,
   strokeColor,
   strokeSize,
