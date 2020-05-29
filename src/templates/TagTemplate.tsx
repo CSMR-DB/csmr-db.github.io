@@ -68,7 +68,7 @@ export default function ProjectTemplate({
                   },
                 }: IEdge,
                 i: number
-              ) => (
+              ): JSX.Element => (
                 <ProjectCard
                   body={excerpt}
                   title={title}

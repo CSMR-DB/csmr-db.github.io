@@ -11,7 +11,7 @@ export function ArticleBody({
     (body && (
       <p>
         {Array.isArray(body)
-          ? body.map((string: StringOrUrlObject, i: number) => {
+          ? body.map((string: StringOrUrlObject, i: number): JSX.Element | string => {
               if (typeof string !== 'string' && string.url) {
                 return (
                   <StyledA href={string.url} target="blank" key={i}>
@@ -20,7 +20,7 @@ export function ArticleBody({
                 )
               }
 
-              return string
+              return string as string
             })
           : body}
       </p>

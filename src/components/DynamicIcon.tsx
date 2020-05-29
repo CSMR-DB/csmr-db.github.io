@@ -67,7 +67,7 @@ export const DynamicIcon: ({
       render={({ images }: IImagesRoot): JSX.Element | null =>
         renderImage(
           images.edges.find(
-            (image: IFluidImage) => image.node.relativePath === path
+            (image: IFluidImage): boolean => image.node.relativePath === path
           ) // returns images like this node: {extension: "png", relativePath: "gatsby-icon.png", childImageSharp: {…}}
         )
       }

@@ -14,7 +14,7 @@ export const ArticleTags: ({ tags }: { tags?: string[] }) => JSX.Element = ({
   <StyledP>
     Tags:{' '}
     {tags &&
-      tags.map((tag: string, i: number) => (
+      tags.map((tag: string, i: number): JSX.Element => (
         <span key={i}>
           <StyledLink
             to={`/tag/${tag.toLocaleLowerCase().replace(/\s/gi, '_')}`}
