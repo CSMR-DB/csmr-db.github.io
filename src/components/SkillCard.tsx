@@ -19,6 +19,14 @@ interface ISkillCardProps {
   time?: number
 }
 
+const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(Card)`
+  &:hover {
+    .backdrop {
+      opacity: .75 !important;
+    }
+  }
+`
+
 interface IStyledIndicatorProps {
   lit: boolean
   litColor: ColorProperty
@@ -78,7 +86,8 @@ const StyledSkillCardHeader: StyledComponent<
   }
 `
 
-const StyledSkillCardBackdrop: StyledComponent<'div', any, {}, never> = styled.div`
+const StyledSkillCardBackdrop: StyledComponent<'div', any, {}, never> = styled.div.attrs({ className: 'backdrop' })`
+  transition: all ease .5s;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -133,7 +142,7 @@ export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
   time = 0,
 }: ISkillCardProps): JSX.Element => (
   <Tween from={{ x: '-400px', opacity: 0 }} duration={1} delay={.25 + index * .125} ease="elastic">
-    <Card>
+    <StyledSkillCard>
       <SkillCardBackdrop index={index}>
         <DynamicImage
           path={`code-icons/${title
@@ -173,6 +182,6 @@ export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
         </Tween>
         {' '} hours)</p>
       </CardFooter>
-    </Card>
+    </StyledSkillCard>
   </Tween>
 )
