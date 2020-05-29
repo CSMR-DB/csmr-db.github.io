@@ -1,4 +1,4 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, { StyledComponent, CSSObject } from 'styled-components'
 import { BackgroundColorProperty, MaxHeightProperty } from 'csstype'
 import { theme } from '../data/theme'
 
@@ -130,11 +130,20 @@ export const CardBody: StyledComponent<'main', any, {}, never> = styled.main`
 export const CardFooter: StyledComponent<
   'footer',
   any,
-  {},
+  { style?: boolean },
   never
 > = styled.footer`
-  background: #eee;
+  ${({ style = false }: { style?: boolean }): CSSObject => style && {
+    background: '#EEE',
+    padding: '2rem',
+    borderTop: '1px solid #DDD',
+    gridArea: 'footer'
+  } || {
+    padding: '0 2rem 2rem'
+  }}
+
+  /* background: #eee;
   padding: 2em;
   border-top: 1px solid #ddd;
-  grid-area: 'footer';
+  grid-area: 'footer'; */
 `
