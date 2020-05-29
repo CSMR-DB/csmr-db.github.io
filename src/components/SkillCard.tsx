@@ -5,7 +5,7 @@ import { Flex } from './Flex'
 import { DynamicImage } from './DynamicImage'
 import { StyledA, StyledLink } from './StyledLink'
 import { StringOrUrlObject, StringOrUrlArray } from '../types/StringOrUrlObject'
-import { BackgroundColorProperty } from 'csstype'
+import { BackgroundColorProperty, ColorProperty } from 'csstype'
 import { theme } from '../data/theme'
 import { Timeline, Tween } from 'react-gsap'
 
@@ -15,11 +15,13 @@ interface ISkillCardProps {
   level: number
   title: string
   description: StringOrUrlArray
+  skillColor: ColorProperty
   time?: number
 }
 
 interface IStyledIndicator {
   lit: boolean
+  litColor: ColorProperty
 }
 
 const StyledIndicatorDot: StyledComponent<
@@ -35,14 +37,17 @@ const StyledIndicatorDot: StyledComponent<
   height: 1rem;
   border-radius: 1rem;
   background: ${(props: IStyledIndicator): BackgroundColorProperty =>
-    props.lit ? theme.activeIndicator : theme.inactiveIndicator};
+    props.lit ? props.litColor : theme.inactiveIndicator};
+
+  /* background: ${(props: IStyledIndicator): BackgroundColorProperty =>
+    props.lit ? theme.activeIndicator : theme.inactiveIndicator}; */
 `
 
-function StyledIndicator({ lit, index, instance }: { lit: boolean, index: number, instance: number }): JSX.Element {
+function StyledIndicator({ lit, litColor, index, instance }: { lit: boolean, litColor: ColorProperty, index: number, instance: number }): JSX.Element {
   return (
     <Timeline>
       <Tween from={{ scale: 8, opacity: 0 }} duration={.125} delay={1 + index / 8 + instance * .125}>
-        <StyledIndicatorDot lit={lit} />
+        <StyledIndicatorDot lit={lit} litColor={litColor} />
       </Tween>
     </Timeline>
   )
@@ -85,7 +90,7 @@ const StyledSkillCardBackdrop: StyledComponent<'div', any, {}, never> = styled.d
 function SkillCardBackdrop({children, index}: { children: ReactNode, index: number }): JSX.Element {
   return (
     <Timeline>
-      <Tween to={{ opacity: .075 }} duration={1} delay={1 + index * .125} ease="power1">
+      <Tween to={{ opacity: .25 }} duration={1} delay={1 + index * .125} ease="power1">
         <StyledSkillCardBackdrop>
           {children}
         </StyledSkillCardBackdrop>
@@ -124,6 +129,7 @@ export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
   level,
   title,
   description,
+  skillColor,
   time = 0,
 }: ISkillCardProps): JSX.Element => (
   <Tween from={{ x: '-400px', opacity: 0 }} duration={1} delay={.25 + index * .125} ease="elastic">
@@ -140,11 +146,11 @@ export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
           <Flex justifyContent="space-between">
             {/* {level && level >= -1 && ( */}
             <StyledIndicatorGrid>
-              <StyledIndicator instance={index} index={0} lit={level >= 1}></StyledIndicator>
-              <StyledIndicator instance={index} index={1} lit={level >= 2}></StyledIndicator>
-              <StyledIndicator instance={index} index={2} lit={level >= 3}></StyledIndicator>
-              <StyledIndicator instance={index} index={3} lit={level >= 4}></StyledIndicator>
-              <StyledIndicator instance={index} index={4} lit={level === 5}></StyledIndicator>
+              <StyledIndicator instance={index} index={0} lit={level >= 1} litColor={skillColor}></StyledIndicator>
+              <StyledIndicator instance={index} index={1} lit={level >= 2} litColor={skillColor}></StyledIndicator>
+              <StyledIndicator instance={index} index={2} lit={level >= 3} litColor={skillColor}></StyledIndicator>
+              <StyledIndicator instance={index} index={3} lit={level >= 4} litColor={skillColor}></StyledIndicator>
+              <StyledIndicator instance={index} index={4} lit={level === 5} litColor={skillColor}></StyledIndicator>
             </StyledIndicatorGrid>
             {/* )} */}
             <h1>
