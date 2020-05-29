@@ -19,7 +19,7 @@ interface ISkillCardProps {
   time?: number
 }
 
-interface IStyledIndicator {
+interface IStyledIndicatorProps {
   lit: boolean
   litColor: ColorProperty
 }
@@ -27,7 +27,7 @@ interface IStyledIndicator {
 const StyledIndicatorDot: StyledComponent<
   'span',
   any,
-  IStyledIndicator,
+  IStyledIndicatorProps,
   never
 > = styled.span`
   display: inline-block;
@@ -36,10 +36,10 @@ const StyledIndicatorDot: StyledComponent<
   width: 1rem;
   height: 1rem;
   border-radius: 1rem;
-  background: ${(props: IStyledIndicator): BackgroundColorProperty =>
+  background: ${(props: IStyledIndicatorProps): BackgroundColorProperty =>
     props.lit ? props.litColor : theme.inactiveIndicator};
 
-  /* background: ${(props: IStyledIndicator): BackgroundColorProperty =>
+  /* background: ${(props: IStyledIndicatorProps): BackgroundColorProperty =>
     props.lit ? theme.activeIndicator : theme.inactiveIndicator}; */
 `
 
