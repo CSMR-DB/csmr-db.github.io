@@ -1,17 +1,7 @@
-import { IRouteObject } from './../data/routes';
 import { useState, useEffect } from 'react';
 
-export function useKeyPressNavigation(routes: IRouteObject[]): string {
+export function useKeyPressNavigation(keyPressRouteBinds: Map<string, string>): string {
   const [navigationPath, setNavigationPath]: [ string, React.Dispatch<React.SetStateAction<string>> ] = useState('');
-
-  const keyPressRouteBinds: Map<string, string> = new Map()
-  routes.forEach((route: IRouteObject): void => { 
-    route.boundKeys.forEach((key: string | number): void => { 
-      keyPressRouteBinds.set( `${key}`, route.path )
-    }) 
-  })
-
-  console.table(keyPressRouteBinds)
 
   useEffect((): (() => void) => {
     function downHandler({ key }: { key: string }): void {
@@ -33,7 +23,7 @@ export function useKeyPressNavigation(routes: IRouteObject[]): string {
       window.removeEventListener('keydown', downHandler);
       window.removeEventListener('keyup', upHandler);
     };
-  }, [routes]);
+  }, [keyPressRouteBinds]);
 
   return navigationPath;
 }
