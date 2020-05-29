@@ -56,28 +56,32 @@ export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
   backgroundColor,
 }: IExperienceCardProps): JSX.Element => (
   <Reveal>
-    <Tween from={{ opacity: 0, scale: .75 }} duration={.5}>
+    <Tween from={{ width: '8rem', height: '8rem' }} to={{ width: '100%', height: 'auto' }} duration={.75} ease={"power4"}>
       <Card>
         <ExperienceCardHeader>
           <Flex justifyContent="flex-start">
             <CardHeaderIconWrapper backgroundColor={backgroundColor}>
               <DynamicIcon path={icon} />
             </CardHeaderIconWrapper>
-            <ExperienceCardHeaderText>
-              <h1>
-                {name} ({type})
-              </h1>
-              <h2>
-                <DateFormatted dateString={dateStart} /> -{' '}
-                <DateFormatted dateString={dateEnd} />
-              </h2>
-            </ExperienceCardHeaderText>
+            <Tween from={{ display: 'none' }} delay={1}>
+              <ExperienceCardHeaderText>
+                <h1>
+                  {name} ({type})
+                </h1>
+                <h2>
+                  <DateFormatted dateString={dateStart} /> -{' '}
+                  <DateFormatted dateString={dateEnd} />
+                </h2>
+              </ExperienceCardHeaderText>
+            </Tween>
           </Flex>
         </ExperienceCardHeader>
         <CardBody>
-          <main>
-            <p>{description}</p>
-          </main>
+          <Tween from={{ display: 'none' }} delay={1}>
+            <main>
+              <p>{description}</p>
+            </main>
+          </Tween>
         </CardBody>
       </Card>
     </Tween>
