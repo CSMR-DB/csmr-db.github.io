@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react'
 import { ColorProperty, BackgroundColorProperty } from 'csstype'
 import { Relative } from './Relative'
 import { DynamicIcon } from './DynamicIcon'
-import { AbsoluteCenter } from './Absolute'
+import { Absolute } from './Absolute'
 import { ClippedBtn } from './ClippedBtn'
 import { Flex } from './Flex'
 import styled, { StyledComponent } from 'styled-components'
@@ -40,13 +40,13 @@ export const SocialButton: ({
       <StyledDynamicIcon>
         <DynamicIcon path={iconPath} />
       </StyledDynamicIcon>
-      <AbsoluteCenter>
+      <Absolute>
         <ClippedBtn background={background} color={color}>
           <Flex justifyContent="space-around">
             <span>{children}</span>
           </Flex>
         </ClippedBtn>
-      </AbsoluteCenter>
+      </Absolute>
     </Relative>
   </StyledA>
 )
