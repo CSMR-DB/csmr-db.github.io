@@ -133,4 +133,5 @@ export interface IExtendedFrontmatter {
   tags?: string[]
   time?: number
   level?: number
+  skillColor?: ColorProperty
 }

@@ -31,6 +31,8 @@ export default function ProjectTemplate({
         <CenteredBlock>
           {markdownRemark ? (
             <SkillCard
+              skillColor={markdownRemark.frontmatter.skillColor || 'black'}
+              index={0}
               level={markdownRemark.frontmatter.level || 0}
               title={markdownRemark.frontmatter.title}
               description={markdownRemark.frontmatter.excerpt}
@@ -38,6 +40,8 @@ export default function ProjectTemplate({
             />
           ) : (
             <SkillCard
+              skillColor={'black'}
+              index={0}
               level={0}
               title={'Placeholder'}
               description="Description"
@@ -73,6 +77,7 @@ export default function ProjectTemplate({
                   body={excerpt}
                   title={title}
                   key={i}
+                  index={i}
                   tags={tags}
                   date={date}
                   image={featuredImage}
@@ -129,6 +134,7 @@ export const pageQuery: void = graphql`
         excerpt
         level
         time
+        skillColor
       }
     }
   }
