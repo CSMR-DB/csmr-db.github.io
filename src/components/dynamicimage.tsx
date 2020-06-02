@@ -44,7 +44,7 @@ export const DynamicImage: ({
                 extension
                 relativePath
                 childImageSharp {
-                  fluid(maxWidth: 2560) {
+                  fluid(maxWidth: 960) {
                     ...GatsbyImageSharpFluid
                   }
                 }
