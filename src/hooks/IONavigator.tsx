@@ -3,8 +3,26 @@ import { IRouteObject, routes } from '../data/routes';
 import { navigate } from 'gatsby';
 import { useKeyPressNavigation } from './useKeyPressNavigation.hook';
 
+const SECRET_ROUTES: IRouteObject[] = [
+  {
+    path: '/photography',
+    title: 'Photography',
+    boundKeys: [ 'p', NaN ]
+  },
+  {
+    path: '/onepage',
+    title: 'Onepage',
+    boundKeys: [ 'o', NaN ]
+  }
+]
+
+const ALL_ROUTES: IRouteObject[] = [
+  ...routes, 
+  ...SECRET_ROUTES
+]
+
 const keyPressRouteBinds: Map<string, string> = new Map()
-routes.forEach((route: IRouteObject): void => { 
+ALL_ROUTES.forEach((route: IRouteObject): void => { 
   route.boundKeys.forEach((key: string | number): void => { 
     keyPressRouteBinds.set( `${key}`, route.path )
   }) 
