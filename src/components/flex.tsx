@@ -1,17 +1,20 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-import { BackgroundColorProperty, JustifyContentProperty } from 'csstype'
+import { BackgroundColorProperty, JustifyContentProperty, FlexDirectionProperty } from 'csstype'
 
 export interface IFlexProps {
   children: ReactNode
   background?: BackgroundColorProperty
   justifyContent?: JustifyContentProperty
+  direction?: FlexDirectionProperty
 }
 
 const StyledFlex: StyledComponent<'div', any, IFlexProps, never> = styled.div`
   position: relative;
   background: ${(props: IFlexProps): BackgroundColorProperty =>
     props.background || 'transparent'};
+  flex-direction: ${(props: IFlexProps): FlexDirectionProperty =>
+    props.direction || 'column'};
 
   height: 100%;
   display: flex;
@@ -25,16 +28,7 @@ const StyledFlex: StyledComponent<'div', any, IFlexProps, never> = styled.div`
   }
 `
 
-export const Flex: ({
-  children,
-  background,
-  justifyContent,
-}: IFlexProps) => JSX.Element = ({
-  children,
-  background,
-  justifyContent,
-}: IFlexProps): JSX.Element => (
-  <StyledFlex background={background} justifyContent={justifyContent}>
-    {children}
-  </StyledFlex>
-)
+export const Flex: React.ForwardRefExoticComponent<IFlexProps & React.RefAttributes<HTMLDivElement>> =
+  React.forwardRef((props: IFlexProps, ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement) => void) | null): JSX.Element => (
+    <StyledFlex {...props} ref={ref} />
+  ))
