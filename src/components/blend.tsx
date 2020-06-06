@@ -19,10 +19,6 @@ const StyledDiv: StyledComponent<'div', any, IBlend, never> = styled.div`
     position: relative !important;
   }
 
-  :hover > :first-child {
-    transform: scale(1.1);
-  }
-
   & > * {
     mix-blend-mode: ${(props: IBlend): MixBlendModeProperty => props.mode};
     position: absolute !important; /** to work with gatsby-image, adding !important is a necessary override */
