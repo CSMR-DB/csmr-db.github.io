@@ -37,14 +37,16 @@ export const DynamicImage: ({
       query={graphql`
         query {
           images: allFile(
-            filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
+            filter: { 
+              extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)/" },
+            }
           ) {
             edges {
               node {
                 extension
                 relativePath
                 childImageSharp {
-                  fluid(maxWidth: 960) {
+                  fluid(maxWidth: 960, maxHeight: 960, cropFocus: CENTER) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -52,25 +54,6 @@ export const DynamicImage: ({
             }
           }
         }
-      #   query imageRegex($path: String) {
-      #     images: allFile( filter: { extension: { regex: "/jpeg|jpg|png|gif/" }, relativePath: { regex: $path } } ) {
-      #       edges {
-      #         node {
-      #           extension
-      #           relativePath
-      #           childImageSharp {
-      #             fluid(maxWidth: 960) {
-      #               base64
-      #               presentationWidth
-      #               presentationHeight
-      #               src
-      #               srcSet
-      #             }
-      #           }
-      #         }
-      #       }
-      #     }
-      #   }
       `}
       render={({ images }: IImageEdges): (JSX.Element | null)[] => {
         return images.edges.map((image: IFluidImage, i: number): JSX.Element | null =>
@@ -88,7 +71,3 @@ export const DynamicImage: ({
     />
   )
 }
-
-/**
- * Question remains: how much impact will many (100s) of images have?
- */
