@@ -52,25 +52,6 @@ const GridElement: StyledComponent<
   }
 `
 
-export const Grid: ({
-  children,
-  columns,
-  rows,
-  height,
-  maxWidth,
-}: IGridMenuProps) => JSX.Element = ({
-  children,
-  columns,
-  rows,
-  height,
-  maxWidth,
-}: IGridMenuProps): JSX.Element => (
-  <GridElement
-    columns={columns}
-    rows={rows}
-    height={height}
-    maxWidth={maxWidth}
-  >
-    {children}
-  </GridElement>
+export const Grid: (props: IGridMenuProps) => JSX.Element = (props: IGridMenuProps): JSX.Element => (
+  <GridElement {...props} />
 )
