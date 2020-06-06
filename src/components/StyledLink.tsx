@@ -1,16 +1,20 @@
 import styled, { StyledComponent } from 'styled-components'
 import { Link } from 'gatsby'
 import { theme } from '../data/theme'
+import { ColorProperty } from 'csstype'
 
-const Styler: (
-  element: any
-) => StyledComponent<any, any, object, string | number | symbol> = (
-  element: any
-): StyledComponent<any, any, object, string | number | symbol> => styled(
-  element
-)`
+interface IStyledALinkProps {
+  color?: ColorProperty
+}
+
+export const StyledLink: StyledComponent<
+  typeof Link,
+  any,
+  IStyledALinkProps,
+  string | number | symbol
+> = styled(Link)`
   text-decoration: none;
-  color: ${theme.primary};
+  color: ${(props: IStyledALinkProps): ColorProperty => props.color || theme.primary} !important; 
   display: inline-block;
 
   & :hover {
@@ -22,11 +26,16 @@ const Styler: (
   }
 `
 
-export const StyledLink: StyledComponent<
-  typeof Link,
-  any,
-  object,
-  string | number | symbol
-> = Styler(Link)
+export const StyledA: StyledComponent<'a', any, IStyledALinkProps, never> = styled.a`
+  text-decoration: none;
+  color: ${(props: IStyledALinkProps): ColorProperty => props.color || theme.primary} !important;
+  display: inline-block;
 
-export const StyledA: StyledComponent<'a', any, object, never> = Styler('a')
+  & :hover {
+    color: ${theme.primaryHover};
+  }
+
+  &.active {
+    color: ${theme.primaryHover};
+  }
+`
