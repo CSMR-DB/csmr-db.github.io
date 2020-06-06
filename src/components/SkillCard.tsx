@@ -145,14 +145,14 @@ export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
     <StyledSkillCard>
       <SkillCardBackdrop index={index}>
         <DynamicImage
-          path={`code-icons/${title
+          path={`code_icons/${title
             .replace(/\([0-9]*\)|\s+/gi, '')
             .toLocaleLowerCase()}.png`}
         />
       </SkillCardBackdrop>
       <CardHeader>
         <StyledSkillCardHeader>
-          <Flex justifyContent="space-between">
+          <Flex justifyContent="space-between" direction="row">
             {/* {level && level >= -1 && ( */}
             <StyledIndicatorGrid>
               <StyledIndicator instance={index} index={0} lit={level >= 1} litColor={skillColor}></StyledIndicator>
@@ -165,6 +165,7 @@ export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
             <h1>
               <StyledLink
                 to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
+                color={skillColor}
               >
                 {title}
               </StyledLink>
