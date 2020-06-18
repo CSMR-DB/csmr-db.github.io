@@ -48,7 +48,7 @@ export const StyledLayout: StyledComponent<
   background: ${theme.background};
   min-height: 100vh;
   margin-bottom: ${(props: IStyledLayoutProps): string | number =>
-    props.hasFooter ? '48rem' : 0};
+    props.hasFooter ? '100vh' : 0};
 
   ${(props: IStyledLayoutProps): CSSObject => props.fixed && {
     background: 'transparent',
@@ -67,7 +67,7 @@ export const StyledLayout: StyledComponent<
 
 const StyledMain: StyledComponent<'main', any, {}, never> = styled.main`
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 4rem 0;
 
   a {
     text-decoration: none;
