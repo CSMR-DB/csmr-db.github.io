@@ -6,7 +6,8 @@ export const ImageContainerCircle: StyledComponent<
   {},
   never
 > = styled.div`
-  max-width: 12rem;
+  width: 100%;
+  max-width: 16rem;
   overflow: hidden;
   border-radius: 999rem;
   margin: 0 auto 4rem;
