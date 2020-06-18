@@ -1,9 +1,9 @@
-import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import { CenteredBlock } from './CenteredBlock'
-import { PaddingProperty } from 'csstype'
-import { StyledA } from './StyledLink'
-import { theme } from '../data/theme'
+import React from 'react';
+import styled, { StyledComponent } from 'styled-components';
+import { CenteredBlock } from './CenteredBlock';
+import { PaddingProperty } from 'csstype';
+import { StyledA } from './StyledLink';
+import { theme } from '../data/theme';
 
 const StyledFooter: StyledComponent<'footer', any, {}, never> = styled.footer`
   position: fixed;
@@ -13,8 +13,7 @@ const StyledFooter: StyledComponent<'footer', any, {}, never> = styled.footer`
   text-align: center;
   padding: 2rem;
   background: black;
-  color: white;
-  height: 48rem;
+  height: 100vh;
   z-index: -1;
 
   @media ${theme.breakpoints.max.smartphone} {
@@ -49,7 +48,7 @@ const ProgramLine: StyledComponent<
 type CreditFn = (href: string, title: string) => JSX.Element
 
 const Credit: CreditFn = (href: string, title: string): JSX.Element => (
-  <StyledA href={href} target="blank">
+  <StyledA color={'white'} href={href} target="blank">
     {title}
   </StyledA>
 )
@@ -73,6 +72,7 @@ const CREDITS: { [key: string]: JSX.Element } = {
 
 const FooterQuote: StyledComponent<'h6', any, {}, never> = styled.h6`
   line-height: 1.2rem !important;
+  color: white;
 `
 
 export const Footer: () => JSX.Element = (): JSX.Element => (
@@ -83,7 +83,7 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
     </FooterQuote>
     <CenteredBlock>
       <ProgramContainer>
-        <ProgramLine>type Requirements = {`{ essence: emoji[] }`}</ProgramLine>
+        <ProgramLine>type Requirements = {`{ essence: Emoji[] }`}</ProgramLine>
         <ProgramLine>type DevWebsite = {`{ typescript: boolean }`}</ProgramLine>
         <ProgramLine>interface IWebsite {'{'}</ProgramLine>
         <ProgramLine padding={1}>{`url: string`}</ProgramLine>
@@ -94,18 +94,17 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
         <ProgramLine padding={1}>
           return await start({CREDITS.gatsby})
         </ProgramLine>
-        <ProgramLine padding={2}>.then((dev: DevWebsite) => </ProgramLine>
+        <ProgramLine padding={2}>.then((dev: DevWebsite) ={">"} </ProgramLine>
         <ProgramLine padding={3}>pipe(</ProgramLine>
         <ProgramLine padding={4}>
           addStyle({CREDITS.styledComponents}),
         </ProgramLine>
         <ProgramLine padding={4}>useFont({CREDITS.firaCode}),</ProgramLine>
-        <ProgramLine padding={4}>sprinkleWith(essence),</ProgramLine>
         <ProgramLine padding={4}>
           addCodeIcons({CREDITS.vsCodeIcons}),
         </ProgramLine>
         <ProgramLine padding={4}>
-          addAdobeIcons({CREDITS.adobeIcons})
+          addAdobeIcons({CREDITS.adobeIcons}),
         </ProgramLine>
         <ProgramLine padding={4}>
           prettifyCodeUsing({CREDITS.prettier}),
@@ -113,6 +112,7 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
         <ProgramLine padding={4}>
           makeCodeImagesUsing({CREDITS.carbon}),
         </ProgramLine>
+        <ProgramLine padding={4}>sprinkleWith(essence),</ProgramLine>
         <ProgramLine padding={4}>deployUsing({CREDITS.ghPages})</ProgramLine>
         <ProgramLine padding={3}>)(dev)</ProgramLine>
         <ProgramLine padding={2}>)</ProgramLine>
@@ -121,7 +121,7 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
         <ProgramLine>
           websitePromise({`{ essence: [ ❤️, ✨, 🎆 ] }`})
         </ProgramLine>
-        <ProgramLine padding={1}>.then((website: IWebsite) =></ProgramLine>
+        <ProgramLine padding={1}>.then((website: IWebsite) ={">"}</ProgramLine>
         <ProgramLine padding={2}>website.visit())</ProgramLine>
         <ProgramLine padding={1}>)</ProgramLine>
       </ProgramContainer>
