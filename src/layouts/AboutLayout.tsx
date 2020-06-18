@@ -299,7 +299,13 @@ export function CollegeBuildings(props: { images: ICollegeBuilding[] }): JSX.Ele
   )
 }
 
-export function AboutLayout(props: { wallpapers: IBioImagesMarkdownRemark, squares: IBioImagesMarkdownRemark, posters: IBioImagesMarkdownRemark }): JSX.Element {
+export interface IAboutLayoutProps {
+  wallpapers: IBioImagesMarkdownRemark, 
+  squares: IBioImagesMarkdownRemark, 
+  posters: IBioImagesMarkdownRemark
+}
+
+export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
   const groupedCourses: [ICourse['category'], ICourse[]][] = [...groupBy(courses, 'category')]
 
   return (
