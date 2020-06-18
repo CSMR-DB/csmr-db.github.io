@@ -4,6 +4,7 @@ import { theme } from '../data/theme'
 
 export const Card: StyledComponent<'article', any, {}, never> = styled.article`
   position: relative;
+  height: 100%;
   border-radius: 0.25rem;
   display: grid;
   grid-template-areas: 'header' 'body' 'footer';
@@ -141,9 +142,4 @@ export const CardFooter: StyledComponent<
   } || {
     padding: '0 2rem 2rem'
   }}
-
-  /* background: #eee;
-  padding: 2em;
-  border-top: 1px solid #ddd;
-  grid-area: 'footer'; */
 `
