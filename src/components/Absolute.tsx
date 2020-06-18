@@ -19,12 +19,10 @@ export const Absolute: StyledComponent<
   never
 > = styled.div`
   position: absolute;
-  width: ${(props: IAbsoluteProps): WidthProperty<1> =>
-    props.width || '100%'};
-  height: ${(props: IAbsoluteProps): HeightProperty<1> =>
-    props.height || '100%'};
-  top: ${(props: IAbsoluteProps): TopProperty<1> => props.top || '0'};
-  left: ${(props: IAbsoluteProps): LeftProperty<1> => props.left || '0'};
-  bottom: ${(props: IAbsoluteProps): TopProperty<1> => props.bottom || '0'};
-  right: ${(props: IAbsoluteProps): TopProperty<1> => props.right || '0'};
+  width: ${({ width = 'auto' }: IAbsoluteProps): WidthProperty<1> => width};
+  height: ${({ height = 'auto' }: IAbsoluteProps): HeightProperty<1> => height};
+  top: ${({ top = '0' }: IAbsoluteProps): TopProperty<1> => top};
+  left: ${({ left = '0' }: IAbsoluteProps): LeftProperty<1> => left};
+  bottom: ${({ bottom = '0' }: IAbsoluteProps): TopProperty<1> => bottom};
+  right: ${({ right = '0' }: IAbsoluteProps): TopProperty<1> => right};
 `
