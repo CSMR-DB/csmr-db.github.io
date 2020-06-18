@@ -1,8 +1,8 @@
 {
   "name": "csmr-db",
   "private": true,
-  "description": "Gatsby-based Portfolio Project",
-  "version": "0.2.0",
+  "description": "Portfolio built with ❤️ & Gatsby",
+  "version": "1.0.0",
   "author": "Casimir de Bruijn <casimir.db@outlook.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
@@ -31,6 +31,8 @@
     "react-youtube": "^7.11.2",
     "styled-components": "^5.1.0",
     "typeface-fira-sans": "0.0.75",
+    "typeface-holtwood-one-sc": "0.0.71",
+    "typeface-inter": "^3.12.0",
     "typeface-merriweather": "0.0.72",
     "typeface-open-sans-condensed": "0.0.72"
   },
@@ -58,7 +60,8 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run format && gatsby build",
-    "develop": "gatsby clean && gatsby develop",
+    "cleandev": "gatsby clean && gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
