@@ -333,15 +333,15 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         <CollegeBuildings
           images={[
             {
-              path: 'bio_movie/hu_oldest.jpg',
+              path: 'bio/hu_oldest.jpg',
               text: 'HU Building #1'
             },
             {
-              path: 'bio_movie/hu_old.jpg',
+              path: 'bio/hu_old.jpg',
               text: 'HU Building #2'
             },
             {
-              path: 'bio_movie/hu_new.jpg',
+              path: 'bio/hu_new.jpg',
               text: 'HU Building #3'
             },
           ]}
