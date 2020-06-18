@@ -4,7 +4,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   overflow-x: hidden;
 }
@@ -14,31 +15,38 @@ html {
 }
 
 h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Merriweather', serif;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    line-height: 100%;
-    margin-bottom: 1rem;
-  }
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  line-height: 100%;
+  margin-bottom: 2rem;
+}
 
-  p {
-    text-align: justify;
-    line-height: 1.2rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
+p {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.75rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
 
-  p, a,pre,code {
-    font-family: 'Fira Code';
-  }
+p,
+a,
+pre,
+code,
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: 'Fira Code';
+  font-size: .9rem;
+}
 
-  p,
-  pre,
-  code {
-    font-size: 0.75rem;
-  }
+/* p, */
+pre,
+code {
+  font-size: 0.75rem;
+}
