@@ -1,29 +1,35 @@
-import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import { SEO } from '../components/SEO'
-import { Fixed } from '../components/Fixed'
-import { DynamicImage } from '../components/DynamicImage'
-import { Filter } from '../components/Filter'
-import { Layout } from '../components/Layout'
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Layout, SEO } from '../components';
 
-const StyledDynamicImage: StyledComponent<'div', any, {}, never> = styled.div`
-  .gatsby-image-wrapper {
-    height: 100vh;
+export interface ISiteMetadata {
+  site: {
+    siteMetadata: {
+      title: string
+      description: string
+      author: string
+    }
   }
-`
+}
 
 export function IndexLayout(): JSX.Element {
+  // tslint:disable-next-line: no-void-expression
+  const data: ISiteMetadata = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+        }
+      }
+    }
+  `)
+
   return (
     <>
-      <SEO title="Homepage" />
-      <Fixed>
-        <Filter>
-          <StyledDynamicImage>
-            <DynamicImage path="wallpaper/wallpaper.jpg" />
-          </StyledDynamicImage>
-        </Filter>
-      </Fixed>
-      <Layout hasFooter={false} fixed showImage={false} headerHeight={'100%'} />
+      <SEO title={`Homepage • ${data.site.siteMetadata.description}`} description={data.site.siteMetadata.description} />
+      <Layout isLandingPage />
     </>
   )
 }

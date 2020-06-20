@@ -3,10 +3,10 @@ import styled, { StyledComponent } from 'styled-components'
 import { IRouteObject } from '../data/routes'
 import { theme } from '../data/theme'
 import { Link } from 'gatsby'
-import { ColorProperty, BorderProperty, GridAreaProperty } from 'csstype'
+import { ColorProperty, BorderProperty, GridAreaProperty, GridGapProperty, BackgroundProperty, BackgroundColorProperty } from 'csstype'
 import { Tween } from 'react-gsap'
 
-const StyledNav: StyledComponent<'nav', any, {}, never> = styled.nav`
+const StyledNav: StyledComponent<'nav', any, { gap: GridGapProperty<1> }, never> = styled.nav`
   display: grid;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@ const StyledNav: StyledComponent<'nav', any, {}, never> = styled.nav`
     "a s d";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: ${({ gap }: { gap: GridGapProperty<1> }): GridGapProperty<1> => gap};
 
   & > * {
     justify-self: center;
@@ -35,19 +35,28 @@ const StyledH1: StyledComponent<'h1', any, {}, never> = styled.h1`
   };
 `
 
-const StyledLinkOrb: StyledComponent<typeof Link, any, { color: ColorProperty, area: GridAreaProperty }, never> = styled(Link)`
+interface IStyledLinkOrbProps {
+  color: ColorProperty,
+  borderColor: ColorProperty,
+  area: GridAreaProperty
+  background?: BackgroundProperty<1>
+  inverted?: boolean
+}
+
+const StyledLinkOrb: StyledComponent<typeof Link, any, IStyledLinkOrbProps, never> = styled(Link)`
   height: 8rem;
   width: 8rem;
   margin: 0 auto;
   text-align: center;
   text-decoration: none;
-  border: ${(props: { color: ColorProperty, area: GridAreaProperty }): BorderProperty<1> => `1px solid ${props.color}`};
+  background: ${({ background = 'transparent' }: IStyledLinkOrbProps): BackgroundProperty<1> => background};
+  border: ${({ borderColor }: IStyledLinkOrbProps): BorderProperty<1> => `1px solid ${borderColor}`};
   border-radius: 256rem;
-  color: ${(props: { color: ColorProperty, area: GridAreaProperty }): ColorProperty => props.color};
+  color: ${({ color }: IStyledLinkOrbProps): ColorProperty => color};
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  grid-area: ${(props: { color: ColorProperty, area: GridAreaProperty }): GridAreaProperty => props.area};
+  grid-area: ${({ area }: IStyledLinkOrbProps): GridAreaProperty => area};
 
   &:hover {
     border: 1px solid ${theme.primaryHover};
@@ -78,19 +87,28 @@ const StyledLogoOrbKey: StyledComponent<'span', any, {}, never> = styled.span`
   };
 `
 
-export function WASDNav({ routes, color }: { routes: IRouteObject[], color: ColorProperty }): JSX.Element {
+interface IWASDNavProps {
+  routes: IRouteObject[],
+  color?: ColorProperty,
+  gap: GridGapProperty<1>
+  background: BackgroundColorProperty
+}
+
+export function WASDNav({ routes, color = 'white', gap = '2rem', background = 'transparent' }: IWASDNavProps): JSX.Element {
   const currentPage: string = typeof window !== 'undefined' ? window.location.pathname : ''
 
   return (
-    <StyledNav>
+    <StyledNav gap={gap}>
       {routes.map((route: IRouteObject, i: number): JSX.Element => (
-        <Tween key={i} from={currentPage === '/' ? { boxShadow: `0 0 0 32rem inset ${theme.primary}`, opacity: 0, scale: 0, } : {}} duration={1} delay={ i * .25 } ease={'bounce'}>
+        <Tween key={i} from={currentPage === '/' ? { boxShadow: `0 0 0 32rem inset white`, opacity: 0, scale: 0, } : {}} duration={1} delay={i * .25} ease={'bounce'}>
           <StyledLinkOrb
             key={i}
             to={route.path}
             activeClassName="active"
             partiallyActive
             color={color}
+            borderColor={background === 'transparent' ? color : background}
+            background={background}
             area={route.boundKeys[0].toLocaleLowerCase()}
           >
             <StyledLogoOrbKey>{`0${route.boundKeys[1]}`}</StyledLogoOrbKey>

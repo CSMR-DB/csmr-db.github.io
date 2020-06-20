@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `CSMR`,
-    description: `This is me. A predominantly self-taught programmer using TypeScript to make things. Read all about me, my skillset and my projects on this very website.`,
+    description: `A predominantly self-taught programmer using TypeScript, with or without HTML & CSS (with extra flavor) to make things. Welcome!`,
     author: `Casimir de Bruijn`,
     image: 'images/wallpaper/me.jpg',
     url: 'https://csmr-db.github.io',

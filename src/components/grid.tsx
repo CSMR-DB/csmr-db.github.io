@@ -7,11 +7,13 @@ import {
   GridTemplateColumnsProperty,
   GridTemplateRowsProperty,
   AlignItemsProperty,
+  GridGapProperty,
 } from 'csstype'
 import { theme } from '../data/theme'
 
 interface IGridMenuProps {
   children: ReactNode
+  gap?: GridGapProperty<1>
   columns?: number | string
   rows?: number
   height?: string
@@ -32,7 +34,8 @@ const StyledGrid: StyledComponent<
   overflow: ${(props: IGridMenuProps): OverflowProperty =>
     props.height === '100vh' ? 'hidden' : 'initial'};
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: ${(props: IGridMenuProps): HeightProperty<1> =>
+    props.gap || '1rem'};
   grid-template-columns: ${(
       props: IGridMenuProps
     ): GridTemplateColumnsProperty<1> =>
