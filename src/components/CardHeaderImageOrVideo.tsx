@@ -5,7 +5,10 @@ import { StyledIFrame } from './StyledIFrame'
 import Img from 'gatsby-image'
 import { IFeaturedImage } from '../templates/interfaces'
 import { MaxHeightProperty } from 'csstype'
-import { AnyExoticRefComponent } from '../types/types.interface'
+import {
+  AnyExoticRefComponent,
+  AnyExoticRefTargets,
+} from '../types/types.interface'
 
 interface IImageOrVideo {
   image?: string | IFeaturedImage
@@ -16,10 +19,7 @@ interface IImageOrVideo {
 export const CardHeaderImageOrVideo: AnyExoticRefComponent<IImageOrVideo> = React.forwardRef(
   (
     { image, video, maxHeight }: IImageOrVideo,
-    ref:
-      | React.RefObject<HTMLDivElement>
-      | ((instance: HTMLDivElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <CardHeaderFeaturedImage maxHeight={maxHeight} ref={ref}>
       {image && typeof image === 'string' ? (
