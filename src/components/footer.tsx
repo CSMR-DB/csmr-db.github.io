@@ -1,23 +1,27 @@
-import React from 'react';
-import styled, { StyledComponent } from 'styled-components';
-import { CenteredBlock } from './CenteredBlock';
-import { PaddingProperty } from 'csstype';
-import { StyledA } from './StyledLink';
-import { theme } from '../data/theme';
+import React from 'react'
+import styled, { StyledComponent } from 'styled-components'
+import { CenteredBlock } from './CenteredBlock'
+import { PaddingProperty } from 'csstype'
+import { StyledA } from './StyledLink'
+import { theme } from '../data/theme'
 
 const StyledFooter: StyledComponent<'footer', any, {}, never> = styled.footer`
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
   padding: 2rem;
   background: black;
-  height: 100vh;
+  min-height: 100vh;
   z-index: -1;
 
   @media ${theme.breakpoints.max.smartphone} {
-    height: 100vh;
+    padding: 1rem;
+
+    & p,
+    & a {
+      font-size: 0.9rem;
+    }
   }
 `
 
@@ -68,9 +72,16 @@ const CREDITS: { [key: string]: JSX.Element } = {
   prettier: Credit('https://prettier.io/', 'Prettier'),
   carbon: Credit('https://carbon.now.sh/', 'Carbon'),
   ghPages: Credit('https://www.npmjs.com/package/gh-pages', 'gh-pages'),
+  gsap: Credit('https://greensock.com/gsap/', 'GSAP'),
+  reactGsap: Credit('https://www.npmjs.com/package/react-gsap', 'react-gsap'),
+  pageTransitions: Credit(
+    'https://www.gatsbyjs.org/packages/gatsby-plugin-transitions/',
+    'gatsby-plugin-transitions'
+  ),
 }
 
 const FooterQuote: StyledComponent<'h6', any, {}, never> = styled.h6`
+  padding: 1rem;
   line-height: 1.2rem !important;
   color: white;
 `
@@ -94,7 +105,7 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
         <ProgramLine padding={1}>
           return await start({CREDITS.gatsby})
         </ProgramLine>
-        <ProgramLine padding={2}>.then((dev: DevWebsite) ={">"} </ProgramLine>
+        <ProgramLine padding={2}>.then((dev: DevWebsite) ={'>'} </ProgramLine>
         <ProgramLine padding={3}>pipe(</ProgramLine>
         <ProgramLine padding={4}>
           addStyle({CREDITS.styledComponents}),
@@ -112,6 +123,10 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
         <ProgramLine padding={4}>
           makeCodeImagesUsing({CREDITS.carbon}),
         </ProgramLine>
+        <ProgramLine padding={4}>
+          useAnimationLibraries({CREDITS.gsap}, {CREDITS.reactGsap},{' '}
+          {CREDITS.pageTransitions}),
+        </ProgramLine>
         <ProgramLine padding={4}>sprinkleWith(essence),</ProgramLine>
         <ProgramLine padding={4}>deployUsing({CREDITS.ghPages})</ProgramLine>
         <ProgramLine padding={3}>)(dev)</ProgramLine>
@@ -121,7 +136,7 @@ export const Footer: () => JSX.Element = (): JSX.Element => (
         <ProgramLine>
           websitePromise({`{ essence: [ ❤️, ✨, 🎆 ] }`})
         </ProgramLine>
-        <ProgramLine padding={1}>.then((website: IWebsite) ={">"}</ProgramLine>
+        <ProgramLine padding={1}>.then((website: IWebsite) ={'>'}</ProgramLine>
         <ProgramLine padding={2}>website.visit())</ProgramLine>
         <ProgramLine padding={1}>)</ProgramLine>
       </ProgramContainer>
