@@ -1,4 +1,4 @@
-import { ColorProperty } from 'csstype';
+import { ColorProperty } from 'csstype'
 import { FluidObject } from 'gatsby-image'
 
 export interface IAllMarkdownRemark {
@@ -64,6 +64,7 @@ export interface IExperienceAllMarkdownRemark {
 }
 
 export interface ISkillsetFrontmatter {
+  favorite: boolean | null
   title: string
   path: string
   excerpt: string
@@ -90,6 +91,7 @@ export interface ISkillsetAllMarkdownRemark {
 }
 
 export interface IProjectsFrontmatter {
+  favorite: boolean | null
   title: string
   category: 'Programming' | 'Graphic Design'
   date: string
