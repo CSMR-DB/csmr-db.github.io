@@ -37,16 +37,14 @@ const StyledGrid: StyledComponent<
   grid-gap: ${(props: IGridMenuProps): HeightProperty<1> =>
     props.gap || '1rem'};
   grid-template-columns: ${(
-      props: IGridMenuProps
-    ): GridTemplateColumnsProperty<1> =>
+    props: IGridMenuProps
+  ): GridTemplateColumnsProperty<1> =>
     props.columns
       ? typeof props.columns === 'number'
         ? `repeat(${props.columns}, 1fr)`
         : props.columns
       : 'auto'};
-  grid-template-rows: ${(
-      props: IGridMenuProps
-    ): GridTemplateRowsProperty<1> =>
+  grid-template-rows: ${(props: IGridMenuProps): GridTemplateRowsProperty<1> =>
     props.rows
       ? typeof props.rows === 'number'
         ? `repeat(${props.rows}, 1fr)`
@@ -58,10 +56,20 @@ const StyledGrid: StyledComponent<
 
   @media ${theme.breakpoints.max.smartphone} {
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+
+    grid-gap: ${(props: IGridMenuProps): HeightProperty<1> =>
+      `calc(${props.gap} / 2)` || '.5rem'};
   }
 `
 
-export const Grid: React.ForwardRefExoticComponent<IGridMenuProps & React.RefAttributes<HTMLDivElement>> =
-  React.forwardRef((props: IGridMenuProps, ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement) => void) | null): JSX.Element => (
-    <StyledGrid {...props} ref={ref} />
-  ))
+export const Grid: React.ForwardRefExoticComponent<
+  IGridMenuProps & React.RefAttributes<HTMLDivElement>
+> = React.forwardRef(
+  (
+    props: IGridMenuProps,
+    ref:
+      | React.RefObject<HTMLDivElement>
+      | ((instance: HTMLDivElement) => void)
+      | null
+  ): JSX.Element => <StyledGrid {...props} ref={ref} />
+)

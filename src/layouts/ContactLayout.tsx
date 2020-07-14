@@ -22,7 +22,7 @@ export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
     <>
       <SEO
         title="Contact"
-      // description="Get in touch with me through some social links"
+        // description="Get in touch with me through some social links"
       />
       <CenteredBlock>
         <h1>Get in touch!</h1>
@@ -31,12 +31,15 @@ export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
           it about twice a year. However, there are other ways to get in touch
           with me. I don't have a fancy form (yet), but that shouldn't be a
           dealbreaker. I check my mail at least once a day, LinkedIn weekly and
-          I'm pretty much always available on Discord. You just do whatever feels
-          right 😉.
-      </p>
+          I'm pretty much always available on Discord. You just do whatever
+          feels right 😉.
+        </p>
         <Grid columns={3} rows={1}>
           {contacts.map(
-            ({ background, iconPath, href, text }: IContact, key: number): JSX.Element => (
+            (
+              { background, iconPath, href, text }: IContact,
+              key: number
+            ): JSX.Element => (
               <SocialButton
                 background={background}
                 iconPath={iconPath}

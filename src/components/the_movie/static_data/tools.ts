@@ -109,12 +109,8 @@ export const misc: ITool[] = [
   {
     name: 'Meteor',
     color: '#df4f4f',
-    svg: MeteorSVG
-  }
+    svg: MeteorSVG,
+  },
 ]
 
-export const allSVGs: ITool[] = [
-  ...coreStuff,
-  ...frontEndFrameworks,
-  ...misc
-]
+export const allSVGs: ITool[] = [...coreStuff, ...frontEndFrameworks, ...misc]

@@ -56,7 +56,12 @@ export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
   backgroundColor,
 }: IExperienceCardProps): JSX.Element => (
   <Reveal>
-    <Tween from={{ width: '8rem', height: '8rem' }} to={{ width: '100%', height: 'auto' }} duration={.75} ease={"power4"}>
+    <Tween
+      from={{ width: '8rem', height: '8rem' }}
+      to={{ width: '100%', height: 'auto' }}
+      duration={0.75}
+      ease={'power4'}
+    >
       <Card>
         <ExperienceCardHeader>
           <Flex justifyContent="flex-start">

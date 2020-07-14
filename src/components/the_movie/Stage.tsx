@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
 
-export const StyledStage: StyledComponent<"div", any, {}, never> = styled.div`
+export const StyledStage: StyledComponent<'div', any, {}, never> = styled.div`
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
@@ -11,10 +11,10 @@ export const StyledStage: StyledComponent<"div", any, {}, never> = styled.div`
   display: grid;
 `
 
-export function Stage({ children }: { children: React.ReactNode }): JSX.Element {
-  return (
-    <StyledStage>
-      {children}
-    </StyledStage>
-  )
+export function Stage({
+  children,
+}: {
+  children: React.ReactNode
+}): JSX.Element {
+  return <StyledStage>{children}</StyledStage>
 }

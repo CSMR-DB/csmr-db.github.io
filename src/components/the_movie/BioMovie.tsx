@@ -1,15 +1,20 @@
 import React from 'react'
 import { Timeline, Controls, PlayState } from 'react-gsap'
-import { Stage } from './Stage';
-import styled, { StyledComponent } from 'styled-components';
-import { GamesIvePlayed } from './scenes/GamesIvePlayed';
-import { SeriesIveWatched } from './scenes/SeriesIveWatched';
-import { OpeningCredits } from './scenes/OpeningCredits';
-import { CollegeTour } from './scenes/CollegeTour';
-import { ToolsUsed } from './scenes/ToolsUsed';
-import { Flex } from '../Flex';
+import { Stage } from './Stage'
+import styled, { StyledComponent } from 'styled-components'
+import { GamesIvePlayed } from './scenes/GamesIvePlayed'
+import { SeriesIveWatched } from './scenes/SeriesIveWatched'
+import { OpeningCredits } from './scenes/OpeningCredits'
+import { CollegeTour } from './scenes/CollegeTour'
+import { ToolsUsed } from './scenes/ToolsUsed'
+import { Flex } from '../Flex'
 
-const StyledControlsWrapper: StyledComponent<'div', any, {}, never> = styled.div`
+const StyledControlsWrapper: StyledComponent<
+  'div',
+  any,
+  {},
+  never
+> = styled.div`
   & > div > div:nth-child(2) {
     margin-top: 0 !important;
     border: none !important;
@@ -26,7 +31,7 @@ const StyledControlsWrapper: StyledComponent<'div', any, {}, never> = styled.div
 
       button {
         background: transparent !important;
-        margin: .5rem !important; 
+        margin: 0.5rem !important;
         width: 4rem;
         height: 4rem;
         border-radius: 999rem;
@@ -43,7 +48,7 @@ const StyledControlsWrapper: StyledComponent<'div', any, {}, never> = styled.div
   }
 `
 
-const PlayButton: StyledComponent<"button", any, {}, never> = styled.button`
+const PlayButton: StyledComponent<'button', any, {}, never> = styled.button`
   width: 4rem;
   height: 4rem;
   border-radius: 999rem;
@@ -56,11 +61,11 @@ export function BioMovie(): JSX.Element {
   const [playing, setPlaying]: [
     boolean,
     React.Dispatch<React.SetStateAction<boolean>>
-  ] = React.useState(false as boolean);
+  ] = React.useState(false as boolean)
   const [progress, setProgress]: [
     number,
     React.Dispatch<React.SetStateAction<number>>
-  ] = React.useState(0);
+  ] = React.useState(0)
 
   const timelineRef: React.MutableRefObject<null> = React.useRef(null)
 
@@ -138,7 +143,7 @@ export function BioMovie(): JSX.Element {
     <>
       <Flex>
         <PlayButton onClick={(): void => setPlaying(!playing)}>
-          {playing ? "Stop" : "Play"}
+          {playing ? 'Stop' : 'Play'}
         </PlayButton>
         {/* Figure out low-level access: https://bitworking.github.io/react-gsap/src-instructions-low-level-access */}
         {/* <button onClick={() => timelineRef.current.getGSAP().play(0)}>Play</button>
@@ -175,9 +180,9 @@ export function BioMovie(): JSX.Element {
               paused={true}
               ref={timelineRef}
             >
-              <OpeningCredits position='opening' />
+              <OpeningCredits position="opening" />
               {/* <CollegeTour position='college' /> */}
-              <ToolsUsed position='experimentingSolo' />
+              <ToolsUsed position="experimentingSolo" />
               {/* <GamesIvePlayed position='games' /> */}
               {/* <SeriesIveWatched position='series' /> */}
             </Timeline>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tween } from 'react-gsap';
+import { Tween } from 'react-gsap'
 
 type WriteConfig = {
   target: string
@@ -9,7 +9,7 @@ type WriteConfig = {
 
 type CursorConfig = {
   target: string
-  positions: [(string | number), (string | number)]
+  positions: [string | number, string | number]
 }
 
 export function Write({ target, position }: WriteConfig): JSX.Element {
@@ -18,7 +18,7 @@ export function Write({ target, position }: WriteConfig): JSX.Element {
       <Tween
         from={{ display: 'none' }}
         stagger={0.025}
-        duration={.05}
+        duration={0.05}
         position={position}
         target={target}
       />
@@ -26,7 +26,10 @@ export function Write({ target, position }: WriteConfig): JSX.Element {
   )
 }
 
-export function AnimateCursor({ target, positions }: CursorConfig): JSX.Element {
+export function AnimateCursor({
+  target,
+  positions,
+}: CursorConfig): JSX.Element {
   return (
     <>
       <Tween
@@ -45,7 +48,13 @@ export function AnimateCursor({ target, positions }: CursorConfig): JSX.Element 
   )
 }
 
-export function InOut({ target, positions }: { target: string, positions: [(string | number), (string | number)] }): JSX.Element {
+export function InOut({
+  target,
+  positions,
+}: {
+  target: string
+  positions: [string | number, string | number]
+}): JSX.Element {
   return (
     <>
       <Tween

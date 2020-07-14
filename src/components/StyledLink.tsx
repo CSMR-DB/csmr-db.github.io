@@ -14,7 +14,8 @@ export const StyledLink: StyledComponent<
   string | number | symbol
 > = styled(Link)`
   text-decoration: none;
-  color: ${(props: IStyledALinkProps): ColorProperty => props.color || theme.primary} !important; 
+  color: ${(props: IStyledALinkProps): ColorProperty =>
+    props.color || theme.primary} !important;
   display: inline-block;
 
   & :hover {
@@ -26,9 +27,15 @@ export const StyledLink: StyledComponent<
   }
 `
 
-export const StyledA: StyledComponent<'a', any, IStyledALinkProps, never> = styled.a`
+export const StyledA: StyledComponent<
+  'a',
+  any,
+  IStyledALinkProps,
+  never
+> = styled.a`
   text-decoration: none;
-  color: ${(props: IStyledALinkProps): ColorProperty => props.color || theme.primary} !important;
+  color: ${(props: IStyledALinkProps): ColorProperty =>
+    props.color || theme.primary} !important;
   display: inline-block;
 
   & :hover {

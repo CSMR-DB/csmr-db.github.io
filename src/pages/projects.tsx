@@ -38,14 +38,24 @@ const PAGE_QUERY: void = graphql`
 
   query {
     programmingData: allMarkdownRemark(
-      filter: { frontmatter: { path: { regex: "/projects/" }, category: { eq: "Programming" } } }
+      filter: {
+        frontmatter: {
+          path: { regex: "/projects/" }
+          category: { eq: "Programming" }
+        }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       ...SharedQuery
     }
 
     graphicDesignData: allMarkdownRemark(
-      filter: { frontmatter: { path: { regex: "/projects/" }, category: { eq: "Graphic Design" } } }
+      filter: {
+        frontmatter: {
+          path: { regex: "/projects/" }
+          category: { eq: "Graphic Design" }
+        }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       ...SharedQuery
@@ -62,7 +72,10 @@ const ProjectsPage: () => JSX.Element = (): JSX.Element => {
           programmingData,
           graphicDesignData,
         }: IProjectsLayoutProps): JSX.Element => (
-          <ProjectsLayout programmingData={programmingData} graphicDesignData={graphicDesignData} />
+          <ProjectsLayout
+            programmingData={programmingData}
+            graphicDesignData={graphicDesignData}
+          />
         )}
       />
     </Layout>

@@ -12,7 +12,10 @@ export interface IProjectsLayoutProps {
   graphicDesignData: IProjectsAllMarkdownRemark
 }
 
-export function ProjectsLayout({ programmingData, graphicDesignData }: IProjectsLayoutProps): JSX.Element {
+export function ProjectsLayout({
+  programmingData,
+  graphicDesignData,
+}: IProjectsLayoutProps): JSX.Element {
   return (
     <>
       <SEO title="Projects" description="These are some projects I did" />
@@ -20,9 +23,9 @@ export function ProjectsLayout({ programmingData, graphicDesignData }: IProjects
         <CenteredBlock>
           <h1>Hey! These are some of my projects</h1>
           <p>
-            In chronological order, from newest to oldest. These are some projects
-            I worked on that I am proud of, that taught me a lot and / or got me
-            some decent grades.
+            In chronological order, from newest to oldest. These are some
+            projects I worked on that I am proud of, that taught me a lot and /
+            or got me some decent grades.
           </p>
         </CenteredBlock>
         <Grid
@@ -31,24 +34,25 @@ export function ProjectsLayout({ programmingData, graphicDesignData }: IProjects
         >
           <Reveal>
             <Tween from={{ opacity: 0 }}>
-              {
-                programmingData.edges.map(
-                  ({ node: { frontmatter, timeToRead } }: IEdge, i: number): JSX.Element => (
-                    <ProjectCard
-                      title={frontmatter.title}
-                      tags={frontmatter.tags}
-                      video={frontmatter.featuredVideo}
-                      image={frontmatter.featuredImage}
-                      body={frontmatter.excerpt}
-                      timeToRead={timeToRead}
-                      path={frontmatter.path}
-                      date={frontmatter.date}
-                      key={i}
-                      index={i}
-                    />
-                  )
+              {programmingData.edges.map(
+                (
+                  { node: { frontmatter, timeToRead } }: IEdge,
+                  i: number
+                ): JSX.Element => (
+                  <ProjectCard
+                    title={frontmatter.title}
+                    tags={frontmatter.tags}
+                    video={frontmatter.featuredVideo}
+                    image={frontmatter.featuredImage}
+                    body={frontmatter.excerpt}
+                    timeToRead={timeToRead}
+                    path={frontmatter.path}
+                    date={frontmatter.date}
+                    key={i}
+                    index={i}
+                  />
                 )
-              }
+              )}
             </Tween>
           </Reveal>
         </Grid>
@@ -57,11 +61,11 @@ export function ProjectsLayout({ programmingData, graphicDesignData }: IProjects
         <CenteredBlock>
           <h1>I have also done some Graphic Design stuff</h1>
           <p>
-            Not everything in here has to do with programming.
-            I also included some projects I made using Adobe Illustrator and After
-            Effects. The first projects were part of courses in a timeframe of
-            about 10 weeks. That meant going from 0 - 100 in roughly 10 weeks,
-            allocating time for other courses as well (about 4 at a time).
+            Not everything in here has to do with programming. I also included
+            some projects I made using Adobe Illustrator and After Effects. The
+            first projects were part of courses in a timeframe of about 10
+            weeks. That meant going from 0 - 100 in roughly 10 weeks, allocating
+            time for other courses as well (about 4 at a time).
           </p>
         </CenteredBlock>
         <Grid
@@ -70,24 +74,25 @@ export function ProjectsLayout({ programmingData, graphicDesignData }: IProjects
         >
           <Reveal>
             <Tween from={{ opacity: 0 }}>
-              {
-                graphicDesignData.edges.map(
-                  ({ node: { frontmatter, timeToRead } }: IEdge, i: number): JSX.Element => (
-                    <ProjectCard
-                      title={frontmatter.title}
-                      tags={frontmatter.tags}
-                      video={frontmatter.featuredVideo}
-                      image={frontmatter.featuredImage}
-                      body={frontmatter.excerpt}
-                      timeToRead={timeToRead}
-                      path={frontmatter.path}
-                      date={frontmatter.date}
-                      key={i}
-                      index={i}
-                    />
-                  )
+              {graphicDesignData.edges.map(
+                (
+                  { node: { frontmatter, timeToRead } }: IEdge,
+                  i: number
+                ): JSX.Element => (
+                  <ProjectCard
+                    title={frontmatter.title}
+                    tags={frontmatter.tags}
+                    video={frontmatter.featuredVideo}
+                    image={frontmatter.featuredImage}
+                    body={frontmatter.excerpt}
+                    timeToRead={timeToRead}
+                    path={frontmatter.path}
+                    date={frontmatter.date}
+                    key={i}
+                    index={i}
+                  />
                 )
-              }
+              )}
             </Tween>
           </Reveal>
         </Grid>

@@ -12,7 +12,7 @@ const PAGE_QUERY: void = graphql`
         name
         relativePath
         childImageSharp {
-          fluid(maxWidth: 240, maxHeight: 240, cropFocus: CENTER){
+          fluid(maxWidth: 240, maxHeight: 240, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -21,16 +21,19 @@ const PAGE_QUERY: void = graphql`
   }
 
   query {
-    wallpapers: allFile(filter: {
-      extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-      relativeDirectory: { regex: "/bio/games/" }
-    }, limit: 14) {
+    wallpapers: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { regex: "/bio/games/" }
+      }
+      limit: 14
+    ) {
       edges {
         node {
           name
           relativePath
           childImageSharp {
-            fluid(maxWidth: 960, maxHeight: 540, cropFocus: CENTER){
+            fluid(maxWidth: 960, maxHeight: 540, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -38,16 +41,19 @@ const PAGE_QUERY: void = graphql`
       }
     }
 
-    squares: allFile(filter: {
-      extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-      relativeDirectory: { regex: "/photography/" }
-    }, limit: 9) {
+    squares: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { regex: "/photography/" }
+      }
+      limit: 9
+    ) {
       edges {
         node {
           name
           relativePath
           childImageSharp {
-            fluid(maxWidth: 240, maxHeight: 240, cropFocus: CENTER){
+            fluid(maxWidth: 240, maxHeight: 240, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -55,16 +61,19 @@ const PAGE_QUERY: void = graphql`
       }
     }
 
-    posters: allFile(filter: {
-      extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-      relativeDirectory: { regex: "/bio/series/" }
-    }, limit: 28) {
+    posters: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { regex: "/bio/series/" }
+      }
+      limit: 28
+    ) {
       edges {
         node {
           name
           relativePath
           childImageSharp {
-            fluid(maxWidth: 270, maxHeight: 480, cropFocus: CENTER){
+            fluid(maxWidth: 270, maxHeight: 480, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -79,9 +88,11 @@ const AboutMe: () => JSX.Element = (): JSX.Element => (
     {/* <AboutLayout /> */}
     <StaticQuery
       query={PAGE_QUERY}
-      render={(data: { wallpapers: IBioImagesMarkdownRemark, squares: IBioImagesMarkdownRemark, posters: IBioImagesMarkdownRemark }): JSX.Element => (
-        <AboutLayout {...data} />
-      )}
+      render={(data: {
+        wallpapers: IBioImagesMarkdownRemark
+        squares: IBioImagesMarkdownRemark
+        posters: IBioImagesMarkdownRemark
+      }): JSX.Element => <AboutLayout {...data} />}
     />
   </Layout>
 )

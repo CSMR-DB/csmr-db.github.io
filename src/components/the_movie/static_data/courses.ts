@@ -45,7 +45,7 @@ export const devCourses: ICourse[] = [
     description: 'Building a website using Wordpress.',
     color: theme.primary,
     category: 'Development',
-  }
+  },
 ]
 
 export const marketingCourses: ICourse[] = [
@@ -133,13 +133,13 @@ export const researchCourses: ICourse[] = [
   {
     name: 'Evaluation Research',
     description: 'Focus on qualitative research.',
-    category: 'Research'
+    category: 'Research',
     // color: 'red'
   },
   {
     name: 'Testing & Measuring',
     description: 'Focus on quantitative research',
-    category: 'Research'
+    category: 'Research',
     // color: 'red'
   },
 ]
@@ -148,25 +148,25 @@ export const miscCourses: ICourse[] = [
   {
     name: 'Doing New Things',
     description: '',
-    category: 'Misc'
+    category: 'Misc',
     // color: 'blue'
   },
   {
     name: 'Professional Skills',
     description: '',
-    category: 'Misc'
+    category: 'Misc',
     // color: 'blue'
   },
   {
     name: 'Legal Skills',
     description: '',
-    category: 'Misc'
+    category: 'Misc',
     // color: 'blue'
   },
   {
     name: 'Entrepreneurship',
     description: '',
-    category: 'Misc'
+    category: 'Misc',
     // color: 'blue'
   },
 ]
@@ -177,5 +177,5 @@ export const courses: ICourse[] = [
   ...marketingCourses,
   ...organizationCourses,
   ...researchCourses,
-  ...miscCourses
+  ...miscCourses,
 ]

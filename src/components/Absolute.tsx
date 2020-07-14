@@ -1,6 +1,13 @@
 import styled, { StyledComponent } from 'styled-components'
 import { ReactNode } from 'react'
-import { LeftProperty, TopProperty, WidthProperty, HeightProperty, BottomProperty, RightProperty } from 'csstype'
+import {
+  LeftProperty,
+  TopProperty,
+  WidthProperty,
+  HeightProperty,
+  BottomProperty,
+  RightProperty,
+} from 'csstype'
 
 export interface IAbsoluteProps {
   children: ReactNode
@@ -20,7 +27,8 @@ export const Absolute: StyledComponent<
 > = styled.div`
   position: absolute;
   width: ${({ width = 'auto' }: IAbsoluteProps): WidthProperty<1> => width};
-  height: ${({ height = 'auto' }: IAbsoluteProps): HeightProperty<1> => height};
+  min-height: ${({ height = 'auto' }: IAbsoluteProps): HeightProperty<1> =>
+    height};
   top: ${({ top = '0' }: IAbsoluteProps): TopProperty<1> => top};
   left: ${({ left = '0' }: IAbsoluteProps): LeftProperty<1> => left};
   bottom: ${({ bottom = '0' }: IAbsoluteProps): TopProperty<1> => bottom};

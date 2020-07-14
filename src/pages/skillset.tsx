@@ -27,7 +27,7 @@ const PAGE_QUERY: void = graphql`
     }
     skillsetData: allMarkdownRemark(
       filter: { frontmatter: { path: { regex: "/tag/" } } }
-      sort: { fields: frontmatter___time, order: DESC  }
+      sort: { fields: frontmatter___time, order: DESC }
     ) {
       edges {
         node {
@@ -54,7 +54,10 @@ const SkillsetPage: () => JSX.Element = (): JSX.Element => (
         experienceData,
         skillsetData,
       }: ISkillsetLayoutProps): JSX.Element => (
-        <SkillsetLayout skillsetData={skillsetData} experienceData={experienceData} />
+        <SkillsetLayout
+          skillsetData={skillsetData}
+          experienceData={experienceData}
+        />
       )}
     />
   </Layout>

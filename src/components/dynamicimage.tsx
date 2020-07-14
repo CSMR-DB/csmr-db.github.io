@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 interface IImageEdges {
   images: {
-    edges: (IFluidImage)[]
+    edges: IFluidImage[]
   }
 }
 
@@ -28,7 +28,7 @@ interface IDynamicImageProps {
 
 export const DynamicImage: ({
   path,
-}: IDynamicImageProps) => JSX.Element = function({
+}: IDynamicImageProps) => JSX.Element = function ({
   path,
 }: IDynamicImageProps): JSX.Element {
   return (
@@ -37,9 +37,7 @@ export const DynamicImage: ({
       query={graphql`
         query {
           images: allFile(
-            filter: { 
-              extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)/" },
-            }
+            filter: { extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)/" } }
           ) {
             edges {
               node {
@@ -56,12 +54,13 @@ export const DynamicImage: ({
         }
       `}
       render={({ images }: IImageEdges): (JSX.Element | null)[] => {
-        return images.edges.map((image: IFluidImage, i: number): JSX.Element | null =>
-          image.node.relativePath === path ||
-          image.node.relativePath.includes(path)
-            ? renderImage(image, i)
-            : null
-        ) 
+        return images.edges.map(
+          (image: IFluidImage, i: number): JSX.Element | null =>
+            image.node.relativePath === path ||
+            image.node.relativePath.includes(path)
+              ? renderImage(image, i)
+              : null
+        )
         /**
          * Refactored so I can get ALL images from a provided folder portion of 'relativePath'
          * Note: Don't even bother trying to use query variables in this way. Can apparently only be done for page queries.

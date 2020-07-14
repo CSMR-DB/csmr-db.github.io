@@ -39,7 +39,7 @@ interface IDynamicIconProps {
 
 export const DynamicIcon: ({
   path,
-}: IDynamicIconProps) => JSX.Element = function({
+}: IDynamicIconProps) => JSX.Element = function ({
   path,
 }: IDynamicIconProps): JSX.Element {
   return (

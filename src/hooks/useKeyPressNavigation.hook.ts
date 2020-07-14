@@ -1,7 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-export function useKeyPressNavigation(keyPressRouteBinds: Map<string, string>): string {
-  const [navigationPath, setNavigationPath]: [ string, React.Dispatch<React.SetStateAction<string>> ] = useState('');
+export function useKeyPressNavigation(
+  keyPressRouteBinds: Map<string, string>
+): string {
+  const [navigationPath, setNavigationPath]: [
+    string,
+    React.Dispatch<React.SetStateAction<string>>
+  ] = useState('')
 
   useEffect((): (() => void) => {
     function downHandler({ key }: { key: string }): void {
@@ -12,18 +17,23 @@ export function useKeyPressNavigation(keyPressRouteBinds: Map<string, string>): 
 
     function upHandler({ key }: { key: string }): void {
       if (keyPressRouteBinds.has(key)) {
-        setNavigationPath('');
+        setNavigationPath('')
       }
-    };
+    }
 
-    window.addEventListener('keydown', downHandler);
-    window.addEventListener('keyup', upHandler);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', downHandler)
+      window.addEventListener('keyup', upHandler)
 
-    return (): void => {
-      window.removeEventListener('keydown', downHandler);
-      window.removeEventListener('keyup', upHandler);
-    };
-  }, [keyPressRouteBinds]);
+      return (): void => {
+        window.removeEventListener('keydown', downHandler)
+        window.removeEventListener('keyup', upHandler)
+      }
+    }
 
-  return navigationPath;
+    // tslint:disable-next-line: no-empty
+    return (): void => {}
+  }, [keyPressRouteBinds])
+
+  return navigationPath
 }

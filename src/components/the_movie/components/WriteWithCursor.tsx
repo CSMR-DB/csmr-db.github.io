@@ -11,16 +11,15 @@ export interface IWriteWithCursorProps {
   cursorRef?: AnyExoticRefTargets
 }
 
-export const WriteWithCursor: AnyExoticRefComponent<IWriteWithCursorProps> = React.forwardRef((props: IWriteWithCursorProps, ref: AnyExoticRefTargets): JSX.Element =>
-  (
+export const WriteWithCursor: AnyExoticRefComponent<IWriteWithCursorProps> = React.forwardRef(
+  (props: IWriteWithCursorProps, ref: AnyExoticRefTargets): JSX.Element => (
     <div ref={props.wrapperRef}>
       <Flex direction="row">
-        {
-          props.textWrapper(
-            <SplitChars ref={ref} wrapper={<span />} children={props.children} />
-          )
-        }
-        <Cursor ref={props.cursorRef}/>
+        {props.textWrapper(
+          <SplitChars ref={ref} wrapper={<span />} children={props.children} />
+        )}
+        <Cursor ref={props.cursorRef} />
       </Flex>
     </div>
-  ))
+  )
+)

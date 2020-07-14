@@ -7,11 +7,16 @@ export interface ICursorProps {
   width?: WidthProperty<1>
 }
 
-const StyledCursor: StyledComponent<"span", any, ICursorProps, never> = styled.span`
+const StyledCursor: StyledComponent<
+  'span',
+  any,
+  ICursorProps,
+  never
+> = styled.span`
   @keyframes blink {
     0% {
       height: 0;
-      opacity: .25;
+      opacity: 0.25;
     }
     50% {
       height: 1rem;
@@ -20,21 +25,23 @@ const StyledCursor: StyledComponent<"span", any, ICursorProps, never> = styled.s
     }
     100% {
       height: 0;
-      opacity: .25;
+      opacity: 0.25;
     }
   }
 
-  animation: blink infinite .5s ease-in-out;
+  animation: blink infinite 0.5s ease-in-out;
 
   display: inline-block;
-  margin-left: .25rem;
+  margin-left: 0.25rem;
   width: ${({ width = '.25rem' }: ICursorProps): WidthProperty<1> => width};
-  background: ${({ background = 'black' }: ICursorProps): BackgroundColorProperty => background};
+  background: ${({
+    background = 'black',
+  }: ICursorProps): BackgroundColorProperty => background};
   height: 1rem;
   opacity: 0;
 
   &.start {
-    animation: blink infinite .5s ease-in-out;
+    animation: blink infinite 0.5s ease-in-out;
   }
 
   &.stop {
@@ -42,7 +49,14 @@ const StyledCursor: StyledComponent<"span", any, ICursorProps, never> = styled.s
   }
 `
 
-export const Cursor: React.ForwardRefExoticComponent<ICursorProps & React.RefAttributes<HTMLDivElement>> =
-  React.forwardRef((props: ICursorProps, ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement) => void) | null): JSX.Element => (
-    <StyledCursor {...props} ref={ref} />
-  ))
+export const Cursor: React.ForwardRefExoticComponent<
+  ICursorProps & React.RefAttributes<HTMLDivElement>
+> = React.forwardRef(
+  (
+    props: ICursorProps,
+    ref:
+      | React.RefObject<HTMLDivElement>
+      | ((instance: HTMLDivElement) => void)
+      | null
+  ): JSX.Element => <StyledCursor {...props} ref={ref} />
+)
