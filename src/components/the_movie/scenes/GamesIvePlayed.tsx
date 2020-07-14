@@ -5,7 +5,7 @@ import {
   AnyExoticRefComponent,
   IBioImagesEdge,
   IBioImagesMarkdownRemark,
-} from '../types.interface'
+} from '../../../types/types.interface'
 import { Absolute } from '../../Absolute'
 import { Flex } from '../../Flex'
 import { Blend } from '../../Blend'
@@ -18,9 +18,9 @@ import { cleanAndCapitalize } from '../../../utils/textTransformer'
 
 const GamesDecor: AnyExoticRefComponent<any> = React.forwardRef(
   (_props: any, targets: any): JSX.Element | null => {
-    // tslint:disable-next-line: no-void-expression
     const {
       wallpapers,
+      // tslint:disable-next-line: no-void-expression
     }: { wallpapers: IBioImagesMarkdownRemark } = useStaticQuery(graphql`
       query {
         wallpapers: allFile(

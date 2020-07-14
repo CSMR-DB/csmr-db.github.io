@@ -1,6 +1,6 @@
 import React from 'react'
 import { Timeline, Tween, SplitChars } from 'react-gsap'
-import { AnyExoticRefComponent } from '../types.interface'
+import { AnyExoticRefComponent } from '../../../types/types.interface'
 import styled, { StyledComponent } from 'styled-components'
 import { Polaroid } from '../Polaroid'
 import { DynamicImage } from '../../DynamicImage'

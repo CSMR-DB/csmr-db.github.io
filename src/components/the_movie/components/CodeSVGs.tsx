@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnyExoticRefComponent } from '../types.interface'
+import { AnyExoticRefComponent } from '../../../types/types.interface'
 
 export const AngularSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (

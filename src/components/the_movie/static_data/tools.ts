@@ -16,7 +16,7 @@ import {
   JSSVG,
   TSSVG,
 } from './../components/CodeSVGs'
-import { AnyExoticRefComponent } from './../types.interface'
+import { AnyExoticRefComponent } from '../../../types/types.interface'
 
 export interface ITool {
   name: string
