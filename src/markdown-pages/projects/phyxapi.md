@@ -1,4 +1,5 @@
 ---
+favorite: true
 path: '/projects/phyxapi'
 category: 'Programming'
 date: 2019-03-01

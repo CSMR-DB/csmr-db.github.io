@@ -4,5 +4,5 @@ skillColor: '#C3002F'
 time: 200
 path: '/tag/'
 title: 'Angular'
-excerpt: "I love the complexity, but haven't used it much at all. It's built with TypeScript, so that's a big plus. It encourages the use of Services to hold business logic more so than React does. Also, Angular taught me the idea of Dependency Injection."
+excerpt: 'I love the complexity, and I owe my love for TypeScript to it.'
 ---

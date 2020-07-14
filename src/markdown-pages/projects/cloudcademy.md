@@ -1,4 +1,5 @@
 ---
+favorite: true
 path: '/projects/cloudcademy'
 category: 'Programming'
 date: 2016-01-30
