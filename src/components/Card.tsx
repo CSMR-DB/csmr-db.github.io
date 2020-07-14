@@ -23,7 +23,6 @@ export const Card: StyledComponent<'article', any, {}, never> = styled.article`
     &:hover {
       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25),
         0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-      transform: translateY(-4px);
 
       & header img {
         transform: scale(1.1);
@@ -45,8 +44,11 @@ export const Card: StyledComponent<'article', any, {}, never> = styled.article`
   }
 
   & p {
-    margin: 0;
     text-align: justify;
+
+    @media ${theme.breakpoints.max.smartphone} {
+      text-align: left;
+    }
   }
 `
 
@@ -134,12 +136,13 @@ export const CardFooter: StyledComponent<
   { style?: boolean },
   never
 > = styled.footer`
-  ${({ style = false }: { style?: boolean }): CSSObject => style && {
-    background: '#EEE',
-    padding: '2rem',
-    borderTop: '1px solid #DDD',
-    gridArea: 'footer'
-  } || {
-    padding: '0 2rem 2rem'
-  }}
+  ${({ style = false }: { style?: boolean }): CSSObject =>
+    (style && {
+      background: '#EEE',
+      padding: '2rem',
+      borderTop: '1px solid #DDD',
+      gridArea: 'footer',
+    }) || {
+      padding: '0 2rem 2rem',
+    }}
 `
