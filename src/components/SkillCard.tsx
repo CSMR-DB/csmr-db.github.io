@@ -1,14 +1,19 @@
 import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-import { Card, CardBody, CardHeader, CardFooter } from './Card'
-import { Flex } from './Flex'
-import { DynamicImage } from './DynamicImage'
-import { StyledA, StyledLink } from './StyledLink'
-import { StringOrUrlObject, StringOrUrlArray } from '../types/StringOrUrlObject'
-import { BackgroundColorProperty, ColorProperty } from 'csstype'
-import { theme } from '../data/theme'
+import { ColorProperty } from 'csstype'
+import { StringOrUrlArray, StringOrUrlObject } from '../types/StringOrUrlObject'
 import { Timeline, Tween } from 'react-gsap'
-import { Heart } from './Heart'
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+  Flex,
+  DynamicImage,
+  StyledA,
+  StyledLink,
+  Heart,
+} from './'
 
 interface ISkillCardProps {
   index: number
@@ -31,41 +36,16 @@ const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(
 `
 
 interface IStyledIndicatorProps {
-  lit: boolean
-  litColor: ColorProperty
-}
-
-const StyledIndicatorDot: StyledComponent<
-  'span',
-  any,
-  IStyledIndicatorProps,
-  never
-> = styled.span`
-  display: inline-block;
-  margin-right: 0.5rem;
-  padding: 0.25rem;
-  width: 1rem;
-  height: 1rem;
-  line-height: 1rem;
-  text-align: center;
-  border-radius: 1rem;
-  /* background: ${(props: IStyledIndicatorProps): BackgroundColorProperty =>
-    props.lit ? props.litColor : theme.inactiveIndicator}; */
-  color: ${(props: IStyledIndicatorProps): BackgroundColorProperty =>
-    props.lit ? props.litColor : theme.inactiveIndicator};
-`
-
-function StyledIndicator({
-  lit,
-  litColor,
-  index,
-  instance,
-}: {
-  lit: boolean
   litColor: ColorProperty
   index: number
   instance: number
-}): JSX.Element {
+}
+
+function StyledIndicator({
+  litColor,
+  index,
+  instance,
+}: IStyledIndicatorProps): JSX.Element {
   return (
     <Timeline>
       <Tween
@@ -73,9 +53,6 @@ function StyledIndicator({
         duration={0.125}
         delay={1 + index / 8 + instance * 0.125}
       >
-        {/* <StyledIndicatorDot lit={lit} litColor={litColor}>
-          ❤
-        </StyledIndicatorDot> */}
         <Heart fill={litColor} width={'1rem'} height={'1rem'} />
       </Tween>
     </Timeline>
@@ -83,7 +60,7 @@ function StyledIndicator({
 }
 
 const StyledIndicatorGrid: StyledComponent<'div', any, {}, never> = styled.div`
-  min-width: 8rem;
+  min-width: 2rem;
   margin-right: 1rem;
 `
 
@@ -119,7 +96,6 @@ const StyledSkillCardBackdrop: StyledComponent<
   right: 1rem;
   width: 100%;
   max-width: 8rem;
-  /* filter: opacity(0.075); */
 `
 
 function SkillCardBackdrop({
@@ -161,18 +137,18 @@ function SkillCardBody({
         <p>
           {Array.isArray(description)
             ? description.map((string: StringOrUrlObject, i: number):
-              | JSX.Element
-              | string => {
-              if (typeof string !== 'string' && string.url !== '') {
-                return (
-                  <StyledA href={string.url} target="blank" key={i}>
-                    {string.text}
-                  </StyledA>
-                )
-              }
+                | JSX.Element
+                | string => {
+                if (typeof string !== 'string' && string.url !== '') {
+                  return (
+                    <StyledA href={string.url} target="blank" key={i}>
+                      {string.text}
+                    </StyledA>
+                  )
+                }
 
-              return string as string
-            })
+                return string as string
+              })
             : description}
         </p>
       </Tween>
@@ -181,93 +157,63 @@ function SkillCardBody({
 }
 
 export const SkillCard: (props: ISkillCardProps) => JSX.Element = ({
-  // children,
   index,
-  level,
   title,
   description,
   skillColor,
   time = 0,
 }: ISkillCardProps): JSX.Element => (
-    <Tween
-      from={{ x: '-400px', opacity: 0 }}
-      duration={1}
-      delay={0.25 + index * 0.125}
-      ease="elastic"
-    >
-      <StyledSkillCard>
-        <SkillCardBackdrop index={index}>
-          <DynamicImage
-            path={`code_icons/${title
-              .replace(/\([0-9]*\)|\s+/gi, '')
-              .toLocaleLowerCase()}.png`}
-          />
-        </SkillCardBackdrop>
-        <CardHeader>
-          <StyledSkillCardHeader>
-            <Flex justifyContent="space-between" direction="row">
-              {/* {level && level >= -1 && ( */}
-              <StyledIndicatorGrid>
-                <StyledIndicator
-                  instance={index}
-                  index={0}
-                  lit={level >= 1}
-                  litColor={skillColor}
-                ></StyledIndicator>
-                {/* Don't present a 'progress' for skill level, it is utterly meaningless */}
-                {/* <StyledIndicator
-                  instance={index}
-                  index={1}
-                  lit={level >= 2}
-                  litColor={skillColor}
-                ></StyledIndicator>
-                <StyledIndicator
-                  instance={index}
-                  index={2}
-                  lit={level >= 3}
-                  litColor={skillColor}
-                ></StyledIndicator>
-                <StyledIndicator
-                  instance={index}
-                  index={3}
-                  lit={level >= 4}
-                  litColor={skillColor}
-                ></StyledIndicator>
-                <StyledIndicator
-                  instance={index}
-                  index={4}
-                  lit={level === 5}
-                  litColor={skillColor}
-                ></StyledIndicator> */}
-              </StyledIndicatorGrid>
-              {/* )} */}
-              <h1>
-                <StyledLink
-                  to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
-                  color={skillColor}
-                >
-                  {title}
-                </StyledLink>
-              </h1>
-            </Flex>
-          </StyledSkillCardHeader>
-        </CardHeader>
-        <CardBody>
-          <SkillCardBody description={description} index={index} />
-        </CardBody>
-        <CardFooter>
-          <p>
-            (time spent:{' '}
-            <Tween
-              to={{ count: time }}
-              ease="none"
-              duration={Math.sqrt(Math.sqrt(time)) * 0.5}
-            >
-              <span>0</span>
-            </Tween>{' '}
+  <Tween
+    from={{ x: '-400px', opacity: 0 }}
+    duration={1}
+    delay={0.25 + index * 0.125}
+    ease="elastic"
+  >
+    <StyledSkillCard>
+      <SkillCardBackdrop index={index}>
+        <DynamicImage
+          path={`code_icons/${title
+            .replace(/\([0-9]*\)|\s+/gi, '')
+            .toLocaleLowerCase()}.png`}
+        />
+      </SkillCardBackdrop>
+      <CardHeader>
+        <StyledSkillCardHeader>
+          <Flex justifyContent="space-between" direction="row">
+            <StyledIndicatorGrid>
+              <StyledIndicator
+                instance={index}
+                index={0}
+                litColor={skillColor}
+              ></StyledIndicator>
+            </StyledIndicatorGrid>
+            <h1>
+              <StyledLink
+                to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
+                color={skillColor}
+              >
+                {title}
+              </StyledLink>
+            </h1>
+          </Flex>
+        </StyledSkillCardHeader>
+      </CardHeader>
+      <CardBody>
+        <SkillCardBody description={description} index={index} />
+      </CardBody>
+      <CardFooter>
+        <p>
+          (time spent:{' '}
+          <Tween
+            to={{ count: time }}
+            ease="none"
+            duration={Math.sqrt(Math.sqrt(time)) * 0.5}
+          >
+            <span>0</span>
+          </Tween>{' '}
           hours)
         </p>
-        </CardFooter>
-      </StyledSkillCard>
-    </Tween>
-  )
+      </CardFooter>
+    </StyledSkillCard>
+  </Tween>
+)
