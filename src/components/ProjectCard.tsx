@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { StringOrUrlArray } from '../types/StringOrUrlObject'
 import { Card, CardHeader, CardHeaderText, CardBody, CardFooter } from './Card'
 import { IFeaturedImage } from '../templates/interfaces'
@@ -8,7 +8,7 @@ import { ArticleTags } from './ArticleTags'
 import { StyledLink } from './StyledLink'
 import { DateFormatted } from './DateFormatted'
 import { ReadingTime } from './ReadingTime'
-import { Tween, Timeline } from 'react-gsap'
+import { Tween } from 'react-gsap'
 
 interface IProjectCardProps {
   index: number
@@ -23,14 +23,6 @@ interface IProjectCardProps {
   path: string
 }
 
-function HeaderGSAP({ children }: { children: ReactNode }): JSX.Element {
-  return (
-    <Tween from={{ scale: 0 }} duration={1}>
-      {children}
-    </Tween>
-  )
-}
-
 export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   index,
   image,
@@ -38,17 +30,19 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   title,
   body,
   tags,
-  // html,
   date,
   timeToRead,
   path,
 }: IProjectCardProps): JSX.Element => (
-  <Tween from={{ scale: .75, opacity: 0 }} duration={1} delay={.25 + index * .125} ease="back">
+  <Tween
+    from={{ scale: 0.75, opacity: 0 }}
+    duration={1}
+    delay={0.25 + index * 0.125}
+    ease="back"
+  >
     <Card>
       <CardHeader>
-        <HeaderGSAP>
-          <CardHeaderImageOrVideo video={video} image={image} />
-        </HeaderGSAP>
+        <CardHeaderImageOrVideo video={video} image={image} />
         <CardHeaderText>
           <h1>
             <StyledLink to={path}>{title}</StyledLink>
@@ -60,10 +54,7 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
           </h6>
         </CardHeaderText>
       </CardHeader>
-      <CardBody>
-        {ArticleBody({ body })}
-        {/* {html && <div dangerouslySetInnerHTML={{ __html: html }} />} */}
-      </CardBody>
+      <CardBody>{ArticleBody({ body })}</CardBody>
       <CardFooter>
         <ArticleTags tags={tags} />
       </CardFooter>
