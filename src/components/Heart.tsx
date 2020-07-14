@@ -4,7 +4,7 @@ import { FillProperty, HeightProperty, WidthProperty } from 'csstype'
 import {
   AnyExoticRefComponent,
   AnyExoticRefTargets,
-} from './the_movie/types.interface'
+} from '../types/types.interface'
 
 interface IHeartProps {
   height: HeightProperty<1>

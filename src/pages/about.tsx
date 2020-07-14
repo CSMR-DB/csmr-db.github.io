@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout } from '../components/Layout'
 import { AboutLayout } from '../layouts/AboutLayout'
 import { graphql, StaticQuery } from 'gatsby'
-import { IBioImagesMarkdownRemark } from '../components/the_movie/types.interface'
+import { IBioImagesMarkdownRemark } from '../types/types.interface'
 
 // tslint:disable-next-line: no-void-expression
 const PAGE_QUERY: void = graphql`

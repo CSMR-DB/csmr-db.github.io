@@ -5,7 +5,7 @@ import { StyledIFrame } from './StyledIFrame'
 import Img from 'gatsby-image'
 import { IFeaturedImage } from '../templates/interfaces'
 import { MaxHeightProperty } from 'csstype'
-import { AnyExoticRefComponent } from './the_movie/types.interface'
+import { AnyExoticRefComponent } from '../types/types.interface'
 
 interface IImageOrVideo {
   image?: string | IFeaturedImage

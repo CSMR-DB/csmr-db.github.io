@@ -27,7 +27,7 @@ import { courses, ICourse } from '../components/the_movie/static_data/courses'
 import {
   IBioImagesEdge,
   IBioImagesMarkdownRemark,
-} from '../components/the_movie/types.interface'
+} from '../types/types.interface'
 
 export const WideBoi: StyledComponent<
   'div',
