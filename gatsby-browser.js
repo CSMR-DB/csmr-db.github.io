@@ -13,3 +13,7 @@ require('firacode')
 require('typeface-holtwood-one-sc')
 require('typeface-inter')
 require('prismjs/themes/prism-tomorrow.css')
+
+exports.shouldUpdateScroll = () => {
+  return false
+}
