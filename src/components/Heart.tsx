@@ -8,7 +8,12 @@ interface IHeartProps {
   fill: FillProperty
 }
 
-export const StyledHeart: StyledComponent<'svg', any, IHeartProps, never> = styled.svg`
+export const StyledHeart: StyledComponent<
+  'svg',
+  any,
+  IHeartProps,
+  never
+> = styled.svg`
   fill: ${({ fill }: IHeartProps): FillProperty => fill};
 `
 
