@@ -20,8 +20,8 @@ const GamesDecor: AnyExoticRefComponent<any> = React.forwardRef(
   (_props: any, targets: any): JSX.Element | null => {
     const {
       wallpapers,
-      // tslint:disable-next-line: no-void-expression
-    }: { wallpapers: IBioImagesMarkdownRemark } = useStaticQuery(graphql`
+    }: // tslint:disable-next-line: no-void-expression
+    { wallpapers: IBioImagesMarkdownRemark } = useStaticQuery(graphql`
       query {
         wallpapers: allFile(
           filter: {

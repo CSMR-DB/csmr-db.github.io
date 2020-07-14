@@ -1,5 +1,8 @@
 import React from 'react'
-import { AnyExoticRefTargets, AnyExoticRefComponent } from '../../../types/types.interface'
+import {
+  AnyExoticRefTargets,
+  AnyExoticRefComponent,
+} from '../../../types/types.interface'
 import { SplitChars } from 'react-gsap'
 import { Cursor } from './Cursor'
 import { Flex } from '../../Flex'
