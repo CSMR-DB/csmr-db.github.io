@@ -102,7 +102,7 @@ exports.createPages = async ({
   const flatTagsArray = [].concat.apply([], tagsArray)
   const uniqueTags = Array.from(new Set(flatTagsArray))
 
-  uniqueTags.map(tag =>
+  uniqueTags.map((tag) =>
     createPage({
       path: `/tag/${tag.toLocaleLowerCase().replace(/\s+/gi, '_')}`,
       component: TagTemplate,
