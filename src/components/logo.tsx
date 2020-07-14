@@ -14,6 +14,8 @@ interface ILogoProps {
   strokeColor?: string
   strokeSize?: number
   fill: string
+  background?: BackgroundColorProperty
+  bordered?: boolean
 }
 
 interface ILogoPathProps {
@@ -21,22 +23,16 @@ interface ILogoPathProps {
   stroke: StrokeProperty
 }
 
-interface ILogoBaseProps {
-  background?: BackgroundColorProperty
-  bordered?: boolean
-}
-
 const StyledLogoBase: StyledComponent<
   'div',
   any,
-  ILogoBaseProps,
+  Partial<ILogoProps>,
   never
 > = styled.div`
   float: left;
   border-radius: 999rem;
-  /* padding: 2rem; */
   display: block;
-  border: ${(props: ILogoBaseProps): BorderProperty<1> =>
+  border: ${(props: Partial<ILogoProps>): BorderProperty<1> =>
     props.bordered ? `1px solid ${theme.primary}` : 'none'};
   z-index: 999;
 
@@ -56,13 +52,13 @@ const StyledPath: StyledComponent<
   stroke: ${(props: ILogoPathProps): StrokeProperty => props.stroke || 'white'};
 `
 
-export const Logo: (props: ILogoProps & ILogoBaseProps) => JSX.Element = ({
+export const Logo: (props: ILogoProps) => JSX.Element = ({
   size,
   strokeColor = 'transparent',
   strokeSize = 0,
   fill,
   background,
-}: ILogoProps & ILogoBaseProps): JSX.Element => (
+}: ILogoProps): JSX.Element => (
   <StyledLogoBase background={background}>
     <svg
       width={size}
