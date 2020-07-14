@@ -5,45 +5,40 @@ import {
   HeightProperty,
   TopProperty,
   LeftProperty,
+  BottomProperty,
+  RightProperty,
+  ZIndexProperty,
 } from 'csstype'
 
 export interface IFixedElementProps {
   children: ReactNode
   top?: TopProperty<1>
   left?: LeftProperty<1>
+  bottom?: BottomProperty<1>
+  right?: RightProperty<1>
   width?: WidthProperty<1>
   height?: HeightProperty<1>
+  zIndex?: ZIndexProperty
 }
 
-const FixedElement: StyledComponent<
+const StyledFixed: StyledComponent<
   'div',
   any,
   IFixedElementProps,
   never
 > = styled.div`
   position: fixed;
-  width: ${(props: IFixedElementProps): WidthProperty<1> =>
-    props.width || '100%'};
-  height: ${(props: IFixedElementProps): HeightProperty<1> =>
-    props.height || '100%'};
-  top: ${(props: IFixedElementProps): TopProperty<1> => props.top || '0'};
-  left: ${(props: IFixedElementProps): LeftProperty<1> => props.left || '0'};
+  width: ${({ width = '100%' }: IFixedElementProps): WidthProperty<1> => width};
+  height: ${({ height = 'auto' }: IFixedElementProps): HeightProperty<1> =>
+    height};
+  top: ${({ top = 'unset' }: IFixedElementProps): TopProperty<1> => top};
+  left: ${({ left = 'unset' }: IFixedElementProps): LeftProperty<1> => left};
+  bottom: ${({ bottom = 'unset' }: IFixedElementProps): TopProperty<1> =>
+    bottom};
+  right: ${({ right = 'unset' }: IFixedElementProps): LeftProperty<1> => right};
+  z-index: ${({ zIndex = 1 }: IFixedElementProps): ZIndexProperty => zIndex};
 `
 
-export const Fixed: ({
-  children,
-  top,
-  left,
-  width,
-  height,
-}: IFixedElementProps) => JSX.Element = ({
-  children,
-  top,
-  left,
-  width,
-  height,
-}: IFixedElementProps): JSX.Element => (
-  <FixedElement top={top} left={left} width={width} height={height}>
-    {children}
-  </FixedElement>
-)
+export function Fixed(props: IFixedElementProps): JSX.Element {
+  return <StyledFixed {...props} />
+}
