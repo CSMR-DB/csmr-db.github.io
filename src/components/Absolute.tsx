@@ -1,4 +1,8 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 import { ReactNode } from 'react'
 import {
   LeftProperty,
@@ -26,11 +30,20 @@ export const Absolute: StyledComponent<
   never
 > = styled.div`
   position: absolute;
-  width: ${({ width = 'auto' }: IAbsoluteProps): WidthProperty<1> => width};
-  min-height: ${({ height = 'auto' }: IAbsoluteProps): HeightProperty<1> =>
-    height};
-  top: ${({ top = '0' }: IAbsoluteProps): TopProperty<1> => top};
-  left: ${({ left = '0' }: IAbsoluteProps): LeftProperty<1> => left};
-  bottom: ${({ bottom = '0' }: IAbsoluteProps): TopProperty<1> => bottom};
-  right: ${({ right = '0' }: IAbsoluteProps): TopProperty<1> => right};
+
+  ${({
+    width = 'auto',
+    height = 'auto',
+    top = '0',
+    left = '0',
+    bottom = '0',
+    right = '0',
+  }: IAbsoluteProps): FlattenSimpleInterpolation => css`
+    width: ${width};
+    min-height: ${height};
+    top: ${top};
+    left: ${left};
+    bottom: ${bottom};
+    right: ${right};
+  `}
 `

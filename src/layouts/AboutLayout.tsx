@@ -1,393 +1,47 @@
-import Image from 'gatsby-image'
 import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import {
-  Absolute,
-  Blend,
-  Card,
-  CardBody,
-  CardHeader,
-  CenteredBlock,
-  CTAButton,
-  DynamicImage,
-  Filter,
-  Flex,
-  Grid,
-  SEO,
-  StyledLink,
-} from '../components'
-import { allSVGs, ITool } from '../components/the_movie/static_data/tools'
-import { cleanAndCapitalize, groupBy } from '../utils'
-import {
-  ColorProperty,
-  JustifyContentProperty,
-  MaxWidthProperty,
-} from 'csstype'
-import { courses, ICourse } from '../components/the_movie/static_data/courses'
-import {
-  IBioImagesEdge,
-  IBioImagesMarkdownRemark,
-} from '../types/types.interface'
 
-export const WideBoi: StyledComponent<
-  'div',
-  any,
-  { maxWidth?: MaxWidthProperty<1> },
-  never
-> = styled.div`
-  position: relative;
-  padding: 4rem;
-  background: #efefef;
-  margin: 4rem auto;
+import { IImageSharpAllFiles } from '../types/interfaces'
+import { groupBy } from '../utils'
+import { courses, ICourse } from '../data/courses'
+import { allSVGs } from '../data/tools'
 
-  max-width: ${({
-    maxWidth = '100%',
-  }: {
-    maxWidth: MaxWidthProperty<1>
-  }): MaxWidthProperty<1> => maxWidth};
-`
-
-export const Paddie: StyledComponent<'div', any, {}, never> = styled.div`
-  padding: 2rem;
-`
-
-export const ColoredText: StyledComponent<
-  'span',
-  any,
-  Partial<ICourse>,
-  never
-> = styled.span`
-  color: ${(props: ICourse): ColorProperty => props.color || 'black'};
-`
-
-export const Underline: StyledComponent<
-  'div',
-  any,
-  Partial<ICourse>,
-  never
-> = styled.div`
-  width: 100%;
-  border-bottom: 1px dashed #ddd;
-`
-
-export const ColoredCircle: StyledComponent<
-  'div',
-  any,
-  Partial<ITool>,
-  never
-> = styled.div`
-  width: 8rem;
-  height: 8rem;
-  border: 4px solid ${({ color = 'black' }: ITool): ColorProperty => color};
-  border-radius: 999rem;
-  padding: 1.5rem;
-  margin: auto;
-
-  /* Filter */
-  filter: grayscale(1);
-  transition: all 100ms ease-in-out;
-
-  & svg {
-    transition: inherit;
-  }
-
-  &:hover {
-    filter: none;
-
-    & svg {
-      transform: scale(1.1);
-    }
-  }
-
-  & > * {
-    max-width: 100%;
-    max-height: 100%;
-  }
-`
-
-export interface IStyledImageGridProps {
-  columns: number
-  rows: number
-}
-
-export const StyledImageGrid: StyledComponent<
-  'div',
-  any,
-  IStyledImageGridProps,
-  never
-> = styled.div`
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: repeat(
-    ${({ columns }: IStyledImageGridProps): number => columns},
-    1fr
-  );
-  grid-template-rows: repeat(
-    ${({ rows }: IStyledImageGridProps): number => rows},
-    1fr
-  );
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
-`
-
-export const BlendBlock: StyledComponent<'div', any, {}, never> = styled.div`
-  padding: 1rem;
-  background: white;
-  border-radius: 999rem;
-`
-
-export const StyledBioImageContainer: StyledComponent<
-  'div',
-  any,
-  {},
-  never
-> = styled.div`
-  position: relative;
-  overflow: hidden;
-
-  & > div:first-child {
-    position: relative;
-    transition: all 300ms ease-in-out;
-    transform: scale(1.01);
-  }
-
-  &:hover > div:first-child {
-    transform: scale(1.1);
-
-    & > * {
-      filter: none;
-    }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
-`
-
-export const Quote: StyledComponent<'div', any, {}, never> = styled.div`
-  text-align: center;
-  font-style: italic;
-  color: #888;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 2rem;
-    font-weight: 300;
-  }
-`
-
-export function BioImageContainer({
-  children,
-  overlay,
-}: {
-  children: React.ReactNode
-  overlay?: { node: React.ReactNode; justifyContent?: JustifyContentProperty }
-}): JSX.Element {
-  return (
-    <StyledBioImageContainer>
-      <div className={'children'}>{children}</div>
-      {overlay && (
-        <Absolute top={'1rem'} bottom={'1rem'}>
-          <Flex justifyContent={overlay.justifyContent}>{overlay.node}</Flex>
-        </Absolute>
-      )}
-    </StyledBioImageContainer>
-  )
-}
-
-export function ImageOverlay({ text }: { text: string }): JSX.Element {
-  return (
-    <Blend mode={'lighten'}>
-      <BlendBlock>
-        <h6>{text}</h6>
-      </BlendBlock>
-    </Blend>
-  )
-}
-
-export function GamesGrid(props: {
-  wallpapers: IBioImagesMarkdownRemark
-}): JSX.Element {
-  return (
-    <StyledImageGrid rows={2} columns={7}>
-      {props.wallpapers.edges.map(
-        (edge: IBioImagesEdge, i: number): JSX.Element => (
-          <BioImageContainer
-            overlay={{
-              node: (
-                <Blend mode={'difference'}>
-                  <h3 style={{ color: 'white' }}>
-                    {cleanAndCapitalize(edge.node.name)}
-                  </h3>
-                </Blend>
-              ),
-            }}
-            key={i}
-          >
-            <Filter>
-              <Image fluid={edge.node.childImageSharp.fluid} />
-            </Filter>
-          </BioImageContainer>
-        )
-      )}
-    </StyledImageGrid>
-  )
-}
-
-export function ShowsGrid(props: {
-  posters: IBioImagesMarkdownRemark
-}): JSX.Element {
-  return (
-    <StyledImageGrid rows={2} columns={14}>
-      {props.posters.edges.map(
-        (edge: IBioImagesEdge, i: number): JSX.Element => (
-          <BioImageContainer key={i}>
-            <Filter>
-              <Image fluid={edge.node.childImageSharp.fluid} />
-            </Filter>
-          </BioImageContainer>
-        )
-      )}
-    </StyledImageGrid>
-  )
-}
-
-export function PhotographyGrid(props: {
-  squares: IBioImagesMarkdownRemark
-}): JSX.Element {
-  return (
-    <StyledImageGrid rows={3} columns={3}>
-      {props.squares.edges.map(
-        (edge: IBioImagesEdge, i: number): JSX.Element => (
-          <BioImageContainer key={i}>
-            <Filter>
-              <Image fluid={edge.node.childImageSharp.fluid} />
-            </Filter>
-          </BioImageContainer>
-        )
-      )}
-    </StyledImageGrid>
-  )
-}
-
-export function CoursesLists(props: {
-  courses: [ICourse['category'], ICourse[]][]
-}): JSX.Element {
-  return (
-    <Flex direction={'column'} justifyContent={'center'}>
-      <Grid columns={6} alignItems={'baseline'}>
-        {props.courses.map(
-          (
-            courseGroup: [ICourse['category'], ICourse[]],
-            i: number
-          ): JSX.Element => (
-            <Card key={i}>
-              <CardHeader>
-                <Paddie>
-                  <Underline>
-                    <h2>{courseGroup[0]}</h2>
-                  </Underline>
-                </Paddie>
-              </CardHeader>
-              <CardBody>
-                {courseGroup[1].map(
-                  (course: ICourse, j: number): JSX.Element => (
-                    <h5 key={j}>
-                      <ColoredText color={course.color ? 'black' : '#666'}>
-                        {'❭'} {course.name}
-                      </ColoredText>
-                    </h5>
-                  )
-                )}
-              </CardBody>
-            </Card>
-          )
-        )}
-      </Grid>
-      <div>
-        <p>
-          * Not intrinsically about programming, I just made it so. ** Not a
-          full on course with credits, but a support course to provide extra
-          knowledge about Adobe software.
-        </p>
-      </div>
-    </Flex>
-  )
-}
-
-export function SVGLogos(props: { svgs: ITool[] }): JSX.Element {
-  return (
-    <Flex direction={'column'} justifyContent={'center'}>
-      <Grid rows={2} columns={8}>
-        {props.svgs.map(
-          (framework: ITool, i: number): JSX.Element => (
-            <ColoredCircle color={framework.color} key={i}>
-              <framework.svg />
-            </ColoredCircle>
-          )
-        )}
-      </Grid>
-    </Flex>
-  )
-}
-
-export interface ICollegeBuilding {
-  path: string
-  text: string
-}
-
-export function CollegeBuildings(props: {
-  images: ICollegeBuilding[]
-}): JSX.Element {
-  return (
-    <Grid columns={props.images.length} rows={1}>
-      {props.images.map(
-        (image: ICollegeBuilding, i: number): JSX.Element => (
-          <BioImageContainer
-            overlay={{
-              node: <ImageOverlay text={image.text} />,
-              justifyContent: 'flex-end',
-            }}
-            key={i}
-          >
-            <Filter>
-              <DynamicImage path={image.path} />
-            </Filter>
-          </BioImageContainer>
-        )
-      )}
-    </Grid>
-  )
-}
+import { GamesGrid } from '../components/compositions/GamesGrid'
+import { ShowsGrid } from '../components/compositions/ShowsGrid'
+import { PhotographyGrid } from '../components/compositions/PhotographyGrid'
+import { WideBoi } from '../components/WideBoi'
+import { CoursesGrid } from '../components/compositions/CoursesGrid'
+import { SVGLogos } from '../components/compositions/SVGLogos'
+import { SubbedImages } from '../components/compositions/SubbedImages'
+import { Quote } from '../components/Quote'
+import { ISubbedImage } from '../components/compositions/SubbedImage'
+import { SEO } from '../components/compositions/SEO'
+import { CenteredBlock } from '../components/CenteredBlock'
+import { CTAButton } from '../components/CTAButton'
+import { StyledLink } from '../components/StyledLink'
 
 export interface IAboutLayoutProps {
-  wallpapers: IBioImagesMarkdownRemark
-  squares: IBioImagesMarkdownRemark
-  posters: IBioImagesMarkdownRemark
+  wallpapers: IImageSharpAllFiles
+  squares: IImageSharpAllFiles
+  posters: IImageSharpAllFiles
 }
 
 export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
   const groupedCourses: [ICourse['category'], ICourse[]][] = [
     ...groupBy(courses, 'category'),
+  ]
+  const images: ISubbedImage[] = [
+    {
+      path: 'bio/hu_oldest.jpg',
+      text: 'HU Building #1',
+    },
+    {
+      path: 'bio/hu_old.jpg',
+      text: 'HU Building #2',
+    },
+    {
+      path: 'bio/hu_new.jpg',
+      text: 'HU Building #3',
+    },
   ]
 
   return (
@@ -421,22 +75,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         </p>
       </CenteredBlock>
       <WideBoi maxWidth={'1280px'}>
-        <CollegeBuildings
-          images={[
-            {
-              path: 'bio/hu_oldest.jpg',
-              text: 'HU Building #1',
-            },
-            {
-              path: 'bio/hu_old.jpg',
-              text: 'HU Building #2',
-            },
-            {
-              path: 'bio/hu_new.jpg',
-              text: 'HU Building #3',
-            },
-          ]}
-        />
+        <SubbedImages images={images} />
       </WideBoi>
       <CenteredBlock>
         <h2>Starting College: DMC</h2>
@@ -464,7 +103,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         </Quote>
       </CenteredBlock>
       <WideBoi>
-        <CoursesLists courses={groupedCourses} />
+        <CoursesGrid courses={groupedCourses} />
         <CTAButton to={'/skillset'}>I can do this</CTAButton>
       </WideBoi>
       <CenteredBlock>

@@ -1,5 +1,11 @@
 import React from 'react'
-import { CenteredBlock, DynamicImage, Grid, SEO } from '../components'
+
+import { IImageSharpAllFiles } from '../types/interfaces'
+
+import { Photos } from '../components/compositions/Photos'
+import { SEO } from '../components/compositions/SEO'
+import { CenteredBlock } from '../components/CenteredBlock'
+import { Grid } from '../components/Grid'
 
 // const ParallaxContainer: StyledComponent<"div", any, {}, never> = styled.div`
 //   /* perspective: 8px;
@@ -61,7 +67,13 @@ import { CenteredBlock, DynamicImage, Grid, SEO } from '../components'
 //   )
 // }
 
-export function PhotographyLayout(): JSX.Element {
+export interface IPhotographyLayoutProps {
+  images: IImageSharpAllFiles
+}
+
+export function PhotographyLayout({
+  images,
+}: IPhotographyLayoutProps): JSX.Element {
   return (
     <>
       <SEO title="Photography" />
@@ -72,7 +84,7 @@ export function PhotographyLayout(): JSX.Element {
         </article>
       </CenteredBlock>
       <Grid columns={'repeat(auto-fill, minmax(32rem,1fr))'}>
-        <DynamicImage path="photography/" />
+        <Photos images={images.edges} />
       </Grid>
     </>
   )

@@ -1,5 +1,10 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 import { ColorProperty, BackgroundColorProperty } from 'csstype'
+
 import { theme } from '../data/theme'
 
 interface IClippedBtnProps {
@@ -19,25 +24,33 @@ export const ClippedBtn: StyledComponent<
   transition: color 0.1s ease-in 0.1s;
 
   @media ${theme.breakpoints.max.tablet} {
-    color: ${(props: IClippedBtnProps): ColorProperty =>
-      props.color || 'white'};
     clip-path: circle(16em at 50% 50%);
-    background: ${(props: IClippedBtnProps): BackgroundColorProperty =>
-      props.background || 'grey'};
+
+    ${({
+      color = 'white',
+      background = 'grey',
+    }: IClippedBtnProps): FlattenSimpleInterpolation => css`
+      color: ${color};
+      background: ${background};
+    `}
   }
 
   @media ${theme.breakpoints.min.desktop} {
-    transition: all 0.25s ease-in-out;
     clip-path: circle(1em at 50% 50%);
+    transition: all 0.25s ease-in-out;
     font-size: 2rem;
     color: transparent;
 
     :hover {
-      color: ${(props: IClippedBtnProps): ColorProperty =>
-        props.color || 'white'};
       clip-path: circle(8em at 50% 50%);
-      background: ${(props: IClippedBtnProps): BackgroundColorProperty =>
-        props.background || 'grey'};
+
+      ${({
+        color = 'white',
+        background = 'grey',
+      }: IClippedBtnProps): FlattenSimpleInterpolation => css`
+        color: ${color};
+        background: ${background};
+      `}
     }
   }
 `

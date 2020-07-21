@@ -1,27 +1,24 @@
 import React from 'react'
-import {
-  SEO,
-  Grid,
-  CenteredBlock,
-  SkillCard,
-  ProjectCard,
-  Card,
-  CardBody,
-  CTAButton,
-  CardHeader,
-  CardHeaderText,
-  ContentSeparator,
-} from '../components'
+
 import {
   ISkillsetAllMarkdownRemark,
   IProjectsAllMarkdownRemark,
-  ISkillsetEdge,
-  IProjectsEdge,
-} from '../templates/interfaces'
-import styled, { StyledComponent } from 'styled-components'
-import { theme } from '../data/theme'
+} from '../types/interfaces'
 
-export interface ISiteMetadata {
+import { CardHeader } from '../components/compositions/card/CardHeader'
+import { CardBody } from '../components/compositions/card/CardBody'
+import { CardHeaderText } from '../components/compositions/card/CardHeaderText'
+import { SkillCards } from '../components/compositions/card/skillcard/SkillCards'
+import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
+import { LiftedUpWrapper } from '../components/LifedUpWrapper'
+import { SEO } from '../components/compositions/SEO'
+import { ContentSeparator } from '../components/ContentSeparator'
+import { CenteredBlock } from '../components/CenteredBlock'
+import { Grid } from '../components/Grid'
+import { Card } from '../components/compositions/card/Card'
+import { CTAButton } from '../components/CTAButton'
+
+export interface IIndexLayoutProps {
   site: {
     siteMetadata: {
       title: string
@@ -35,21 +32,14 @@ export interface ISiteMetadata {
   programmingData: IProjectsAllMarkdownRemark
 }
 
-const LiftedUpWrapper: StyledComponent<'div', any, {}, never> = styled.div`
-  margin: -8rem auto 0;
-
-  @media ${theme.breakpoints.max.smartphone} {
-    margin: 0 auto;
-  }
-`
-
-export function IndexLayout({ data }: { data: ISiteMetadata }): JSX.Element {
+export function IndexLayout({
+  site,
+  skillsetData,
+  programmingData,
+}: IIndexLayoutProps): JSX.Element {
   return (
     <>
-      <SEO
-        title={`Homepage`}
-        description={data.site.siteMetadata.description}
-      />
+      <SEO title={`Homepage`} description={site.siteMetadata.description} />
       <LiftedUpWrapper>
         <ContentSeparator>
           <CenteredBlock maxWidth={'110rem'}>
@@ -105,22 +95,7 @@ export function IndexLayout({ data }: { data: ISiteMetadata }): JSX.Element {
                       <h1>How I make things</h1>
                     </CardBody>
                   </Card>
-                  {data.skillsetData.edges.map(
-                    (
-                      { node: { frontmatter } }: ISkillsetEdge,
-                      i: number
-                    ): JSX.Element => (
-                      <SkillCard
-                        level={frontmatter.level || 0}
-                        title={frontmatter.title}
-                        description={frontmatter.excerpt}
-                        time={frontmatter.time}
-                        key={i}
-                        index={i}
-                        skillColor={frontmatter.skillColor}
-                      />
-                    )
-                  )}
+                  <SkillCards edges={skillsetData.edges} />
                   <Card>
                     <CardBody>
                       <CTAButton to={'/skillset'}>
@@ -137,25 +112,7 @@ export function IndexLayout({ data }: { data: ISiteMetadata }): JSX.Element {
                       <h1>What I have made</h1>
                     </CardBody>
                   </Card>
-                  {data.programmingData.edges.map(
-                    (
-                      { node: { frontmatter, timeToRead } }: IProjectsEdge,
-                      i: number
-                    ): JSX.Element => (
-                      <ProjectCard
-                        title={frontmatter.title}
-                        tags={frontmatter.tags}
-                        video={frontmatter.featuredVideo}
-                        image={frontmatter.featuredImage}
-                        body={frontmatter.excerpt}
-                        timeToRead={timeToRead}
-                        path={frontmatter.path}
-                        date={frontmatter.date}
-                        key={i}
-                        index={i}
-                      />
-                    )
-                  )}
+                  <ProjectCards edges={programmingData.edges} />
                   <Card>
                     <CardBody>
                       <CTAButton to={'/projects'}>

@@ -1,9 +1,9 @@
 import styled, { StyledComponent } from 'styled-components'
-import { WidthProperty } from 'csstype'
+
 import { theme } from '../data/theme'
 
 interface ICenteredBlockProps {
-  maxWidth?: WidthProperty<1>
+  maxWidth?: string
 }
 
 export const CenteredBlock: StyledComponent<
@@ -12,10 +12,10 @@ export const CenteredBlock: StyledComponent<
   ICenteredBlockProps,
   never
 > = styled.div`
-  max-width: ${({
-    maxWidth = '48rem',
-  }: ICenteredBlockProps): WidthProperty<1> => maxWidth};
   margin: 0 auto;
+
+  max-width: ${({ maxWidth = '48rem' }: ICenteredBlockProps): string =>
+    maxWidth};
 
   @media ${theme.breakpoints.max.smartphone} {
     padding: 0 1rem;

@@ -1,9 +1,11 @@
 import React from 'react'
-import { IRouteObject, routes } from '../data/routes'
 import { navigate } from 'gatsby'
+
+import { IRouteObject, routes } from '../data/routes'
 import { useKeyPressNavigation } from './useKeyPressNavigation.hook'
 
-const SECRET_ROUTES: IRouteObject[] = [
+const ALL_ROUTES: IRouteObject[] = [
+  ...routes,
   {
     path: '/photography',
     title: 'Photography',
@@ -16,8 +18,6 @@ const SECRET_ROUTES: IRouteObject[] = [
   },
 ]
 
-const ALL_ROUTES: IRouteObject[] = [...routes, ...SECRET_ROUTES]
-
 const keyPressRouteBinds: Map<string, string> = new Map()
 ALL_ROUTES.forEach((route: IRouteObject): void => {
   route.boundKeys.forEach((key: string | number): void => {
@@ -25,12 +25,12 @@ ALL_ROUTES.forEach((route: IRouteObject): void => {
   })
 })
 
-export function IONavigator({
-  children,
-}: {
+export interface IIONavigatorProps {
   children: React.ReactNode
   routes?: IRouteObject[]
-}): JSX.Element {
+}
+
+export function IONavigator({ children }: IIONavigatorProps): JSX.Element {
   const currentPage: string =
     typeof window !== 'undefined' ? window.location.pathname : '/'
 

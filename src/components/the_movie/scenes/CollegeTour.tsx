@@ -1,13 +1,13 @@
 import React from 'react'
 import { Timeline, Tween, SplitChars } from 'react-gsap'
-import { AnyExoticRefComponent } from '../../../types/types.interface'
+import { AnyExoticRefComponent } from '../../../types/types'
 import styled, { StyledComponent } from 'styled-components'
 import { Polaroid } from '../Polaroid'
 import { DynamicImage } from '../../DynamicImage'
 import { ColorProperty } from 'csstype'
 import { Flex } from '../../Flex'
 import { Filter } from '../../Filter'
-import { ICourse, courses } from '../static_data/courses'
+import { ICourse, courses } from '../../../data/courses'
 import { Layer } from '../components/Layer'
 
 const PaddedH1: StyledComponent<'h1', any, {}, never> = styled.h1`

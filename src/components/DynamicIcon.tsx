@@ -1,47 +1,20 @@
 import React from 'react'
-import Img, { FluidObject } from 'gatsby-image'
+import Image from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { StyledComponent } from 'styled-components'
 
-interface IFluidImage {
-  node: {
-    extension: string
-    relativePath: string
-    childImageSharp: {
-      fluid: FluidObject
-    }
-  }
-}
+import { IImageSharpEdge, IImageSharpAllFiles } from '../types/interfaces'
 
-interface IImagesRoot {
-  // images: {
-  //   edges: (IFluidImage)[]
-  // }
-  images: any // temp fix
-}
-
-const StyledDynamicIcon: StyledComponent<typeof Img, any, {}, never> = styled(
-  Img
-)`
-  max-width: 4rem;
-  width: 100%;
-  max-height: 4rem;
-  height: 100%;
-`
-
-function renderImage(file: IFluidImage): JSX.Element {
-  return <StyledDynamicIcon fluid={file.node.childImageSharp.fluid} />
-}
-
-interface IDynamicIconProps {
+export interface IDynamicIconProps {
   path: string
 }
 
-export const DynamicIcon: ({
-  path,
-}: IDynamicIconProps) => JSX.Element = function ({
-  path,
-}: IDynamicIconProps): JSX.Element {
+export function DynamicIcon({ path }: IDynamicIconProps): JSX.Element {
+  function renderImage(
+    file: IImageSharpEdge | null = null
+  ): JSX.Element | null {
+    return file && <Image fluid={file.node.childImageSharp.fluid} />
+  }
+
   return (
     <StaticQuery
       // tslint:disable-next-line: no-void-expression
@@ -64,17 +37,17 @@ export const DynamicIcon: ({
           }
         }
       `}
-      render={({ images }: IImagesRoot): JSX.Element | null =>
+      render={({
+        images,
+      }: {
+        images: IImageSharpAllFiles
+      }): JSX.Element | null =>
         renderImage(
           images.edges.find(
-            (image: IFluidImage): boolean => image.node.relativePath === path
+            ({ node }: IImageSharpEdge): boolean => node.relativePath === path
           ) // returns images like this node: {extension: "png", relativePath: "gatsby-icon.png", childImageSharp: {…}}
         )
       }
     />
   )
 }
-
-/**
- * Question remains: how much impact will many (100s) of images have?
- */

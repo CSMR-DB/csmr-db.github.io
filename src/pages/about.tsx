@@ -1,8 +1,10 @@
 import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+
+import { IImageSharpAllFiles } from '../types/interfaces'
+
 import { Layout } from '../components/Layout'
 import { AboutLayout } from '../layouts/AboutLayout'
-import { graphql, StaticQuery } from 'gatsby'
-import { IBioImagesMarkdownRemark } from '../types/types.interface'
 
 // tslint:disable-next-line: no-void-expression
 const PAGE_QUERY: void = graphql`
@@ -83,19 +85,21 @@ const PAGE_QUERY: void = graphql`
   }
 `
 
-const AboutMe: () => JSX.Element = (): JSX.Element => (
-  <Layout>
-    {/* <AboutLayout /> */}
-    <StaticQuery
-      query={PAGE_QUERY}
-      render={(data: {
-        wallpapers: IBioImagesMarkdownRemark
-        squares: IBioImagesMarkdownRemark
-        posters: IBioImagesMarkdownRemark
-      }): JSX.Element => <AboutLayout {...data} />}
-    />
-  </Layout>
-)
+function AboutMe(): JSX.Element {
+  return (
+    <Layout>
+      {/* <AboutLayout /> */}
+      <StaticQuery
+        query={PAGE_QUERY}
+        render={(data: {
+          wallpapers: IImageSharpAllFiles
+          squares: IImageSharpAllFiles
+          posters: IImageSharpAllFiles
+        }): JSX.Element => <AboutLayout {...data} />}
+      />
+    </Layout>
+  )
+}
 
 // tslint:disable-next-line: no-default-export
 export default AboutMe

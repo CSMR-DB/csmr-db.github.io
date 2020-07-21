@@ -1,30 +1,43 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenInterpolation,
+  ThemedStyledProps,
+} from 'styled-components'
 import { Link } from 'gatsby'
-import { theme } from '../data/theme'
 import { ColorProperty } from 'csstype'
+
+import { theme } from '../data/theme'
 
 interface IStyledALinkProps {
   color?: ColorProperty
 }
 
-export const StyledLink: StyledComponent<
-  typeof Link,
-  any,
+const LinkStyles: FlattenInterpolation<ThemedStyledProps<
   IStyledALinkProps,
-  string | number | symbol
-> = styled(Link)`
+  any
+>> = css`
   text-decoration: none;
-  color: ${(props: IStyledALinkProps): ColorProperty =>
-    props.color || theme.primary} !important;
   display: inline-block;
 
-  & :hover {
+  color: ${(props: IStyledALinkProps): ColorProperty =>
+    props.color || theme.primary} !important;
+
+  &:hover {
     color: ${theme.primaryHover};
   }
 
   &.active {
     color: ${theme.primaryHover};
   }
+`
+export const StyledLink: StyledComponent<
+  typeof Link,
+  any,
+  IStyledALinkProps,
+  never
+> = styled(Link)`
+  ${LinkStyles}
 `
 
 export const StyledA: StyledComponent<
@@ -33,16 +46,5 @@ export const StyledA: StyledComponent<
   IStyledALinkProps,
   never
 > = styled.a`
-  text-decoration: none;
-  color: ${(props: IStyledALinkProps): ColorProperty =>
-    props.color || theme.primary} !important;
-  display: inline-block;
-
-  & :hover {
-    color: ${theme.primaryHover};
-  }
-
-  &.active {
-    color: ${theme.primaryHover};
-  }
+  ${LinkStyles}
 `

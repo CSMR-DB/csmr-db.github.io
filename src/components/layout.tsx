@@ -1,56 +1,24 @@
 import React, { ReactNode } from 'react'
-import styled, { CSSObject, StyledComponent } from 'styled-components'
-import { IONavigator } from '../hooks/IONavigator'
+import styled, { StyledComponent } from 'styled-components'
+
 import { theme } from '../data/theme'
-// tslint:disable-next-line: no-import-side-effect
-import '../css/reset.css'
 
-interface ILayoutProps {
+import { LayoutMain } from './LayoutMain'
+
+export interface ILayoutProps {
   children?: ReactNode
-  isLandingPage?: boolean
-}
-
-interface IStyledLayoutProps {
   isLandingPage?: boolean
 }
 
 export const StyledLayout: StyledComponent<
   'div',
   any,
-  IStyledLayoutProps,
+  ILayoutProps,
   never
 > = styled.div`
-  background: ${theme.background};
   min-height: 100vh;
 
-  ${(props: IStyledLayoutProps): CSSObject =>
-    (props.isLandingPage && {
-      background: 'transparent',
-      position: 'fixed',
-      display: 'flex',
-      alignItems: 'center',
-      width: '100vw',
-      height: '100vh',
-    }) ||
-    {}}
-`
-
-const StyledMain: StyledComponent<'main', any, {}, never> = styled.main`
-  margin: 0 auto;
-  padding: 4rem 1rem;
-
-  a {
-    text-decoration: none;
-    color: ${theme.primary};
-
-    &:hover {
-      color: ${theme.primaryHover};
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 1rem;
-  }
+  background: ${theme.background};
 `
 
 export function Layout({
@@ -58,10 +26,8 @@ export function Layout({
   isLandingPage = false,
 }: ILayoutProps): JSX.Element {
   return (
-    <IONavigator>
-      <StyledLayout isLandingPage={isLandingPage}>
-        <StyledMain>{children}</StyledMain>
-      </StyledLayout>
-    </IONavigator>
+    <StyledLayout isLandingPage={isLandingPage}>
+      <LayoutMain>{children}</LayoutMain>
+    </StyledLayout>
   )
 }

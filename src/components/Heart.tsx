@@ -1,14 +1,16 @@
 import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import { FillProperty, HeightProperty, WidthProperty } from 'csstype'
-import {
-  AnyExoticRefComponent,
-  AnyExoticRefTargets,
-} from '../types/types.interface'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
+import { FillProperty } from 'csstype'
 
-interface IHeartProps {
-  height: HeightProperty<1>
-  width: WidthProperty<1>
+import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
+
+export interface IHeartProps {
+  height: string
+  width: string
   fill: FillProperty
 }
 
@@ -18,7 +20,9 @@ export const StyledHeart: StyledComponent<
   IHeartProps,
   never
 > = styled.svg`
-  fill: ${({ fill }: IHeartProps): FillProperty => fill};
+  ${({ fill }: IHeartProps): FlattenSimpleInterpolation => css`
+    fill: ${fill};
+  `}
 `
 
 export const Heart: AnyExoticRefComponent<IHeartProps> = React.forwardRef(

@@ -1,5 +1,5 @@
-import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
+
 import { theme } from '../data/theme'
 
 export const Excerpt: StyledComponent<'div', any, {}, never> = styled.div`

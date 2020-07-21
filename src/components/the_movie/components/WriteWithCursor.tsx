@@ -2,7 +2,7 @@ import React from 'react'
 import {
   AnyExoticRefTargets,
   AnyExoticRefComponent,
-} from '../../../types/types.interface'
+} from '../../../types/types'
 import { SplitChars } from 'react-gsap'
 import { Cursor } from './Cursor'
 import { Flex } from '../../Flex'

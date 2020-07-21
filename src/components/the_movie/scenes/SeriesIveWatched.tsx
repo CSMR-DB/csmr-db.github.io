@@ -6,7 +6,7 @@ import {
   AnyExoticRefComponent,
   IBioImagesEdge,
   IBioImagesMarkdownRemark,
-} from '../../../types/types.interface'
+} from '../../../types/types'
 import styled, { StyledComponent } from 'styled-components'
 import { Absolute } from '../../Absolute'
 import { Flex } from '../../Flex'

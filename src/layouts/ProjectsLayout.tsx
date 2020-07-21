@@ -1,11 +1,12 @@
 import React from 'react'
+import { Reveal } from 'react-gsap'
+
 import { Grid } from '../components/Grid'
-import { IEdge, IProjectsAllMarkdownRemark } from '../templates/interfaces'
-import { ProjectCard } from '../components/ProjectCard'
-import { SEO } from '../components/SEO'
+import { IProjectsAllMarkdownRemark } from '../types/interfaces'
+import { SEO } from '../components/compositions/SEO'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { ContentSeparator } from '../components/ContentSeparator'
-import { Reveal, Tween } from 'react-gsap'
+import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
 
 export interface IProjectsLayoutProps {
   programmingData: IProjectsAllMarkdownRemark
@@ -33,27 +34,7 @@ export function ProjectsLayout({
           maxWidth={'100rem'}
         >
           <Reveal>
-            <Tween from={{ opacity: 0 }}>
-              {programmingData.edges.map(
-                (
-                  { node: { frontmatter, timeToRead } }: IEdge,
-                  i: number
-                ): JSX.Element => (
-                  <ProjectCard
-                    title={frontmatter.title}
-                    tags={frontmatter.tags}
-                    video={frontmatter.featuredVideo}
-                    image={frontmatter.featuredImage}
-                    body={frontmatter.excerpt}
-                    timeToRead={timeToRead}
-                    path={frontmatter.path}
-                    date={frontmatter.date}
-                    key={i}
-                    index={i}
-                  />
-                )
-              )}
-            </Tween>
+            <ProjectCards edges={programmingData.edges} />
           </Reveal>
         </Grid>
       </ContentSeparator>
@@ -73,27 +54,7 @@ export function ProjectsLayout({
           maxWidth={'100rem'}
         >
           <Reveal>
-            <Tween from={{ opacity: 0 }}>
-              {graphicDesignData.edges.map(
-                (
-                  { node: { frontmatter, timeToRead } }: IEdge,
-                  i: number
-                ): JSX.Element => (
-                  <ProjectCard
-                    title={frontmatter.title}
-                    tags={frontmatter.tags}
-                    video={frontmatter.featuredVideo}
-                    image={frontmatter.featuredImage}
-                    body={frontmatter.excerpt}
-                    timeToRead={timeToRead}
-                    path={frontmatter.path}
-                    date={frontmatter.date}
-                    key={i}
-                    index={i}
-                  />
-                )
-              )}
-            </Tween>
+            <ProjectCards edges={graphicDesignData.edges} />
           </Reveal>
         </Grid>
       </ContentSeparator>

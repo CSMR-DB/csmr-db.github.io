@@ -1,7 +1,10 @@
 import React from 'react'
-import { AboutLayout, IAboutLayoutProps } from '../layouts/AboutLayout'
-import { ContactLayout, IContact } from '../layouts/ContactLayout'
 import { graphql, StaticQuery } from 'gatsby'
+
+import { CONTACTS } from '../data/contacts'
+
+import { AboutLayout, IAboutLayoutProps } from '../layouts/AboutLayout'
+import { ContactLayout } from '../layouts/ContactLayout'
 import { IProjectsLayoutProps, ProjectsLayout } from '../layouts/ProjectsLayout'
 import { ISkillsetLayoutProps, SkillsetLayout } from '../layouts/SkillSetLayout'
 import { Layout } from '../components/Layout'
@@ -166,28 +169,7 @@ const PAGE_QUERY: void = graphql`
   }
 `
 
-const CONTACTS: IContact[] = [
-  {
-    background: '#000000',
-    iconPath: 'icons/email.png',
-    href: 'mailto://casimir.db@outlook.com',
-    text: 'Mail',
-  },
-  {
-    background: '#007AB9',
-    iconPath: 'icons/linkedin.png',
-    href: 'https://www.linkedin.com/in/casimir-de-bruijn-309990161/',
-    text: 'LinkedIn',
-  },
-  {
-    background: '#8C9EFF',
-    iconPath: 'icons/discord.png',
-    href: 'https://discordapp.com/users/187303558599671808',
-    text: 'Discord',
-  },
-]
-
-const ProjectsPage: () => JSX.Element = (): JSX.Element => {
+function ProjectsPage(): JSX.Element {
   return (
     <Layout>
       <StaticQuery

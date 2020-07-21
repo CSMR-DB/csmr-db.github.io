@@ -5,7 +5,7 @@ import styled, {
 } from 'styled-components'
 import { ColorProperty, FilterProperty } from 'csstype'
 
-interface IFilterProps {
+export interface IFilterProps {
   filter?: FilterProperty
   filterHover?: FilterProperty
   lens?: ColorProperty
@@ -18,19 +18,22 @@ export const Filter: StyledComponent<
   never
 > = styled.div`
   position: relative;
-  filter: ${({
-    filter = 'sepia(0.25) saturate(2) grayscale(1) brightness(.5)',
-  }: IFilterProps): FilterProperty => filter};
   transition: all 200ms ease-in-out;
   overflow: hidden;
 
-  &:hover {
-    filter: ${({ filterHover = 'none' }: IFilterProps): FilterProperty =>
-      filterHover};
-  }
+  ${({
+    filter = 'sepia(0.25) saturate(2) grayscale(1) brightness(.5)',
+    filterHover = 'none',
+  }: IFilterProps): FlattenSimpleInterpolation => css`
+    filter: ${filter};
+
+    &:hover {
+      filter: ${filterHover};
+    }
+  `};
 
   ${({ lens }: IFilterProps): FlattenSimpleInterpolation | null =>
-    lens !== undefined
+    lens
       ? css`
           &::after {
             content: '';

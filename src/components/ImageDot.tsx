@@ -1,9 +1,13 @@
-import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import { theme } from '../data/theme'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 import { WidthProperty } from 'csstype'
 
-interface IImageDotProps {
+import { theme } from '../data/theme'
+
+export interface IImageDotProps {
   width: WidthProperty<1>
 }
 
@@ -16,11 +20,28 @@ export const ImageDot: StyledComponent<
   margin: 0 auto 8rem;
   border-radius: 256rem;
   overflow: hidden;
-  max-width: ${({ width }: IImageDotProps): WidthProperty<1> => width};
+  
+  ${({ width }: IImageDotProps): FlattenSimpleInterpolation => css`
+    width: ${width};
+    height: ${width};
+
+    .gatsby-image-wrapper {
+      max-width: ${width};
+      max-height: ${width};
+    }
+  `}
 
   @media ${theme.breakpoints.max.smartphone} {
-    max-width: ${({ width }: IImageDotProps): WidthProperty<1> =>
-      `calc(${width} / 2)`};
     margin: 0 auto 1rem;
+
+    ${({ width }: IImageDotProps): FlattenSimpleInterpolation => css`
+      width: calc(${width} / 2);
+      height: calc(${width} / 2);
+
+      .gatsby-image-wrapper {
+        max-width: calc(${width} / 2);
+        max-height: calc(${width} / 2);
+      }
+    `}
   }
 `

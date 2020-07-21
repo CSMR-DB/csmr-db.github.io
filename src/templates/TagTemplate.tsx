@@ -1,52 +1,48 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../components/Layout'
+
 import {
   IListItemData,
-  IAllMarkdownRemark,
-  IEdge,
   ISingleItemData,
-  IProjectsAllMarkdownRemark,
-} from './interfaces'
-import { ProjectCard } from '../components/ProjectCard'
+  ISkillsetFrontmatter,
+  IProjectFrontmatter,
+} from '../types/interfaces'
+
+import { Layout } from '../components/Layout'
 import { Grid } from '../components/Grid'
 import { ContentSeparator } from '../components/ContentSeparator'
-import { SkillCard } from '../components/SkillCard'
+import { SkillCard } from '../components/compositions/card/skillcard/SkillCard'
 import { CenteredBlock } from '../components/CenteredBlock'
+import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
 
 // tslint:disable-next-line: no-default-export
-export default function ProjectTemplate({
-  data, // this prop will be injected by the GraphQL query below.
-}: IListItemData<IProjectsAllMarkdownRemark> & ISingleItemData): JSX.Element {
-  const {
-    allMarkdownRemark,
-    markdownRemark,
-  }: IListItemData<IProjectsAllMarkdownRemark>['data'] &
-    ISingleItemData['data'] = data // data.markdownRemark holds our post data
-  const { edges }: IAllMarkdownRemark = allMarkdownRemark
-
+export default function TagTemplate({
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        skillColor = 'black',
+        level = 0,
+        title = 'Placeholder',
+        excerpt: description = 'Description',
+        time = 0,
+      },
+    },
+    allMarkdownRemark: { edges },
+  }, // this prop will be injected by the GraphQL query below.
+}: IListItemData<IProjectFrontmatter> &
+  ISingleItemData<ISkillsetFrontmatter>): JSX.Element {
   return (
     <Layout>
       <ContentSeparator>
         <CenteredBlock>
-          {markdownRemark ? (
-            <SkillCard
-              skillColor={markdownRemark.frontmatter.skillColor || 'black'}
-              index={0}
-              level={markdownRemark.frontmatter.level || 0}
-              title={markdownRemark.frontmatter.title}
-              description={markdownRemark.frontmatter.excerpt}
-              time={markdownRemark.frontmatter.time}
-            />
-          ) : (
-            <SkillCard
-              skillColor={'black'}
-              index={0}
-              level={0}
-              title={'Placeholder'}
-              description="Description"
-            />
-          )}
+          <SkillCard
+            skillColor={skillColor}
+            level={level}
+            title={title}
+            description={description}
+            time={time}
+            index={0}
+          />
         </CenteredBlock>
       </ContentSeparator>
       <ContentSeparator>
@@ -54,39 +50,7 @@ export default function ProjectTemplate({
           columns={'repeat(auto-fill,minmax(32rem,1fr))'}
           maxWidth={'100rem'}
         >
-          {edges.length > 0 &&
-            edges.map(
-              (
-                {
-                  node: {
-                    frontmatter: {
-                      tags,
-                      title,
-                      date,
-                      excerpt,
-                      featuredImage,
-                      featuredVideo,
-                      path,
-                    },
-                    timeToRead,
-                  },
-                }: IEdge,
-                i: number
-              ): JSX.Element => (
-                <ProjectCard
-                  body={excerpt}
-                  title={title}
-                  key={i}
-                  index={i}
-                  tags={tags}
-                  date={date}
-                  image={featuredImage}
-                  video={featuredVideo}
-                  path={path}
-                  timeToRead={timeToRead}
-                />
-              )
-            )}
+          <ProjectCards edges={edges} />
         </Grid>
       </ContentSeparator>
     </Layout>
@@ -127,7 +91,9 @@ export const pageQuery: void = graphql`
       }
     }
 
-    markdownRemark(frontmatter: { title: { eq: $tag } }) {
+    markdownRemark(
+      frontmatter: { title: { eq: $tag }, path: { eq: "/tag/" } }
+    ) {
       frontmatter {
         path
         title

@@ -1,4 +1,5 @@
 import { pipe } from './pipe_compose'
+
 export const cleanString: (string: string) => string = (
   string: string
 ): string => string.replace(/(_)/gi, ' ')

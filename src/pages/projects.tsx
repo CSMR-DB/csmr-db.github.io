@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+
 import { Layout } from '../components/Layout'
 import { ProjectsLayout, IProjectsLayoutProps } from '../layouts/ProjectsLayout'
 
@@ -63,19 +64,13 @@ const PAGE_QUERY: void = graphql`
   }
 `
 
-const ProjectsPage: () => JSX.Element = (): JSX.Element => {
+function ProjectsPage(): JSX.Element {
   return (
     <Layout>
       <StaticQuery
         query={PAGE_QUERY}
-        render={({
-          programmingData,
-          graphicDesignData,
-        }: IProjectsLayoutProps): JSX.Element => (
-          <ProjectsLayout
-            programmingData={programmingData}
-            graphicDesignData={graphicDesignData}
-          />
+        render={(props: IProjectsLayoutProps): JSX.Element => (
+          <ProjectsLayout {...props} />
         )}
       />
     </Layout>

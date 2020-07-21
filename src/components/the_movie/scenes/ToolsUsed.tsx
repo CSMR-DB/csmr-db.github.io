@@ -1,6 +1,6 @@
 import React from 'react'
 import { Timeline, Tween, SplitChars } from 'react-gsap'
-import { AnyExoticRefComponent } from '../../../types/types.interface'
+import { AnyExoticRefComponent } from '../../../types/types'
 import styled, { StyledComponent } from 'styled-components'
 import { ColorProperty } from 'csstype'
 import { Layer } from '../components/Layer'

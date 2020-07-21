@@ -1,36 +1,14 @@
 import React from 'react'
-import Img, { FluidObject } from 'gatsby-image'
+import Image from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-interface IImageEdges {
-  images: {
-    edges: IFluidImage[]
-  }
-}
+import { IImageSharpAllFiles, IImageSharpEdge } from '../types/interfaces'
 
-interface IFluidImage {
-  node: {
-    extension: string
-    relativePath: string
-    childImageSharp: {
-      fluid: FluidObject
-    }
-  }
-}
-
-function renderImage(file: IFluidImage, key: number = 1): JSX.Element {
-  return <Img key={key} fluid={file.node.childImageSharp.fluid} />
-}
-
-interface IDynamicImageProps {
+export interface IDynamicImageProps {
   path: string
 }
 
-export const DynamicImage: ({
-  path,
-}: IDynamicImageProps) => JSX.Element = function ({
-  path,
-}: IDynamicImageProps): JSX.Element {
+export function DynamicImage({ path }: IDynamicImageProps): JSX.Element {
   return (
     <StaticQuery
       // tslint:disable-next-line: no-void-expression
@@ -53,13 +31,17 @@ export const DynamicImage: ({
           }
         }
       `}
-      render={({ images }: IImageEdges): (JSX.Element | null)[] => {
+      render={({
+        images,
+      }: {
+        images: IImageSharpAllFiles
+      }): (JSX.Element | null)[] => {
         return images.edges.map(
-          (image: IFluidImage, i: number): JSX.Element | null =>
+          (image: IImageSharpEdge, i: number): JSX.Element | null =>
             image.node.relativePath === path ||
-            image.node.relativePath.includes(path)
-              ? renderImage(image, i)
-              : null
+            image.node.relativePath.includes(path) ? (
+              <Image key={i} fluid={image.node.childImageSharp.fluid} />
+            ) : null
         )
         /**
          * Refactored so I can get ALL images from a provided folder portion of 'relativePath'

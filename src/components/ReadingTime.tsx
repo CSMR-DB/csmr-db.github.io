@@ -1,16 +1,15 @@
 import React from 'react'
 
-export const ReadingTime: ({
-  timeToRead,
-}: {
+interface IReadingTimeProps {
   timeToRead?: number
-}) => JSX.Element | null = ({
+}
+
+export function ReadingTime({
   timeToRead,
-}: {
-  timeToRead?: number
-}): JSX.Element | null =>
-  timeToRead ? (
+}: IReadingTimeProps): JSX.Element | null {
+  return timeToRead ? (
     <span>
       Reading time: ~{timeToRead} minute{timeToRead !== 1 ? 's' : ''}
     </span>
   ) : null
+}

@@ -1,14 +1,17 @@
 import React from 'react'
 import { format, parseISO } from 'date-fns'
 
-export const DateFormatted: ({
-  dateString,
-}: {
+interface IDateFormattedProps {
   dateString?: string
-}) => JSX.Element | null = ({
+}
+
+export function DateFormatted({
   dateString,
-}: {
-  dateString?: string
-}): JSX.Element | null =>
-  (dateString && <span>{format(parseISO(dateString), 'dd MMM yyyy')}</span>) ||
-  null
+}: IDateFormattedProps): JSX.Element | null {
+  return (
+    (dateString && (
+      <span>{format(parseISO(dateString), 'dd MMM yyyy')}</span>
+    )) ||
+    null
+  )
+}

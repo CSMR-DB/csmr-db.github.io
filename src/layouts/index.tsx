@@ -1,9 +1,12 @@
 import React, { ReactNode } from 'react'
+import { TransitionProvider, TransitionViews } from 'gatsby-plugin-transitions'
 // tslint:disable-next-line: no-import-side-effect
 import '../css/reset.css'
-import { TransitionProvider, TransitionViews } from 'gatsby-plugin-transitions'
-import { Header, Footer } from '../components'
+
 import { IONavigator } from '../hooks/IONavigator'
+
+import { Header } from '../components/compositions/header/Header'
+import { Footer } from '../components/compositions/footer/Footer'
 
 interface ILayoutProps {
   children: ReactNode

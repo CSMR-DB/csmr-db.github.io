@@ -1,17 +1,11 @@
 import React from 'react'
-import { SEO } from '../components/SEO'
+
+import { IContact } from '../data/contacts'
+
+import { SEO } from '../components/compositions/SEO'
 import { Grid } from '../components/Grid'
-import { SocialButton } from '../components/SocialButton'
 import { CenteredBlock } from '../components/CenteredBlock'
-
-import { BackgroundColorProperty } from 'csstype'
-
-export interface IContact {
-  background: BackgroundColorProperty
-  iconPath: string
-  href: string
-  text: string
-}
+import { Contacts } from '../components/compositions/Contacts'
 
 export interface IContactLayoutProps {
   contacts: IContact[]
@@ -35,21 +29,7 @@ export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
           feels right 😉.
         </p>
         <Grid columns={3} rows={1}>
-          {contacts.map(
-            (
-              { background, iconPath, href, text }: IContact,
-              key: number
-            ): JSX.Element => (
-              <SocialButton
-                background={background}
-                iconPath={iconPath}
-                href={href}
-                key={key}
-              >
-                {text}
-              </SocialButton>
-            )
-          )}
+          <Contacts contacts={contacts} />
         </Grid>
       </CenteredBlock>
     </>

@@ -1,75 +1,57 @@
 import React, { ReactNode } from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import {
-  HeightProperty,
-  MaxWidthProperty,
-  OverflowProperty,
-  GridTemplateColumnsProperty,
-  GridTemplateRowsProperty,
-  AlignItemsProperty,
-  GridGapProperty,
-} from 'csstype'
-import { theme } from '../data/theme'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
+import { AlignItemsProperty } from 'csstype'
 
-interface IGridMenuProps {
+import { theme } from '../data/theme'
+import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
+
+export interface IGridProps {
   children: ReactNode
-  gap?: GridGapProperty<1>
-  columns?: number | string
-  rows?: number
+  gap?: string
+  columns?: string | number
+  rows?: string | number
   height?: string
   maxWidth?: string
   alignItems?: AlignItemsProperty
 }
 
-const StyledGrid: StyledComponent<
-  'div',
-  any,
-  IGridMenuProps,
-  never
-> = styled.div`
-  height: ${(props: IGridMenuProps): HeightProperty<1> =>
-    props.height || 'auto'};
-  max-width: ${(props: IGridMenuProps): MaxWidthProperty<1> =>
-    props.maxWidth || 'auto'};
-  overflow: ${(props: IGridMenuProps): OverflowProperty =>
-    props.height === '100vh' ? 'hidden' : 'initial'};
+const StyledGrid: StyledComponent<'div', any, IGridProps, never> = styled.div`
   display: grid;
-  grid-gap: ${(props: IGridMenuProps): HeightProperty<1> =>
-    props.gap || '1rem'};
-  grid-template-columns: ${(
-    props: IGridMenuProps
-  ): GridTemplateColumnsProperty<1> =>
-    props.columns
-      ? typeof props.columns === 'number'
-        ? `repeat(${props.columns}, 1fr)`
-        : props.columns
-      : 'auto'};
-  grid-template-rows: ${(props: IGridMenuProps): GridTemplateRowsProperty<1> =>
-    props.rows
-      ? typeof props.rows === 'number'
-        ? `repeat(${props.rows}, 1fr)`
-        : props.rows
-      : 'auto'};
   margin: 0 auto;
-  align-items: ${(props: IGridMenuProps): AlignItemsProperty =>
-    props.alignItems || 'initial'};
+  
+  ${({
+    height = 'auto',
+    maxWidth = 'auto',
+    gap = '1rem',
+    columns = 'auto',
+    rows = 'auto',
+    alignItems = 'initial',
+  }: IGridProps): FlattenSimpleInterpolation => css`
+    height: ${height};
+    max-width: ${maxWidth};
+    gap: ${gap};
+    grid-template-columns: ${
+      typeof columns === 'number' ? `repeat(${columns}, 1fr);` : columns
+    };
+    grid-template-rows: ${
+      typeof rows === 'number' ? `repeat(${rows}, 1fr);` : rows
+    }
+    align-items: ${alignItems};
+  `}
 
   @media ${theme.breakpoints.max.smartphone} {
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 
-    grid-gap: ${(props: IGridMenuProps): HeightProperty<1> =>
-      `calc(${props.gap} / 2)` || '.5rem'};
+    grid-gap: ${({ gap }: IGridProps): string => `calc(${gap} / 2)` || '.5rem'};
   }
 `
 
-export const Grid: React.ForwardRefExoticComponent<
-  IGridMenuProps & React.RefAttributes<HTMLDivElement>
-> = React.forwardRef(
-  (
-    props: IGridMenuProps,
-    ref:
-      | React.RefObject<HTMLDivElement>
-      | ((instance: HTMLDivElement) => void)
-      | null
-  ): JSX.Element => <StyledGrid {...props} ref={ref} />
+export const Grid: AnyExoticRefComponent<IGridProps> = React.forwardRef(
+  (props: IGridProps, ref: AnyExoticRefTargets): JSX.Element => (
+    <StyledGrid {...props} ref={ref} />
+  )
 )

@@ -1,12 +1,14 @@
 import React from 'react'
+
 import { StringOrUrlObject, StringOrUrlArray } from '../types/StringOrUrlObject'
+
 import { StyledA } from './StyledLink'
 
-export function ArticleBody({
-  body,
-}: {
+interface IArticleBodyProps {
   body?: StringOrUrlArray
-}): JSX.Element | null {
+}
+
+export function ArticleBody({ body }: IArticleBodyProps): JSX.Element | null {
   return (
     (body && (
       <p>

@@ -1,16 +1,17 @@
 import React from 'react'
-import { SEO } from '../components/SEO'
-import { SkillCard } from '../components/SkillCard'
-import { ExperienceCard } from '../components/ExperienceCard'
-import { CenteredBlock } from '../components/CenteredBlock'
-import { Grid } from '../components/Grid'
+
 import {
   IExperienceAllMarkdownRemark,
-  IExperienceEdge,
   ISkillsetAllMarkdownRemark,
-  ISkillsetEdge,
-} from '../templates/interfaces'
+} from '../types/interfaces'
+
+import { SEO } from '../components/compositions/SEO'
+import { CenteredBlock } from '../components/CenteredBlock'
+import { Grid } from '../components/Grid'
 import { ContentSeparator } from '../components/ContentSeparator'
+import { SkillCards } from '../components/compositions/card/skillcard/SkillCards'
+import { ExperienceCards } from '../components/compositions/card/experiencecard/ExperienceCards'
+import { ExperienceCard } from '../components/compositions/card/experiencecard/ExperienceCard'
 
 export interface ISkillsetLayoutProps {
   skillsetData: ISkillsetAllMarkdownRemark
@@ -38,22 +39,7 @@ export function SkillsetLayout({
       </CenteredBlock>
       <ContentSeparator>
         <Grid columns="repeat(auto-fill, minmax(25rem, 1fr))" maxWidth="160rem">
-          {skillsetData.edges.map(
-            (
-              { node: { frontmatter } }: ISkillsetEdge,
-              i: number
-            ): JSX.Element => (
-              <SkillCard
-                level={frontmatter.level || 0}
-                title={frontmatter.title}
-                description={frontmatter.excerpt}
-                time={frontmatter.time}
-                key={i}
-                index={i}
-                skillColor={frontmatter.skillColor}
-              />
-            )
-          )}
+          <SkillCards edges={skillsetData.edges} />
         </Grid>
       </ContentSeparator>
       <CenteredBlock>
@@ -73,24 +59,7 @@ export function SkillsetLayout({
         <ContentSeparator>
           <h1>Professional experience</h1>
           <Grid>
-            {experienceData.edges.map(
-              (
-                { node: { frontmatter } }: IExperienceEdge,
-                i: number
-              ): JSX.Element => (
-                <ExperienceCard
-                  name={frontmatter.title}
-                  type={frontmatter.type}
-                  description={frontmatter.excerpt}
-                  icon={`icons/${frontmatter.title.toLocaleLowerCase()}_logo.png`}
-                  backgroundColor={frontmatter.backgroundColor}
-                  dateStart={frontmatter.dateStart}
-                  dateEnd={frontmatter.dateEnd}
-                  key={i}
-                  index={i}
-                />
-              )
-            )}
+            <ExperienceCards edges={experienceData.edges} />
           </Grid>
         </ContentSeparator>
       </CenteredBlock>
