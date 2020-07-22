@@ -1,14 +1,11 @@
 import React from 'react'
 
-import { AnyExoticRefComponent } from '../../types/types'
+import { AnyExoticRefComponent, AnyExoticRefTargets } from '../../types/types'
 
 export const AngularSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
@@ -36,10 +33,7 @@ export const AngularSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef
 export const ReactSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <circle
@@ -75,10 +69,7 @@ export const ReactSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const VueSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -106,10 +97,7 @@ export const VueSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const SvelteSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -131,10 +119,7 @@ export const SvelteSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const CSSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
@@ -186,10 +171,7 @@ export const CSSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const StylusSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -229,10 +211,7 @@ export const StylusSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const SassSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -248,10 +227,7 @@ export const SassSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const GatsbySVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <title>file_type_gatsby</title>
@@ -274,10 +250,7 @@ export const GatsbySVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const GitSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -299,10 +272,7 @@ export const GitSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const JestSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -324,10 +294,7 @@ export const JestSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const GraphQLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <rect
@@ -460,10 +427,7 @@ export const GraphQLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef
 export const MeteorSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -515,10 +479,7 @@ export const MeteorSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const NodeSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -540,10 +501,7 @@ export const NodeSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const MongoSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
@@ -571,10 +529,7 @@ export const MongoSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const HTMLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
@@ -620,10 +575,7 @@ export const HTMLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const JSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <rect
@@ -643,10 +595,7 @@ export const JSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 export const TSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (
     _props: any,
-    ref:
-      | React.RefObject<SVGSVGElement>
-      | ((instance: SVGSVGElement) => void)
-      | null
+    ref: AnyExoticRefTargets
   ): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
