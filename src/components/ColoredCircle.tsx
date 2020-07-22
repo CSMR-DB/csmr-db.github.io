@@ -1,4 +1,4 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, { StyledComponent, css, FlattenSimpleInterpolation } from 'styled-components'
 import { ColorProperty } from 'csstype'
 
 interface IColoredCircleProps {
@@ -13,8 +13,6 @@ export const ColoredCircle: StyledComponent<
 > = styled.div`
   width: 8rem;
   height: 8rem;
-  border: 4px solid
-    ${({ color = 'black' }: IColoredCircleProps): ColorProperty => color};
   border-radius: 999rem;
   padding: 1.5rem;
   margin: auto;
@@ -39,4 +37,8 @@ export const ColoredCircle: StyledComponent<
     max-width: 100%;
     max-height: 100%;
   }
+
+  ${({ color = "black" }: IColoredCircleProps): FlattenSimpleInterpolation => css`
+    border: 4px solid ${color};
+  `}
 `

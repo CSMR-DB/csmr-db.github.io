@@ -1,6 +1,6 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, { StyledComponent, css, FlattenSimpleInterpolation } from 'styled-components'
 
-export interface IStyledImageGridProps {
+export interface IImageGridProps {
   columns: number
   rows: number
 }
@@ -8,7 +8,7 @@ export interface IStyledImageGridProps {
 export const ImageGrid: StyledComponent<
   'div',
   any,
-  IStyledImageGridProps,
+  IImageGridProps,
   never
 > = styled.div`
   width: 100%;
@@ -16,14 +16,6 @@ export const ImageGrid: StyledComponent<
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: repeat(
-    ${({ columns }: IStyledImageGridProps): number => columns},
-    1fr
-  );
-  grid-template-rows: repeat(
-    ${({ rows }: IStyledImageGridProps): number => rows},
-    1fr
-  );
 
   h1,
   h2,
@@ -33,4 +25,13 @@ export const ImageGrid: StyledComponent<
   h6 {
     margin: 0;
   }
+
+  ${({ columns, rows }: IImageGridProps): FlattenSimpleInterpolation => css`
+    grid-template-columns: repeat(${columns},
+      1fr
+    );
+    grid-template-rows: repeat(${rows},
+      1fr
+    );
+  `}
 `
