@@ -1,19 +1,21 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
-import { IBioImagesMarkdownRemark, IBioImagesEdge } from '../../types/types'
+import { IImageSharpAllFiles, IImageSharpEdge } from '../../types/interfaces'
 
 import { ImageContainer } from './ImageContainer'
 import { Filter } from '../Filter'
 import { ImageGrid } from '../ImageGrid'
 
-export function ShowsGrid(props: {
-  posters: IBioImagesMarkdownRemark
-}): JSX.Element {
+export interface IShowsGridProps {
+  posters: IImageSharpAllFiles
+}
+
+export function ShowsGrid({ posters }: IShowsGridProps): JSX.Element {
   return (
     <ImageGrid rows={2} columns={14}>
-      {props.posters.edges.map(
-        (edge: IBioImagesEdge, i: number): JSX.Element => (
+      {posters.edges.map(
+        (edge: IImageSharpEdge, i: number): JSX.Element => (
           <ImageContainer key={i}>
             <Filter>
               <Image fluid={edge.node.childImageSharp.fluid} />

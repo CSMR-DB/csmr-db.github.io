@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
+import { IImageSharpAllFiles, IImageSharpEdge } from '../../types/interfaces'
+
 import { ImageContainer } from './ImageContainer'
 import { Filter } from '../Filter'
 import { ImageGrid } from '../ImageGrid'
-import { IImageSharpAllFiles, IImageSharpEdge } from '../../types/interfaces'
 
 export interface IPhotographyGrid {
   squares: IImageSharpAllFiles
