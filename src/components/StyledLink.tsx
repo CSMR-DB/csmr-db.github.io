@@ -3,14 +3,15 @@ import styled, {
   css,
   FlattenInterpolation,
   ThemedStyledProps,
+  DefaultTheme,
+  FlattenSimpleInterpolation,
 } from 'styled-components'
 import { Link } from 'gatsby'
 import { ColorProperty } from 'csstype'
 
-import { theme } from '../data/theme'
-
 interface IStyledALinkProps {
-  color?: ColorProperty
+  theme?: DefaultTheme
+  $color?: ColorProperty
 }
 
 const LinkStyles: FlattenInterpolation<ThemedStyledProps<
@@ -20,16 +21,20 @@ const LinkStyles: FlattenInterpolation<ThemedStyledProps<
   text-decoration: none;
   display: inline-block;
 
-  color: ${(props: IStyledALinkProps): ColorProperty =>
-    props.color || theme.primary} !important;
+  ${({
+    theme,
+    $color: color,
+  }: IStyledALinkProps): FlattenSimpleInterpolation => css`
+    color: ${color || theme!.palette.first.normal} !important;
 
-  &:hover {
-    color: ${theme.primaryHover};
-  }
+    &:hover {
+      color: ${theme!.palette.first.hover};
+    }
 
-  &.active {
-    color: ${theme.primaryHover};
-  }
+    &.active {
+      color: ${theme!.palette.first.active};
+    }
+  `}
 `
 export const StyledLink: StyledComponent<
   typeof Link,

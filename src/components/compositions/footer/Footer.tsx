@@ -1,30 +1,49 @@
 import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
-
-import { theme } from '../../../data/theme'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+  DefaultTheme,
+} from 'styled-components'
 
 import { CenteredBlock } from '../../CenteredBlock'
 import { PseudoCode } from './PseudoCode'
 import { FooterQuote } from './FooterQuote'
 
-const StyledFooter: StyledComponent<'footer', any, {}, never> = styled.footer`
+export interface IFooterProps {
+  theme?: DefaultTheme
+}
+
+const StyledFooter: StyledComponent<
+  'footer',
+  any,
+  IFooterProps,
+  never
+> = styled.footer`
   bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   background: black;
   min-height: 100vh;
   z-index: -1;
 
-  @media ${theme.breakpoints.max.smartphone} {
-    padding: 1rem;
-
-    & p,
-    & a {
-      font-size: 0.9rem;
-    }
+  & p,
+  & a {
+    font-size: 0.9rem;
   }
+
+  ${({ theme }: IFooterProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      padding: 2rem;
+
+      & p,
+      & a {
+        font-size: 1rem;
+      }
+    }
+  `}
 `
 
 export const Footer: () => JSX.Element = (): JSX.Element => (

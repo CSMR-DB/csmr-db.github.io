@@ -1,9 +1,11 @@
-import styled, { StyledComponent } from 'styled-components'
-
-import { theme } from '../data/theme'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
 interface ICenteredBlockProps {
-  maxWidth?: string
+  $maxWidth?: string
 }
 
 export const CenteredBlock: StyledComponent<
@@ -14,10 +16,9 @@ export const CenteredBlock: StyledComponent<
 > = styled.div`
   margin: 0 auto;
 
-  max-width: ${({ maxWidth = '48rem' }: ICenteredBlockProps): string =>
-    maxWidth};
-
-  @media ${theme.breakpoints.max.smartphone} {
-    padding: 0 1rem;
-  }
+  ${({
+    $maxWidth: maxWidth = '48rem',
+  }: ICenteredBlockProps): FlattenSimpleInterpolation => css`
+    max-width: ${maxWidth};
+  `}
 `

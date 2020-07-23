@@ -1,8 +1,10 @@
 import React, { ReactNode } from 'react'
+import { ThemeProvider } from 'styled-components'
 import { TransitionProvider, TransitionViews } from 'gatsby-plugin-transitions'
 // tslint:disable-next-line: no-import-side-effect
 import '../css/reset.css'
 
+import { theme } from '../data/theme'
 import { IONavigator } from '../hooks/IONavigator'
 
 import { Header } from '../components/compositions/header/Header'
@@ -60,12 +62,14 @@ function TransitioningLayout({
           },
         }}
       >
-        <Header
-          height={isLandingPage ? '100vh' : '24rem'}
-          isLandingPage={isLandingPage}
-        />
-        <TransitionViews>{children}</TransitionViews>
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <Header
+            $height={isLandingPage ? '100vh' : '24rem'}
+            isLandingPage={isLandingPage}
+          />
+          <TransitionViews>{children}</TransitionViews>
+          <Footer />
+        </ThemeProvider>
       </TransitionProvider>
     </IONavigator>
   )

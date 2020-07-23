@@ -1,6 +1,13 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
-import { theme } from '../../data/theme'
+export interface IAnimatedScrollerProps {
+  theme?: DefaultTheme
+}
 
 export const ScrollIconWrapper: StyledComponent<
   'div',
@@ -20,7 +27,7 @@ export const ScrollIconWrapper: StyledComponent<
 export const AnimatedScroller: StyledComponent<
   'span',
   any,
-  {},
+  IAnimatedScrollerProps,
   never
 > = styled.span`
   @keyframes scrollDown {
@@ -48,9 +55,11 @@ export const AnimatedScroller: StyledComponent<
   height: 1rem;
   background: white;
   border-radius: 999rem;
-  animation: scrollDown 2000ms infinite ease-in-out;
+  animation: scrollDown 2000ms infinite ease-in-out reverse;
 
-  @media ${theme.breakpoints.max.smartphone} {
-    animation: scrollDown 2000ms infinite ease-in-out reverse;
-  }
+  ${({ theme }: IAnimatedScrollerProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      animation: scrollDown 2000ms infinite ease-in-out;
+    }
+  `}
 `

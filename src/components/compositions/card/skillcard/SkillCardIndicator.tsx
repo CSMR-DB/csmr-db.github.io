@@ -21,7 +21,7 @@ export function SkillCardIndicator({
       duration={0.125}
       delay={1 + index / 8 + instance * 0.125}
     >
-      <Heart fill={litColor} width={'1rem'} height={'1rem'} />
+      <Heart $fill={litColor} $width={'1rem'} $height={'1rem'} />
     </Tween>
   )
 }

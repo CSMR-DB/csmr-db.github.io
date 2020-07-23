@@ -17,7 +17,7 @@ export function Contacts({ contacts }: IContactsProps): JSX.Element {
           key: number
         ): JSX.Element => (
           <SocialButton
-            background={background}
+            $background={background}
             iconPath={iconPath}
             href={href}
             key={key}

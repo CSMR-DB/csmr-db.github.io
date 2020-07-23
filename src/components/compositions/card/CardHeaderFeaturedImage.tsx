@@ -6,7 +6,7 @@ import styled, {
 import { MaxHeightProperty } from 'csstype'
 
 interface ICardHeaderFeaturedImageProps {
-  maxHeight?: MaxHeightProperty<1>
+  $maxHeight?: MaxHeightProperty<1>
 }
 
 export const CardHeaderFeaturedImage: StyledComponent<
@@ -18,7 +18,7 @@ export const CardHeaderFeaturedImage: StyledComponent<
   overflow: hidden;
 
   ${({
-    maxHeight = '18rem',
+    $maxHeight: maxHeight = '18rem',
   }: ICardHeaderFeaturedImageProps): FlattenSimpleInterpolation => css`
     max-height: ${maxHeight};
     min-height: ${maxHeight};

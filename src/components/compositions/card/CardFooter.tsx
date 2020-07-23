@@ -5,7 +5,7 @@ import styled, {
 } from 'styled-components'
 
 interface ICardFooterProps {
-  style?: boolean
+  $style?: boolean
 }
 
 export const CardFooter: StyledComponent<
@@ -14,7 +14,7 @@ export const CardFooter: StyledComponent<
   ICardFooterProps,
   never
 > = styled.footer`
-  ${({ style = false }: ICardFooterProps): FlattenSimpleInterpolation =>
+  ${({ $style: style = false }: ICardFooterProps): FlattenSimpleInterpolation =>
     style
       ? css`
           background: #eee;

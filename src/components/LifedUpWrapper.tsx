@@ -1,6 +1,13 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
-import { theme } from '../data/theme'
+export interface ILiftedUpWrapperProps {
+  theme?: DefaultTheme
+}
 
 export const LiftedUpWrapper: StyledComponent<
   'div',
@@ -8,9 +15,12 @@ export const LiftedUpWrapper: StyledComponent<
   {},
   never
 > = styled.div`
-  margin: -8rem auto 0;
+  margin: 0 auto;
+  padding: 0 1rem;
 
-  @media ${theme.breakpoints.max.smartphone} {
-    margin: 0 auto;
-  }
+  ${({ theme }: ILiftedUpWrapperProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      margin: -8rem auto 0;
+    }
+  `}
 `

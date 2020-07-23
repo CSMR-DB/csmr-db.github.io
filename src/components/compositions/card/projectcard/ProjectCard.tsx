@@ -1,8 +1,8 @@
 import React from 'react'
 import { Tween } from 'react-gsap'
 
+import { IImageSharp } from '../../../../types/interfaces'
 import { StringOrUrlArray } from '../../../../types/StringOrUrlObject'
-import { IFeaturedImage } from '../../../../types/interfaces'
 
 import { Card } from '../Card'
 import { ArticleBody } from '../../../ArticleBody'
@@ -18,7 +18,7 @@ import { CardHeaderText } from '../CardHeaderText'
 
 interface IProjectCardProps {
   index: number
-  image?: string | IFeaturedImage
+  image?: string | IImageSharp
   video?: string
   title: string
   body?: StringOrUrlArray

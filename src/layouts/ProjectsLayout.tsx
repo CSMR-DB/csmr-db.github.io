@@ -30,8 +30,8 @@ export function ProjectsLayout({
           </p>
         </CenteredBlock>
         <Grid
-          columns={'repeat(auto-fill, minmax(32rem,1fr))'}
-          maxWidth={'100rem'}
+          $columns={'repeat(auto-fill, minmax(32rem,1fr))'}
+          $maxWidth={'100rem'}
         >
           <Reveal>
             <ProjectCards edges={programmingData.edges} />
@@ -50,8 +50,8 @@ export function ProjectsLayout({
           </p>
         </CenteredBlock>
         <Grid
-          columns={'repeat(auto-fill, minmax(32rem,1fr))'}
-          maxWidth={'100rem'}
+          $columns={'repeat(auto-fill, minmax(32rem,1fr))'}
+          $maxWidth={'100rem'}
         >
           <Reveal>
             <ProjectCards edges={graphicDesignData.edges} />

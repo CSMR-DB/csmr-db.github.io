@@ -12,8 +12,8 @@ interface ISVGLogos {
 
 export function SVGLogos({ svgs }: ISVGLogos): JSX.Element {
   return (
-    <Flex direction={'column'} justifyContent={'center'}>
-      <Grid rows={2} columns={8}>
+    <Flex $direction={'column'} $justifyContent={'center'}>
+      <Grid $rows={2} $columns={8}>
         {svgs.map(
           (logo: ITool, i: number): JSX.Element => (
             <SVGLogo logo={logo} key={i} />

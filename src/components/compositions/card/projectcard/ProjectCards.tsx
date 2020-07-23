@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IProjectsAllMarkdownRemark, IEdge } from '../../../../types/interfaces'
+import { IProjectsAllMarkdownRemark, IProjectsEdge } from '../../../../types/interfaces'
 
 import { ProjectCard } from './ProjectCard'
 
@@ -11,7 +11,7 @@ export function ProjectCards({
     <>
       {edges.map(
         (
-          { node: { frontmatter, timeToRead } }: IEdge,
+          { node: { frontmatter, timeToRead } }: IProjectsEdge,
           i: number
         ): JSX.Element => (
           <ProjectCard

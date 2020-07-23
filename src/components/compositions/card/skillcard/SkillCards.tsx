@@ -19,7 +19,7 @@ export function SkillCards({ edges }: ISkillsetAllMarkdownRemark): JSX.Element {
             time={frontmatter.time}
             key={i}
             index={i}
-            skillColor={frontmatter.skillColor}
+            skillColor={frontmatter.skillColor || 'black'}
           />
         )
       )}

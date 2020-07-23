@@ -8,9 +8,9 @@ import { MixBlendModeProperty } from 'csstype'
 
 interface IBlendProps {
   children: ReactNode
-  mode: MixBlendModeProperty
-  hoverMode?: MixBlendModeProperty
-  isolation?: boolean
+  $mode: MixBlendModeProperty
+  $hoverMode?: MixBlendModeProperty
+  $isolation?: boolean
 }
 
 export const Blend: StyledComponent<
@@ -21,10 +21,6 @@ export const Blend: StyledComponent<
 > = styled.div`
   position: relative;
   overflow: hidden; /** to make sure the containing element has no children overlapping parent's sibling elements */
-
-  ${({ isolation }: IBlendProps): FlattenSimpleInterpolation => css`
-    isolation: ${isolation ? 'isolate' : 'auto'};
-  `}
 
   & > :first-child {
     position: relative !important;
@@ -37,7 +33,10 @@ export const Blend: StyledComponent<
     top: 0;
     transition: all 0.25s ease-in-out;
 
-    ${({ mode, hoverMode }: IBlendProps): FlattenSimpleInterpolation => css`
+    ${({
+      $mode: mode,
+      $hoverMode: hoverMode,
+    }: IBlendProps): FlattenSimpleInterpolation => css`
       mix-blend-mode: ${mode};
 
       &:hover {
@@ -45,4 +44,8 @@ export const Blend: StyledComponent<
       }
     `}
   }
+
+  ${({ $isolation: isolation }: IBlendProps): FlattenSimpleInterpolation => css`
+    isolation: ${isolation ? 'isolate' : 'auto'};
+  `}
 `

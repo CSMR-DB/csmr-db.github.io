@@ -1,11 +1,15 @@
 import React, { ReactNode } from 'react'
-import styled, { StyledComponent } from 'styled-components'
-
-import { theme } from '../data/theme'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
 import { LayoutMain } from './LayoutMain'
 
 export interface ILayoutProps {
+  theme?: DefaultTheme
   children?: ReactNode
   isLandingPage?: boolean
 }
@@ -18,7 +22,9 @@ export const StyledLayout: StyledComponent<
 > = styled.div`
   min-height: 100vh;
 
-  background: ${theme.background};
+  ${({ theme }: ILayoutProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.light.normal};
+  `}
 `
 
 export function Layout({

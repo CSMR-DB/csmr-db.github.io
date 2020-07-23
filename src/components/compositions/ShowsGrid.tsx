@@ -13,7 +13,7 @@ export interface IShowsGridProps {
 
 export function ShowsGrid({ posters }: IShowsGridProps): JSX.Element {
   return (
-    <ImageGrid rows={2} columns={14}>
+    <ImageGrid $rows={2} $columns={14}>
       {posters.edges.map(
         (edge: IImageSharpEdge, i: number): JSX.Element => (
           <ImageContainer key={i}>

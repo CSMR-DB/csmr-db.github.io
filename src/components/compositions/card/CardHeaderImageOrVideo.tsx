@@ -1,17 +1,19 @@
 import React from 'react'
-import { DynamicImage } from '../../DynamicImage'
-import { StyledYoutube } from '../../StyledYoutube'
-import Img from 'gatsby-image'
-import { IFeaturedImage } from '../../../types/interfaces'
+import Image from 'gatsby-image'
 import { MaxHeightProperty } from 'csstype'
+
+import { IImageSharp } from '../../../types/interfaces'
 import {
   AnyExoticRefComponent,
   AnyExoticRefTargets,
 } from '../../../types/types'
+
 import { CardHeaderFeaturedImage } from './CardHeaderFeaturedImage'
+import { DynamicImage } from '../../DynamicImage'
+import { StyledYoutube } from '../../StyledYoutube'
 
 interface IImageOrVideo {
-  image?: string | IFeaturedImage
+  image?: string | IImageSharp
   video?: string
   maxHeight?: MaxHeightProperty<1>
 }
@@ -21,12 +23,12 @@ export const CardHeaderImageOrVideo: AnyExoticRefComponent<IImageOrVideo> = Reac
     { image, video, maxHeight }: IImageOrVideo,
     ref: AnyExoticRefTargets
   ): JSX.Element => (
-    <CardHeaderFeaturedImage maxHeight={maxHeight} ref={ref}>
+    <CardHeaderFeaturedImage $maxHeight={maxHeight} ref={ref}>
       {image && typeof image === 'string' ? (
         <DynamicImage path={image} />
       ) : (
         (image && typeof image !== 'string' && (
-          <Img fluid={image.childImageSharp.fluid} />
+          <Image fluid={image.childImageSharp.fluid} />
         )) ||
         (video && (
           <StyledYoutube

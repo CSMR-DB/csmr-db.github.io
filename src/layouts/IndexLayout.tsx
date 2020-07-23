@@ -42,8 +42,8 @@ export function IndexLayout({
       <SEO title={`Homepage`} description={site.siteMetadata.description} />
       <LiftedUpWrapper>
         <ContentSeparator>
-          <CenteredBlock maxWidth={'110rem'}>
-            <Grid columns={3}>
+          <CenteredBlock $maxWidth={'110rem'}>
+            <Grid $columns={3}>
               <div>
                 <Grid>
                   <Card>

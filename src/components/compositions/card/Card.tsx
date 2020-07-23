@@ -1,7 +1,20 @@
-import styled, { StyledComponent } from 'styled-components'
-import { theme } from '../../../data/theme'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
-export const Card: StyledComponent<'article', any, {}, never> = styled.article`
+export interface ICardProps {
+  theme?: DefaultTheme
+}
+
+export const Card: StyledComponent<
+  'article',
+  any,
+  ICardProps,
+  never
+> = styled.article`
   position: relative;
   height: 100%;
   border-radius: 0.25rem;
@@ -18,17 +31,6 @@ export const Card: StyledComponent<'article', any, {}, never> = styled.article`
     transition: all 0.2s ease-in-out !important;
   }
 
-  @media ${theme.breakpoints.min.desktop} {
-    &:hover {
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25),
-        0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-
-      & header img {
-        transform: scale(1.1);
-      }
-    }
-  }
-
   & h1 {
     font-size: 1.1em;
     margin: 0;
@@ -43,10 +45,23 @@ export const Card: StyledComponent<'article', any, {}, never> = styled.article`
   }
 
   & p {
-    text-align: justify;
-
-    @media ${theme.breakpoints.max.smartphone} {
-      text-align: left;
-    }
+    text-align: left;
   }
+
+  ${({ theme }: ICardProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      text-align: justify;
+    }
+
+    @media ${theme!.breakpoints.min.desktop} {
+      &:hover {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25),
+          0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+
+        & header img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  `}
 `

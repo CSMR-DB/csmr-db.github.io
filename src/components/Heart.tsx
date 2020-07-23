@@ -9,9 +9,9 @@ import { FillProperty } from 'csstype'
 import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
 
 export interface IHeartProps {
-  height: string
-  width: string
-  fill: FillProperty
+  $width: string
+  $height: string
+  $fill: FillProperty
 }
 
 export const StyledHeart: StyledComponent<
@@ -20,8 +20,14 @@ export const StyledHeart: StyledComponent<
   IHeartProps,
   never
 > = styled.svg`
-  ${({ fill }: IHeartProps): FlattenSimpleInterpolation => css`
+  ${({
+    $fill: fill,
+    $width: width,
+    $height: height,
+  }: IHeartProps): FlattenSimpleInterpolation => css`
     fill: ${fill};
+    width: ${width};
+    height: ${height};
   `}
 `
 

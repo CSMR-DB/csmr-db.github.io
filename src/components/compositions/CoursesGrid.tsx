@@ -17,8 +17,8 @@ export interface ICoursesGridProps {
 
 export function CoursesGrid({ courses }: ICoursesGridProps): JSX.Element {
   return (
-    <Flex direction={'column'} justifyContent={'center'}>
-      <Grid columns={6} alignItems={'baseline'}>
+    <Flex $direction={'column'} $justifyContent={'center'}>
+      <Grid $columns={6} $alignItems={'baseline'}>
         {courses.map(
           (
             courseGroup: [ICourse['category'], ICourse[]],

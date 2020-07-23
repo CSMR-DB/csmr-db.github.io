@@ -16,7 +16,7 @@ const StyledPseudoCode: StyledComponent<'div', any, {}, never> = styled.div`
   }
 `
 interface IProgramLineProps {
-  padding?: number
+  $padding?: number
 }
 
 const ProgramLine: StyledComponent<
@@ -27,14 +27,14 @@ const ProgramLine: StyledComponent<
 > = styled.p`
   margin: 0 !important;
 
-  ${({ padding = 0 }: IProgramLineProps): FlattenSimpleInterpolation => css`
+  ${({ $padding: padding = 0 }: IProgramLineProps): FlattenSimpleInterpolation => css`
     padding-left: ${padding}rem;
   `}
 `
 
 function Credit(href: string, title: string): JSX.Element {
   return (
-    <StyledA color={'white'} href={href} target="blank">
+    <StyledA $color={'white'} href={href} target="blank">
       {title}
     </StyledA>
   )
@@ -69,46 +69,46 @@ export function PseudoCode(): JSX.Element {
       <ProgramLine>type Requirements = {`{ essence: Emoji[] }`}</ProgramLine>
       <ProgramLine>type DevWebsite = {`{ typescript: boolean }`}</ProgramLine>
       <ProgramLine>interface IWebsite {'{'}</ProgramLine>
-      <ProgramLine padding={1}>{`url: string`}</ProgramLine>
-      <ProgramLine padding={1}>{`visit: () => WebPage`}</ProgramLine>
+      <ProgramLine $padding={1}>{`url: string`}</ProgramLine>
+      <ProgramLine $padding={1}>{`visit: () => WebPage`}</ProgramLine>
       <ProgramLine>{'}'}</ProgramLine>
       <br />
       <ProgramLine>{`async function websitePromise({ essence }: Requirements): Promise<IWebsite> {`}</ProgramLine>
-      <ProgramLine padding={1}>
+      <ProgramLine $padding={1}>
         return await start({CREDITS.gatsby})
       </ProgramLine>
-      <ProgramLine padding={2}>.then((dev: DevWebsite) ={'>'} </ProgramLine>
-      <ProgramLine padding={3}>pipe(</ProgramLine>
-      <ProgramLine padding={4}>
+      <ProgramLine $padding={2}>.then((dev: DevWebsite) ={'>'} </ProgramLine>
+      <ProgramLine $padding={3}>pipe(</ProgramLine>
+      <ProgramLine $padding={4}>
         addStyle({CREDITS.styledComponents}),
       </ProgramLine>
-      <ProgramLine padding={4}>useFont({CREDITS.firaCode}),</ProgramLine>
-      <ProgramLine padding={4}>
+      <ProgramLine $padding={4}>useFont({CREDITS.firaCode}),</ProgramLine>
+      <ProgramLine $padding={4}>
         addCodeIcons({CREDITS.vsCodeIcons}),
       </ProgramLine>
-      <ProgramLine padding={4}>
+      <ProgramLine $padding={4}>
         addAdobeIcons({CREDITS.adobeIcons}),
       </ProgramLine>
-      <ProgramLine padding={4}>
+      <ProgramLine $padding={4}>
         prettifyCodeUsing({CREDITS.prettier}),
       </ProgramLine>
-      <ProgramLine padding={4}>
+      <ProgramLine $padding={4}>
         makeCodeImagesUsing({CREDITS.carbon}),
       </ProgramLine>
-      <ProgramLine padding={4}>
+      <ProgramLine $padding={4}>
         useAnimationLibraries({CREDITS.gsap}, {CREDITS.reactGsap},{' '}
         {CREDITS.pageTransitions}),
       </ProgramLine>
-      <ProgramLine padding={4}>sprinkleWith(essence),</ProgramLine>
-      <ProgramLine padding={4}>deployUsing({CREDITS.ghPages})</ProgramLine>
-      <ProgramLine padding={3}>)(dev)</ProgramLine>
-      <ProgramLine padding={2}>)</ProgramLine>
+      <ProgramLine $padding={4}>sprinkleWith(essence),</ProgramLine>
+      <ProgramLine $padding={4}>deployUsing({CREDITS.ghPages})</ProgramLine>
+      <ProgramLine $padding={3}>)(dev)</ProgramLine>
+      <ProgramLine $padding={2}>)</ProgramLine>
       <ProgramLine>{`}`}</ProgramLine>
       <br />
       <ProgramLine>websitePromise({`{ essence: [ ❤️, ✨, 🎆 ] }`})</ProgramLine>
-      <ProgramLine padding={1}>.then((website: IWebsite) ={'>'}</ProgramLine>
-      <ProgramLine padding={2}>website.visit())</ProgramLine>
-      <ProgramLine padding={1}>)</ProgramLine>
+      <ProgramLine $padding={1}>.then((website: IWebsite) ={'>'}</ProgramLine>
+      <ProgramLine $padding={2}>website.visit())</ProgramLine>
+      <ProgramLine $padding={1}>)</ProgramLine>
     </StyledPseudoCode>
   )
 }

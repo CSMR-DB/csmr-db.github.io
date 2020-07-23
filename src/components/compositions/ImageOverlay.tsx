@@ -9,7 +9,7 @@ interface IImageOverlayProps {
 
 export function ImageOverlay({ text }: IImageOverlayProps): JSX.Element {
   return (
-    <Blend mode={'lighten'}>
+    <Blend $mode={'lighten'}>
       <BlendBlock>
         <h6>{text}</h6>
       </BlendBlock>

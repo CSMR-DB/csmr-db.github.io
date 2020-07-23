@@ -47,8 +47,8 @@ export default function TagTemplate({
       </ContentSeparator>
       <ContentSeparator>
         <Grid
-          columns={'repeat(auto-fill,minmax(32rem,1fr))'}
-          maxWidth={'100rem'}
+          $columns={'repeat(auto-fill,minmax(32rem,1fr))'}
+          $maxWidth={'100rem'}
         >
           <ProjectCards edges={edges} />
         </Grid>

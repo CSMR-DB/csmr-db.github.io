@@ -2,13 +2,15 @@ import styled, {
   css,
   FlattenSimpleInterpolation,
   StyledComponent,
+  DefaultTheme,
 } from 'styled-components'
 import { ColorProperty, FilterProperty } from 'csstype'
 
 export interface IFilterProps {
-  filter?: FilterProperty
-  filterHover?: FilterProperty
-  lens?: ColorProperty
+  theme?: DefaultTheme
+  $filter?: FilterProperty
+  $filterHover?: FilterProperty
+  $lens?: ColorProperty
 }
 
 export const Filter: StyledComponent<
@@ -22,8 +24,9 @@ export const Filter: StyledComponent<
   overflow: hidden;
 
   ${({
-    filter = 'sepia(0.25) saturate(2) grayscale(1) brightness(.5)',
-    filterHover = 'none',
+    theme,
+    $filter: filter = theme!.palette.filter.normal,
+    $filterHover: filterHover = theme!.palette.filter.hover,
   }: IFilterProps): FlattenSimpleInterpolation => css`
     filter: ${filter};
 
@@ -32,7 +35,7 @@ export const Filter: StyledComponent<
     }
   `};
 
-  ${({ lens }: IFilterProps): FlattenSimpleInterpolation | null =>
+  ${({ $lens: lens }: IFilterProps): FlattenSimpleInterpolation | null =>
     lens
       ? css`
           &::after {

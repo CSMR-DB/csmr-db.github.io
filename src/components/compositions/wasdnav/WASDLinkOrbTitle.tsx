@@ -1,6 +1,13 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  FlattenSimpleInterpolation,
+  css,
+} from 'styled-components'
 
-import { theme } from '../../../data/theme'
+export interface IWASDLinkOrbTitleProps {
+  theme?: DefaultTheme
+}
 
 export const WASDLinkOrbTitle: StyledComponent<
   'h1',
@@ -10,8 +17,11 @@ export const WASDLinkOrbTitle: StyledComponent<
 > = styled.h1`
   line-height: inherit;
   margin: 0;
+  font-size: 0.75rem;
 
-  @media ${theme.breakpoints.max.smartphone} {
-    font-size: 0.75rem;
-  }
+  ${({ theme }: IWASDLinkOrbTitleProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      font-size: 1.25rem;
+    }
+  `}
 `

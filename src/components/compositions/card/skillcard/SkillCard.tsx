@@ -61,7 +61,7 @@ export function SkillCard({
         </SkillCardBackdrop>
         <CardHeader>
           <SkillCardHeader>
-            <Flex justifyContent="space-between" direction="row">
+            <Flex $justifyContent="space-between" $direction="row">
               <SkillCardIndicator
                 instance={index}
                 index={0}
@@ -70,7 +70,7 @@ export function SkillCard({
               <h1>
                 <StyledLink
                   to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
-                  color={skillColor}
+                  $color={skillColor}
                 >
                   {title}
                 </StyledLink>

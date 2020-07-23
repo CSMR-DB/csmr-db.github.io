@@ -74,7 +74,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
           influential to the entirety of the UX.
         </p>
       </CenteredBlock>
-      <WideBoi maxWidth={'1280px'}>
+      <WideBoi $maxWidth={'1280px'}>
         <SubbedImages images={images} />
       </WideBoi>
       <CenteredBlock>
@@ -131,7 +131,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
           think about every single day.
         </p>
       </CenteredBlock>
-      <WideBoi maxWidth={'32rem'}>
+      <WideBoi $maxWidth={'32rem'}>
         <Quote>
           <h3>The benefits of TDD</h3>
           <h1>&</h1>
@@ -200,7 +200,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
           And finally, you'll never see me wear anything with a print on it.
         </p>
       </CenteredBlock>
-      <WideBoi maxWidth={'64rem'}>
+      <WideBoi $maxWidth={'64rem'}>
         <PhotographyGrid squares={props.squares} />
       </WideBoi>
       <CenteredBlock>

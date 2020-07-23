@@ -28,7 +28,7 @@ export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
           I'm pretty much always available on Discord. You just do whatever
           feels right 😉.
         </p>
-        <Grid columns={3} rows={1}>
+        <Grid $columns={3} $rows={1}>
           <Contacts contacts={contacts} />
         </Grid>
       </CenteredBlock>

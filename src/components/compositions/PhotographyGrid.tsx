@@ -13,7 +13,7 @@ export interface IPhotographyGrid {
 
 export function PhotographyGrid({ squares }: IPhotographyGrid): JSX.Element {
   return (
-    <ImageGrid rows={3} columns={3}>
+    <ImageGrid $rows={3} $columns={3}>
       {squares.edges.map(
         (edge: IImageSharpEdge, i: number): JSX.Element => (
           <ImageContainer key={i}>

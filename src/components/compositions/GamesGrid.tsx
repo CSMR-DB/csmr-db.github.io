@@ -15,13 +15,13 @@ export interface IGamesGridProps {
 
 export function GamesGrid({ wallpapers }: IGamesGridProps): JSX.Element {
   return (
-    <ImageGrid rows={2} columns={7}>
+    <ImageGrid $rows={2} $columns={7}>
       {wallpapers.edges.map(
         (edge: IImageSharpEdge, i: number): JSX.Element => (
           <ImageContainer
             overlay={{
               node: (
-                <Blend mode={'difference'}>
+                <Blend $mode={'difference'}>
                   <h3 style={{ color: 'white' }}>
                     {cleanAndCapitalize(edge.node.name)}
                   </h3>

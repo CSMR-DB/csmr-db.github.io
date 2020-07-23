@@ -23,7 +23,6 @@ interface IExperienceCardProps {
 }
 
 export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
-  // index,
   name,
   type,
   icon,
@@ -41,8 +40,8 @@ export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
     >
       <Card>
         <ExperienceCardHeader>
-          <Flex justifyContent="flex-start">
-            <CardHeaderIconWrapper backgroundColor={backgroundColor}>
+          <Flex $justifyContent="flex-start">
+            <CardHeaderIconWrapper $backgroundColor={backgroundColor}>
               <DynamicIcon path={icon} />
             </CardHeaderIconWrapper>
             <Tween from={{ display: 'none' }} delay={1}>

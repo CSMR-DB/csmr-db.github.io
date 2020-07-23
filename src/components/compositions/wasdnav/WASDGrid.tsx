@@ -2,11 +2,11 @@ import styled, {
   StyledComponent,
   css,
   FlattenSimpleInterpolation,
+  DefaultTheme,
 } from 'styled-components'
 
-import { theme } from '../../../data/theme'
-
 export interface IWASDGridProps {
+  theme?: DefaultTheme
   gap: string
 }
 
@@ -18,6 +18,7 @@ export const WASDGrid: StyledComponent<
 > = styled.nav`
   margin: 0 auto;
   display: grid;
+  gap: 2rem;
   justify-content: space-between;
   align-items: center;
   grid-template-areas:
@@ -26,15 +27,13 @@ export const WASDGrid: StyledComponent<
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 
-  ${({ gap }: IWASDGridProps): FlattenSimpleInterpolation => css`
-    gap: ${gap};
-  `}
-
   & > * {
     justify-self: center;
   }
 
-  @media ${theme.breakpoints.max.smartphone} {
-    grid-gap: 2rem;
-  }
+  ${({ theme, gap }: IWASDGridProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      gap: ${gap};
+    }
+  `}
 `

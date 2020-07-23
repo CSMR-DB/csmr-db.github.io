@@ -44,10 +44,10 @@ export function WASDNav({
               to={route.path}
               activeClassName="active"
               partiallyActive
-              color={color}
-              bordercolor={background === 'transparent' ? color : background}
-              background={background}
-              area={route.boundKeys[0].toLocaleLowerCase()}
+              $color={color}
+              $bordercolor={background === 'transparent' ? color : background}
+              $background={background}
+              $area={route.boundKeys[0].toLocaleLowerCase()}
             >
               <WASDLinkOrbKey>{`0${route.boundKeys[1]}`}</WASDLinkOrbKey>
               <WASDLinkOrbTitle>{route.title}</WASDLinkOrbTitle>

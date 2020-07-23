@@ -12,9 +12,9 @@ import { Flex } from '../Flex'
 interface ISocialButtonsProps {
   children: ReactNode
   href: string
-  color?: ColorProperty
-  background?: BackgroundColorProperty
   iconPath: string
+  $color?: ColorProperty
+  $background?: BackgroundColorProperty
 }
 
 const StyledSocialIcon: StyledComponent<'div', any, {}, never> = styled.div`
@@ -24,8 +24,8 @@ const StyledSocialIcon: StyledComponent<'div', any, {}, never> = styled.div`
 
 export function SocialButton({
   children,
-  color,
-  background,
+  $color: color,
+  $background: background,
   href,
   iconPath,
 }: ISocialButtonsProps): JSX.Element {
@@ -36,8 +36,8 @@ export function SocialButton({
           <DynamicIcon path={iconPath} />
         </StyledSocialIcon>
         <Absolute>
-          <ClippedBtn background={background} color={color}>
-            <Flex justifyContent="space-around">
+          <ClippedBtn $background={background} $color={color}>
+            <Flex $justifyContent="space-around">
               <span>{children}</span>
             </Flex>
           </ClippedBtn>

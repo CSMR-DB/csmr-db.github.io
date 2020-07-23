@@ -9,7 +9,7 @@ export interface ISubbedImages {
 
 export function SubbedImages({ images }: ISubbedImages): JSX.Element {
   return (
-    <Grid columns={images.length} rows={1}>
+    <Grid $columns={images.length} $rows={1}>
       {images.map(
         (image: ISubbedImage, i: number): JSX.Element => (
           <SubbedImage {...image} key={i} />

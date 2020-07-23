@@ -2,10 +2,12 @@ import styled, {
   StyledComponent,
   css,
   FlattenSimpleInterpolation,
+  DefaultTheme,
 } from 'styled-components'
 
 export interface IWideBoiProps {
-  maxWidth?: string
+  theme?: DefaultTheme
+  $maxWidth?: string
 }
 
 export const WideBoi: StyledComponent<
@@ -16,10 +18,10 @@ export const WideBoi: StyledComponent<
 > = styled.div`
   position: relative;
   padding: 4rem;
-  background: #efefef;
   margin: 4rem auto;
 
-  ${({ maxWidth }: IWideBoiProps): FlattenSimpleInterpolation => css`
+  ${({ theme, $maxWidth: maxWidth }: IWideBoiProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.third.normal};
     max-width: ${maxWidth};
   `}
 `

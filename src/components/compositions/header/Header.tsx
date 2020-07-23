@@ -3,11 +3,11 @@ import styled, {
   StyledComponent,
   css,
   FlattenSimpleInterpolation,
+  DefaultTheme,
 } from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { routes } from '../../../data/routes'
-import { theme } from '../../../data/theme'
 
 import { FullSizeLogo } from './FullSizeLogo'
 import { Filter } from '../../Filter'
@@ -24,9 +24,10 @@ import { ScrollIconWrapper, AnimatedScroller } from '../ScrollIndicator'
 import { ISiteMetadata } from '../../../types/interfaces'
 
 interface IHeaderProps {
+  theme?: DefaultTheme
   siteTitle?: string
-  height: string
   isLandingPage: boolean
+  $height: string
 }
 
 const StyledHeader: StyledComponent<
@@ -36,26 +37,21 @@ const StyledHeader: StyledComponent<
   never
 > = styled.header`
   position: relative;
-  width: 100%;
-  overflow: hidden;
-
-  ${({ height }: IHeaderProps): FlattenSimpleInterpolation => css`
-    min-height: ${height};
-  `};
-
-  @media ${theme.breakpoints.max.smartphone} {
-    padding-bottom: 0;
-    padding-top: 0;
-    height: auto;
-  }
+  height: auto;
 
   .gatsby-image-wrapper {
     height: 100vh;
   }
+
+  ${({
+    $height: height,
+  }: IHeaderProps): FlattenSimpleInterpolation => css`
+    min-height: ${height};
+  `};
 `
 
 export function Header({
-  height = '16rem',
+  $height: height = '16rem',
   isLandingPage,
 }: IHeaderProps): JSX.Element {
   // tslint:disable-next-line: no-void-expression
@@ -72,23 +68,23 @@ export function Header({
   `)
 
   return (
-    <StyledHeader height={height} isLandingPage={isLandingPage}>
-      <Fixed height={height} zIndex={-1}>
+    <StyledHeader $height={height} isLandingPage={isLandingPage}>
+      <Fixed $height={height} $zIndex={-1}>
         <Filter>
           <DynamicImage path="wallpaper/wallpaper.jpg" />
         </Filter>
       </Fixed>
-      <Absolute height={height}>
-        <FullSizeLogo height={height}>
+      <Absolute $height={height}>
+        <FullSizeLogo $height={height}>
           <Logo
-            fill={'rgba(256, 256, 256, .025)'}
-            size={isLandingPage ? '100vh' : '25vh'}
+            $fill={'rgba(256, 256, 256, .025)'}
+            $size={isLandingPage ? '100vh' : '25vh'}
           />
         </FullSizeLogo>
       </Absolute>
-      <Absolute height={height}>
-        <Flex justifyContent={'space-evenly'}>
-          <Grid gap={isLandingPage ? '2rem' : '1rem'}>
+      <Absolute $height={height}>
+        <Flex $justifyContent={'space-evenly'}>
+          <Grid $gap={isLandingPage ? '2rem' : '1rem'}>
             <WASDNav
               routes={routes}
               background={'rgba(48, 48, 48, .96)'}
@@ -98,7 +94,7 @@ export function Header({
             {isLandingPage && (
               <>
                 <Excerpt>
-                  <ImageDot width={'8rem'}>
+                  <ImageDot $width={'8rem'}>
                     <Filter>
                       <DynamicImage path="wallpaper/me.jpg" />
                     </Filter>

@@ -1,6 +1,13 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  FlattenSimpleInterpolation,
+  css,
+  DefaultTheme,
+} from 'styled-components'
 
-import { theme } from '../../../data/theme'
+export interface IWASDLinkOrbKeyProps {
+  theme?: DefaultTheme
+}
 
 export const WASDLinkOrbKey: StyledComponent<
   'span',
@@ -8,6 +15,7 @@ export const WASDLinkOrbKey: StyledComponent<
   {},
   never
 > = styled.span`
+  display: none;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 2rem;
@@ -15,7 +23,9 @@ export const WASDLinkOrbKey: StyledComponent<
   margin: 0 auto;
   line-height: 2rem;
 
-  @media ${theme.breakpoints.max.smartphone} {
-    display: none;
-  }
+  ${({ theme }: IWASDLinkOrbKeyProps): FlattenSimpleInterpolation => css`
+    @media ${theme!.breakpoints.min.smartphone} {
+      display: initial;
+    }
+  `}
 `

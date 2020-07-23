@@ -1,21 +1,30 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
-import { theme } from '../data/theme'
+export interface ILayoutMainProps {
+  theme?: DefaultTheme
+}
 
 export const LayoutMain: StyledComponent<'main', any, {}, never> = styled.main`
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 1rem;
 
-  a {
-    text-decoration: none;
-    color: ${theme.primary};
+  ${({ theme }: ILayoutMainProps): FlattenSimpleInterpolation => css`
+    a {
+      text-decoration: none;
+      color: ${theme!.palette.first.normal};
 
-    &:hover {
-      color: ${theme.primaryHover};
+      &:hover {
+        color: ${theme!.palette.first.hover};
+      }
     }
-  }
 
-  @media ${theme.breakpoints.max.smartphone} {
-    padding: 1rem;
-  }
+    @media ${theme!.breakpoints.min.smartphone} {
+      padding: 4rem 1rem;
+    }
+  `}
 `

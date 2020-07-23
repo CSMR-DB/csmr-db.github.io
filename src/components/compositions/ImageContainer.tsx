@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { JustifyContentProperty } from 'csstype'
 
@@ -38,19 +38,24 @@ export const StyledImageContainer: StyledComponent<
   }
 `
 
+export interface IImageContainer {
+  children: ReactNode
+  overlay: {
+    node: ReactNode,
+    justifyContent?: JustifyContentProperty
+  }
+}
+
 export function ImageContainer({
   children,
   overlay,
-}: {
-  children: React.ReactNode
-  overlay?: { node: React.ReactNode; justifyContent?: JustifyContentProperty }
-}): JSX.Element {
+}: IImageContainer): JSX.Element {
   return (
     <StyledImageContainer>
       <div className={'children'}>{children}</div>
       {overlay && (
-        <Absolute top={'1rem'} bottom={'1rem'}>
-          <Flex justifyContent={overlay.justifyContent}>{overlay.node}</Flex>
+        <Absolute $top={'1rem'} $bottom={'1rem'}>
+          <Flex $justifyContent={overlay.justifyContent}>{overlay.node}</Flex>
         </Absolute>
       )}
     </StyledImageContainer>

@@ -15,10 +15,10 @@ import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
 
 export interface IFlexProps {
   children: ReactNode
-  justifyContent?: JustifyContentProperty
-  alignItems?: AlignItemsProperty
-  direction?: FlexDirectionProperty
-  wrap?: FlexWrapProperty
+  $justifyContent?: JustifyContentProperty
+  $alignItems?: AlignItemsProperty
+  $direction?: FlexDirectionProperty
+  $wrap?: FlexWrapProperty
 }
 
 const StyledFlex: StyledComponent<'div', any, IFlexProps, never> = styled.div`
@@ -30,10 +30,10 @@ const StyledFlex: StyledComponent<'div', any, IFlexProps, never> = styled.div`
   transition: all 0.25s ease-in-out;
 
   ${({
-    direction = 'column',
-    wrap = 'initial',
-    alignItems = 'center',
-    justifyContent = 'space-around',
+    $direction: direction = 'column',
+    $wrap: wrap = 'initial',
+    $alignItems: alignItems = 'center',
+    $justifyContent: justifyContent = 'space-around',
   }: IFlexProps): FlattenSimpleInterpolation => css`
     flex-direction: ${direction};
     flex-wrap: ${wrap};

@@ -38,7 +38,10 @@ export function SkillsetLayout({
         </ContentSeparator>
       </CenteredBlock>
       <ContentSeparator>
-        <Grid columns="repeat(auto-fill, minmax(25rem, 1fr))" maxWidth="160rem">
+        <Grid
+          $columns="repeat(auto-fill, minmax(25rem, 1fr))"
+          $maxWidth="160rem"
+        >
           <SkillCards edges={skillsetData.edges} />
         </Grid>
       </ContentSeparator>

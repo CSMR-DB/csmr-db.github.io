@@ -18,32 +18,32 @@ export const devCourses: ICourse[] = [
     name: 'WebSkills',
     description: 'Just the absolute starter kit for working with HTML and CSS.',
     category: 'Development',
-    color: theme.primary,
+    color: theme.palette.dark.normal,
   },
   {
     name: 'Web Programming',
     description: `$('JavaScript'|'jQuery')`,
     category: 'Development',
-    color: theme.primary,
+    color: theme.palette.dark.normal,
   },
   {
     name: 'Realisation',
     description:
       'Using tools other than code to produce functional little apps. We worked with stuff like Appery.io and Layar.',
-    color: theme.primary,
+    color: theme.palette.dark.normal,
     category: 'Development',
   },
   {
     name: 'The Digital Workplace *',
     description:
       'A group project in about 8 groups of 4 to 5 students working together to create a prototype for a new Intranet for a client.',
-    color: theme.primary,
+    color: theme.palette.dark.normal,
     category: 'Development',
   },
   {
     name: 'Content Management Systems *',
     description: 'Building a website using Wordpress.',
-    color: theme.primary,
+    color: theme.palette.dark.normal,
     category: 'Development',
   },
 ]

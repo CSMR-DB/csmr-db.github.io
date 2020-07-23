@@ -83,7 +83,7 @@ export function PhotographyLayout({
           <p>Something I also enjoy doing, but don't do that often.</p>
         </article>
       </CenteredBlock>
-      <Grid columns={'repeat(auto-fill, minmax(32rem,1fr))'}>
+      <Grid $columns={'repeat(auto-fill, minmax(32rem,1fr))'}>
         <Photos images={images.edges} />
       </Grid>
     </>

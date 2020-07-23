@@ -12,7 +12,7 @@ import {
 
 interface IFullSizeLogoProps {
   children: React.ReactNode
-  height: string
+  $height: string
 }
 
 const StyledFullSizeLogo: StyledComponent<
@@ -25,7 +25,9 @@ const StyledFullSizeLogo: StyledComponent<
   transform-origin: 50%;
   transform: rotate(-45deg) scale(1.5);
 
-  ${({ height }: IFullSizeLogoProps): FlattenSimpleInterpolation => css`
+  ${({
+    $height: height,
+  }: IFullSizeLogoProps): FlattenSimpleInterpolation => css`
     height: ${height};
     width: ${height};
   `}

@@ -6,7 +6,7 @@ import styled, {
 import { BackgroundColorProperty } from 'csstype'
 
 interface ICardHeaderIconWrapperProps {
-  backgroundColor: BackgroundColorProperty
+  $backgroundColor: BackgroundColorProperty
 }
 
 export const CardHeaderIconWrapper: StyledComponent<
@@ -21,7 +21,7 @@ export const CardHeaderIconWrapper: StyledComponent<
   padding: 0.5em;
 
   ${({
-    backgroundColor = '#DDD',
+    $backgroundColor: backgroundColor = '#DDD',
   }: ICardHeaderIconWrapperProps): FlattenSimpleInterpolation => css`
     background: ${backgroundColor};
   `}

@@ -1,8 +1,12 @@
-import styled, { StyledComponent, css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, {
+  StyledComponent,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
 export interface IImageGridProps {
-  columns: number
-  rows: number
+  $columns: number
+  $rows: number
 }
 
 export const ImageGrid: StyledComponent<
@@ -26,12 +30,11 @@ export const ImageGrid: StyledComponent<
     margin: 0;
   }
 
-  ${({ columns, rows }: IImageGridProps): FlattenSimpleInterpolation => css`
-    grid-template-columns: repeat(${columns},
-      1fr
-    );
-    grid-template-rows: repeat(${rows},
-      1fr
-    );
+  ${({
+    $columns: columns,
+    $rows: rows,
+  }: IImageGridProps): FlattenSimpleInterpolation => css`
+    grid-template-columns: repeat(${columns}, 1fr);
+    grid-template-rows: repeat(${rows}, 1fr);
   `}
 `

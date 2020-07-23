@@ -16,13 +16,15 @@ const StyledSkillCardBackdrop: StyledComponent<
   max-width: 8rem;
 `
 
+export interface ISkillCardBackdrop {
+  children: ReactNode
+  index: number
+}
+
 export function SkillCardBackdrop({
   children,
   index,
-}: {
-  children: ReactNode
-  index: number
-}): JSX.Element {
+}: ISkillCardBackdrop): JSX.Element {
   return (
     <Tween
       to={{ opacity: 0.25 }}
