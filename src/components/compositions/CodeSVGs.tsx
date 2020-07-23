@@ -3,10 +3,7 @@ import React from 'react'
 import { AnyExoticRefComponent, AnyExoticRefTargets } from '../../types/types'
 
 export const AngularSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
         points="16 2 16 2 16 2 2.966 6.648 4.954 23.882 16 30 16 30 16 30 27.046 23.882 29.034 6.648 16 2"
@@ -31,10 +28,7 @@ export const AngularSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef
 )
 
 export const ReactSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <circle
         cx="16"
@@ -67,10 +61,7 @@ export const ReactSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const VueSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M24.4,3.925H30L16,28.075,2,3.925H12.71L16,9.525l3.22-5.6Z"
@@ -95,10 +86,7 @@ export const VueSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const SvelteSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M26.47,5.7A8.973,8.973,0,0,0,14.677,3.246L7.96,7.4a7.461,7.461,0,0,0-3.481,5.009,7.686,7.686,0,0,0,.8,5.058,7.358,7.358,0,0,0-1.151,2.8,7.789,7.789,0,0,0,1.4,6.028,8.977,8.977,0,0,0,11.794,2.458L24.04,24.6a7.468,7.468,0,0,0,3.481-5.009,7.673,7.673,0,0,0-.8-5.062,7.348,7.348,0,0,0,1.152-2.8A7.785,7.785,0,0,0,26.47,5.7"
@@ -117,10 +105,7 @@ export const SvelteSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const CSSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
         points="5.902 27.201 3.656 2 28.344 2 26.095 27.197 15.985 30 5.902 27.201"
@@ -169,10 +154,7 @@ export const CSSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const StylusSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M6.315,20.776c.726-.869.812-1.766.249-3.432-.356-1.054-.947-1.865-.513-2.521.463-.7,1.445-.021.627.911l.164.114c.983.114,1.467-1.232.733-1.616-1.937-1.011-3.631.933-2.884,3.183.32.954.769,1.965.406,2.77A1.794,1.794,0,0,1,3.773,21.3c-.847.043-.285-1.9.691-2.385.085-.043.206-.1.093-.242a2.134,2.134,0,0,0-2.314,1.2C1.061,22.121,4.485,22.954,6.315,20.776Z"
@@ -209,10 +191,7 @@ export const StylusSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const SassSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M26.11,17.572a5.8,5.8,0,0,0-2.537.588,5.345,5.345,0,0,1-.568-1.314,3.53,3.53,0,0,1-.051-1.1,9.811,9.811,0,0,1,.332-1.192c-.005-.051-.061-.292-.624-.3s-1.048.107-1.1.256a6.171,6.171,0,0,0-.235.834,19.686,19.686,0,0,1-1.713,3.294,3.186,3.186,0,0,1-.44-2.066,9.811,9.811,0,0,1,.332-1.192c-.005-.051-.061-.292-.624-.3s-1.048.107-1.1.256-.118.5-.235.834-1.483,3.386-1.841,4.173c-.184.4-.343.726-.455.946h0a.233.233,0,0,1-.02.041c-.1.189-.153.292-.153.292v.005c-.077.138-.159.266-.2.266a1.711,1.711,0,0,1,.01-.869c.2-1.059.69-2.705.685-2.762,0-.031.092-.317-.317-.465a.508.508,0,0,0-.578.1c-.036,0-.061.087-.061.087s.445-1.851-.849-1.851a3.855,3.855,0,0,0-2.475,1.683c-.348.189-1.089.593-1.882,1.028-.3.169-.614.338-.905.5-.02-.02-.041-.046-.061-.066C6.87,17.6,3.975,16.416,4.1,14.171c.046-.818.327-2.966,5.559-5.575,4.306-2.122,7.733-1.534,8.326-.23.849,1.862-1.836,5.319-6.285,5.82a3.351,3.351,0,0,1-2.813-.711c-.235-.256-.271-.271-.358-.22-.143.077-.051.307,0,.44a2.626,2.626,0,0,0,1.606,1.263,8.55,8.55,0,0,0,5.217-.517c2.7-1.043,4.8-3.943,4.184-6.372-.619-2.465-4.71-3.278-8.582-1.9A19.5,19.5,0,0,0,4.359,9.952c-2.133,1.995-2.47,3.728-2.332,4.455.5,2.578,4.051,4.255,5.472,5.5-.072.041-.138.077-.194.107-.711.353-3.421,1.77-4.1,3.268-.767,1.7.123,2.915.711,3.079a4.374,4.374,0,0,0,4.71-1.908A4.725,4.725,0,0,0,9.049,20.1a.107.107,0,0,0-.02-.031l.557-.327c.363-.215.721-.414,1.028-.578a6.74,6.74,0,0,0-.363,1.862,3.886,3.886,0,0,0,.834,2.7.921.921,0,0,0,.675.22c.6,0,.875-.5,1.176-1.094.368-.726.7-1.57.7-1.57s-.414,2.281.711,2.281c.409,0,.823-.532,1.008-.8v.005s.01-.015.031-.051l.066-.107v-.01c.164-.286.532-.936,1.079-2.015.706-1.391,1.386-3.13,1.386-3.13a8.888,8.888,0,0,0,.271,1.13,10.643,10.643,0,0,0,.583,1.309c-.164.23-.266.358-.266.358l.005.005c-.133.174-.276.363-.435.547a16.3,16.3,0,0,0-1.314,1.647.447.447,0,0,0,.123.6,1.116,1.116,0,0,0,.685.113,3.147,3.147,0,0,0,1.028-.235,3.45,3.45,0,0,0,.885-.465,1.98,1.98,0,0,0,.849-1.744,3.521,3.521,0,0,0-.322-1.233c.051-.072.1-.143.148-.215a23.428,23.428,0,0,0,1.534-2.649,8.888,8.888,0,0,0,.271,1.13,7.57,7.57,0,0,0,.5,1.125A4.861,4.861,0,0,0,20.965,20.8c-.322.931-.072,1.35.4,1.447a1.425,1.425,0,0,0,.747-.153,3.4,3.4,0,0,0,.946-.486,2.126,2.126,0,0,0,1.043-1.729,3.268,3.268,0,0,0-.235-1.023,5.356,5.356,0,0,1,2.716-.312c2.434.286,2.915,1.805,2.823,2.445a1.618,1.618,0,0,1-.772,1.094c-.169.107-.225.143-.21.22.02.113.1.107.245.087A1.9,1.9,0,0,0,30,20.7c.077-1.5-1.355-3.145-3.887-3.13ZM7.33,23.9c-.808.88-1.933,1.212-2.419.931-.522-.3-.317-1.6.675-2.532a12.884,12.884,0,0,1,1.9-1.417c.118-.072.292-.174.5-.3l.056-.031h0l.123-.077A3.493,3.493,0,0,1,7.33,23.9Zm5.881-4c-.281.685-.869,2.44-1.227,2.342-.307-.082-.5-1.412-.061-2.726a6.193,6.193,0,0,1,.956-1.754c.44-.491.926-.655,1.043-.455a9.062,9.062,0,0,1-.711,2.593Zm4.853,2.322c-.118.061-.23.1-.281.072-.036-.02.051-.1.051-.1s.609-.655.849-.951c.138-.174.3-.378.476-.609V20.7c0,.782-.757,1.309-1.094,1.524Zm3.744-.854c-.087-.061-.072-.266.22-.905a3.408,3.408,0,0,1,.834-1.074,1.448,1.448,0,0,1,.082.471,1.547,1.547,0,0,1-1.135,1.509Z"
@@ -225,10 +204,7 @@ export const SassSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const GatsbySVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <title>file_type_gatsby</title>
       <path
@@ -248,10 +224,7 @@ export const GatsbySVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const GitSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M29.472,14.753,17.247,2.528a1.8,1.8,0,0,0-2.55,0L12.158,5.067l3.22,3.22a2.141,2.141,0,0,1,2.712,2.73l3.1,3.1a2.143,2.143,0,1,1-1.285,1.21l-2.895-2.895v7.617a2.141,2.141,0,1,1-1.764-.062V12.3a2.146,2.146,0,0,1-1.165-2.814L10.911,6.314,2.528,14.7a1.8,1.8,0,0,0,0,2.551L14.753,29.472a1.8,1.8,0,0,0,2.55,0L29.472,17.3a1.8,1.8,0,0,0,0-2.551"
@@ -270,10 +243,7 @@ export const GitSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const JestSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M27.089,15.786a2.606,2.606,0,0,0-2.606-2.606,2.633,2.633,0,0,0-.274.014l3.58-10.558H12.576l3.575,10.549c-.052,0-.105-.005-.158-.005a2.606,2.606,0,0,0-.791,5.09,11.383,11.383,0,0,1-2.049,2.579A10.436,10.436,0,0,1,9.5,23.116a3.323,3.323,0,0,1-1.665-4.23c.077-.18.155-.362.229-.544a2.607,2.607,0,1,0-2.09-.4,20.134,20.134,0,0,0-1.889,4.787c-.354,2.135,0,4.4,1.845,5.681,4.3,2.981,8.969-1.848,13.891-3.061,1.784-.44,3.742-.369,5.313-1.279a4.45,4.45,0,0,0,2.179-3.088,4.639,4.639,0,0,0-.831-3.522,2.6,2.6,0,0,0,.606-1.671ZM18.6,15.8v-.009a2.6,2.6,0,0,0-1.256-2.23L20.188,7.8l2.85,5.814a2.6,2.6,0,0,0-1.161,2.169c0,.019,0,.038,0,.057L18.6,15.8Z"
@@ -292,10 +262,7 @@ export const JestSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const GraphQLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <rect
         x="-0.43"
@@ -425,10 +392,7 @@ export const GraphQLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef
 )
 
 export const MeteorSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M2,2.273l23.979,25.4a1.119,1.119,0,0,0,1.442-.1,1.064,1.064,0,0,0,.144-1.344L2,2.273Z"
@@ -477,10 +441,7 @@ export const MeteorSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const NodeSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M16,30a2.151,2.151,0,0,1-1.076-.288L11.5,27.685c-.511-.286-.262-.387-.093-.446a6.828,6.828,0,0,0,1.549-.7.263.263,0,0,1,.255.019l2.631,1.563a.34.34,0,0,0,.318,0l10.26-5.922a.323.323,0,0,0,.157-.278V10.075a.331.331,0,0,0-.159-.283L16.158,3.875a.323.323,0,0,0-.317,0L5.587,9.794a.33.33,0,0,0-.162.281V21.916a.315.315,0,0,0,.161.274L8.4,23.814c1.525.762,2.459-.136,2.459-1.038V11.085a.3.3,0,0,1,.3-.3h1.3a.3.3,0,0,1,.3.3V22.777c0,2.035-1.108,3.2-3.038,3.2a4.389,4.389,0,0,1-2.363-.642L4.661,23.788a2.166,2.166,0,0,1-1.076-1.872V10.075A2.162,2.162,0,0,1,4.661,8.2L14.922,2.276a2.246,2.246,0,0,1,2.156,0L27.338,8.2a2.165,2.165,0,0,1,1.077,1.87V21.916a2.171,2.171,0,0,1-1.077,1.872l-10.26,5.924A2.152,2.152,0,0,1,16,30Z"
@@ -499,10 +460,7 @@ export const NodeSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const MongoSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <path
         d="M16.62,30l-.751-.249s.1-3.8-1.275-4.067c-.9-1.048.133-44.741,3.423-.149a2.712,2.712,0,0,0-1.333,1.523A14.1,14.1,0,0,0,16.62,30Z"
@@ -527,10 +485,7 @@ export const MongoSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const HTMLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
         points="5.902 27.201 3.655 2 28.345 2 26.095 27.197 15.985 30 5.902 27.201"
@@ -573,10 +528,7 @@ export const HTMLSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const JSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <rect
         x="2"
@@ -593,10 +545,7 @@ export const JSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
 )
 
 export const TSSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
-  (
-    _props: any,
-    ref: AnyExoticRefTargets
-  ): JSX.Element => (
+  (_props: any, ref: AnyExoticRefTargets): JSX.Element => (
     <svg viewBox="0 0 32 32" width="128" height="128" ref={ref}>
       <polygon
         points="2 16 2 30 16 30 30 30 30 16 30 2 16 2 2 2 2 16"
