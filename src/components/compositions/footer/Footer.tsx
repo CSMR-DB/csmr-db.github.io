@@ -25,7 +25,6 @@ const StyledFooter: StyledComponent<
   width: 100%;
   text-align: center;
   padding: 1rem;
-  background: black;
   min-height: 100vh;
   z-index: -1;
 
@@ -35,6 +34,8 @@ const StyledFooter: StyledComponent<
   }
 
   ${({ theme }: IFooterProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.dark.normal};
+
     @media ${theme!.breakpoints.min.smartphone} {
       padding: 2rem;
 
