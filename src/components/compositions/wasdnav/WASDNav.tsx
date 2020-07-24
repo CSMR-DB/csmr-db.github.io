@@ -30,14 +30,10 @@ export function WASDNav({
         (route: IRouteObject, i: number): JSX.Element => (
           <Tween
             key={i}
-            from={
-              isLandingPage
-                ? { boxShadow: `0 0 0 32rem inset white`, opacity: 0, scale: 0 }
-                : {}
-            }
+            from={isLandingPage && { opacity: 0, scale: 0 }}
             duration={1}
-            delay={i * 0.25}
-            ease={'bounce'}
+            delay={route.boundKeys[0] === 's' ? 0.75 : 1}
+            ease={'back'}
           >
             <WASDLinkOrb
               key={i}
