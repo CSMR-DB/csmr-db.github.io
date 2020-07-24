@@ -74,7 +74,7 @@ export function Card({ children, index = 0 }: ICardProps): JSX.Element {
   return (
     <Tween
       from={{ scale: 0.95, opacity: 0 }}
-      duration={.5}
+      duration={0.5}
       delay={0.25 + index * 0.125}
       ease="back"
     >
