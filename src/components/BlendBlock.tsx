@@ -1,7 +1,24 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled, {
+  StyledComponent,
+  DefaultTheme,
+  css,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
-export const BlendBlock: StyledComponent<'div', any, {}, never> = styled.div`
+export interface IBlendBlockProps {
+  theme?: DefaultTheme
+}
+
+export const BlendBlock: StyledComponent<
+  'div',
+  any,
+  IBlendBlockProps,
+  never
+> = styled.div`
   padding: 1rem;
-  background: white;
   border-radius: 999rem;
+
+  ${({ theme }: IBlendBlockProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.light.normal};
+  `}
 `

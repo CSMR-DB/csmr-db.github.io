@@ -53,11 +53,12 @@ export const AnimatedScroller: StyledComponent<
   display: block;
   width: 1rem;
   height: 1rem;
-  background: white;
   border-radius: 999rem;
   animation: scrollDown 2000ms infinite ease-in-out reverse;
 
   ${({ theme }: IAnimatedScrollerProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.light.normal};
+
     @media ${theme!.breakpoints.min.smartphone} {
       animation: scrollDown 2000ms infinite ease-in-out;
     }

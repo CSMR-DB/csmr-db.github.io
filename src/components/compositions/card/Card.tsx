@@ -26,7 +26,6 @@ export const StyledCard: StyledComponent<
   grid-template-areas: 'header' 'body' 'footer';
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
-  background: white;
   box-shadow: 0 0.075rem 0.075rem rgba(0, 0, 0, 0.1),
     0 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -53,6 +52,8 @@ export const StyledCard: StyledComponent<
   }
 
   ${({ theme }: ICardProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.light.normal};
+
     @media ${theme!.breakpoints.min.smartphone} {
       text-align: justify;
     }

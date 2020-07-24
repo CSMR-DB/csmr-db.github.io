@@ -15,7 +15,6 @@ export const Excerpt: StyledComponent<
   IExcerptProps,
   never
 > = styled.div`
-  background: white;
   margin: auto 1rem;
   border-radius: 0.25rem;
   max-width: 36rem;
@@ -37,6 +36,8 @@ export const Excerpt: StyledComponent<
   }
 
   ${({ theme }: IExcerptProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.light.normal};
+
     @media ${theme!.breakpoints.min.smartphone} {
       padding: 2rem;
       margin: auto;
