@@ -40,8 +40,9 @@ export const WASDLinkOrb: StyledComponent<
     background: ${$background};
     color: ${$color};
     grid-area: ${$area};
-
+    
     @media ${theme!.breakpoints.min.smartphone} {
+      transition: background 200ms ease-in-out;
       width: 8rem;
       height: 8rem;
 
