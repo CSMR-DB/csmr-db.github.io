@@ -48,15 +48,21 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   >
     <Card>
       <CardHeader>
-        <CardHeaderImageOrVideo video={video} image={image} />
+        {(video || image) && (
+          <CardHeaderImageOrVideo video={video} image={image} />
+        )}
         <CardHeaderText>
           <h1>
             <StyledLink to={path}>{title}</StyledLink>
           </h1>
           <h6>
             <DateFormatted dateString={date} />
-            <span> · </span>
-            <ReadingTime timeToRead={timeToRead} />
+            {timeToRead && (
+              <>
+                <span> · </span>
+                <ReadingTime timeToRead={timeToRead} />
+              </>
+            )}
           </h6>
         </CardHeaderText>
       </CardHeader>

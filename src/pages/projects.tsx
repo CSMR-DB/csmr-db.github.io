@@ -6,37 +6,6 @@ import { ProjectsLayout, IProjectsLayoutProps } from '../layouts/ProjectsLayout'
 
 // tslint:disable-next-line: no-void-expression
 const PAGE_QUERY: void = graphql`
-  fragment SharedQuery on MarkdownRemarkConnection {
-    edges {
-      node {
-        frontmatter {
-          path
-          category
-          title
-          featuredVideo
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 960) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          excerpt
-          tags
-          date
-        }
-        wordCount {
-          words
-          sentences
-          paragraphs
-        }
-        timeToRead
-        excerpt
-        id
-      }
-    }
-  }
-
   query {
     programmingData: allMarkdownRemark(
       filter: {
@@ -47,7 +16,33 @@ const PAGE_QUERY: void = graphql`
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
-      ...SharedQuery
+      edges {
+        node {
+          frontmatter {
+            path
+            category
+            title
+            featuredVideo
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 960) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            excerpt
+            tags
+            date
+          }
+          wordCount {
+            words
+            sentences
+            paragraphs
+          }
+          excerpt
+          id
+        }
+      }
     }
 
     graphicDesignData: allMarkdownRemark(
@@ -59,7 +54,25 @@ const PAGE_QUERY: void = graphql`
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
-      ...SharedQuery
+      edges {
+        node {
+          frontmatter {
+            path
+            category
+            title
+            excerpt
+            tags
+            date
+          }
+          wordCount {
+            words
+            sentences
+            paragraphs
+          }
+          excerpt
+          id
+        }
+      }
     }
   }
 `
