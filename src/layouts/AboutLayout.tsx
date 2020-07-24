@@ -104,7 +104,9 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
       </CenteredBlock>
       <WideBoi>
         <CoursesGrid courses={groupedCourses} />
-        <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>I can do this</CTAButton>
+        <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>
+          I can do this
+        </CTAButton>
       </WideBoi>
       <CenteredBlock>
         <p>
@@ -148,7 +150,9 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
       </CenteredBlock>
       <WideBoi>
         <SVGLogos svgs={allSVGs} />
-        <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>Find out more</CTAButton>
+        <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>
+          Find out more
+        </CTAButton>
       </WideBoi>
       <CenteredBlock>
         <p>
