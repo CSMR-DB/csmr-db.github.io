@@ -9,7 +9,7 @@ const PAGE_QUERY: void = graphql`
   query {
     experienceData: allMarkdownRemark(
       filter: { frontmatter: { path: { regex: "/experiences/" } } }
-      sort: { fields: frontmatter___dateEnd }
+      sort: { fields: frontmatter___dateEnd, order: DESC }
     ) {
       edges {
         node {
