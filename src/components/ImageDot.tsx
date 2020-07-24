@@ -1,16 +1,19 @@
+import React, { ReactNode } from 'react'
 import styled, {
   StyledComponent,
   css,
   FlattenSimpleInterpolation,
   DefaultTheme,
 } from 'styled-components'
+import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
 
 export interface IImageDotProps {
   theme?: DefaultTheme
+  children: ReactNode
   $width: string
 }
 
-export const ImageDot: StyledComponent<
+export const StyledImageDot: StyledComponent<
   'div',
   any,
   IImageDotProps,
@@ -44,3 +47,9 @@ export const ImageDot: StyledComponent<
     }
   `}
 `
+
+export const ImageDot: AnyExoticRefComponent<IImageDotProps> = React.forwardRef(
+  (props: IImageDotProps, ref: AnyExoticRefTargets): JSX.Element => (
+    <StyledImageDot ref={ref} {...props} />
+  )
+)

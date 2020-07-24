@@ -22,6 +22,7 @@ import { Excerpt } from '../../Excerpt'
 import { ImageDot } from '../../ImageDot'
 import { ScrollIconWrapper, AnimatedScroller } from '../ScrollIndicator'
 import { ISiteMetadata } from '../../../types/interfaces'
+import { Tween } from 'react-gsap'
 
 interface IHeaderProps {
   theme?: DefaultTheme
@@ -92,11 +93,18 @@ export function Header({
             {isLandingPage && (
               <>
                 <Excerpt>
-                  <ImageDot $width={'8rem'}>
-                    <Filter>
-                      <DynamicImage path="wallpaper/me.jpg" />
-                    </Filter>
-                  </ImageDot>
+                  <Tween
+                    from={{ opacity: 0, scale: 0 }}
+                    duration={1}
+                    delay={0.25}
+                    ease={'back'}
+                  >
+                    <ImageDot $width={'8rem'}>
+                      <Filter>
+                        <DynamicImage path="wallpaper/me.jpg" />
+                      </Filter>
+                    </ImageDot>
+                  </Tween>
                   <h1>Hey, I'm {data.site.siteMetadata.author}</h1>
                   <p>{data.site.siteMetadata.description}</p>
                 </Excerpt>
