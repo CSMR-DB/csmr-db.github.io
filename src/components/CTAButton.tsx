@@ -11,6 +11,7 @@ interface ICTAButtonProps {
   theme?: DefaultTheme
   children: ReactNode
   to: string
+  $margin?: string
 }
 
 export const CTAButton: StyledComponent<
@@ -29,14 +30,14 @@ export const CTAButton: StyledComponent<
   padding: 1.5rem;
   max-width: 24rem;
   border-radius: 999rem;
-  margin: 0 auto;
 
   &:hover {
     filter: grayscale(0.5);
   }
 
-  ${({ theme }: ICTAButtonProps): FlattenSimpleInterpolation => css`
+  ${({ theme, $margin: margin = '0 auto' }: ICTAButtonProps): FlattenSimpleInterpolation => css`
     background: ${theme!.palette.second.normal};
+    margin: ${margin};
 
     @media ${theme!.breakpoints.min.smartphone} {
       font-size: 1.25rem;
