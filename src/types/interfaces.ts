@@ -77,7 +77,6 @@ export interface IExperienceEdge {
       sentences: number
       paragraphs: number
     }
-    timeToRead: number
     html: string
   }
 }
@@ -109,7 +108,6 @@ export interface ISkillsetEdge {
       sentences: number
       paragraphs: number
     }
-    timeToRead: number
     html: string
   }
 }
@@ -141,7 +139,6 @@ export interface IProjectsEdge {
       sentences: number
       paragraphs: number
     }
-    timeToRead: number
     html: string
   }
 }

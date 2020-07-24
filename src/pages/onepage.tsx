@@ -36,7 +36,6 @@ const PAGE_QUERY: void = graphql`
           sentences
           paragraphs
         }
-        timeToRead
         excerpt
         id
       }
