@@ -20,7 +20,6 @@ export const CTAButton: StyledComponent<
   never
 > = styled(Link)`
   display: block;
-  background: palevioletred;
   font-size: 1rem;
   cursor: pointer;
   color: white !important;
@@ -37,6 +36,8 @@ export const CTAButton: StyledComponent<
   }
 
   ${({ theme }: ICTAButtonProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.second.normal};
+
     @media ${theme!.breakpoints.min.smartphone} {
       font-size: 1.25rem;
     }
