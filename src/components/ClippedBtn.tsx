@@ -19,7 +19,6 @@ export const ClippedBtn: StyledComponent<
   never
 > = styled.div`
   height: 100%;
-  background: transparent;
   border-radius: 0.25rem;
   transition: color 0.1s ease-in 0.1s;
   transition: all 0.25s ease-in-out;
