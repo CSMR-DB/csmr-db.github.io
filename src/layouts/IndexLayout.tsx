@@ -16,7 +16,7 @@ import { ContentSeparator } from '../components/ContentSeparator'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Grid } from '../components/Grid'
 import { Card } from '../components/compositions/card/Card'
-import { CTAButton } from '../components/CTAButton'
+import { ReadMore } from '../components/compositions/ReadMore'
 
 export interface IIndexLayoutProps {
   site: {
@@ -46,11 +46,10 @@ export function IndexLayout({
             <Grid $columns={3}>
               <div>
                 <Grid>
-                  <Card>
-                    <CardBody>
-                      <h1>Why I make things</h1>
-                    </CardBody>
-                  </Card>
+                  <ReadMore
+                    title={'Why I make things'}
+                    link={{ path: '/about', text: 'my story' }}
+                  />
                   <Card>
                     <CardHeader>
                       <CardHeaderText>
@@ -81,45 +80,24 @@ export function IndexLayout({
                       </p>
                     </CardBody>
                   </Card>
-                  <Card>
-                    <CardBody>
-                      <CTAButton to={'/about'}>Let me tell you...</CTAButton>
-                    </CardBody>
-                  </Card>
                 </Grid>
               </div>
               <div>
                 <Grid>
-                  <Card>
-                    <CardBody>
-                      <h1>How I make things</h1>
-                    </CardBody>
-                  </Card>
+                  <ReadMore
+                    title={'How I make things'}
+                    link={{ path: '/skillset', text: 'my toolbelt' }}
+                  />
                   <SkillCards edges={skillsetData.edges} />
-                  <Card>
-                    <CardBody>
-                      <CTAButton to={'/skillset'}>
-                        What else can I do?
-                      </CTAButton>
-                    </CardBody>
-                  </Card>
                 </Grid>
               </div>
               <div>
                 <Grid>
-                  <Card>
-                    <CardBody>
-                      <h1>What I have made</h1>
-                    </CardBody>
-                  </Card>
+                  <ReadMore
+                    title={'What I have made'}
+                    link={{ path: '/projects', text: 'my work / experiments' }}
+                  />
                   <ProjectCards edges={programmingData.edges} />
-                  <Card>
-                    <CardBody>
-                      <CTAButton to={'/projects'}>
-                        Read more about my projects
-                      </CTAButton>
-                    </CardBody>
-                  </Card>
                 </Grid>
               </div>
             </Grid>
