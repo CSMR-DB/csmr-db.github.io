@@ -23,7 +23,6 @@ export const CTAButton: StyledComponent<
   display: block;
   font-size: 1rem;
   cursor: pointer;
-  color: white !important;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
@@ -35,8 +34,12 @@ export const CTAButton: StyledComponent<
     filter: grayscale(0.5);
   }
 
-  ${({ theme, $margin: margin = '0 auto' }: ICTAButtonProps): FlattenSimpleInterpolation => css`
+  ${({
+    theme,
+    $margin: margin = '0 auto',
+  }: ICTAButtonProps): FlattenSimpleInterpolation => css`
     background: ${theme!.palette.second.normal};
+    color: ${theme!.palette.light.normal} !important;
     margin: ${margin};
 
     @media ${theme!.breakpoints.min.smartphone} {
