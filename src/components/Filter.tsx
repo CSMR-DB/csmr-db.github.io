@@ -35,7 +35,10 @@ export const Filter: StyledComponent<
     }
   `};
 
-  ${({ $lens: lens }: IFilterProps): FlattenSimpleInterpolation | null =>
+  ${({
+    theme,
+    $lens: lens = theme!.palette.first.lens,
+  }: IFilterProps): FlattenSimpleInterpolation | null =>
     lens
       ? css`
           &::after {
