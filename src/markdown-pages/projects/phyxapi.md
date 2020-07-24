@@ -6,14 +6,7 @@ date: 2019-03-01
 title: 'PHYX API'
 featuredImage: '../../images/projects/phyx_api.png'
 tags: ['TypeScript', 'GraphQL']
-excerpt: "This is my first major project stepping out of front-end
-  development. Everything I have made up until this point has
-  focussed, in some way, on visual design. The only visual aspect of
-  this project is the GraphiQL portal that's made available to
-  communicate with the server. The stack consists of Apollo Server
-  (GraphQL), TypeScript and a Dependency Injection Container. This is
-  a project for me to experiment with architecture, TDD & SOLID
-  principles. I still have a lot to learn."
+excerpt: 'This is my first project stepping out of front-end development and into back-end development. The stack consists of Apollo Server (GraphQL), TypeScript and a Dependency Injection Container.'
 ---
 
 This project is all about games I play, used to play, or like to watch. All games have a different signature, feature set and playstyle. For example: CS:GO implements an in-match economy system, while R6 Siege and Apex Legends have Operators / Legends with unique abilities. All these games have an e-sports scene around them and require some form of tactic to be played properly.

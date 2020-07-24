@@ -6,11 +6,7 @@ date: 2016-01-30
 title: 'Cloudcademy'
 featuredImage: '../../images/projects/cloudcademy_code.png'
 tags: ['HTML', 'CSS', 'JavaScript']
-excerpt: 'Cloudcademy was the big course assignment we were to work on to get
-  a final grade. We were just told to make "a social media platform"
-  for any subject we wanted. The subject itself didn''t matter, as the
-  goal was to learn JavaScript. In this project I chose to focus on
-  jQuery, as it enabled me to get going faster.'
+excerpt: 'Cloudcademy was the big course assignment we were to work on to get a final grade. We were just told to make "a social media platform" for any subject we wanted, as long as it was powered by JavaScript'
 ---
 
 The registration system included a super fancy validation function. All `registerCheck` functions return a string literal of either `"error"` or `""`, so concatenating them would mean that any string with a length greater than 0 would result in the registration button becoming disabled. This felt smart at the time.
