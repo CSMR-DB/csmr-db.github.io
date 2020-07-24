@@ -1,15 +1,19 @@
+import React, { ReactNode } from 'react'
 import styled, {
   StyledComponent,
   DefaultTheme,
   css,
   FlattenSimpleInterpolation,
 } from 'styled-components'
+import { Tween } from 'react-gsap'
 
 export interface ICardProps {
   theme?: DefaultTheme
+  children: ReactNode
+  index?: number
 }
 
-export const Card: StyledComponent<
+export const StyledCard: StyledComponent<
   'article',
   any,
   ICardProps,
@@ -65,3 +69,16 @@ export const Card: StyledComponent<
     }
   `}
 `
+
+export function Card({ children, index = 0 }: ICardProps): JSX.Element {
+  return (
+    <Tween
+      from={{ scale: 0.95, opacity: 0 }}
+      duration={.5}
+      delay={0.25 + index * 0.125}
+      ease="back"
+    >
+      <StyledCard>{children}</StyledCard>
+    </Tween>
+  )
+}

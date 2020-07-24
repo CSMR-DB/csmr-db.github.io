@@ -45,56 +45,49 @@ export function SkillCard({
   time = 0,
 }: ISkillCardProps): JSX.Element {
   return (
-    <Tween
-      from={{ x: '-400px', opacity: 0 }}
-      duration={1}
-      delay={0.25 + index * 0.125}
-      ease="elastic"
-    >
-      <StyledSkillCard>
-        <SkillCardBackdrop index={index}>
-          <DynamicImage
-            path={`code_icons/${title
-              .replace(/\([0-9]*\)|\s+/gi, '')
-              .toLocaleLowerCase()}.png`}
-          />
-        </SkillCardBackdrop>
-        <CardHeader>
-          <SkillCardHeader>
-            <Flex $justifyContent="space-between" $direction="row">
-              <SkillCardIndicator
-                instance={index}
-                index={0}
-                litColor={skillColor}
-              ></SkillCardIndicator>
-              <h1>
-                <StyledLink
-                  to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
-                  $color={skillColor}
-                >
-                  {title}
-                </StyledLink>
-              </h1>
-            </Flex>
-          </SkillCardHeader>
-        </CardHeader>
-        <CardBody>
-          <SkillCardBody description={description} index={index} />
-        </CardBody>
-        <CardFooter>
-          <p>
-            (time spent:{' '}
-            <Tween
-              to={{ count: time }}
-              ease="none"
-              duration={Math.sqrt(Math.sqrt(time)) * 0.5}
-            >
-              <span>0</span>
-            </Tween>{' '}
-            hours)
-          </p>
-        </CardFooter>
-      </StyledSkillCard>
-    </Tween>
+    <StyledSkillCard index={index}>
+      <SkillCardBackdrop index={index}>
+        <DynamicImage
+          path={`code_icons/${title
+            .replace(/\([0-9]*\)|\s+/gi, '')
+            .toLocaleLowerCase()}.png`}
+        />
+      </SkillCardBackdrop>
+      <CardHeader>
+        <SkillCardHeader>
+          <Flex $justifyContent="space-between" $direction="row">
+            <SkillCardIndicator
+              instance={index}
+              index={0}
+              litColor={skillColor}
+            ></SkillCardIndicator>
+            <h1>
+              <StyledLink
+                to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
+                $color={skillColor}
+              >
+                {title}
+              </StyledLink>
+            </h1>
+          </Flex>
+        </SkillCardHeader>
+      </CardHeader>
+      <CardBody>
+        <SkillCardBody description={description} index={index} />
+      </CardBody>
+      <CardFooter>
+        <p>
+          (time spent:{' '}
+          <Tween
+            to={{ count: time }}
+            ease="none"
+            duration={Math.sqrt(Math.sqrt(time)) * 0.5}
+          >
+            <span>0</span>
+          </Tween>{' '}
+          hours)
+        </p>
+      </CardFooter>
+    </StyledSkillCard>
   )
 }

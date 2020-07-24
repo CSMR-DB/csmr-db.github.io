@@ -1,6 +1,6 @@
 import React from 'react'
 import { BackgroundColorProperty } from 'csstype'
-import { Reveal, Tween } from 'react-gsap'
+import { Reveal } from 'react-gsap'
 
 import { Card } from '../Card'
 import { Flex } from '../../../Flex'
@@ -32,39 +32,28 @@ export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
   backgroundColor,
 }: IExperienceCardProps): JSX.Element => (
   <Reveal>
-    <Tween
-      from={{ width: '8rem', height: '8rem' }}
-      to={{ width: '100%', height: 'auto' }}
-      duration={0.75}
-      ease={'power4'}
-    >
-      <Card>
-        <ExperienceCardHeader>
-          <Flex $justifyContent="flex-start">
-            <CardHeaderIconWrapper $backgroundColor={backgroundColor}>
-              <DynamicIcon path={icon} />
-            </CardHeaderIconWrapper>
-            <Tween from={{ display: 'none' }} delay={1}>
-              <ExperienceCardHeaderText>
-                <h1>
-                  {name} ({type})
-                </h1>
-                <h2>
-                  <DateFormatted dateString={dateStart} /> -{' '}
-                  <DateFormatted dateString={dateEnd} />
-                </h2>
-              </ExperienceCardHeaderText>
-            </Tween>
-          </Flex>
-        </ExperienceCardHeader>
-        <CardBody>
-          <Tween from={{ display: 'none' }} delay={1}>
-            <main>
-              <p>{description}</p>
-            </main>
-          </Tween>
-        </CardBody>
-      </Card>
-    </Tween>
+    <Card>
+      <ExperienceCardHeader>
+        <Flex $justifyContent="flex-start">
+          <CardHeaderIconWrapper $backgroundColor={backgroundColor}>
+            <DynamicIcon path={icon} />
+          </CardHeaderIconWrapper>
+          <ExperienceCardHeaderText>
+            <h1>
+              {name} ({type})
+            </h1>
+            <h2>
+              <DateFormatted dateString={dateStart} /> -{' '}
+              <DateFormatted dateString={dateEnd} />
+            </h2>
+          </ExperienceCardHeaderText>
+        </Flex>
+      </ExperienceCardHeader>
+      <CardBody>
+        <main>
+          <p>{description}</p>
+        </main>
+      </CardBody>
+    </Card>
   </Reveal>
 )
