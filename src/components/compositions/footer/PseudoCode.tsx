@@ -27,7 +27,9 @@ const ProgramLine: StyledComponent<
 > = styled.p`
   margin: 0 !important;
 
-  ${({ $padding: padding = 0 }: IProgramLineProps): FlattenSimpleInterpolation => css`
+  ${({
+    $padding: padding = 0,
+  }: IProgramLineProps): FlattenSimpleInterpolation => css`
     padding-left: ${padding}rem;
   `}
 `

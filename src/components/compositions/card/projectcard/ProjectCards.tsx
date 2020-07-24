@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { IProjectsAllMarkdownRemark, IProjectsEdge } from '../../../../types/interfaces'
+import {
+  IProjectsAllMarkdownRemark,
+  IProjectsEdge,
+} from '../../../../types/interfaces'
 
 import { ProjectCard } from './ProjectCard'
 

@@ -43,9 +43,7 @@ const StyledHeader: StyledComponent<
     height: 100vh;
   }
 
-  ${({
-    $height: height,
-  }: IHeaderProps): FlattenSimpleInterpolation => css`
+  ${({ $height: height }: IHeaderProps): FlattenSimpleInterpolation => css`
     min-height: ${height};
   `};
 `

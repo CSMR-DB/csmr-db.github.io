@@ -14,10 +14,10 @@ export interface IThemeBreakpointsGroups {
   max: IThemeBreakpoints
 }
 
-    export interface IThemeFonts {
-      headings: FontProperty
-      copy: FontProperty
-    }
+export interface IThemeFonts {
+  headings: FontProperty
+  copy: FontProperty
+}
 
 export interface IThemePaletteObject<T> {
   normal: T
@@ -61,7 +61,10 @@ export class Theme implements DefaultTheme {
     return lighten(0.2)(color)
   }
 
-  static createMediaQueryScreenSizeString(minMax: 'min' | 'max', size: number): string {
+  static createMediaQueryScreenSizeString(
+    minMax: 'min' | 'max',
+    size: number
+  ): string {
     return `only screen and (${minMax}-width: ${size}px)`
   }
 
@@ -91,7 +94,7 @@ export class Theme implements DefaultTheme {
       normal: color,
       hover: Theme.createHoverVariant(color),
       active: Theme.createActiveVariant(color),
-      lens: opacify(-.75)(color),
+      lens: opacify(-0.75)(color),
     }
   }
 
@@ -120,7 +123,7 @@ export class Theme implements DefaultTheme {
     this.#breakpoints = Theme.createBreakpoints(breakpoints)
     this.#fonts = {
       headings: fonts[0],
-      copy: fonts[1]
+      copy: fonts[1],
     }
   }
 
@@ -155,6 +158,6 @@ export const theme: DefaultTheme = new Theme({
   light: '#F8F8F8',
   dark: '#000',
   filter: 'sepia(0.25) saturate(2) grayscale(1) brightness(.5)',
-  fonts: [ "'Inter', serif", "Fira Code" ],
+  fonts: ["'Inter', serif", 'Fira Code'],
   breakpoints: [600, 960, 1200, 1920],
 })

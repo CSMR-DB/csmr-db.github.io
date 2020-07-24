@@ -20,7 +20,10 @@ export const WideBoi: StyledComponent<
   padding: 4rem;
   margin: 4rem auto;
 
-  ${({ theme, $maxWidth: maxWidth }: IWideBoiProps): FlattenSimpleInterpolation => css`
+  ${({
+    theme,
+    $maxWidth: maxWidth,
+  }: IWideBoiProps): FlattenSimpleInterpolation => css`
     background: ${theme!.palette.third.normal};
     max-width: ${maxWidth};
   `}
