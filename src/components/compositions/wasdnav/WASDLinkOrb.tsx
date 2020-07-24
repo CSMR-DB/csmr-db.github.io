@@ -33,13 +33,11 @@ export const WASDLinkOrb: StyledComponent<
 
   ${({
     theme,
-    $background = 'transparent',
-    $bordercolor,
-    $color,
+    $background = theme!.palette.first.lens,
+    $color = theme!.palette.light.normal,
     $area,
   }: IWASDLinkOrbProps): FlattenSimpleInterpolation => css`
     background: ${$background};
-    border: 1px solid ${$bordercolor};
     color: ${$color};
     grid-area: ${$area};
 
@@ -48,13 +46,13 @@ export const WASDLinkOrb: StyledComponent<
       height: 8rem;
 
       &:hover {
-        border: 1px solid ${theme!.palette.first.hover};
-        color: ${theme!.palette.first.hover};
+        background: ${theme!.palette.first.hover};
+        color: ${theme!.palette.light.hover};
       }
 
       &.active {
-        border: 1px solid ${theme!.palette.first.normal};
-        color: ${theme!.palette.first.normal};
+        background: ${theme!.palette.first.active};
+        color: ${theme!.palette.light.active};
       }
     }
   `}
