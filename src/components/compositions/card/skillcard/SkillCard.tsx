@@ -73,7 +73,7 @@ export function SkillCard({
         </SkillCardHeader>
       </CardHeader>
       <CardBody>
-        <SkillCardBody description={description} index={index} />
+        <SkillCardBody description={description} />
       </CardBody>
       <CardFooter>
         <p>
