@@ -168,7 +168,7 @@ const PAGE_QUERY: void = graphql`
   }
 `
 
-function ProjectsPage(): JSX.Element {
+function Onepage(): JSX.Element {
   return (
     <Layout>
       <StaticQuery
@@ -207,4 +207,4 @@ function ProjectsPage(): JSX.Element {
 }
 
 // tslint:disable-next-line: no-default-export
-export default ProjectsPage
+export default Onepage
