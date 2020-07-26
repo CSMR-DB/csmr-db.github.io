@@ -27,7 +27,7 @@ export interface IAboutLayoutProps {
 
 export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
   const groupedCourses: [ICourse['category'], ICourse[]][] = [
-    ...groupBy(courses, 'category'),
+    ...groupBy(COURSES, 'category'),
   ]
   const images: ISubbedImage[] = [
     {

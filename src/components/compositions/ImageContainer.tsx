@@ -40,7 +40,7 @@ export const StyledImageContainer: StyledComponent<
 
 export interface IImageContainer {
   children: ReactNode
-  overlay: {
+  overlay?: {
     node: ReactNode
     justifyContent?: JustifyContentProperty
   }
