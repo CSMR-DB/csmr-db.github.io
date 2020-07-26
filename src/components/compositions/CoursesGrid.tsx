@@ -36,7 +36,11 @@ export function CoursesGrid({ courses }: ICoursesGridProps): JSX.Element {
                 {courseGroup[1].map(
                   (course: ICourse, j: number): JSX.Element => (
                     <h5 key={j}>
-                      <ColoredText $color={course.color || '#666'}>
+                      <ColoredText
+                        $color={
+                          course.category === 'Development' ? '#000' : '#666'
+                        }
+                      >
                         {'❭'} {course.name}
                       </ColoredText>
                     </h5>
