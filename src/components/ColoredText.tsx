@@ -6,7 +6,7 @@ import styled, {
 import { ColorProperty } from 'csstype'
 
 interface IColoredTextProps {
-  color: ColorProperty
+  $color: ColorProperty
 }
 
 export const ColoredText: StyledComponent<
@@ -15,7 +15,9 @@ export const ColoredText: StyledComponent<
   Partial<IColoredTextProps>,
   never
 > = styled.span`
-  ${({ color = 'black' }: IColoredTextProps): FlattenSimpleInterpolation => css`
+  ${({
+    $color: color = 'black',
+  }: IColoredTextProps): FlattenSimpleInterpolation => css`
     color: ${color};
   `}
 `
