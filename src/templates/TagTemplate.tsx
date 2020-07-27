@@ -7,7 +7,9 @@ import {
   ISkillsetFrontmatter,
   IProjectFrontmatter,
 } from '../types/interfaces'
+import { StaticDataManager } from '../data/DataManager'
 
+import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
 import { Grid } from '../components/Grid'
 import { ContentSeparator } from '../components/ContentSeparator'
@@ -32,28 +34,35 @@ export default function TagTemplate({
 }: IListItemData<IProjectFrontmatter> &
   ISingleItemData<ISkillsetFrontmatter>): JSX.Element {
   return (
-    <Layout>
-      <ContentSeparator>
-        <CenteredBlock>
-          <SkillCard
-            skillColor={skillColor}
-            level={level}
-            title={title}
-            description={description}
-            time={time}
-            index={0}
-          />
-        </CenteredBlock>
-      </ContentSeparator>
-      <ContentSeparator>
-        <Grid
-          $columns={'repeat(auto-fill,minmax(32rem,1fr))'}
-          $maxWidth={'100rem'}
-        >
-          <ProjectCards edges={edges} />
-        </Grid>
-      </ContentSeparator>
-    </Layout>
+    <>
+      <SEO
+        title={`${title} · Tag`}
+        description={description}
+        siteMetadata={StaticDataManager.siteMetadata}
+      />
+      <Layout>
+        <ContentSeparator>
+          <CenteredBlock>
+            <SkillCard
+              skillColor={skillColor}
+              level={level}
+              title={title}
+              description={description}
+              time={time}
+              index={0}
+            />
+          </CenteredBlock>
+        </ContentSeparator>
+        <ContentSeparator>
+          <Grid
+            $columns={'repeat(auto-fill,minmax(32rem,1fr))'}
+            $maxWidth={'100rem'}
+          >
+            <ProjectCards edges={edges} />
+          </Grid>
+        </ContentSeparator>
+      </Layout>
+    </>
   )
 }
 
