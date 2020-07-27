@@ -15,7 +15,7 @@ exports.createPages = async ({
   /**
    * TEMPLATE IMPORTS
    */
-  const ArticleTemplate = path.resolve(`src/templates/ArticleTemplate.tsx`)
+  const ArticleTemplate = path.resolve(`src/templates/ProjectTemplate.tsx`)
   // const SkillsetTemplate = path.resolve(`src/templates/SkillsetTemplate.tsx`)
   const TagTemplate = path.resolve(`src/templates/TagTemplate.tsx`)
   const { errors, data } = await graphql(`

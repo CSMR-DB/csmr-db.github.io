@@ -14,7 +14,7 @@ import { ReadingTime } from '../components/ReadingTime'
 import { FullPageH1 } from '../components/FullPageH1'
 
 // tslint:disable-next-line: no-default-export
-export default function ArticleTemplate({
+export default function ProjectTemplate({
   data: {
     markdownRemark: {
       frontmatter: { featuredImage, featuredVideo, tags, date, title, excerpt },
