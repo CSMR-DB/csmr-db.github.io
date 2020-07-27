@@ -11,18 +11,6 @@ export interface ISEOProps {
   image?: string
 }
 
-export interface ISiteMetadata {
-  site: {
-    siteMetadata: {
-      title: string
-      description: string
-      author: string
-      image: string
-      url: string
-    }
-  }
-}
-
 export function SEO({
   description,
   lang = 'en-US',
