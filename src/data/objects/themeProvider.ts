@@ -46,7 +46,7 @@ interface IThemeBuilderArgs {
   breakpoints: [number, number, number, number]
 }
 
-export class Theme implements DefaultTheme {
+class Theme implements DefaultTheme {
   #palette: DefaultTheme['palette']
 
   #breakpoints: DefaultTheme['breakpoints']
@@ -151,7 +151,7 @@ export class Theme implements DefaultTheme {
 //   breakpoints: [600, 960, 1200, 1920],
 // })
 
-export const theme: DefaultTheme = new Theme({
+const THEME: DefaultTheme = new Theme({
   first: '#0088CD',
   second: '#00D8FD',
   third: '#EFEFEF',
@@ -161,3 +161,7 @@ export const theme: DefaultTheme = new Theme({
   fonts: ["'Inter', serif", 'Fira Code'],
   breakpoints: [600, 960, 1200, 1920],
 })
+
+export function themeProvider(): DefaultTheme {
+  return THEME
+}

@@ -4,7 +4,7 @@ export interface IRouteObject {
   title: string
 }
 
-export const routes: IRouteObject[] = [
+const ROUTES: IRouteObject[] = [
   {
     path: '/about',
     boundKeys: ['w', 0],
@@ -26,3 +26,7 @@ export const routes: IRouteObject[] = [
     title: 'projects',
   },
 ]
+
+export function routesProvider(): IRouteObject[] {
+  return ROUTES
+}

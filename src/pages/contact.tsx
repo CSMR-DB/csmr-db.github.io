@@ -1,14 +1,18 @@
 import React from 'react'
 
-import { CONTACTS } from '../data/contacts'
+import { StaticDataManager } from '../data/DataManager'
 
 import { Layout } from '../components/Layout'
-import { ContactLayout } from '../layouts/ContactLayout'
+import { ContactLayout, IContactLayoutProps } from '../layouts/ContactLayout'
 
 function ContactPage(): JSX.Element {
+  const data: IContactLayoutProps = {
+    contacts: StaticDataManager.contacts,
+  }
+
   return (
     <Layout>
-      <ContactLayout contacts={CONTACTS} />
+      <ContactLayout {...data} />
     </Layout>
   )
 }

@@ -4,11 +4,11 @@ import { TransitionProvider, TransitionViews } from 'gatsby-plugin-transitions'
 // tslint:disable-next-line: no-import-side-effect
 import '../css/reset.css'
 
-import { theme } from '../data/theme'
 import { IONavigator } from '../hooks/IONavigator'
 
 import { Header } from '../components/compositions/header/Header'
 import { Footer } from '../components/compositions/footer/Footer'
+import { StaticDataManager, AStaticDataManager } from '../data/DataManager'
 
 interface ILayoutProps {
   children: ReactNode
@@ -33,6 +33,8 @@ function TransitioningLayout({
   children,
   location,
 }: ILayoutProps): JSX.Element {
+  const { theme }: typeof AStaticDataManager = StaticDataManager
+
   const isLandingPage: boolean = location.pathname === '/'
 
   return (

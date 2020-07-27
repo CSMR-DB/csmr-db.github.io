@@ -5,9 +5,11 @@ import styled, {
   FlattenSimpleInterpolation,
   DefaultTheme,
 } from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
 
-import { routes } from '../../../data/routes'
+import {
+  AStaticDataManager,
+  StaticDataManager,
+} from '../../../data/DataManager'
 
 import { FullSizeLogo } from './FullSizeLogo'
 import { Filter } from '../../Filter'
@@ -21,7 +23,6 @@ import { WASDNav } from '../wasdnav/WASDNav'
 import { Excerpt } from '../../Excerpt'
 import { ImageDot } from '../../ImageDot'
 import { ScrollIconWrapper, AnimatedScroller } from '../ScrollIndicator'
-import { ISiteMetadata } from '../../../types/interfaces'
 import { Tween } from 'react-gsap'
 
 interface IHeaderProps {
@@ -53,18 +54,10 @@ export function Header({
   $height: height = '16rem',
   isLandingPage,
 }: IHeaderProps): JSX.Element {
-  // tslint:disable-next-line: no-void-expression
-  const data: ISiteMetadata = useStaticQuery(graphql`
-    query SiteTitleQueryHeader {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
-    }
-  `)
+  const {
+    siteMetadata: { site },
+    routes: defaultRoutes,
+  }: typeof AStaticDataManager = StaticDataManager
 
   return (
     <StyledHeader $height={height} isLandingPage={isLandingPage}>
@@ -85,7 +78,7 @@ export function Header({
         <Flex $justifyContent={'space-evenly'}>
           <Grid $gap={isLandingPage ? '2rem' : '1rem'}>
             <WASDNav
-              routes={routes}
+              routes={defaultRoutes}
               background={'rgba(48, 48, 48, .96)'}
               gap={isLandingPage ? '4rem' : '2rem'}
               isLandingPage={isLandingPage}
@@ -105,8 +98,8 @@ export function Header({
                       </Filter>
                     </ImageDot>
                   </Tween>
-                  <h1>Hey, I'm {data.site.siteMetadata.author}</h1>
-                  <p>{data.site.siteMetadata.description}</p>
+                  <h1>Hey, I'm {site.siteMetadata.author}</h1>
+                  <p>{site.siteMetadata.description}</p>
                 </Excerpt>
                 <div>
                   <ScrollIconWrapper>

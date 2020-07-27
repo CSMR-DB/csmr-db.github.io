@@ -2,7 +2,7 @@ import React from 'react'
 import { ColorProperty, BackgroundColorProperty } from 'csstype'
 import { Tween } from 'react-gsap'
 
-import { IRouteObject } from '../../../data/routes'
+import { IRouteObject } from '../../../data/objects/routesProvider'
 
 import { WASDGrid } from './WASDGrid'
 import { WASDLinkOrb } from './WASDLinkOrb'

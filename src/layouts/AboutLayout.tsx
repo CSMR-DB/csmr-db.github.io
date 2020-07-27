@@ -2,8 +2,8 @@ import React from 'react'
 
 import { IImageSharpAllFiles } from '../types/interfaces'
 import { groupBy } from '../utils'
-import { courses, ICourse } from '../data/courses'
-import { allSVGs } from '../data/tools'
+import { ICourse } from '../data/objects/coursesProvider'
+import { ITool } from '../data/objects/toolsProvider'
 
 import { GamesGrid } from '../components/compositions/GamesGrid'
 import { ShowsGrid } from '../components/compositions/ShowsGrid'
@@ -20,14 +20,22 @@ import { CTAButton } from '../components/CTAButton'
 import { StyledLink } from '../components/StyledLink'
 
 export interface IAboutLayoutProps {
-  wallpapers: IImageSharpAllFiles
-  squares: IImageSharpAllFiles
-  posters: IImageSharpAllFiles
+  gameWallpapers: IImageSharpAllFiles
+  photographySquares: IImageSharpAllFiles
+  seriesPosters: IImageSharpAllFiles
+  courses: ICourse[]
+  tools: ITool[]
 }
 
-export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
+export function AboutLayout({
+  gameWallpapers,
+  photographySquares,
+  seriesPosters,
+  courses,
+  tools,
+}: IAboutLayoutProps): JSX.Element {
   const groupedCourses: [ICourse['category'], ICourse[]][] = [
-    ...groupBy(COURSES, 'category'),
+    ...groupBy(courses, 'category'),
   ]
   const images: ISubbedImage[] = [
     {
@@ -149,7 +157,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         </p>
       </CenteredBlock>
       <WideBoi>
-        <SVGLogos svgs={allSVGs} />
+        <SVGLogos svgs={tools} />
         <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>
           Find out more
         </CTAButton>
@@ -170,7 +178,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         </p>
       </CenteredBlock>
       <WideBoi>
-        <ShowsGrid posters={props.posters} />
+        <ShowsGrid posters={seriesPosters} />
       </WideBoi>
       <CenteredBlock>
         <p>
@@ -183,7 +191,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         </p>
       </CenteredBlock>
       <WideBoi>
-        <GamesGrid wallpapers={props.wallpapers} />
+        <GamesGrid wallpapers={gameWallpapers} />
       </WideBoi>
       <CenteredBlock>
         <h2>Anything else?</h2>
@@ -205,7 +213,7 @@ export function AboutLayout(props: IAboutLayoutProps): JSX.Element {
         </p>
       </CenteredBlock>
       <WideBoi $maxWidth={'64rem'}>
-        <PhotographyGrid squares={props.squares} />
+        <PhotographyGrid squares={photographySquares} />
       </WideBoi>
       <CenteredBlock>
         <p>

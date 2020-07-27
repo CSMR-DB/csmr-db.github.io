@@ -10,7 +10,7 @@ export interface ICourse {
     | 'Misc'
 }
 
-export const devCourses: ICourse[] = [
+const devCourses: ICourse[] = [
   {
     name: 'WebSkills',
     description: 'Just the absolute starter kit for working with HTML and CSS.',
@@ -40,7 +40,7 @@ export const devCourses: ICourse[] = [
   },
 ]
 
-export const marketingCourses: ICourse[] = [
+const marketingCourses: ICourse[] = [
   {
     name: 'Marketing & e-Business',
     description: 'An introduction course into digital marketing.',
@@ -59,7 +59,7 @@ export const marketingCourses: ICourse[] = [
   },
 ]
 
-export const designCourses: ICourse[] = [
+const designCourses: ICourse[] = [
   {
     name: 'Workshop **',
     description:
@@ -91,7 +91,7 @@ export const designCourses: ICourse[] = [
   },
 ]
 
-export const organizationCourses: ICourse[] = [
+const organizationCourses: ICourse[] = [
   {
     name: 'Organisations & Communication',
     description: '',
@@ -110,7 +110,7 @@ export const organizationCourses: ICourse[] = [
   },
 ]
 
-export const researchCourses: ICourse[] = [
+const researchCourses: ICourse[] = [
   {
     name: 'Evaluation Research',
     description: 'Focus on qualitative research.',
@@ -123,7 +123,7 @@ export const researchCourses: ICourse[] = [
   },
 ]
 
-export const miscCourses: ICourse[] = [
+const miscCourses: ICourse[] = [
   {
     name: 'Doing New Things',
     description: '',
@@ -146,7 +146,7 @@ export const miscCourses: ICourse[] = [
   },
 ]
 
-export const COURSES: ICourse[] = [
+const COURSES: ICourse[] = [
   ...devCourses,
   ...designCourses,
   ...marketingCourses,
@@ -154,3 +154,7 @@ export const COURSES: ICourse[] = [
   ...researchCourses,
   ...miscCourses,
 ]
+
+export function coursesProvider(): ICourse[] {
+  return COURSES
+}

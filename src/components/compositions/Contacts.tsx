@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IContact } from '../../data/contacts'
+import { IContact } from '../../data/objects/contactsProvider'
 
 import { SocialButton } from './SocialButton'
 

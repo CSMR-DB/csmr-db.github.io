@@ -1,14 +1,18 @@
 import React from 'react'
 import Image from 'gatsby-image'
-import { StaticQuery, graphql } from 'gatsby'
 
-import { IImageSharpEdge, IImageSharpAllFiles } from '../types/interfaces'
+import { IImageSharpEdge } from '../types/interfaces'
+import { AStaticDataManager, StaticDataManager } from '../data/DataManager'
 
 export interface IDynamicIconProps {
   path: string
 }
 
 export function DynamicIcon({ path }: IDynamicIconProps): JSX.Element {
+  const {
+    dynamicIcons: { dynamicIcons },
+  }: typeof AStaticDataManager = StaticDataManager
+
   function renderImage(
     file: IImageSharpEdge | null = null
   ): JSX.Element | null {
@@ -16,38 +20,12 @@ export function DynamicIcon({ path }: IDynamicIconProps): JSX.Element {
   }
 
   return (
-    <StaticQuery
-      // tslint:disable-next-line: no-void-expression
-      query={graphql`
-        query {
-          images: allFile(
-            filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
-          ) {
-            edges {
-              node {
-                extension
-                relativePath
-                childImageSharp {
-                  fluid(maxWidth: 128) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={({
-        images,
-      }: {
-        images: IImageSharpAllFiles
-      }): JSX.Element | null =>
-        renderImage(
-          images.edges.find(
-            ({ node }: IImageSharpEdge): boolean => node.relativePath === path
-          ) // returns images like this node: {extension: "png", relativePath: "gatsby-icon.png", childImageSharp: {…}}
+    <>
+      {renderImage(
+        dynamicIcons.edges.find(
+          ({ node }: IImageSharpEdge): boolean => node.relativePath === path
         )
-      }
-    />
+      )}
+    </>
   )
 }

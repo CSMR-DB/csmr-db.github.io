@@ -68,11 +68,11 @@ import { Grid } from '../components/Grid'
 // }
 
 export interface IPhotographyLayoutProps {
-  images: IImageSharpAllFiles
+  photographyData: IImageSharpAllFiles
 }
 
 export function PhotographyLayout({
-  images,
+  photographyData,
 }: IPhotographyLayoutProps): JSX.Element {
   return (
     <>
@@ -84,7 +84,7 @@ export function PhotographyLayout({
         </article>
       </CenteredBlock>
       <Grid $columns={'repeat(auto-fill, minmax(32rem,1fr))'}>
-        <Photos images={images.edges} />
+        <Photos images={photographyData.edges} />
       </Grid>
     </>
   )

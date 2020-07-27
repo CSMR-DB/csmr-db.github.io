@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+
+import { AStaticDataManager, StaticDataManager } from '../../data/DataManager'
 
 export interface ISEOProps {
   description?: string
@@ -28,22 +29,9 @@ export function SEO({
   title,
   image,
 }: ISEOProps): JSX.Element {
-  const { site }: ISiteMetadata = useStaticQuery(
-    // tslint:disable-next-line: no-void-expression
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            image
-            url
-          }
-        }
-      }
-    `
-  )
+  const {
+    siteMetadata: { site },
+  }: typeof AStaticDataManager = StaticDataManager
 
   const metaDescription: string = description || site.siteMetadata.description
   const metaImage: string = image || site.siteMetadata.image

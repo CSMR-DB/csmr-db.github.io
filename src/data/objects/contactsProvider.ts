@@ -7,7 +7,7 @@ export interface IContact {
   text: string
 }
 
-export const CONTACTS: IContact[] = [
+const CONTACTS: IContact[] = [
   {
     background: '#000000',
     iconPath: 'icons/email.png',
@@ -27,3 +27,7 @@ export const CONTACTS: IContact[] = [
     text: 'Discord',
   },
 ]
+
+export function contactsProvider(): IContact[] {
+  return CONTACTS
+}
