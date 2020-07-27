@@ -5,6 +5,7 @@ import {
   IProjectsAllMarkdownRemark,
 } from '../types/interfaces'
 
+import { Layout } from '../components/Layout'
 import { CardHeader } from '../components/compositions/card/CardHeader'
 import { CardBody } from '../components/compositions/card/CardBody'
 import { CardHeaderText } from '../components/compositions/card/CardHeaderText'
@@ -28,7 +29,7 @@ export function IndexLayout({
   programmingData,
 }: IIndexLayoutProps): JSX.Element {
   return (
-    <>
+    <Layout isLandingPage={true}>
       <LiftedUpWrapper>
         <ContentSeparator>
           <CenteredBlock $maxWidth={'110rem'}>
@@ -93,6 +94,6 @@ export function IndexLayout({
           </CenteredBlock>
         </ContentSeparator>
       </LiftedUpWrapper>
-    </>
+    </Layout>
   )
 }

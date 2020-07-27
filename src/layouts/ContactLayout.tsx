@@ -2,6 +2,7 @@ import React from 'react'
 
 import { IContact } from '../data/objects/contactsProvider'
 
+import { Layout } from '../components/Layout'
 import { Grid } from '../components/Grid'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Contacts } from '../components/compositions/Contacts'
@@ -12,7 +13,7 @@ export interface IContactLayoutProps {
 
 export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
   return (
-    <>
+    <Layout>
       <CenteredBlock>
         <h1>Get in touch!</h1>
         <p>
@@ -27,6 +28,6 @@ export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
           <Contacts contacts={contacts} />
         </Grid>
       </CenteredBlock>
-    </>
+    </Layout>
   )
 }

@@ -3,7 +3,6 @@ import React from 'react'
 import { StaticDataManager } from '../data/DataManager'
 
 import { SEO } from '../components/compositions/SEO'
-import { Layout } from '../components/Layout'
 import { AboutLayout, IAboutLayoutProps } from '../layouts/AboutLayout'
 import { ContactLayout, IContactLayoutProps } from '../layouts/ContactLayout'
 import { IProjectsLayoutProps, ProjectsLayout } from '../layouts/ProjectsLayout'
@@ -27,7 +26,7 @@ function Onepage(): JSX.Element {
   }
 
   return (
-    <Layout>
+    <>
       <SEO
         title="Onepage"
         description="All 4 pages with 0 navigation"
@@ -37,7 +36,7 @@ function Onepage(): JSX.Element {
       <ProjectsLayout {...data} />
       <SkillsetLayout {...data} />
       <ContactLayout {...data} />
-    </Layout>
+    </>
   )
 }
 

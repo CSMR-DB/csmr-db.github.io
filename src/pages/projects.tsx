@@ -3,7 +3,6 @@ import React from 'react'
 import { StaticDataManager } from '../data/DataManager'
 
 import { SEO } from '../components/compositions/SEO'
-import { Layout } from '../components/Layout'
 import { ProjectsLayout, IProjectsLayoutProps } from '../layouts/ProjectsLayout'
 
 function ProjectsPage(): JSX.Element {
@@ -13,14 +12,14 @@ function ProjectsPage(): JSX.Element {
   }
 
   return (
-    <Layout>
+    <>
       <SEO
         title="Projects"
         description="These are some projects I did"
         siteMetadata={StaticDataManager.siteMetadata}
       />
       <ProjectsLayout {...data} />
-    </Layout>
+    </>
   )
 }
 

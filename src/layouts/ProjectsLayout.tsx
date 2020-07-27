@@ -1,6 +1,7 @@
 import React from 'react'
 import { Reveal } from 'react-gsap'
 
+import { Layout } from '../components/Layout'
 import { Grid } from '../components/Grid'
 import { IProjectsAllMarkdownRemark } from '../types/interfaces'
 import { CenteredBlock } from '../components/CenteredBlock'
@@ -17,7 +18,7 @@ export function ProjectsLayout({
   graphicDesignData,
 }: IProjectsLayoutProps): JSX.Element {
   return (
-    <>
+    <Layout>
       <ContentSeparator>
         <CenteredBlock>
           <h1>Hey! These are some of my projects</h1>
@@ -56,6 +57,6 @@ export function ProjectsLayout({
           </Reveal>
         </Grid>
       </ContentSeparator>
-    </>
+    </Layout>
   )
 }

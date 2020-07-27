@@ -2,6 +2,7 @@ import React from 'react'
 
 import { IImageSharpAllFiles } from '../types/interfaces'
 
+import { Layout } from '../components/Layout'
 import { Photos } from '../components/compositions/Photos'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Grid } from '../components/Grid'
@@ -74,7 +75,7 @@ export function PhotographyLayout({
   photographyData,
 }: IPhotographyLayoutProps): JSX.Element {
   return (
-    <>
+    <Layout>
       <CenteredBlock>
         <article>
           <h1>Photography</h1>
@@ -84,6 +85,6 @@ export function PhotographyLayout({
       <Grid $columns={'repeat(auto-fill, minmax(32rem,1fr))'}>
         <Photos images={photographyData.edges} />
       </Grid>
-    </>
+    </Layout>
   )
 }

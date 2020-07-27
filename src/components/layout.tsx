@@ -22,8 +22,8 @@ export const StyledLayout: StyledComponent<
 > = styled.div`
   min-height: 100vh;
 
-  ${({ theme }: ILayoutProps): FlattenSimpleInterpolation => css`
-    background: ${theme!.palette.light.normal};
+  ${({ theme, isLandingPage }: ILayoutProps): FlattenSimpleInterpolation => css`
+    background: ${isLandingPage ? 'transparent' : theme!.palette.light.normal};
   `}
 `
 

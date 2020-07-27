@@ -5,6 +5,7 @@ import { groupBy } from '../utils'
 import { ICourse } from '../data/objects/coursesProvider'
 import { ITool } from '../data/objects/toolsProvider'
 
+import { Layout } from '../components/Layout'
 import { GamesGrid } from '../components/compositions/GamesGrid'
 import { ShowsGrid } from '../components/compositions/ShowsGrid'
 import { PhotographyGrid } from '../components/compositions/PhotographyGrid'
@@ -52,7 +53,7 @@ export function AboutLayout({
   ]
 
   return (
-    <>
+    <Layout>
       {/* <BioMovie /> */}
       <CenteredBlock>
         <h1>My name is Casimir</h1>
@@ -217,6 +218,6 @@ export function AboutLayout({
           don't shoot often.
         </p>
       </CenteredBlock>
-    </>
+    </Layout>
   )
 }

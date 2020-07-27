@@ -5,6 +5,7 @@ import {
   ISkillsetAllMarkdownRemark,
 } from '../types/interfaces'
 
+import { Layout } from '../components/Layout'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Grid } from '../components/Grid'
 import { ContentSeparator } from '../components/ContentSeparator'
@@ -22,7 +23,7 @@ export function SkillsetLayout({
   experienceData,
 }: ISkillsetLayoutProps): JSX.Element {
   return (
-    <>
+    <Layout>
       <CenteredBlock>
         <ContentSeparator>
           <h1>This is what I have worked with</h1>
@@ -61,6 +62,6 @@ export function SkillsetLayout({
           </Grid>
         </ContentSeparator>
       </CenteredBlock>
-    </>
+    </Layout>
   )
 }
