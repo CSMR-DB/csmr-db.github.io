@@ -2,6 +2,7 @@ import React from 'react'
 
 import { StaticDataManager } from '../data/DataManager'
 
+import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
 import { IAboutLayoutProps, AboutLayout } from '../layouts/AboutLayout'
 
@@ -16,6 +17,11 @@ function AboutMe(): JSX.Element {
 
   return (
     <Layout>
+      <SEO
+        title="About"
+        description="A little backstory about how I got where I am"
+        siteMetadata={StaticDataManager.siteMetadata}
+      />
       <AboutLayout {...data} />
     </Layout>
   )

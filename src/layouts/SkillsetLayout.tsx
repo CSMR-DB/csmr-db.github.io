@@ -5,7 +5,6 @@ import {
   ISkillsetAllMarkdownRemark,
 } from '../types/interfaces'
 
-import { SEO } from '../components/compositions/SEO'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Grid } from '../components/Grid'
 import { ContentSeparator } from '../components/ContentSeparator'
@@ -24,10 +23,6 @@ export function SkillsetLayout({
 }: ISkillsetLayoutProps): JSX.Element {
   return (
     <>
-      <SEO
-        title="Skillset"
-        description="This is my trying to provide you with an indication about my capabilities & goals looking forward"
-      />
       <CenteredBlock>
         <ContentSeparator>
           <h1>This is what I have worked with</h1>

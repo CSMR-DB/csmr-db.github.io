@@ -2,11 +2,12 @@ import React from 'react'
 
 import { StaticDataManager } from '../data/DataManager'
 
+import { SEO } from '../components/compositions/SEO'
+import { Layout } from '../components/Layout'
 import { AboutLayout, IAboutLayoutProps } from '../layouts/AboutLayout'
 import { ContactLayout, IContactLayoutProps } from '../layouts/ContactLayout'
 import { IProjectsLayoutProps, ProjectsLayout } from '../layouts/ProjectsLayout'
 import { ISkillsetLayoutProps, SkillsetLayout } from '../layouts/SkillSetLayout'
-import { Layout } from '../components/Layout'
 
 function Onepage(): JSX.Element {
   const data: ISkillsetLayoutProps &
@@ -27,6 +28,11 @@ function Onepage(): JSX.Element {
 
   return (
     <Layout>
+      <SEO
+        title="Onepage"
+        description="All 4 pages with 0 navigation"
+        siteMetadata={StaticDataManager.siteMetadata}
+      />
       <AboutLayout {...data} />
       <ProjectsLayout {...data} />
       <SkillsetLayout {...data} />

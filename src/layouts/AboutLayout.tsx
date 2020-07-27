@@ -14,7 +14,6 @@ import { SVGLogos } from '../components/compositions/SVGLogos'
 import { SubbedImages } from '../components/compositions/SubbedImages'
 import { Quote } from '../components/Quote'
 import { ISubbedImage } from '../components/compositions/SubbedImage'
-import { SEO } from '../components/compositions/SEO'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { CTAButton } from '../components/CTAButton'
 import { StyledLink } from '../components/StyledLink'
@@ -54,10 +53,6 @@ export function AboutLayout({
 
   return (
     <>
-      <SEO
-        title="About"
-        description="A little backstory about how I got where I am"
-      />
       {/* <BioMovie /> */}
       <CenteredBlock>
         <h1>My name is Casimir</h1>

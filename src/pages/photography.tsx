@@ -2,6 +2,7 @@ import React from 'react'
 
 import { StaticDataManager } from '../data/DataManager'
 
+import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
 import {
   PhotographyLayout,
@@ -15,6 +16,11 @@ function PhotographyPage(): JSX.Element {
 
   return (
     <Layout>
+      <SEO
+        title="Photography"
+        description="I like photography and I really should do it more often. Anyway, here are some shots!"
+        siteMetadata={StaticDataManager.siteMetadata}
+      />
       <PhotographyLayout {...data} />
     </Layout>
   )

@@ -2,7 +2,6 @@ import React from 'react'
 
 import { IContact } from '../data/objects/contactsProvider'
 
-import { SEO } from '../components/compositions/SEO'
 import { Grid } from '../components/Grid'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Contacts } from '../components/compositions/Contacts'
@@ -14,10 +13,6 @@ export interface IContactLayoutProps {
 export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {
   return (
     <>
-      <SEO
-        title="Contact"
-        // description="Get in touch with me through some social links"
-      />
       <CenteredBlock>
         <h1>Get in touch!</h1>
         <p>

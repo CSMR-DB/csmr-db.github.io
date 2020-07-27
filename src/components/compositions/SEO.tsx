@@ -1,41 +1,36 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { AStaticDataManager, StaticDataManager } from '../../data/DataManager'
+import { ISiteMetadata } from '../../types/interfaces'
 
 export interface ISEOProps {
-  description?: string
-  lang?: string
-  meta?: any
+  siteMetadata: ISiteMetadata
   title: string
+  description: string
+  lang?: string
   image?: string
 }
 
 export function SEO({
+  siteMetadata,
   description,
   lang = 'en-US',
-  title,
-  image,
+  title = siteMetadata.site.siteMetadata.title,
+  image = siteMetadata.site.siteMetadata.image,
 }: ISEOProps): JSX.Element {
-  const {
-    siteMetadata: { site },
-  }: typeof AStaticDataManager = StaticDataManager
-
-  const metaDescription: string = description || site.siteMetadata.description
-  const metaImage: string = image || site.siteMetadata.image
-  const metaTitle: string = title || site.siteMetadata.title
-  const metaURL: string = site.siteMetadata.url
-
   return (
-    <Helmet title={title} titleTemplate={`%s · ${site.siteMetadata.title}`}>
+    <Helmet
+      title={title}
+      titleTemplate={`%s · ${siteMetadata.site.siteMetadata.title}`}
+    >
       <meta name="lang" content={lang} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={metaTitle} />
-      <meta name="description" content={metaDescription} />
-      <meta property="og:description" content={metaDescription} />
-      <meta name="image" content={metaImage} />
-      <meta property="og:image" content={metaImage} />
-      <meta property="og:url" content={metaURL} />
+      <meta property="og:title" content={title} />
+      <meta name="description" content={description} />
+      <meta property="og:description" content={description} />
+      <meta name="image" content={image} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={siteMetadata.site.siteMetadata.url} />
     </Helmet>
   )
 }

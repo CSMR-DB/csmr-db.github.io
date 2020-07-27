@@ -3,7 +3,6 @@ import { Reveal } from 'react-gsap'
 
 import { Grid } from '../components/Grid'
 import { IProjectsAllMarkdownRemark } from '../types/interfaces'
-import { SEO } from '../components/compositions/SEO'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { ContentSeparator } from '../components/ContentSeparator'
 import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
@@ -19,7 +18,6 @@ export function ProjectsLayout({
 }: IProjectsLayoutProps): JSX.Element {
   return (
     <>
-      <SEO title="Projects" description="These are some projects I did" />
       <ContentSeparator>
         <CenteredBlock>
           <h1>Hey! These are some of my projects</h1>

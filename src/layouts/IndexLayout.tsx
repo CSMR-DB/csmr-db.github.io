@@ -11,7 +11,6 @@ import { CardHeaderText } from '../components/compositions/card/CardHeaderText'
 import { SkillCards } from '../components/compositions/card/skillcard/SkillCards'
 import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
 import { LiftedUpWrapper } from '../components/LifedUpWrapper'
-import { SEO } from '../components/compositions/SEO'
 import { ContentSeparator } from '../components/ContentSeparator'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Grid } from '../components/Grid'
@@ -19,27 +18,17 @@ import { Card } from '../components/compositions/card/Card'
 import { ReadMore } from '../components/compositions/ReadMore'
 
 export interface IIndexLayoutProps {
-  site: {
-    siteMetadata: {
-      title: string
-      description: string
-      author: string
-    }
-  }
-
   skillsetData: ISkillsetAllMarkdownRemark
 
   programmingData: IProjectsAllMarkdownRemark
 }
 
 export function IndexLayout({
-  site,
   skillsetData,
   programmingData,
 }: IIndexLayoutProps): JSX.Element {
   return (
     <>
-      <SEO title={`Homepage`} description={site.siteMetadata.description} />
       <LiftedUpWrapper>
         <ContentSeparator>
           <CenteredBlock $maxWidth={'110rem'}>

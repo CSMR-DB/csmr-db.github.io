@@ -3,7 +3,6 @@ import React from 'react'
 import { IImageSharpAllFiles } from '../types/interfaces'
 
 import { Photos } from '../components/compositions/Photos'
-import { SEO } from '../components/compositions/SEO'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { Grid } from '../components/Grid'
 
@@ -76,7 +75,6 @@ export function PhotographyLayout({
 }: IPhotographyLayoutProps): JSX.Element {
   return (
     <>
-      <SEO title="Photography" />
       <CenteredBlock>
         <article>
           <h1>Photography</h1>
