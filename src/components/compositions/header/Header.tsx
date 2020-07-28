@@ -20,10 +20,8 @@ import { Logo } from '../Logo'
 import { Flex } from '../../Flex'
 import { Grid } from '../../Grid'
 import { WASDNav } from '../wasdnav/WASDNav'
-import { Excerpt } from '../../Excerpt'
-import { ImageDot } from '../../ImageDot'
 import { ScrollIconWrapper, AnimatedScroller } from '../ScrollIndicator'
-import { Tween } from 'react-gsap'
+import { HeyItsMe } from './HeyItsMe'
 
 interface IHeaderProps {
   theme?: DefaultTheme
@@ -85,22 +83,7 @@ export function Header({
             />
             {isLandingPage && (
               <>
-                <Excerpt>
-                  <Tween
-                    from={{ opacity: 0, scale: 0 }}
-                    duration={1}
-                    delay={0.25}
-                    ease={'back'}
-                  >
-                    <ImageDot $width={'8rem'}>
-                      <Filter>
-                        <DynamicImage path="wallpaper/me.jpg" />
-                      </Filter>
-                    </ImageDot>
-                  </Tween>
-                  <h1>Hey, I'm {site.siteMetadata.author}</h1>
-                  <p>{site.siteMetadata.description}</p>
-                </Excerpt>
+                <HeyItsMe {...site.siteMetadata} />
                 <div>
                   <ScrollIconWrapper>
                     <AnimatedScroller></AnimatedScroller>
