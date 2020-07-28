@@ -10,11 +10,11 @@ export interface IExcerptProps {
 }
 
 export const Excerpt: StyledComponent<
-  'div',
+  'article',
   any,
   IExcerptProps,
   never
-> = styled.div`
+> = styled.article`
   margin: auto 1rem;
   border-radius: 0.25rem;
   max-width: 36rem;
