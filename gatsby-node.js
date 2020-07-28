@@ -16,7 +16,6 @@ exports.createPages = async ({
    * TEMPLATE IMPORTS
    */
   const ArticleTemplate = path.resolve(`src/templates/ProjectTemplate.tsx`)
-  // const SkillsetTemplate = path.resolve(`src/templates/SkillsetTemplate.tsx`)
   const TagTemplate = path.resolve(`src/templates/TagTemplate.tsx`)
   const { errors, data } = await graphql(`
     {
@@ -58,19 +57,6 @@ exports.createPages = async ({
             component: ArticleTemplate,
             context: {}, // additional data can be passed via context
           }),
-        // '/skillset/': () =>
-        //   createPage({
-        //     path: path,
-        //     component: SkillsetTemplate,
-        //     context: {}, // additional data can be passed via context
-        //   }),
-        // '/blog/': () =>
-        //   createPage({
-        //     path: path,
-        //     component: SkillsetTemplate,
-        //     context: {}, // additional data can be passed via context
-        //   }),
-
         '/skillset/': () => null,
         '/blog/': () => null,
         '/tag/': () => null,
