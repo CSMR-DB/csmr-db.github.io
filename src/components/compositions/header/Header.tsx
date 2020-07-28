@@ -20,7 +20,6 @@ import { Logo } from '../Logo'
 import { Flex } from '../../Flex'
 import { Grid } from '../../Grid'
 import { WASDNav } from '../wasdnav/WASDNav'
-import { ScrollIconWrapper, AnimatedScroller } from '../ScrollIndicator'
 import { HeyItsMe } from './HeyItsMe'
 
 interface IHeaderProps {
@@ -81,16 +80,7 @@ export function Header({
               gap={isLandingPage ? '4rem' : '2rem'}
               isLandingPage={isLandingPage}
             />
-            {isLandingPage && (
-              <>
-                <HeyItsMe {...site.siteMetadata} />
-                <div>
-                  <ScrollIconWrapper>
-                    <AnimatedScroller></AnimatedScroller>
-                  </ScrollIconWrapper>
-                </div>
-              </>
-            )}
+            {isLandingPage && <HeyItsMe {...site.siteMetadata} />}
           </Grid>
         </Flex>
       </Absolute>
