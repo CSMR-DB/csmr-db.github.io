@@ -16,6 +16,7 @@ function ContactPage(): JSX.Element {
         title="Contact"
         description="Get in touch via Mail, LinkedIn or Discord"
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/contact'}
       />
       <ContactLayout {...data} />
     </>

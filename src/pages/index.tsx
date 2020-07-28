@@ -19,6 +19,7 @@ function IndexPage(): JSX.Element {
           StaticDataManager.siteMetadata.site.siteMetadata.description
         }
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/'}
       />
       <IndexLayout {...data} />
     </>

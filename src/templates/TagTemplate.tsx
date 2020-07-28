@@ -39,6 +39,7 @@ export default function TagTemplate({
         title={`${title} · Tag`}
         description={description}
         siteMetadata={StaticDataManager.siteMetadata}
+        route={`tag/${title.toLocaleLowerCase()}`}
       />
       <Layout>
         <ContentSeparator>

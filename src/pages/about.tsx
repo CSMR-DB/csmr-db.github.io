@@ -20,6 +20,7 @@ function AboutMe(): JSX.Element {
         title="About"
         description="A little backstory about how I got where I am"
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/about'}
       />
       <AboutLayout {...data} />
     </>

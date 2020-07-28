@@ -17,6 +17,7 @@ function SkillsetPage(): JSX.Element {
         title="Skillset"
         description="You can find out what I am capable of and what I really want to learn here."
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/skillset'}
       />
       <SkillsetLayout {...data} />
     </>

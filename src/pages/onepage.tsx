@@ -31,6 +31,7 @@ function Onepage(): JSX.Element {
         title="Onepage"
         description="All 4 pages with 0 navigation"
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/onepage'}
       />
       <AboutLayout {...data} />
       <ProjectsLayout {...data} />

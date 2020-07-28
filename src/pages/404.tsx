@@ -12,6 +12,7 @@ function FourOFourPage(): JSX.Element {
         title="404: Not found"
         description="Should this even be SEO-able?"
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/404'}
       />
       <FourOFourLayout />
     </>

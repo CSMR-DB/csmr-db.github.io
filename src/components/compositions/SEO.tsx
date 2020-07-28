@@ -7,6 +7,7 @@ export interface ISEOProps {
   siteMetadata: ISiteMetadata
   title: string
   description: string
+  route: string
   lang?: string
   image?: string
 }
@@ -15,9 +16,17 @@ export function SEO({
   siteMetadata,
   description,
   lang = 'en-US',
-  title = siteMetadata.site.siteMetadata.title,
+  title,
+  route,
   image = siteMetadata.site.siteMetadata.image,
 }: ISEOProps): JSX.Element {
+  const fullURL: string =
+    route !== '/'
+      ? `${siteMetadata.site.siteMetadata.url}/${
+          route.startsWith('/', 0) ? route.replace('/', '') : route
+        }`
+      : siteMetadata.site.siteMetadata.url
+
   return (
     <Helmet
       title={title}
@@ -30,7 +39,7 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta name="image" content={image} />
       <meta property="og:image" content={image} />
-      <meta property="og:url" content={siteMetadata.site.siteMetadata.url} />
+      <meta property="og:url" content={fullURL} />
     </Helmet>
   )
 }

@@ -17,7 +17,15 @@ import { FullPageH1 } from '../components/FullPageH1'
 export default function ProjectTemplate({
   data: {
     markdownRemark: {
-      frontmatter: { featuredImage, featuredVideo, tags, date, title, excerpt },
+      frontmatter: {
+        featuredImage,
+        featuredVideo,
+        tags,
+        date,
+        title,
+        excerpt,
+        path,
+      },
       html,
       timeToRead,
     },
@@ -29,6 +37,7 @@ export default function ProjectTemplate({
         title={`${title} · Project`}
         description={excerpt}
         siteMetadata={StaticDataManager.siteMetadata}
+        route={path}
       />
       <Layout>
         <CenteredBlock>

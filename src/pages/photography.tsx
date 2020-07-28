@@ -19,6 +19,7 @@ function PhotographyPage(): JSX.Element {
         title="Photography"
         description="I like photography and I really should do it more often. Anyway, here are some shots!"
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/photography'}
       />
       <PhotographyLayout {...data} />
     </>

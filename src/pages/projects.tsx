@@ -17,6 +17,7 @@ function ProjectsPage(): JSX.Element {
         title="Projects"
         description="These are some projects I did"
         siteMetadata={StaticDataManager.siteMetadata}
+        route={'/projects'}
       />
       <ProjectsLayout {...data} />
     </>
