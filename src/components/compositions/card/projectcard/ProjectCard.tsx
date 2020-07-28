@@ -9,7 +9,6 @@ import { CardHeaderImageOrVideo } from '../CardHeaderImageOrVideo'
 import { ArticleTags } from '../../../ArticleTags'
 import { StyledLink } from '../../../StyledLink'
 import { DateFormatted } from '../../../DateFormatted'
-import { ReadingTime } from '../../../ReadingTime'
 import { CardHeader } from '../CardHeader'
 import { CardFooter } from '../CardFooter'
 import { CardBody } from '../CardBody'
@@ -24,7 +23,6 @@ interface IProjectCardProps {
   tags?: string[]
   html?: string
   date?: string
-  timeToRead?: number
   path: string
 }
 
@@ -36,7 +34,6 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   body,
   tags,
   date,
-  timeToRead,
   path,
 }: IProjectCardProps): JSX.Element => (
   <Card index={index}>
@@ -50,12 +47,6 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
         </h1>
         <h6>
           <DateFormatted dateString={date} />
-          {timeToRead && (
-            <>
-              <span> · </span>
-              <ReadingTime timeToRead={timeToRead} />
-            </>
-          )}
         </h6>
       </CardHeaderText>
     </CardHeader>
