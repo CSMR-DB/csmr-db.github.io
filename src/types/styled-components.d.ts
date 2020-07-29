@@ -4,7 +4,7 @@ import {
   IThemePalette,
   IThemeBreakpointsGroups,
   IThemeFonts,
-} from '../data/theme'
+} from '../data/objects/themeProvider'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
