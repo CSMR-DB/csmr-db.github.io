@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import { ISingleItemData, IProjectFrontmatter } from '../types/interfaces'
 import { StaticDataManager } from '../data/DataManager'
+import { routeGenerator } from '../utils/routeGenerator'
 
 import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
@@ -17,15 +18,8 @@ import { FullPageH1 } from '../components/FullPageH1'
 export default function ProjectTemplate({
   data: {
     markdownRemark: {
-      frontmatter: {
-        featuredImage,
-        featuredVideo,
-        tags,
-        date,
-        title,
-        excerpt,
-        path,
-      },
+      fileAbsolutePath,
+      frontmatter: { featuredImage, featuredVideo, tags, date, title, excerpt },
       html,
       timeToRead,
     },
@@ -37,7 +31,7 @@ export default function ProjectTemplate({
         title={`${title} · Project`}
         description={excerpt}
         siteMetadata={StaticDataManager.siteMetadata}
-        route={path}
+        route={routeGenerator(fileAbsolutePath)}
       />
       <Layout>
         <CenteredBlock>
@@ -69,12 +63,12 @@ export default function ProjectTemplate({
 // tslint:disable-next-line: no-void-expression
 export const pageQuery: void = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(fileAbsolutePath: { regex: $path }) {
+      fileAbsolutePath
       html
       frontmatter {
         date
         category
-        path
         title
         tags
         excerpt

@@ -23,7 +23,7 @@ interface IProjectCardProps {
   tags?: string[]
   html?: string
   date?: string
-  path: string
+  fileAbsolutePath: string
 }
 
 export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
@@ -34,7 +34,7 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   body,
   tags,
   date,
-  path,
+  fileAbsolutePath,
 }: IProjectCardProps): JSX.Element => (
   <Card index={index}>
     <CardHeader>
@@ -43,7 +43,7 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
       )}
       <CardHeaderText>
         <h1>
-          <StyledLink to={path}>{title}</StyledLink>
+          <StyledLink to={fileAbsolutePath}>{title}</StyledLink>
         </h1>
         <h6>
           <DateFormatted dateString={date} />

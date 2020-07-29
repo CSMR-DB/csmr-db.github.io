@@ -15,8 +15,8 @@ exports.createPages = async ({
   /**
    * TEMPLATE IMPORTS
    */
-  const ArticleTemplate = path.resolve(`src/templates/ProjectTemplate.tsx`)
-  const TagTemplate = path.resolve(`src/templates/TagTemplate.tsx`)
+  const ProjectTemplate = path.resolve(`src/templates/ProjectTemplate.tsx`)
+  const SkillsetTemplate = path.resolve(`src/templates/SkillsetTemplate.tsx`)
   const { errors, data } = await graphql(`
     {
       allMarkdownRemark(
@@ -26,10 +26,10 @@ exports.createPages = async ({
         edges {
           node {
             frontmatter {
-              path
               tags
               title
             }
+            fileAbsolutePath
           }
         }
       }
@@ -42,34 +42,34 @@ exports.createPages = async ({
     return
   }
 
-  data.allMarkdownRemark.edges.forEach(
-    ({
-      node: {
-        frontmatter: { path },
-      },
-    }) => {
-      let category = path.match(/\/[a-z]*\/+/)[0]
+  data.allMarkdownRemark.edges.forEach(({ node: { fileAbsolutePath } }) => {
+    let pageDirectory = fileAbsolutePath.match(
+      /(markdown-pages)\/(\w+\/)+/gi
+    )[0] // 'markdown-pages/blog/article/'
+    let subDirectory = pageDirectory.replace('markdown-pages/', '/') // '/blog/article/'
+    let templatePath = subDirectory.split('/')[1] // 'blog'
 
-      const pagesToCreate = {
-        '/projects/': () =>
-          createPage({
-            path: path,
-            component: ArticleTemplate,
-            context: {}, // additional data can be passed via context
-          }),
-        '/skillset/': () => null,
-        '/blog/': () => null,
-        '/tag/': () => null,
-        '/experiences/': () => null,
-      }
-
-      pagesToCreate[category]()
+    const pagesToCreate = {
+      projects: () =>
+        createPage({
+          path: subDirectory,
+          component: ProjectTemplate,
+          context: {}, // additional data can be passed via context
+        }),
+      skillset: () => null,
+      blog: () => null,
+      tag: () => null,
+      experiences: () => null,
     }
-  )
+
+    pagesToCreate[templatePath]()
+  })
 
   const tagsArray = [
     ...data.allMarkdownRemark.edges
-      .filter(({ node: { frontmatter: { path } } }) => path.includes('project'))
+      .filter(({ node: { fileAbsolutePath } }) =>
+        fileAbsolutePath.includes('/projects/')
+      )
       .map(
         ({
           node: {
@@ -78,7 +78,9 @@ exports.createPages = async ({
         }) => tags
       ),
     ...data.allMarkdownRemark.edges
-      .filter(({ node: { frontmatter: { path } } }) => path.includes('tag'))
+      .filter(({ node: { fileAbsolutePath } }) =>
+        fileAbsolutePath.includes('/skillset/')
+      )
       .map(
         ({
           node: {
@@ -91,11 +93,15 @@ exports.createPages = async ({
   const flatTagsArray = [].concat.apply([], tagsArray)
   const uniqueTags = Array.from(new Set(flatTagsArray))
 
-  uniqueTags.map((tag) =>
+  uniqueTags.map((tag) => {
+    const subDirectory = `/skillset/${tag
+      .toLocaleLowerCase()
+      .replace(/\s+/gi, '_')}/`
+
     createPage({
-      path: `/tag/${tag.toLocaleLowerCase().replace(/\s+/gi, '_')}`,
-      component: TagTemplate,
+      path: subDirectory,
+      component: SkillsetTemplate,
       context: { tag },
     })
-  )
+  })
 }

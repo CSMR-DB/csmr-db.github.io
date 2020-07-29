@@ -20,6 +20,7 @@ export interface ISiteMetadata {
  * Generic GraphQL Data
  */
 export interface IMarkdownRemark<T> {
+  fileAbsolutePath: string
   frontmatter: T
   html: string
   timeToRead: number
@@ -46,6 +47,7 @@ export interface IEdge<T> {
 }
 
 export interface INode<T> {
+  fileAbsolutePath: string
   frontmatter: T
   wordCount: {
     words: number
@@ -92,7 +94,6 @@ export interface ISkillsetFrontmatter {
   favorite: boolean | null
   title: string
   date: string
-  path: string
   excerpt: string
   tags?: string[]
   time?: number
@@ -102,6 +103,7 @@ export interface ISkillsetFrontmatter {
 
 export interface ISkillsetEdge {
   node: {
+    fileAbsolutePath: string
     frontmatter: ISkillsetFrontmatter
     wordCount: {
       words: number
@@ -124,7 +126,6 @@ export interface IProjectFrontmatter {
   title: string
   category: 'Programming' | 'Graphic Design'
   date: string
-  path: string
   excerpt: string
   featuredImage?: IImageSharp
   featuredVideo?: string
@@ -133,6 +134,7 @@ export interface IProjectFrontmatter {
 
 export interface IProjectsEdge {
   node: {
+    fileAbsolutePath: string
     frontmatter: IProjectFrontmatter
     wordCount: {
       words: number

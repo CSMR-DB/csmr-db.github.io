@@ -13,6 +13,7 @@ export function programmingDataProvider(): IProgrammingData {
     fragment ProgrammingDataFragment on MarkdownRemarkConnection {
       edges {
         node {
+          fileAbsolutePath
           frontmatter {
             favorite
             path
@@ -44,8 +45,8 @@ export function programmingDataProvider(): IProgrammingData {
     query {
       top: allMarkdownRemark(
         filter: {
+          fileAbsolutePath: { regex: "/projects/" }
           frontmatter: {
-            path: { regex: "/projects/" }
             category: { eq: "Programming" }
             favorite: { eq: true }
           }
@@ -58,10 +59,8 @@ export function programmingDataProvider(): IProgrammingData {
 
       all: allMarkdownRemark(
         filter: {
-          frontmatter: {
-            path: { regex: "/projects/" }
-            category: { eq: "Programming" }
-          }
+          fileAbsolutePath: { regex: "/projects/" }
+          frontmatter: { category: { eq: "Programming" } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {

@@ -1,0 +1,7 @@
+---
+level: 3
+skillColor: '#FFAA2B'
+time: 400
+title: 'Adobe Illustrator'
+excerpt: 'You need me to help out with design? No problem at all!'
+---

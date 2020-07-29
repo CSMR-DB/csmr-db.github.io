@@ -1,0 +1,7 @@
+---
+level: 4
+skillColor: '#F5DE19'
+time: 2000
+title: 'JavaScript'
+excerpt: 'I really like classes with the new (ES10) spec for private properties. I would ALWAYS pick TypeScript over JavaScript if the option is available.'
+---

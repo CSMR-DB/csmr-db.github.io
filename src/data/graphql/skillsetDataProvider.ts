@@ -13,6 +13,7 @@ export function skillsetDataProvider(): ISkillsetData {
     fragment SkillsetDataFragment on MarkdownRemarkConnection {
       edges {
         node {
+          fileAbsolutePath
           frontmatter {
             path
             title
@@ -30,7 +31,8 @@ export function skillsetDataProvider(): ISkillsetData {
     query {
       top: allMarkdownRemark(
         filter: {
-          frontmatter: { path: { regex: "/tag/" }, favorite: { eq: true } }
+          fileAbsolutePath: { regex: "/skillset/" }
+          frontmatter: { favorite: { eq: true } }
         }
         sort: { fields: frontmatter___time, order: DESC }
         limit: 3
@@ -39,7 +41,7 @@ export function skillsetDataProvider(): ISkillsetData {
       }
 
       all: allMarkdownRemark(
-        filter: { frontmatter: { path: { regex: "/tag/" } } }
+        filter: { fileAbsolutePath: { regex: "/skillset/" } }
         sort: { fields: frontmatter___time, order: DESC }
       ) {
         ...SkillsetDataFragment

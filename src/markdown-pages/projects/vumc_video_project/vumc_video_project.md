@@ -1,0 +1,12 @@
+---
+category: 'Graphic Design'
+date: 2019-01-18
+title: 'VUMC Video Project'
+featuredVideo: 'https://www.youtube.com/embed/OYVxTuwnx-c'
+tags: ['Adobe After Effects', 'Adobe Illustrator']
+excerpt: 'At the end of the year 4 minor there was this big assignment: make a datavisualization for a client according to their needs & requirements.'
+---
+
+The entire group of students was split up in smaller teams of 3, each working for a different client with different requirements. Our objective: make an animated short, telling the story about their research and findings.
+
+An animation that would be a good fit for use in schools and one that is interesting for both students and teachers. Make sure to get our message "we need to come together to find a solution" across. We created concepts, sketches and discussed ideas about doing a voice-over. We made a version using a voice-over, but were asked to make a version with subtitles instead. I took it upon myself to create the entire animation in After Effects and find a suiting (& free) piece of background music. The end result: a composition with consistency at the center, and smooth transitions to highlight important sections.

@@ -25,6 +25,7 @@ interface ISkillCardProps {
   description: StringOrUrlArray
   skillColor: ColorProperty
   time?: number
+  fileAbsolutePath: string
 }
 
 const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(
@@ -43,6 +44,7 @@ export function SkillCard({
   description,
   skillColor,
   time = 0,
+  fileAbsolutePath,
 }: ISkillCardProps): JSX.Element {
   return (
     <StyledSkillCard index={index}>
@@ -62,10 +64,7 @@ export function SkillCard({
               litColor={skillColor}
             ></SkillCardIndicator>
             <h1>
-              <StyledLink
-                to={`/tag/${title.toLocaleLowerCase().replace(/\s+/gi, '_')}`}
-                $color={skillColor}
-              >
+              <StyledLink to={fileAbsolutePath} $color={skillColor}>
                 {title}
               </StyledLink>
             </h1>

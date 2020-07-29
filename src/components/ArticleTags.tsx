@@ -20,7 +20,7 @@ export function ArticleTags({ tags }: IArticleTagsProps): JSX.Element {
           (tag: string, i: number): JSX.Element => (
             <span key={i}>
               <StyledLink
-                to={`/tag/${tag.toLocaleLowerCase().replace(/\s/gi, '_')}`}
+                to={`/skillset/${tag.toLocaleLowerCase().replace(/\s/gi, '_')}`}
               >
                 {tag}
               </StyledLink>

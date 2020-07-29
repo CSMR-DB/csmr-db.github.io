@@ -1,9 +1,0 @@
----
-favorite: true
-level: 2
-skillColor: '#E10098'
-time: 400
-path: '/tag/'
-title: 'GraphQL'
-excerpt: I think the developer experience of using GraphQL is absolutely amazing. No over- or under-fetching. Everything in 1 request. Let the server do the heavy lifting, not the client.
----

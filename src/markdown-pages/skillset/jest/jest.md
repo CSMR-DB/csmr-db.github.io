@@ -1,0 +1,7 @@
+---
+level: 2
+skillColor: '#C63D14'
+time: 400
+title: 'Jest'
+excerpt: "I mean, it's one of many testing frameworks. I mainly just like the logo."
+---

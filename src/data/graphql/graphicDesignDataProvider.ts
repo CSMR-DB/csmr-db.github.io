@@ -12,15 +12,14 @@ export function graphicDesignDataProvider(): IGraphicDesignData {
     query {
       graphicDesignData: allMarkdownRemark(
         filter: {
-          frontmatter: {
-            path: { regex: "/projects/" }
-            category: { eq: "Graphic Design" }
-          }
+          fileAbsolutePath: { regex: "/projects/" }
+          frontmatter: { category: { eq: "Graphic Design" } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
           node {
+            fileAbsolutePath
             frontmatter {
               path
               category
