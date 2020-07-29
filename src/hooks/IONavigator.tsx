@@ -25,6 +25,11 @@ export function IONavigator({ children }: IIONavigatorProps): JSX.Element {
       title: 'Onepage',
       boundKeys: ['o', NaN],
     },
+    {
+      path: '/',
+      title: 'Home',
+      boundKeys: ['/', NaN],
+    },
   ]
 
   const keyPressRouteBinds: Map<string, string> = new Map()
