@@ -16,6 +16,13 @@ import { SkillCard } from '../components/compositions/card/skillcard/SkillCard'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
 
+export interface ISkillsetTemplateProps {
+  data: {
+    allMarkdownRemark: ProjectsAllMarkdownRemark
+    markdownRemark: SkillsetMarkdownRemark
+  }
+}
+
 // tslint:disable-next-line: no-default-export
 export default function SkillsetTemplate({
   data: {
@@ -31,12 +38,7 @@ export default function SkillsetTemplate({
     },
     allMarkdownRemark: { edges },
   }, // this prop will be injected by the GraphQL query below.
-}: {
-  data: {
-    allMarkdownRemark: ProjectsAllMarkdownRemark
-    markdownRemark: SkillsetMarkdownRemark
-  }
-}): JSX.Element {
+}: ISkillsetTemplateProps): JSX.Element {
   return (
     <>
       <SEO

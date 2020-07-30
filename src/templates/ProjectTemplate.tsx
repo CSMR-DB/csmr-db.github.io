@@ -14,6 +14,10 @@ import { DateFormatted } from '../components/DateFormatted'
 import { ReadingTime } from '../components/ReadingTime'
 import { FullPageH1 } from '../components/FullPageH1'
 
+export interface IProjectTemplateProps {
+  data: { markdownRemark: ProjectMarkdownRemark }
+}
+
 // tslint:disable-next-line: no-default-export
 export default function ProjectTemplate({
   data: {
@@ -24,9 +28,7 @@ export default function ProjectTemplate({
       timeToRead,
     },
   }, // this prop will be injected by the GraphQL query below.
-}: {
-  data: { markdownRemark: ProjectMarkdownRemark }
-}): JSX.Element {
+}: IProjectTemplateProps): JSX.Element {
   return (
     <>
       <SEO
