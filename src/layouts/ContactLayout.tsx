@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IContact } from '../data/objects/contactsProvider'
+import { Contact } from '../data/objects/contactsProvider'
 
 import { Layout } from '../components/Layout'
 import { Grid } from '../components/Grid'
@@ -8,7 +8,7 @@ import { CenteredBlock } from '../components/CenteredBlock'
 import { Contacts } from '../components/compositions/Contacts'
 
 export interface IContactLayoutProps {
-  contacts: IContact[]
+  contacts: Contact[]
 }
 
 export function ContactLayout({ contacts }: IContactLayoutProps): JSX.Element {

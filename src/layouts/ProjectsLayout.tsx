@@ -3,14 +3,14 @@ import { Reveal } from 'react-gsap'
 
 import { Layout } from '../components/Layout'
 import { Grid } from '../components/Grid'
-import { IProjectsAllMarkdownRemark } from '../types/interfaces'
+import { ProjectsAllMarkdownRemark } from '../types/graphql.types'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { ContentSeparator } from '../components/ContentSeparator'
 import { ProjectCards } from '../components/compositions/card/projectcard/ProjectCards'
 
 export interface IProjectsLayoutProps {
-  programmingData: IProjectsAllMarkdownRemark
-  graphicDesignData: IProjectsAllMarkdownRemark
+  programmingData: ProjectsAllMarkdownRemark
+  graphicDesignData: ProjectsAllMarkdownRemark
 }
 
 export function ProjectsLayout({

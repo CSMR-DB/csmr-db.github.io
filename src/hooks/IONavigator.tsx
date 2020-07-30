@@ -2,18 +2,18 @@ import React from 'react'
 import { navigate } from 'gatsby'
 
 import { AStaticDataManager, StaticDataManager } from '../data/DataManager'
-import { IRouteObject } from '../data/objects/routesProvider'
+import { RouteObject } from '../data/objects/routesProvider'
 import { useKeyPressNavigation } from './useKeyPressNavigation.hook'
 
 export interface IIONavigatorProps {
   children: React.ReactNode
-  routes?: IRouteObject[]
+  routes?: RouteObject[]
 }
 
 export function IONavigator({ children }: IIONavigatorProps): JSX.Element {
   const { routes: defaultRoutes }: typeof AStaticDataManager = StaticDataManager
 
-  const ALL_ROUTES: IRouteObject[] = [
+  const ALL_ROUTES: RouteObject[] = [
     ...defaultRoutes,
     {
       path: '/photography',
@@ -33,7 +33,7 @@ export function IONavigator({ children }: IIONavigatorProps): JSX.Element {
   ]
 
   const keyPressRouteBinds: Map<string, string> = new Map()
-  ALL_ROUTES.forEach((route: IRouteObject): void => {
+  ALL_ROUTES.forEach((route: RouteObject): void => {
     route.boundKeys.forEach((key: string | number): void => {
       keyPressRouteBinds.set(`${key}`, route.path)
     })

@@ -11,7 +11,10 @@ import {
   AlignItemsProperty,
 } from 'csstype'
 
-import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
+import {
+  AnyExoticRefComponent,
+  AnyExoticRefTargets,
+} from '../types/react.types'
 
 export interface IFlexProps {
   children: ReactNode

@@ -8,7 +8,7 @@ import styled, {
 import {
   AnyExoticRefComponent,
   AnyExoticRefTargets,
-} from '../../../types/types'
+} from '../../../types/react.types'
 
 interface IFullSizeLogoProps {
   children: React.ReactNode

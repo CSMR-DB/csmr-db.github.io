@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { AnyExoticRefComponent, AnyExoticRefTargets } from '../../types/types'
+import {
+  AnyExoticRefComponent,
+  AnyExoticRefTargets,
+} from '../../types/react.types'
 
 export const AngularSVG: AnyExoticRefComponent<SVGSVGElement> = React.forwardRef(
   (_props: any, ref: AnyExoticRefTargets): JSX.Element => (

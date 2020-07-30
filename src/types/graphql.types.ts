@@ -1,0 +1,124 @@
+import { ColorProperty } from 'csstype'
+import { FluidObject } from 'gatsby-image'
+
+/**
+ * SiteMetadata GraphQL data
+ */
+export type SiteMetadata = {
+  site: {
+    siteMetadata: {
+      title: string
+      description: string
+      author: string
+      image: string
+      url: string
+    }
+  }
+}
+
+type FrontmatterBase = {
+  title: string
+  excerpt: string
+}
+
+export type MarkdownRemark<T extends FrontmatterBase> = {
+  fileAbsolutePath: string
+  frontmatter: T
+  html: string
+  wordCount?: {
+    words?: number
+    sentences?: number
+    paragraphs?: number
+  }
+  timeToRead?: number
+}
+
+export type MarkdownEdge<T extends FrontmatterBase> = {
+  node: MarkdownRemark<T>
+}
+
+export type AllMarkdownRemark<T extends FrontmatterBase> = {
+  edges: MarkdownEdge<T>[]
+}
+
+/**
+ * Experience GraphQL Frontmatter
+ */
+export type ExperienceFrontmatter = {
+  title: string
+  dateStart: string
+  dateEnd: string
+  description: string
+  backgroundColor: string
+  type: string
+  excerpt: string
+}
+
+export type ExperienceAllMarkdownRemark = AllMarkdownRemark<
+  ExperienceFrontmatter
+>
+export type ExperienceMarkdownEdge = MarkdownEdge<ExperienceFrontmatter>
+export type ExperienceMarkdownRemark = MarkdownRemark<ExperienceFrontmatter>
+
+/**
+ * Skillset GraphQL Frontmatter
+ */
+export type SkillsetFrontmatter = {
+  favorite: boolean | null
+  title: string
+  date: string
+  excerpt: string
+  tags?: string[]
+  time?: number
+  level?: number
+  skillColor?: ColorProperty
+}
+
+export type SkillsetAllMarkdownRemark = AllMarkdownRemark<SkillsetFrontmatter>
+export type SkillsetMarkdownEdge = MarkdownEdge<SkillsetFrontmatter>
+export type SkillsetMarkdownRemark = MarkdownRemark<SkillsetFrontmatter>
+
+/**
+ * Projects GraphQL Frontmatter
+ */
+export type ProjectFrontmatter = {
+  favorite: boolean | null
+  title: string
+  category: 'Programming' | 'Graphic Design'
+  date: string
+  excerpt: string
+  featuredImage?: FileChildImageSharp
+  featuredVideo?: string
+  tags?: string[]
+}
+
+export type ProjectsAllMarkdownRemark = AllMarkdownRemark<ProjectFrontmatter>
+export type ProjectMarkdownEdge = MarkdownEdge<ProjectFrontmatter>
+export type ProjectMarkdownRemark = MarkdownRemark<ProjectFrontmatter>
+
+/**
+ * File GraphQL data
+ */
+export type FileNode = {
+  name: string
+  relativePath: string
+}
+
+export type FileEdge<T extends FileNode> = {
+  node: T
+}
+
+export type AllFile<T extends FileNode> = {
+  edges: FileEdge<T>[]
+}
+
+export type FileChildImageSharp = {
+  name: string
+  relativePath: string
+  childImageSharp: {
+    fluid: FluidObject
+  }
+}
+
+export type ImageSharpAllFiles = AllFile<FileChildImageSharp>
+export type ImageSharpEdge = FileEdge<FileChildImageSharp>

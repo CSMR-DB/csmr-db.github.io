@@ -1,15 +1,15 @@
 import 'styled-components'
 import { ColorProperty, FilterProperty } from 'csstype'
 import {
-  IThemePalette,
-  IThemeBreakpointsGroups,
-  IThemeFonts,
+  ThemePalette,
+  ThemeBreakpointsGroups,
+  ThemeFonts,
 } from '../data/objects/themeProvider'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    palette: IThemePalette
-    fonts: IThemeFonts
-    breakpoints: IThemeBreakpointsGroups
+    palette: ThemePalette
+    fonts: ThemeFonts
+    breakpoints: ThemeBreakpointsGroups
   }
 }

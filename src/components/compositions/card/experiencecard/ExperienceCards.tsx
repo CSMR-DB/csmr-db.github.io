@@ -1,20 +1,20 @@
 import React from 'react'
 
 import {
-  IExperienceEdge,
-  IExperienceAllMarkdownRemark,
-} from '../../../../types/interfaces'
+  ExperienceMarkdownEdge,
+  ExperienceAllMarkdownRemark,
+} from '../../../../types/graphql.types'
 
 import { ExperienceCard } from './ExperienceCard'
 
 export function ExperienceCards({
   edges,
-}: IExperienceAllMarkdownRemark): JSX.Element {
+}: ExperienceAllMarkdownRemark): JSX.Element {
   return (
     <>
       {edges.map(
         (
-          { node: { frontmatter } }: IExperienceEdge,
+          { node: { frontmatter } }: ExperienceMarkdownEdge,
           i: number
         ): JSX.Element => (
           <ExperienceCard

@@ -2,11 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import {
-  IListItemData,
-  ISingleItemData,
-  ISkillsetFrontmatter,
-  IProjectFrontmatter,
-} from '../types/interfaces'
+  SkillsetMarkdownRemark,
+  ProjectsAllMarkdownRemark,
+} from '../types/graphql.types'
 import { StaticDataManager } from '../data/DataManager'
 import { routeGenerator } from '../utils/routeGenerator'
 
@@ -33,8 +31,12 @@ export default function SkillsetTemplate({
     },
     allMarkdownRemark: { edges },
   }, // this prop will be injected by the GraphQL query below.
-}: IListItemData<IProjectFrontmatter> &
-  ISingleItemData<ISkillsetFrontmatter>): JSX.Element {
+}: {
+  data: {
+    allMarkdownRemark: ProjectsAllMarkdownRemark
+    markdownRemark: SkillsetMarkdownRemark
+  }
+}): JSX.Element {
   return (
     <>
       <SEO

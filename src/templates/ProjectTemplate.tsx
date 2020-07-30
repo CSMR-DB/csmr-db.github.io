@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { ISingleItemData, IProjectFrontmatter } from '../types/interfaces'
+import { ProjectMarkdownRemark } from '../types/graphql.types'
 import { StaticDataManager } from '../data/DataManager'
 import { routeGenerator } from '../utils/routeGenerator'
 
@@ -24,7 +24,9 @@ export default function ProjectTemplate({
       timeToRead,
     },
   }, // this prop will be injected by the GraphQL query below.
-}: ISingleItemData<IProjectFrontmatter>): JSX.Element {
+}: {
+  data: { markdownRemark: ProjectMarkdownRemark }
+}): JSX.Element {
   return (
     <>
       <SEO

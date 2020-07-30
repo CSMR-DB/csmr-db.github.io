@@ -1,19 +1,19 @@
 import React from 'react'
 
 import {
-  ISkillsetAllMarkdownRemark,
-  ISkillsetEdge,
-} from '../../../../types/interfaces'
+  SkillsetAllMarkdownRemark,
+  SkillsetMarkdownEdge,
+} from '../../../../types/graphql.types'
 import { routeGenerator } from '../../../../utils/routeGenerator'
 
 import { SkillCard } from './SkillCard'
 
-export function SkillCards({ edges }: ISkillsetAllMarkdownRemark): JSX.Element {
+export function SkillCards({ edges }: SkillsetAllMarkdownRemark): JSX.Element {
   return (
     <>
       {edges.map(
         (
-          { node: { frontmatter, fileAbsolutePath } }: ISkillsetEdge,
+          { node: { frontmatter, fileAbsolutePath } }: SkillsetMarkdownEdge,
           i: number
         ): JSX.Element => (
           <SkillCard

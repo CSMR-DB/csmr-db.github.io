@@ -1,14 +1,14 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { IImageSharpAllFiles } from '../../types/interfaces'
+import { ImageSharpAllFiles } from '../../types/graphql.types'
 
-export interface IDynamicIcons {
-  dynamicIcons: IImageSharpAllFiles
+export type DynamicIcons = {
+  dynamicIcons: ImageSharpAllFiles
 }
 
-export function dynamicIconsProvider(): IDynamicIcons {
-  const data: IDynamicIcons = useStaticQuery(graphql`
+export function dynamicIconsProvider(): DynamicIcons {
+  const data: DynamicIcons = useStaticQuery(graphql`
     query {
       dynamicIcons: allFile(
         filter: { extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)/" } }

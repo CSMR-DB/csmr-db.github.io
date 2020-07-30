@@ -1,14 +1,14 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { IExperienceAllMarkdownRemark } from '../../types/interfaces'
+import { ExperienceAllMarkdownRemark } from '../../types/graphql.types'
 
-export interface IExperienceData {
-  experienceData: IExperienceAllMarkdownRemark
+export type ExperienceData = {
+  experienceData: ExperienceAllMarkdownRemark
 }
 
-export function experienceDataProvider(): IExperienceData {
-  const data: IExperienceData = useStaticQuery(graphql`
+export function experienceDataProvider(): ExperienceData {
+  const data: ExperienceData = useStaticQuery(graphql`
     query {
       experienceData: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/experiences/" } }

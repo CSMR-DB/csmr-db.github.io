@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
-import { IImageSharpEdge } from '../types/interfaces'
+import { ImageSharpEdge } from '../types/graphql.types'
 import { AStaticDataManager, StaticDataManager } from '../data/DataManager'
 
 export interface IDynamicImageProps {
@@ -21,7 +21,7 @@ export function DynamicImage({ path }: IDynamicImageProps): JSX.Element {
   return (
     <>
       {dynamicImages.edges.map(
-        (image: IImageSharpEdge, i: number): JSX.Element | null =>
+        (image: ImageSharpEdge, i: number): JSX.Element | null =>
           image.node.relativePath === path ||
           image.node.relativePath.includes(path) ? (
             <Image key={i} fluid={image.node.childImageSharp.fluid} />

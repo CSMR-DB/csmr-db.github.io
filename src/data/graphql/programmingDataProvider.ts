@@ -1,15 +1,15 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { IProjectsAllMarkdownRemark } from '../../types/interfaces'
+import { ProjectsAllMarkdownRemark } from '../../types/graphql.types'
 
-export interface IProgrammingData {
-  all: IProjectsAllMarkdownRemark
-  top: IProjectsAllMarkdownRemark
+export type ProgrammingData = {
+  all: ProjectsAllMarkdownRemark
+  top: ProjectsAllMarkdownRemark
 }
 
-export function programmingDataProvider(): IProgrammingData {
-  const data: IProgrammingData = useStaticQuery(graphql`
+export function programmingDataProvider(): ProgrammingData {
+  const data: ProgrammingData = useStaticQuery(graphql`
     fragment ProgrammingDataFragment on MarkdownRemarkConnection {
       edges {
         node {

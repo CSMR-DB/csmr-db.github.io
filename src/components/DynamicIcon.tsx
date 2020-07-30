@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
-import { IImageSharpEdge } from '../types/interfaces'
+import { ImageSharpEdge } from '../types/graphql.types'
 import { AStaticDataManager, StaticDataManager } from '../data/DataManager'
 
 export interface IDynamicIconProps {
@@ -13,9 +13,7 @@ export function DynamicIcon({ path }: IDynamicIconProps): JSX.Element {
     dynamicIcons: { dynamicIcons },
   }: typeof AStaticDataManager = StaticDataManager
 
-  function renderImage(
-    file: IImageSharpEdge | null = null
-  ): JSX.Element | null {
+  function renderImage(file: ImageSharpEdge | null = null): JSX.Element | null {
     return file && <Image fluid={file.node.childImageSharp.fluid} />
   }
 
@@ -23,7 +21,7 @@ export function DynamicIcon({ path }: IDynamicIconProps): JSX.Element {
     <>
       {renderImage(
         dynamicIcons.edges.find(
-          ({ node }: IImageSharpEdge): boolean => node.relativePath === path
+          ({ node }: ImageSharpEdge): boolean => node.relativePath === path
         )
       )}
     </>

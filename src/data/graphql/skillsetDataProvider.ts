@@ -1,15 +1,15 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { ISkillsetAllMarkdownRemark } from '../../types/interfaces'
+import { SkillsetAllMarkdownRemark } from '../../types/graphql.types'
 
-export interface ISkillsetData {
-  top: ISkillsetAllMarkdownRemark
-  all: ISkillsetAllMarkdownRemark
+export type SkillsetData = {
+  top: SkillsetAllMarkdownRemark
+  all: SkillsetAllMarkdownRemark
 }
 
-export function skillsetDataProvider(): ISkillsetData {
-  const data: ISkillsetData = useStaticQuery(graphql`
+export function skillsetDataProvider(): SkillsetData {
+  const data: SkillsetData = useStaticQuery(graphql`
     fragment SkillsetDataFragment on MarkdownRemarkConnection {
       edges {
         node {

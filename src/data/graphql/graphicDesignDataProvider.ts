@@ -1,14 +1,14 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { IProjectsAllMarkdownRemark } from '../../types/interfaces'
+import { ProjectsAllMarkdownRemark } from '../../types/graphql.types'
 
-export interface IGraphicDesignData {
-  graphicDesignData: IProjectsAllMarkdownRemark
+export type GraphicDesignData = {
+  graphicDesignData: ProjectsAllMarkdownRemark
 }
 
-export function graphicDesignDataProvider(): IGraphicDesignData {
-  const data: IGraphicDesignData = useStaticQuery(graphql`
+export function graphicDesignDataProvider(): GraphicDesignData {
+  const data: GraphicDesignData = useStaticQuery(graphql`
     query {
       graphicDesignData: allMarkdownRemark(
         filter: {

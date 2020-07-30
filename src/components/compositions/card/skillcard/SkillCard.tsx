@@ -3,7 +3,7 @@ import styled, { StyledComponent } from 'styled-components'
 import { Tween } from 'react-gsap'
 import { ColorProperty } from 'csstype'
 
-import { StringOrUrlArray } from '../../../../types/StringOrUrlObject'
+import { StringOrUrlArray } from '../../../../types/common.types'
 
 import { SkillCardIndicator } from './SkillCardIndicator'
 import { SkillCardBackdrop } from './SkillCardBackdrop'

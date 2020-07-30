@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { IContact } from '../../data/objects/contactsProvider'
+import { Contact } from '../../data/objects/contactsProvider'
 
 import { SocialButton } from './SocialButton'
 
 export interface IContactsProps {
-  contacts: IContact[]
+  contacts: Contact[]
 }
 
 export function Contacts({ contacts }: IContactsProps): JSX.Element {
@@ -13,7 +13,7 @@ export function Contacts({ contacts }: IContactsProps): JSX.Element {
     <>
       {contacts.map(
         (
-          { background, iconPath, href, text }: IContact,
+          { background, iconPath, href, text }: Contact,
           key: number
         ): JSX.Element => (
           <SocialButton

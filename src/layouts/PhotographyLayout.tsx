@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IImageSharpAllFiles } from '../types/interfaces'
+import { ImageSharpAllFiles } from '../types/graphql.types'
 
 import { Layout } from '../components/Layout'
 import { Photos } from '../components/compositions/Photos'
@@ -68,7 +68,7 @@ import { Grid } from '../components/Grid'
 // }
 
 export interface IPhotographyLayoutProps {
-  photographyData: IImageSharpAllFiles
+  photographyData: ImageSharpAllFiles
 }
 
 export function PhotographyLayout({

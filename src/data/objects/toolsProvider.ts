@@ -16,15 +16,15 @@ import {
   JSSVG,
   TSSVG,
 } from '../../components/compositions/CodeSVGs'
-import { AnyExoticRefComponent } from '../../types/types'
+import { AnyExoticRefComponent } from '../../types/react.types'
 
-export interface ITool {
+export type Tool = {
   name: string
   svg: AnyExoticRefComponent<any>
   color?: string
 }
 
-const frontEndFrameworks: ITool[] = [
+const frontEndFrameworks: Tool[] = [
   {
     name: 'React',
     color: '#00d8ff',
@@ -47,7 +47,7 @@ const frontEndFrameworks: ITool[] = [
   },
 ]
 
-const coreStuff: ITool[] = [
+const coreStuff: Tool[] = [
   {
     name: 'CSS',
     color: '#1572b6',
@@ -80,7 +80,7 @@ const coreStuff: ITool[] = [
   },
 ]
 
-const misc: ITool[] = [
+const misc: Tool[] = [
   {
     name: 'Git',
     color: '#dd4c35',
@@ -113,8 +113,8 @@ const misc: ITool[] = [
   },
 ]
 
-const TOOLS: ITool[] = [...coreStuff, ...frontEndFrameworks, ...misc]
+const TOOLS: Tool[] = [...coreStuff, ...frontEndFrameworks, ...misc]
 
-export function toolsProvider(): ITool[] {
+export function toolsProvider(): Tool[] {
   return TOOLS
 }

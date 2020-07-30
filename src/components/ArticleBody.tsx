@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StringOrUrlObject, StringOrUrlArray } from '../types/StringOrUrlObject'
+import { StringOrUrlObject, StringOrUrlArray } from '../types/common.types'
 
 import { StyledA } from './StyledLink'
 

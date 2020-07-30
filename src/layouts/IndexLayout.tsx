@@ -1,9 +1,9 @@
 import React from 'react'
 
 import {
-  ISkillsetAllMarkdownRemark,
-  IProjectsAllMarkdownRemark,
-} from '../types/interfaces'
+  SkillsetAllMarkdownRemark,
+  ProjectsAllMarkdownRemark,
+} from '../types/graphql.types'
 
 import { Layout } from '../components/Layout'
 import { CardHeader } from '../components/compositions/card/CardHeader'
@@ -19,9 +19,8 @@ import { Card } from '../components/compositions/card/Card'
 import { ReadMore } from '../components/compositions/ReadMore'
 
 export interface IIndexLayoutProps {
-  skillsetData: ISkillsetAllMarkdownRemark
-
-  programmingData: IProjectsAllMarkdownRemark
+  skillsetData: SkillsetAllMarkdownRemark
+  programmingData: ProjectsAllMarkdownRemark
 }
 
 export function IndexLayout({

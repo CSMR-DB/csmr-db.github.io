@@ -5,7 +5,10 @@ import styled, {
   FlattenSimpleInterpolation,
   DefaultTheme,
 } from 'styled-components'
-import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
+import {
+  AnyExoticRefComponent,
+  AnyExoticRefTargets,
+} from '../types/react.types'
 
 export interface IImageDotProps {
   theme?: DefaultTheme

@@ -7,7 +7,10 @@ import styled, {
 } from 'styled-components'
 import { AlignItemsProperty } from 'csstype'
 
-import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
+import {
+  AnyExoticRefComponent,
+  AnyExoticRefTargets,
+} from '../types/react.types'
 
 export interface IGridProps {
   theme?: DefaultTheme

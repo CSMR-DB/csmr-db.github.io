@@ -6,7 +6,10 @@ import styled, {
 } from 'styled-components'
 import { FillProperty } from 'csstype'
 
-import { AnyExoticRefComponent, AnyExoticRefTargets } from '../types/types'
+import {
+  AnyExoticRefComponent,
+  AnyExoticRefTargets,
+} from '../types/react.types'
 
 export interface IHeartProps {
   $width: string

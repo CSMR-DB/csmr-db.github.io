@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { IImageSharpAllFiles } from '../types/interfaces'
+import { ImageSharpAllFiles } from '../types/graphql.types'
 import { groupBy } from '../utils'
-import { ICourse } from '../data/objects/coursesProvider'
-import { ITool } from '../data/objects/toolsProvider'
+import { Course } from '../data/objects/coursesProvider'
+import { Tool } from '../data/objects/toolsProvider'
 
 import { Layout } from '../components/Layout'
 import { GamesGrid } from '../components/compositions/GamesGrid'
@@ -20,11 +20,11 @@ import { CTAButton } from '../components/CTAButton'
 import { StyledLink } from '../components/StyledLink'
 
 export interface IAboutLayoutProps {
-  gameWallpapers: IImageSharpAllFiles
-  photographySquares: IImageSharpAllFiles
-  seriesPosters: IImageSharpAllFiles
-  courses: ICourse[]
-  tools: ITool[]
+  gameWallpapers: ImageSharpAllFiles
+  photographySquares: ImageSharpAllFiles
+  seriesPosters: ImageSharpAllFiles
+  courses: Course[]
+  tools: Tool[]
 }
 
 export function AboutLayout({
@@ -34,7 +34,7 @@ export function AboutLayout({
   courses,
   tools,
 }: IAboutLayoutProps): JSX.Element {
-  const groupedCourses: [ICourse['category'], ICourse[]][] = [
+  const groupedCourses: [Course['category'], Course[]][] = [
     ...groupBy(courses, 'category'),
   ]
   const images: ISubbedImage[] = [

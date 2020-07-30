@@ -2,40 +2,40 @@ import { ColorProperty, FilterProperty, FontProperty } from 'csstype'
 import { DefaultTheme } from 'styled-components'
 import { lighten, opacify } from 'polished'
 
-export interface IThemeBreakpoints {
+export type ThemeBreakpoints = {
   smartphone: string
   tablet: string
   desktop: string
   ultrawide: string
 }
 
-export interface IThemeBreakpointsGroups {
-  min: IThemeBreakpoints
-  max: IThemeBreakpoints
+export type ThemeBreakpointsGroups = {
+  min: ThemeBreakpoints
+  max: ThemeBreakpoints
 }
 
-export interface IThemeFonts {
+export type ThemeFonts = {
   headings: FontProperty
   copy: FontProperty
 }
 
-export interface IThemePaletteObject<T> {
+export type ThemePaletteObject<T> = {
   normal: T
   hover: T
   active: T
   lens: T
 }
 
-export interface IThemePalette {
-  first: IThemePaletteObject<ColorProperty>
-  second: IThemePaletteObject<ColorProperty>
-  third: IThemePaletteObject<ColorProperty>
-  light: IThemePaletteObject<ColorProperty>
-  dark: IThemePaletteObject<ColorProperty>
-  filter: Omit<IThemePaletteObject<FilterProperty>, 'lens'>
+export type ThemePalette = {
+  first: ThemePaletteObject<ColorProperty>
+  second: ThemePaletteObject<ColorProperty>
+  third: ThemePaletteObject<ColorProperty>
+  light: ThemePaletteObject<ColorProperty>
+  dark: ThemePaletteObject<ColorProperty>
+  filter: Omit<ThemePaletteObject<FilterProperty>, 'lens'>
 }
 
-interface IThemeBuilderArgs {
+type ThemeBuilderArgs = {
   first: ColorProperty
   second: ColorProperty
   third: ColorProperty
@@ -70,7 +70,7 @@ class Theme implements DefaultTheme {
 
   static createBreakpoints(
     sizes: [number, number, number, number]
-  ): IThemeBreakpointsGroups {
+  ): ThemeBreakpointsGroups {
     return {
       min: {
         smartphone: Theme.createMediaQueryScreenSizeString('min', sizes[0]),
@@ -89,7 +89,7 @@ class Theme implements DefaultTheme {
 
   static createPaletteProperties(
     color: ColorProperty
-  ): IThemePaletteObject<ColorProperty> {
+  ): ThemePaletteObject<ColorProperty> {
     return {
       normal: color,
       hover: Theme.createHoverVariant(color),
@@ -107,7 +107,7 @@ class Theme implements DefaultTheme {
     filter,
     fonts,
     breakpoints,
-  }: IThemeBuilderArgs) {
+  }: ThemeBuilderArgs) {
     this.#palette = {
       first: Theme.createPaletteProperties(first),
       second: Theme.createPaletteProperties(second),

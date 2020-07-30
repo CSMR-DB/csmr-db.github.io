@@ -1,9 +1,9 @@
 import React from 'react'
 
 import {
-  IExperienceAllMarkdownRemark,
-  ISkillsetAllMarkdownRemark,
-} from '../types/interfaces'
+  ExperienceAllMarkdownRemark,
+  SkillsetAllMarkdownRemark,
+} from '../types/graphql.types'
 
 import { Layout } from '../components/Layout'
 import { CenteredBlock } from '../components/CenteredBlock'
@@ -14,8 +14,8 @@ import { ExperienceCards } from '../components/compositions/card/experiencecard/
 import { ExperienceCard } from '../components/compositions/card/experiencecard/ExperienceCard'
 
 export interface ISkillsetLayoutProps {
-  skillsetData: ISkillsetAllMarkdownRemark
-  experienceData: IExperienceAllMarkdownRemark
+  skillsetData: SkillsetAllMarkdownRemark
+  experienceData: ExperienceAllMarkdownRemark
 }
 
 export function SkillsetLayout({

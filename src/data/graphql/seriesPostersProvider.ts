@@ -1,14 +1,14 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { IImageSharpAllFiles } from '../../types/interfaces'
+import { ImageSharpAllFiles } from '../../types/graphql.types'
 
-export interface ISeriesPosters {
-  seriesPosters: IImageSharpAllFiles
+export type SeriesPosters = {
+  seriesPosters: ImageSharpAllFiles
 }
 
-export function seriesPostersProvider(): ISeriesPosters {
-  const data: ISeriesPosters = useStaticQuery(graphql`
+export function seriesPostersProvider(): SeriesPosters {
+  const data: SeriesPosters = useStaticQuery(graphql`
     query {
       seriesPosters: allFile(
         filter: {

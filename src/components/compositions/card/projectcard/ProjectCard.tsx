@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { IImageSharp } from '../../../../types/interfaces'
-import { StringOrUrlArray } from '../../../../types/StringOrUrlObject'
+import { FileChildImageSharp } from '../../../../types/graphql.types'
+import { StringOrUrlArray } from '../../../../types/common.types'
 
 import { Card } from '../Card'
 import { ArticleBody } from '../../../ArticleBody'
@@ -16,7 +16,7 @@ import { CardHeaderText } from '../CardHeaderText'
 
 interface IProjectCardProps {
   index: number
-  image?: string | IImageSharp
+  image?: string | FileChildImageSharp
   video?: string
   title: string
   body?: StringOrUrlArray

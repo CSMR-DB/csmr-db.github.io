@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StringOrUrlArray } from '../../../../types/StringOrUrlObject'
+import { StringOrUrlArray } from '../../../../types/common.types'
 
 import { ArticleBody } from '../../../ArticleBody'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
-import { IImageSharpAllFiles, IImageSharpEdge } from '../../types/interfaces'
+import { ImageSharpAllFiles, ImageSharpEdge } from '../../types/graphql.types'
 import { ImageContainer } from './ImageContainer'
 import { cleanAndCapitalize } from '../../utils'
 
@@ -10,14 +10,14 @@ import { Filter } from '../Filter'
 import { ImageGrid } from '../ImageGrid'
 
 export interface IGamesGridProps {
-  wallpapers: IImageSharpAllFiles
+  wallpapers: ImageSharpAllFiles
 }
 
 export function GamesGrid({ wallpapers }: IGamesGridProps): JSX.Element {
   return (
     <ImageGrid $rows={2} $columns={7}>
       {wallpapers.edges.map(
-        (edge: IImageSharpEdge, i: number): JSX.Element => (
+        (edge: ImageSharpEdge, i: number): JSX.Element => (
           <ImageContainer
             overlay={{
               node: (

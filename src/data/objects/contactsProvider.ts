@@ -1,13 +1,13 @@
 import { BackgroundColorProperty } from 'csstype'
 
-export interface IContact {
+export type Contact = {
   background: BackgroundColorProperty
   iconPath: string
   href: string
   text: string
 }
 
-const CONTACTS: IContact[] = [
+const CONTACTS: Contact[] = [
   {
     background: '#000000',
     iconPath: 'icons/email.png',
@@ -28,6 +28,6 @@ const CONTACTS: IContact[] = [
   },
 ]
 
-export function contactsProvider(): IContact[] {
+export function contactsProvider(): Contact[] {
   return CONTACTS
 }

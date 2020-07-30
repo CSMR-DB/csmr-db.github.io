@@ -1,69 +1,69 @@
-import { ITool, toolsProvider } from './objects/toolsProvider'
+import { Tool, toolsProvider } from './objects/toolsProvider'
 import { themeProvider } from './objects/themeProvider'
 import { DefaultTheme } from 'styled-components'
-import { IRouteObject, routesProvider } from './objects/routesProvider'
-import { ICourse, coursesProvider } from './objects/coursesProvider'
-import { IContact, contactsProvider } from './objects/contactsProvider'
+import { RouteObject, routesProvider } from './objects/routesProvider'
+import { Course, coursesProvider } from './objects/coursesProvider'
+import { Contact, contactsProvider } from './objects/contactsProvider'
 import {
   dynamicIconsProvider,
-  IDynamicIcons,
+  DynamicIcons,
 } from './graphql/dynamicIconsProvider'
 import {
   dynamicImagesProvider,
-  IDynamicImages,
+  DynamicImages,
 } from './graphql/dynamicImagesProvider'
 import {
   experienceDataProvider,
-  IExperienceData,
+  ExperienceData,
 } from './graphql/experienceDataProvider'
 import {
   gameWallpapersProvider,
-  IGameWallpapers,
+  GameWallpapers,
 } from './graphql/gameWallpapersProvider'
 import {
-  ISeriesPosters,
+  SeriesPosters,
   seriesPostersProvider,
 } from './graphql/seriesPostersProvider'
-import { ISiteMetadata } from '../types/interfaces'
+import { SiteMetadata } from '../types/graphql.types'
 import {
-  ISkillsetData,
+  SkillsetData,
   skillsetDataProvider,
 } from './graphql/skillsetDataProvider'
 import { siteMetadataProvider } from './graphql/siteMetadataProvider'
 import {
-  IGraphicDesignData,
+  GraphicDesignData,
   graphicDesignDataProvider,
 } from './graphql/graphicDesignDataProvider'
 import {
-  IPhotographySquares,
+  PhotographySquares,
   photographySquaresProvider,
 } from './graphql/photographySquaresProvider'
 import {
   programmingDataProvider,
-  IProgrammingData,
+  ProgrammingData,
 } from './graphql/programmingDataProvider'
 import {
   photographyDataProvider,
-  IPhotographyData,
+  PhotographyData,
 } from './graphql/photographyDataProvider'
 
 export abstract class AStaticDataManager {
-  static contacts: IContact[]
-  static courses: ICourse[]
-  static routes: IRouteObject[]
+  static contacts: Contact[]
+  static courses: Course[]
+  static routes: RouteObject[]
   static theme: DefaultTheme
-  static tools: ITool[]
-  static siteMetadata: ISiteMetadata
-  static skillsetData: ISkillsetData
-  static experienceData: IExperienceData
-  static programmingData: IProgrammingData
-  static graphicDesignData: IGraphicDesignData
-  static photographyData: IPhotographyData
-  static gameWallpapers: IGameWallpapers
-  static photographySquares: IPhotographySquares
-  static seriesPosters: ISeriesPosters
-  static dynamicImages: IDynamicImages
-  static dynamicIcons: IDynamicIcons
+  static tools: Tool[]
+  static siteMetadata: SiteMetadata
+  static skillsetData: SkillsetData
+  static experienceData: ExperienceData
+  static programmingData: ProgrammingData
+  static graphicDesignData: GraphicDesignData
+  static photographyData: PhotographyData
+  static gameWallpapers: GameWallpapers
+  static photographySquares: PhotographySquares
+  static seriesPosters: SeriesPosters
+  static dynamicImages: DynamicImages
+  static dynamicIcons: DynamicIcons
 }
 
 /**
@@ -83,11 +83,11 @@ export abstract class AStaticDataManager {
  * I am not 100% satisfied with the current API "inconsistencies" when destructuring the data, but alas. That's a priority item for the next revision.
  */
 export class StaticDataManager implements AStaticDataManager {
-  static get routes(): IRouteObject[] {
+  static get routes(): RouteObject[] {
     return routesProvider()
   }
 
-  static get contacts(): IContact[] {
+  static get contacts(): Contact[] {
     return contactsProvider()
   }
 
@@ -95,55 +95,55 @@ export class StaticDataManager implements AStaticDataManager {
     return themeProvider()
   }
 
-  static get tools(): ITool[] {
+  static get tools(): Tool[] {
     return toolsProvider()
   }
 
-  static get courses(): ICourse[] {
+  static get courses(): Course[] {
     return coursesProvider()
   }
 
-  static get siteMetadata(): ISiteMetadata {
+  static get siteMetadata(): SiteMetadata {
     return siteMetadataProvider()
   }
 
-  static get skillsetData(): ISkillsetData {
+  static get skillsetData(): SkillsetData {
     return skillsetDataProvider()
   }
 
-  static get experienceData(): IExperienceData {
+  static get experienceData(): ExperienceData {
     return experienceDataProvider()
   }
 
-  static get programmingData(): IProgrammingData {
+  static get programmingData(): ProgrammingData {
     return programmingDataProvider()
   }
 
-  static get graphicDesignData(): IGraphicDesignData {
+  static get graphicDesignData(): GraphicDesignData {
     return graphicDesignDataProvider()
   }
 
-  static get photographyData(): IPhotographyData {
+  static get photographyData(): PhotographyData {
     return photographyDataProvider()
   }
 
-  static get gameWallpapers(): IGameWallpapers {
+  static get gameWallpapers(): GameWallpapers {
     return gameWallpapersProvider()
   }
 
-  static get photographySquares(): IPhotographySquares {
+  static get photographySquares(): PhotographySquares {
     return photographySquaresProvider()
   }
 
-  static get seriesPosters(): ISeriesPosters {
+  static get seriesPosters(): SeriesPosters {
     return seriesPostersProvider()
   }
 
-  static get dynamicImages(): IDynamicImages {
+  static get dynamicImages(): DynamicImages {
     return dynamicImagesProvider()
   }
 
-  static get dynamicIcons(): IDynamicIcons {
+  static get dynamicIcons(): DynamicIcons {
     return dynamicIconsProvider()
   }
 }

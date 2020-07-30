@@ -2,18 +2,18 @@ import React from 'react'
 import Image from 'gatsby-image'
 import { MaxHeightProperty } from 'csstype'
 
-import { IImageSharp } from '../../../types/interfaces'
+import { FileChildImageSharp } from '../../../types/graphql.types'
 import {
   AnyExoticRefComponent,
   AnyExoticRefTargets,
-} from '../../../types/types'
+} from '../../../types/react.types'
 
 import { CardHeaderFeaturedImage } from './CardHeaderFeaturedImage'
 import { DynamicImage } from '../../DynamicImage'
 import { StyledYoutube } from '../../StyledYoutube'
 
 interface IImageOrVideo {
-  image?: string | IImageSharp
+  image?: string | FileChildImageSharp
   video?: string
   maxHeight?: MaxHeightProperty<1>
 }

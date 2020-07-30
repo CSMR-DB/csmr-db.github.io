@@ -1,14 +1,14 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { IImageSharpAllFiles } from '../../types/interfaces'
+import { ImageSharpAllFiles } from '../../types/graphql.types'
 
-export interface IGameWallpapers {
-  gameWallpapers: IImageSharpAllFiles
+export type GameWallpapers = {
+  gameWallpapers: ImageSharpAllFiles
 }
 
-export function gameWallpapersProvider(): IGameWallpapers {
-  const data: IGameWallpapers = useStaticQuery(graphql`
+export function gameWallpapersProvider(): GameWallpapers {
+  const data: GameWallpapers = useStaticQuery(graphql`
     query {
       gameWallpapers: allFile(
         filter: {

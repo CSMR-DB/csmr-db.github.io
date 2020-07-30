@@ -1,21 +1,21 @@
 import React from 'react'
 
 import {
-  IProjectsAllMarkdownRemark,
-  IProjectsEdge,
-} from '../../../../types/interfaces'
+  ProjectsAllMarkdownRemark,
+  ProjectMarkdownEdge,
+} from '../../../../types/graphql.types'
 import { routeGenerator } from '../../../../utils/routeGenerator'
 
 import { ProjectCard } from './ProjectCard'
 
 export function ProjectCards({
   edges,
-}: IProjectsAllMarkdownRemark): JSX.Element {
+}: ProjectsAllMarkdownRemark): JSX.Element {
   return (
     <>
       {edges.map(
         (
-          { node: { frontmatter, fileAbsolutePath } }: IProjectsEdge,
+          { node: { frontmatter, fileAbsolutePath } }: ProjectMarkdownEdge,
           i: number
         ): JSX.Element => {
           return (

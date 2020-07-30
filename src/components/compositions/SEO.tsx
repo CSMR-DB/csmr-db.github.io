@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { ISiteMetadata } from '../../types/interfaces'
+import { SiteMetadata } from '../../types/graphql.types'
 
 export interface ISEOProps {
-  siteMetadata: ISiteMetadata
+  siteMetadata: SiteMetadata
   title: string
   description: string
   route: string

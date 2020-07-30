@@ -1,10 +1,10 @@
 // tslint:disable: no-void-expression
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { ISiteMetadata } from '../../types/interfaces'
+import { SiteMetadata } from '../../types/graphql.types'
 
-export function siteMetadataProvider(): ISiteMetadata {
-  const data: ISiteMetadata = useStaticQuery(graphql`
+export function siteMetadataProvider(): SiteMetadata {
+  const data: SiteMetadata = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
