@@ -18,7 +18,7 @@ export function SEO({
   lang = 'en-US',
   title,
   route,
-  image = siteMetadata.site.siteMetadata.image,
+  image,
 }: ISEOProps): JSX.Element {
   const fullURL: string =
     route !== '/'
@@ -37,8 +37,12 @@ export function SEO({
       <meta property="og:title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />
-      <meta name="image" content={image} />
-      <meta property="og:image" content={image} />
+      {image && (
+        <>
+          <meta name="image" content={image} />
+          <meta property="og:image" content={image} />
+        </>
+      )}
       <meta property="og:url" content={fullURL} />
     </Helmet>
   )
