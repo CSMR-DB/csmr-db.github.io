@@ -1,4 +1,5 @@
 ---
+category: 'Graphic Design'
 level: 3
 skillColor: '#FFAA2B'
 time: 400

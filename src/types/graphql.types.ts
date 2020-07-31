@@ -41,6 +41,8 @@ export type AllMarkdownRemark<T extends FrontmatterBase> = {
   edges: MarkdownEdge<T>[]
 }
 
+export type FrontmatterCategories = 'Programming' | 'Graphic Design'
+
 /**
  * Experience GraphQL Frontmatter
  */
@@ -66,6 +68,7 @@ export type ExperienceMarkdownRemark = MarkdownRemark<ExperienceFrontmatter>
 export type SkillsetFrontmatter = {
   favorite: boolean | null
   title: string
+  category: FrontmatterCategories
   date: string
   excerpt: string
   tags?: string[]
@@ -84,7 +87,7 @@ export type SkillsetMarkdownRemark = MarkdownRemark<SkillsetFrontmatter>
 export type ProjectFrontmatter = {
   favorite: boolean | null
   title: string
-  category: 'Programming' | 'Graphic Design'
+  category: FrontmatterCategories
   date: string
   excerpt: string
   featuredImage?: FileChildImageSharp

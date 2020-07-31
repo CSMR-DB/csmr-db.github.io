@@ -1,4 +1,5 @@
 ---
+category: 'Programming'
 favorite: true
 level: 3
 skillColor: '#007ACC'

@@ -1,4 +1,5 @@
 ---
+category: 'Graphic Design'
 level: 1
 skillColor: '#041C6B'
 time: 200
