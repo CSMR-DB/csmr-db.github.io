@@ -6,6 +6,8 @@ import { SkillsetAllMarkdownRemark } from '../../types/graphql.types'
 export type SkillsetData = {
   top: SkillsetAllMarkdownRemark
   all: SkillsetAllMarkdownRemark
+  allProgramming: SkillsetAllMarkdownRemark
+  allGraphicDesign: SkillsetAllMarkdownRemark
 }
 
 export function skillsetDataProvider(): SkillsetData {
@@ -42,6 +44,20 @@ export function skillsetDataProvider(): SkillsetData {
 
       all: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/skillset/" } }
+        sort: { fields: frontmatter___time, order: DESC }
+      ) {
+        ...SkillsetDataFragment
+      }
+
+      allProgramming: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/skillset/" }, frontmatter: { category: { eq: "Programming" } } }
+        sort: { fields: frontmatter___time, order: DESC }
+      ) {
+        ...SkillsetDataFragment
+      }
+
+      allGraphicDesign: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/skillset/" }, frontmatter: { category: { eq: "Graphic Design" } } }
         sort: { fields: frontmatter___time, order: DESC }
       ) {
         ...SkillsetDataFragment

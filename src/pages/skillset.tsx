@@ -7,7 +7,8 @@ import { SkillsetLayout, ISkillsetLayoutProps } from '../layouts/SkillSetLayout'
 
 function SkillsetPage(): JSX.Element {
   const data: ISkillsetLayoutProps = {
-    skillsetData: StaticDataManager.skillsetData.all,
+    programmingData: StaticDataManager.skillsetData.allProgramming,
+    graphicDesignData: StaticDataManager.skillsetData.allGraphicDesign,
     ...StaticDataManager.experienceData,
   }
 

@@ -14,19 +14,21 @@ import { ExperienceCards } from '../components/compositions/card/experiencecard/
 import { ExperienceCard } from '../components/compositions/card/experiencecard/ExperienceCard'
 
 export interface ISkillsetLayoutProps {
-  skillsetData: SkillsetAllMarkdownRemark
+  programmingData: SkillsetAllMarkdownRemark
+  graphicDesignData: SkillsetAllMarkdownRemark
   experienceData: ExperienceAllMarkdownRemark
 }
 
 export function SkillsetLayout({
-  skillsetData,
+  programmingData,
+  graphicDesignData,
   experienceData,
 }: ISkillsetLayoutProps): JSX.Element {
   return (
     <Layout>
       <CenteredBlock>
         <ContentSeparator>
-          <h1>This is what I have worked with</h1>
+          <h1>This is what I have developed with</h1>
           <p>
             A rough estimation of the total time I've spent on everything is
             included.
@@ -38,7 +40,20 @@ export function SkillsetLayout({
           $columns="repeat(auto-fill, minmax(25rem, 1fr))"
           $maxWidth="160rem"
         >
-          <SkillCards edges={skillsetData.edges} />
+          <SkillCards edges={programmingData.edges} />
+        </Grid>
+      </ContentSeparator>
+      <CenteredBlock>
+        <ContentSeparator>
+          <h1>I have also worked with graphic design</h1>
+        </ContentSeparator>
+      </CenteredBlock>
+      <ContentSeparator>
+        <Grid
+          $columns="repeat(auto-fill, minmax(25rem, 1fr))"
+          $maxWidth="160rem"
+        >
+          <SkillCards edges={graphicDesignData.edges} />
         </Grid>
       </ContentSeparator>
       <CenteredBlock>
