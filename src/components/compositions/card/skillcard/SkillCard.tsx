@@ -51,7 +51,7 @@ export function SkillCard({
       <SkillCardBackdrop index={index}>
         <DynamicImage
           path={`code_icons/${title
-            .replace(/\([0-9]*\)|\s+/gi, '')
+            .replace(/\([0-9]*\)|\s+/gi, '_')
             .toLocaleLowerCase()}.png`}
         />
       </SkillCardBackdrop>
