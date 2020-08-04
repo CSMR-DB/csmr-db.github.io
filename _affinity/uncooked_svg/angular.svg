@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="angular" x="0" y="0" width="256" height="256" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="256" height="256"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <circle cx="128" cy="128" r="128" style="fill:#dd0031;"/>
+        <path d="M128,96L98.208,106.624L102.752,146.016L128,160L153.248,146.016L157.792,106.624L128,96Z" style="fill:#dd0031;fill-rule:nonzero;"/>
+        <path d="M128,89.63L91.701,102.574L97.145,149.769L128,166.859L158.855,149.769L164.299,102.574L128,89.63ZM128,96L98.208,106.624L102.752,146.016L128,160L153.248,146.016L157.792,106.624L128,96Z" style="fill:#fff;"/>
+        <path d="M128,103.072L109.376,144.832L116.32,144.832L120.064,135.488L135.872,135.488L139.616,144.832L146.56,144.832L128,103.072ZM133.44,129.728L122.56,129.728L128,116.64L133.44,129.728Z" style="fill:#fff;fill-rule:nonzero;"/>
+    </g>
+</svg>

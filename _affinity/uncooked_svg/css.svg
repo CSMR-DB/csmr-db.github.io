@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="css" x="0" y="0" width="256" height="256" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="256" height="256"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <circle cx="128" cy="128" r="128" style="fill:#1572b6;"/>
+        <path id="polygon4" d="M104.919,153.602L99.785,96L156.215,96L151.074,153.593L127.966,160L104.919,153.602Z" style="fill:#1572b6;fill-rule:nonzero;"/>
+        <path d="M99.311,158.273L127.965,166.227L156.681,158.265L162.774,90L93.227,90L99.311,158.273ZM104.919,153.602L99.785,96L156.215,96L151.074,153.593L127.966,160L104.919,153.602Z" style="fill:#fff;"/>
+        <path id="polygon8" d="M145.714,107.28L145.545,109.175L143.81,128.645L143.809,128.645L142.608,142.075L142.501,143.269L128.043,147.275L128.043,147.278L128.009,147.287L113.538,143.269L112.549,132.176L119.641,132.176L120.144,137.81L128.011,139.936L128.018,139.934L128.018,139.931L135.897,137.806L136.721,128.645L120.231,128.645L119.6,121.579L137.349,121.579L137.993,114.345L110.96,114.345L110.818,112.757L110.496,109.175L110.327,107.28L145.714,107.28Z" style="fill:#fff;fill-rule:nonzero;"/>
+    </g>
+</svg>

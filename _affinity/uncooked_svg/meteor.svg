@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="meteor" x="0" y="0" width="256" height="256" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="256" height="256"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <circle cx="128" cy="128" r="128" style="fill:#df4f4f;"/>
+        <path d="M87.191,88L157.093,162.045C158.373,162.984 160.16,162.86 161.297,161.754C162.351,160.72 162.528,159.07 161.717,157.836L87.191,88Z" style="fill:#fff;fill-rule:nonzero;"/>
+        <path d="M109.326,94.999L162.556,152.387C163.836,153.326 165.623,153.202 166.76,152.096C167.814,151.062 167.991,149.412 167.18,148.178L109.326,94.999Z" style="fill:#fff;fill-rule:nonzero;"/>
+        <path d="M93.776,109.975L147.007,167.371C148.286,168.31 150.073,168.186 151.211,167.08C152.265,166.046 152.441,164.396 151.63,163.162L93.776,109.975Z" style="fill:#fff;fill-rule:nonzero;"/>
+        <path d="M128.035,101.016L165.227,141.111C166.118,141.768 167.366,141.685 168.162,140.916C168.899,140.193 169.021,139.04 168.454,138.179L128.035,101.016Z" style="fill:#fff;fill-rule:nonzero;"/>
+        <path d="M98.898,127.331L136.087,167.424C136.978,168.081 138.226,167.998 139.022,167.228C139.759,166.506 139.881,165.353 139.314,164.491L98.898,127.331Z" style="fill:#fff;fill-rule:nonzero;"/>
+        <path d="M147.147,109.695L164.002,127.92C164.448,128.235 165.057,128.197 165.46,127.83C165.823,127.502 165.886,126.949 165.606,126.547L147.153,109.695L147.147,109.695Z" style="fill:#fff;fill-rule:nonzero;"/>
+        <path d="M108.203,145.799L125.059,164.025C125.504,164.339 126.113,164.301 126.516,163.934C126.879,163.606 126.942,163.053 126.662,162.652L108.203,145.799Z" style="fill:#fff;fill-rule:nonzero;"/>
+    </g>
+</svg>

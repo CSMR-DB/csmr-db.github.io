@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="mongodb" x="0" y="0" width="256" height="256" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="256" height="256"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <circle cx="128" cy="128" r="128" style="fill:#429744;"/>
+        <path id="path39" d="M126.313,158.041C124.298,156.58 109.111,144.891 110.056,125.214C110.247,112.368 116.004,100.218 125.824,91.934C126.973,90.958 127.613,89.507 127.559,88C127.587,88.062 127.615,88.145 127.642,88.247L127.641,88.209C128.285,89.802 129.074,91.332 129.999,92.78C131.07,95.106 141.016,101.197 145.216,119.726C147.899,132.79 143.455,146.253 133.755,155.16L133.761,155.243C133.684,155.282 133.607,155.323 133.531,155.365C132.803,156.023 132.044,156.657 131.257,157.263C130.695,157.952 130.252,158.74 129.953,159.594C129.599,162.382 129.538,165.199 129.77,168L127.624,167.289C127.624,167.289 127.778,161.457 126.313,158.041Z" style="fill:#429744;fill-rule:nonzero;stroke:#fff;stroke-width:6px;"/>
+    </g>
+</svg>
