@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `CSMR`,
+        short_name: `CSMR`,
         start_url: `/`,
-        background_color: `#0088CD`,
-        theme_color: `#0088CD`,
+        background_color: `#00A8FF`,
+        theme_color: `#00A8FF`,
         display: `minimal-ui`,
-        icon: `src/images/logo_transparent.png`,
+        icon: `src/images/logo.png`,
       },
     },
     `gatsby-plugin-typescript`,
