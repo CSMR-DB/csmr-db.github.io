@@ -11,12 +11,10 @@ import {
   StaticDataManager,
 } from '../../../data/DataManager'
 
-import { FullSizeLogo } from './FullSizeLogo'
 import { Filter } from '../../Filter'
 import { DynamicImage } from '../../DynamicImage'
 import { Fixed } from '../../Fixed'
 import { Absolute } from '../../Absolute'
-import { Logo } from '../Logo'
 import { Flex } from '../../Flex'
 import { Grid } from '../../Grid'
 import { WASDNav } from '../wasdnav/WASDNav'
@@ -63,14 +61,6 @@ export function Header({
           <DynamicImage path="wallpaper/wallpaper.jpg" />
         </Filter>
       </Fixed>
-      <Absolute $height={height}>
-        <FullSizeLogo $height={height}>
-          <Logo
-            $fill={'rgba(256, 256, 256, .025)'}
-            $size={isLandingPage ? '100vh' : '25vh'}
-          />
-        </FullSizeLogo>
-      </Absolute>
       <Absolute $height={height}>
         <Flex $justifyContent={'space-evenly'}>
           <Grid $gap={isLandingPage ? '2rem' : '1rem'}>
