@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { ITool } from '../../data/tools'
+import { Tool } from '../../data/objects/toolsProvider'
 
 import { Flex } from '../Flex'
 import { Grid } from '../Grid'
 import { SVGLogo } from './SVGLogo'
 
 interface ISVGLogos {
-  svgs: ITool[]
+  svgs: Tool[]
 }
 
 export function SVGLogos({ svgs }: ISVGLogos): JSX.Element {
@@ -15,7 +15,7 @@ export function SVGLogos({ svgs }: ISVGLogos): JSX.Element {
     <Flex $direction={'column'} $justifyContent={'center'}>
       <Grid $rows={2} $columns={8}>
         {svgs.map(
-          (logo: ITool, i: number): JSX.Element => (
+          (logo: Tool, i: number): JSX.Element => (
             <SVGLogo logo={logo} key={i} />
           )
         )}

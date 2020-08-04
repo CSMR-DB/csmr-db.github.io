@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { ITool } from '../../data/tools'
+import { Tool } from '../../data/objects/toolsProvider'
 
 import { ColoredCircle } from '../ColoredCircle'
 
 interface ISVGLogo {
-  logo: ITool
+  logo: Tool
 }
 
 export function SVGLogo({ logo }: ISVGLogo): JSX.Element {
