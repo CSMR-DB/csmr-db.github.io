@@ -50,14 +50,20 @@ export function skillsetDataProvider(): SkillsetData {
       }
 
       allProgramming: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/skillset/" }, frontmatter: { category: { eq: "Programming" } } }
+        filter: {
+          fileAbsolutePath: { regex: "/skillset/" }
+          frontmatter: { category: { eq: "Programming" } }
+        }
         sort: { fields: frontmatter___time, order: DESC }
       ) {
         ...SkillsetDataFragment
       }
 
       allGraphicDesign: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/skillset/" }, frontmatter: { category: { eq: "Graphic Design" } } }
+        filter: {
+          fileAbsolutePath: { regex: "/skillset/" }
+          frontmatter: { category: { eq: "Graphic Design" } }
+        }
         sort: { fields: frontmatter___time, order: DESC }
       ) {
         ...SkillsetDataFragment
