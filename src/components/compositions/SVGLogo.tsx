@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Tool } from '../../data/objects/toolsProvider'
 
-import { ColoredCircle } from '../ColoredCircle'
+import { Filter } from '../Filter'
 
 interface ISVGLogo {
   logo: Tool
@@ -10,8 +10,8 @@ interface ISVGLogo {
 
 export function SVGLogo({ logo }: ISVGLogo): JSX.Element {
   return (
-    <ColoredCircle color={logo.color}>
+    <Filter $lens="transparent">
       <logo.svg />
-    </ColoredCircle>
+    </Filter>
   )
 }
