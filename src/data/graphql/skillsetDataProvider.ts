@@ -12,26 +12,27 @@ export type SkillsetData = {
 
 export function skillsetDataProvider(): SkillsetData {
   const data: SkillsetData = useStaticQuery(graphql`
-    fragment SkillsetDataFragment on MarkdownRemarkConnection {
+    fragment SkillsetDataFragment on MdxConnection {
       edges {
         node {
           fileAbsolutePath
           frontmatter {
-            path
             title
             excerpt
             level
             skillColor
             time
             favorite
+            icon
           }
+          body
           excerpt
         }
       }
     }
 
     query {
-      top: allMarkdownRemark(
+      top: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/skillset/" }
           frontmatter: { favorite: { eq: true } }
@@ -42,14 +43,14 @@ export function skillsetDataProvider(): SkillsetData {
         ...SkillsetDataFragment
       }
 
-      all: allMarkdownRemark(
+      all: allMdx(
         filter: { fileAbsolutePath: { regex: "/skillset/" } }
         sort: { fields: frontmatter___time, order: DESC }
       ) {
         ...SkillsetDataFragment
       }
 
-      allProgramming: allMarkdownRemark(
+      allProgramming: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/skillset/" }
           frontmatter: { category: { eq: "Programming" } }
@@ -59,7 +60,7 @@ export function skillsetDataProvider(): SkillsetData {
         ...SkillsetDataFragment
       }
 
-      allGraphicDesign: allMarkdownRemark(
+      allGraphicDesign: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/skillset/" }
           frontmatter: { category: { eq: "Graphic Design" } }

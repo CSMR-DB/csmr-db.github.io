@@ -10,11 +10,11 @@ import {
   JestSVG,
   GraphQLSVG,
   NodeSVG,
-  MongoSVG,
+  MongoDBSVG,
   MeteorSVG,
   HTMLSVG,
-  JSSVG,
-  TSSVG,
+  JavaScriptSVG,
+  TypeScriptSVG,
 } from '../../components/compositions/CodeSVGs'
 import { AnyExoticRefComponent } from '../../types/react.types'
 
@@ -71,12 +71,12 @@ const coreStuff: Tool[] = [
   {
     name: 'JavaScript',
     color: '#f5de19',
-    svg: JSSVG,
+    svg: JavaScriptSVG,
   },
   {
     name: 'TypeScript',
     color: '#007acc',
-    svg: TSSVG,
+    svg: TypeScriptSVG,
   },
 ]
 
@@ -99,7 +99,7 @@ const misc: Tool[] = [
   {
     name: 'MongoDB',
     color: '#48a547',
-    svg: MongoSVG,
+    svg: MongoDBSVG,
   },
   {
     name: 'Node',

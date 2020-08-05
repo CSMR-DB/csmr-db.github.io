@@ -19,10 +19,7 @@ exports.createPages = async ({
   const SkillsetTemplate = path.resolve(`src/templates/SkillsetTemplate.tsx`)
   const { errors, data } = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
             frontmatter {
@@ -42,7 +39,7 @@ exports.createPages = async ({
     return
   }
 
-  data.allMarkdownRemark.edges.forEach(({ node: { fileAbsolutePath } }) => {
+  data.allMdx.edges.forEach(({ node: { fileAbsolutePath } }) => {
     let pageDirectory = fileAbsolutePath.match(
       /(markdown-pages)\/(\w+\/)+/gi
     )[0] // 'markdown-pages/blog/article/'
@@ -66,7 +63,7 @@ exports.createPages = async ({
   })
 
   const tagsArray = [
-    ...data.allMarkdownRemark.edges
+    ...data.allMdx.edges
       .filter(({ node: { fileAbsolutePath } }) =>
         fileAbsolutePath.includes('/projects/')
       )
@@ -77,7 +74,7 @@ exports.createPages = async ({
           },
         }) => tags
       ),
-    ...data.allMarkdownRemark.edges
+    ...data.allMdx.edges
       .filter(({ node: { fileAbsolutePath } }) =>
         fileAbsolutePath.includes('/skillset/')
       )
@@ -104,4 +101,15 @@ exports.createPages = async ({
       context: { tag },
     })
   })
+}
+
+exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
+  createTypes(`
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter
+    }
+    type MdxFrontmatter {
+      icon: String @mdx
+    }
+  `)
 }

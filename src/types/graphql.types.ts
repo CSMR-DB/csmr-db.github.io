@@ -24,7 +24,7 @@ type FrontmatterBase = {
 export type MarkdownRemark<T extends FrontmatterBase> = {
   fileAbsolutePath: string
   frontmatter: T
-  html: string
+  body?: string
   wordCount?: {
     words?: number
     sentences?: number
@@ -75,6 +75,7 @@ export type SkillsetFrontmatter = {
   time?: number
   level?: number
   skillColor?: ColorProperty
+  icon?: string
 }
 
 export type SkillsetAllMarkdownRemark = AllMarkdownRemark<SkillsetFrontmatter>

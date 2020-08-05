@@ -10,13 +10,12 @@ export type ProgrammingData = {
 
 export function programmingDataProvider(): ProgrammingData {
   const data: ProgrammingData = useStaticQuery(graphql`
-    fragment ProgrammingDataFragment on MarkdownRemarkConnection {
+    fragment ProgrammingDataFragment on MdxConnection {
       edges {
         node {
           fileAbsolutePath
           frontmatter {
             favorite
-            path
             category
             title
             featuredVideo
@@ -43,7 +42,7 @@ export function programmingDataProvider(): ProgrammingData {
     }
 
     query {
-      top: allMarkdownRemark(
+      top: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
           frontmatter: {
@@ -57,7 +56,7 @@ export function programmingDataProvider(): ProgrammingData {
         ...ProgrammingDataFragment
       }
 
-      all: allMarkdownRemark(
+      all: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
           frontmatter: { category: { eq: "Programming" } }

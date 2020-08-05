@@ -10,7 +10,7 @@ export type ExperienceData = {
 export function experienceDataProvider(): ExperienceData {
   const data: ExperienceData = useStaticQuery(graphql`
     query {
-      experienceData: allMarkdownRemark(
+      experienceData: allMdx(
         filter: { fileAbsolutePath: { regex: "/experiences/" } }
         sort: { fields: frontmatter___dateEnd, order: DESC }
       ) {

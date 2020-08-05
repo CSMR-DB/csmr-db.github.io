@@ -18,15 +18,15 @@ import { ProjectCards } from '../components/compositions/card/projectcard/Projec
 
 export interface ISkillsetTemplateProps {
   data: {
-    allMarkdownRemark: ProjectsAllMarkdownRemark
-    markdownRemark: SkillsetMarkdownRemark
+    allMdx: ProjectsAllMarkdownRemark
+    mdx: SkillsetMarkdownRemark
   }
 }
 
 // tslint:disable-next-line: no-default-export
 export default function SkillsetTemplate({
   data: {
-    markdownRemark: {
+    mdx: {
       fileAbsolutePath,
       frontmatter: {
         skillColor = 'black',
@@ -34,9 +34,10 @@ export default function SkillsetTemplate({
         title = 'Placeholder',
         excerpt: description = 'Description',
         time = 0,
+        icon,
       },
     },
-    allMarkdownRemark: { edges },
+    allMdx: { edges },
   }, // this prop will be injected by the GraphQL query below.
 }: ISkillsetTemplateProps): JSX.Element {
   return (
@@ -58,6 +59,7 @@ export default function SkillsetTemplate({
               time={time}
               index={0}
               fileAbsolutePath={routeGenerator(fileAbsolutePath)}
+              icon={icon}
             />
           </CenteredBlock>
         </ContentSeparator>
@@ -77,7 +79,7 @@ export default function SkillsetTemplate({
 // tslint:disable-next-line: no-void-expression
 export const pageQuery: void = graphql`
   query($path: String!, $tag: String!) {
-    allMarkdownRemark(filter: { frontmatter: { tags: { in: [$tag] } } }) {
+    allMdx(filter: { frontmatter: { tags: { in: [$tag] } } }) {
       edges {
         node {
           fileAbsolutePath
@@ -103,12 +105,11 @@ export const pageQuery: void = graphql`
           timeToRead
           excerpt
           id
-          html
         }
       }
     }
 
-    markdownRemark(fileAbsolutePath: { regex: $path }) {
+    mdx(fileAbsolutePath: { regex: $path }) {
       fileAbsolutePath
       frontmatter {
         title
@@ -116,6 +117,7 @@ export const pageQuery: void = graphql`
         level
         time
         skillColor
+        icon
       }
     }
   }

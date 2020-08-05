@@ -51,9 +51,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-typescript',
+            options: {
+              // configure the JSX component that the plugin should check for
+              wrapperComponent: 'Render',
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -93,5 +100,6 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-mdx-frontmatter',
   ],
 }

@@ -25,6 +25,7 @@ export function SkillCards({ edges }: SkillsetAllMarkdownRemark): JSX.Element {
             index={i}
             skillColor={frontmatter.skillColor || 'black'}
             fileAbsolutePath={routeGenerator(fileAbsolutePath)}
+            icon={frontmatter.icon}
           />
         )
       )}

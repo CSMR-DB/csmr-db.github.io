@@ -10,7 +10,7 @@ export type GraphicDesignData = {
 export function graphicDesignDataProvider(): GraphicDesignData {
   const data: GraphicDesignData = useStaticQuery(graphql`
     query {
-      graphicDesignData: allMarkdownRemark(
+      graphicDesignData: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
           frontmatter: { category: { eq: "Graphic Design" } }
@@ -21,7 +21,6 @@ export function graphicDesignDataProvider(): GraphicDesignData {
           node {
             fileAbsolutePath
             frontmatter {
-              path
               category
               title
               excerpt

@@ -13,18 +13,19 @@ import { CardHeaderImageOrVideo } from '../components/compositions/card/CardHead
 import { DateFormatted } from '../components/DateFormatted'
 import { ReadingTime } from '../components/ReadingTime'
 import { FullPageH1 } from '../components/FullPageH1'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 export interface IProjectTemplateProps {
-  data: { markdownRemark: ProjectMarkdownRemark }
+  data: { mdx: ProjectMarkdownRemark }
 }
 
 // tslint:disable-next-line: no-default-export
 export default function ProjectTemplate({
   data: {
-    markdownRemark: {
+    mdx: {
       fileAbsolutePath,
       frontmatter: { featuredImage, featuredVideo, tags, date, title, excerpt },
-      html,
+      body,
       timeToRead,
     },
   }, // this prop will be injected by the GraphQL query below.
@@ -53,7 +54,7 @@ export default function ProjectTemplate({
               </h6>
             </header>
             <p>{excerpt}</p>
-            <main dangerouslySetInnerHTML={{ __html: html }} />
+            {body && <MDXRenderer>{body}</MDXRenderer>}
             <footer>
               <ArticleTags tags={tags} />
             </footer>
@@ -67,9 +68,9 @@ export default function ProjectTemplate({
 // tslint:disable-next-line: no-void-expression
 export const pageQuery: void = graphql`
   query($path: String!) {
-    markdownRemark(fileAbsolutePath: { regex: $path }) {
+    mdx(fileAbsolutePath: { regex: $path }) {
       fileAbsolutePath
-      html
+      body
       frontmatter {
         date
         category
