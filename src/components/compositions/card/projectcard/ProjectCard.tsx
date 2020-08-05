@@ -21,7 +21,6 @@ interface IProjectCardProps {
   title: string
   body?: StringOrUrlArray
   tags?: string[]
-  html?: string
   date?: string
   fileAbsolutePath: string
 }
