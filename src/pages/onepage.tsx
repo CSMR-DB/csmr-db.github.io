@@ -2,7 +2,6 @@ import React from 'react'
 
 import { StaticDataManager } from '../data/DataManager'
 
-import { SEO } from '../components/compositions/SEO'
 import { AboutLayout, IAboutLayoutProps } from '../layouts/AboutLayout'
 import { ContactLayout, IContactLayoutProps } from '../layouts/ContactLayout'
 import { IProjectsLayoutProps, ProjectsLayout } from '../layouts/ProjectsLayout'
@@ -34,12 +33,6 @@ function Onepage(): JSX.Element {
 
   return (
     <>
-      <SEO
-        title="Onepage"
-        description="All 4 pages with 0 navigation"
-        siteMetadata={StaticDataManager.siteMetadata}
-        route={'/onepage'}
-      />
       <AboutLayout {...aboutData} />
       <SkillsetLayout {...skillsetData} />
       <ProjectsLayout {...projectsData} />
