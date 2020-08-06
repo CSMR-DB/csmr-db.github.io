@@ -9,20 +9,27 @@ import { IProjectsLayoutProps, ProjectsLayout } from '../layouts/ProjectsLayout'
 import { ISkillsetLayoutProps, SkillsetLayout } from '../layouts/SkillSetLayout'
 
 function Onepage(): JSX.Element {
-  const data: ISkillsetLayoutProps &
-    IProjectsLayoutProps &
-    IAboutLayoutProps &
-    IContactLayoutProps = {
-    ...StaticDataManager.experienceData,
-    ...StaticDataManager.graphicDesignData,
+  const aboutData: IAboutLayoutProps = {
     ...StaticDataManager.gameWallpapers,
     ...StaticDataManager.seriesPosters,
     ...StaticDataManager.photographySquares,
-    skillsetData: StaticDataManager.skillsetData.all,
-    programmingData: StaticDataManager.programmingData.all,
-    contacts: StaticDataManager.contacts,
     courses: StaticDataManager.courses,
     tools: StaticDataManager.tools,
+  }
+
+  const skillsetData: ISkillsetLayoutProps = {
+    ...StaticDataManager.experienceData,
+    programmingData: StaticDataManager.skillsetData.allProgramming,
+    graphicDesignData: StaticDataManager.skillsetData.allGraphicDesign,
+  }
+
+  const projectsData: IProjectsLayoutProps = {
+    ...StaticDataManager.graphicDesignData,
+    programmingData: StaticDataManager.programmingData.all,
+  }
+
+  const contactData: IContactLayoutProps = {
+    contacts: StaticDataManager.contacts,
   }
 
   return (
@@ -33,10 +40,10 @@ function Onepage(): JSX.Element {
         siteMetadata={StaticDataManager.siteMetadata}
         route={'/onepage'}
       />
-      <AboutLayout {...data} />
-      <ProjectsLayout {...data} />
-      <SkillsetLayout {...data} />
-      <ContactLayout {...data} />
+      <AboutLayout {...aboutData} />
+      <SkillsetLayout {...skillsetData} />
+      <ProjectsLayout {...projectsData} />
+      <ContactLayout {...contactData} />
     </>
   )
 }
