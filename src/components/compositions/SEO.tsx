@@ -29,10 +29,10 @@ export function SEO({
 }: ISEOProps): JSX.Element {
   const fullURL: string =
     route !== '/'
-      ? `${siteMetadata.site.siteMetadata.url}/${
+      ? `${siteMetadata.url}/${
           route.startsWith('/', 0) ? route.replace('/', '') : route
         }`
-      : siteMetadata.site.siteMetadata.url
+      : siteMetadata.url
 
   const universalJsonLd: {
     type: 'application/ld+json'
@@ -45,16 +45,13 @@ export function SEO({
     name: title,
     about: description,
     image,
-    breadcrumb: breadCrumbJsonLdGenerator(
-      siteMetadata.site.siteMetadata.title,
-      route
-    ),
+    breadcrumb: breadCrumbJsonLdGenerator(siteMetadata.title, route),
   })
 
   return (
     <Helmet
       title={title}
-      titleTemplate={`%s · ${siteMetadata.site.siteMetadata.title}`}
+      titleTemplate={`%s · ${siteMetadata.title}`}
       script={jsonLd ? [...jsonLd, universalJsonLd] : [universalJsonLd]}
     >
       <meta name="lang" content={lang} />

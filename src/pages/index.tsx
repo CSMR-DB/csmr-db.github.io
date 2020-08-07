@@ -18,19 +18,16 @@ function IndexPage(): JSX.Element {
     <>
       <SEO
         title={`Homepage`}
-        description={
-          StaticDataManager.siteMetadata.site.siteMetadata.description
-        }
+        description={StaticDataManager.siteMetadata.description}
         siteMetadata={StaticDataManager.siteMetadata}
         route={'/'}
         jsonLd={[
           helmetJsonLdProp<WebSite>({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: StaticDataManager.siteMetadata.site.siteMetadata.title,
-            url: StaticDataManager.siteMetadata.site.siteMetadata.url,
-            description:
-              StaticDataManager.siteMetadata.site.siteMetadata.description,
+            name: StaticDataManager.siteMetadata.title,
+            url: StaticDataManager.siteMetadata.url,
+            description: StaticDataManager.siteMetadata.description,
           }),
           helmetJsonLdProp<ItemList>({
             '@context': 'https://schema.org',

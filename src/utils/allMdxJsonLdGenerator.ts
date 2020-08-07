@@ -29,9 +29,7 @@ export function allMdxJsonLdGenerator({
       name: title,
       description: excerpt,
       position: index,
-      url: `${siteMetadata.site.siteMetadata.url}${routeGenerator(
-        fileAbsolutePath
-      )}`,
+      url: `${siteMetadata.url}${routeGenerator(fileAbsolutePath)}`,
     })
   )
 }

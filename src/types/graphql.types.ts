@@ -5,15 +5,11 @@ import { FluidObject } from 'gatsby-image'
  * SiteMetadata GraphQL data
  */
 export type SiteMetadata = {
-  site: {
-    siteMetadata: {
-      title: string
-      description: string
-      author: string
-      image: string
-      url: string
-    }
-  }
+  title: string
+  description: string
+  author: string
+  image: string
+  url: string
 }
 
 type FrontmatterBase = {

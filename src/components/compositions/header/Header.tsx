@@ -50,7 +50,7 @@ export function Header({
   isLandingPage,
 }: IHeaderProps): JSX.Element {
   const {
-    siteMetadata: { site },
+    siteMetadata,
     routes: defaultRoutes,
   }: typeof AStaticDataManager = StaticDataManager
 
@@ -70,7 +70,7 @@ export function Header({
               gap={isLandingPage ? '4rem' : '2rem'}
               isLandingPage={isLandingPage}
             />
-            {isLandingPage && <HeyItsMe {...site.siteMetadata} />}
+            {isLandingPage && <HeyItsMe {...siteMetadata} />}
           </Grid>
         </Flex>
       </Absolute>

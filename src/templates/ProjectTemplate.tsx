@@ -43,7 +43,7 @@ export default function ProjectTemplate({
           helmetJsonLdProp<CreativeWork>({
             '@context': 'https://schema.org',
             '@type': 'CreativeWork',
-            author: StaticDataManager.siteMetadata.site.siteMetadata.author,
+            author: StaticDataManager.siteMetadata.author,
             name: title,
             about: excerpt,
             keywords: tags,

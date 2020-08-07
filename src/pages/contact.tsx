@@ -23,7 +23,7 @@ function ContactPage(): JSX.Element {
           helmetJsonLdProp<Person>({
             '@context': 'https://schema.org',
             '@type': 'Person',
-            name: StaticDataManager.siteMetadata.site.siteMetadata.author,
+            name: StaticDataManager.siteMetadata.author,
             email: 'casimir.db@gmail.com',
           }),
         ]}
