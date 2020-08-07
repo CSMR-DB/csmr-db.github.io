@@ -6,8 +6,6 @@ import {
 } from '../types/graphql.types'
 import { ListItem, ItemList } from 'schema-dts'
 
-import { routeGenerator } from './routeGenerator'
-
 export function allMdxJsonLdGenerator({
   projectsData,
   siteMetadata,
@@ -20,7 +18,7 @@ export function allMdxJsonLdGenerator({
       {
         node: {
           frontmatter: { title, excerpt },
-          fileAbsolutePath,
+          generatedRoute,
         },
       }: SkillsetMarkdownEdge,
       index: number
@@ -29,7 +27,7 @@ export function allMdxJsonLdGenerator({
       name: title,
       description: excerpt,
       position: index,
-      url: `${siteMetadata.url}${routeGenerator(fileAbsolutePath)}`,
+      url: `${siteMetadata.url}${generatedRoute}`,
     })
   )
 }

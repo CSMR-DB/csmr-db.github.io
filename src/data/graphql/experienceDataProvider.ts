@@ -11,7 +11,7 @@ export function experienceDataProvider(): ExperienceData {
   const data: ExperienceData = useStaticQuery(graphql`
     query {
       experienceData: allMdx(
-        filter: { fileAbsolutePath: { regex: "/experiences/" } }
+        filter: { generatedRoute: { regex: "/experiences/" } }
         sort: { fields: frontmatter___dateEnd, order: DESC }
       ) {
         edges {

@@ -15,7 +15,7 @@ export function skillsetDataProvider(): SkillsetData {
     fragment SkillsetDataFragment on MdxConnection {
       edges {
         node {
-          fileAbsolutePath
+          generatedRoute
           frontmatter {
             title
             excerpt
@@ -34,7 +34,7 @@ export function skillsetDataProvider(): SkillsetData {
     query {
       top: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/skillset/" }
+          generatedRoute: { regex: "/skillset/" }
           frontmatter: { favorite: { eq: true } }
         }
         sort: { fields: frontmatter___time, order: DESC }
@@ -44,7 +44,7 @@ export function skillsetDataProvider(): SkillsetData {
       }
 
       all: allMdx(
-        filter: { fileAbsolutePath: { regex: "/skillset/" } }
+        filter: { generatedRoute: { regex: "/skillset/" } }
         sort: { fields: frontmatter___time, order: DESC }
       ) {
         ...SkillsetDataFragment
@@ -52,7 +52,7 @@ export function skillsetDataProvider(): SkillsetData {
 
       allProgramming: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/skillset/" }
+          generatedRoute: { regex: "/skillset/" }
           frontmatter: { category: { eq: "Programming" } }
         }
         sort: { fields: frontmatter___time, order: DESC }
@@ -62,7 +62,7 @@ export function skillsetDataProvider(): SkillsetData {
 
       allGraphicDesign: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/skillset/" }
+          generatedRoute: { regex: "/skillset/" }
           frontmatter: { category: { eq: "Graphic Design" } }
         }
         sort: { fields: frontmatter___time, order: DESC }

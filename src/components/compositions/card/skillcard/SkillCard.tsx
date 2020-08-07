@@ -27,7 +27,7 @@ interface ISkillCardProps {
   description: StringOrUrlArray
   skillColor: ColorProperty
   time?: number
-  fileAbsolutePath: string
+  generatedRoute: string
   icon?: string
 }
 
@@ -47,7 +47,7 @@ export function SkillCard({
   description,
   skillColor,
   time = 0,
-  fileAbsolutePath,
+  generatedRoute,
   icon,
 }: ISkillCardProps): JSX.Element {
   return (
@@ -65,7 +65,7 @@ export function SkillCard({
                 litColor={skillColor}
               ></SkillCardIndicator>
               <h1>
-                <StyledLink to={fileAbsolutePath} $color={skillColor}>
+                <StyledLink to={generatedRoute} $color={skillColor}>
                   {title}
                 </StyledLink>
               </h1>

@@ -18,7 +18,7 @@ type FrontmatterBase = {
 }
 
 export type MarkdownRemark<T extends FrontmatterBase> = {
-  fileAbsolutePath: string
+  generatedRoute: string
   frontmatter: T
   body?: string
   wordCount?: {

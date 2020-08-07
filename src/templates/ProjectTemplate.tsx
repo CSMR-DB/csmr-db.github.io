@@ -5,7 +5,6 @@ import { CreativeWork } from 'schema-dts'
 
 import { ProjectMarkdownRemark } from '../types/graphql.types'
 import { StaticDataManager } from '../data/DataManager'
-import { routeGenerator } from '../utils/routeGenerator'
 
 import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
@@ -25,7 +24,7 @@ export interface IProjectTemplateProps {
 export default function ProjectTemplate({
   data: {
     mdx: {
-      fileAbsolutePath,
+      generatedRoute,
       frontmatter: { featuredImage, featuredVideo, tags, date, title, excerpt },
       body,
       timeToRead,
@@ -38,7 +37,7 @@ export default function ProjectTemplate({
         title={`${title} · Project`}
         description={excerpt}
         siteMetadata={StaticDataManager.siteMetadata}
-        route={routeGenerator(fileAbsolutePath)}
+        route={generatedRoute}
         jsonLd={[
           helmetJsonLdProp<CreativeWork>({
             '@context': 'https://schema.org',
@@ -82,8 +81,8 @@ export default function ProjectTemplate({
 // tslint:disable-next-line: no-void-expression
 export const pageQuery: void = graphql`
   query($path: String!) {
-    mdx(fileAbsolutePath: { regex: $path }) {
-      fileAbsolutePath
+    mdx(generatedRoute: { eq: $path }) {
+      generatedRoute
       body
       frontmatter {
         date

@@ -6,7 +6,6 @@ import {
   ProjectsAllMarkdownRemark,
 } from '../types/graphql.types'
 import { StaticDataManager } from '../data/DataManager'
-import { routeGenerator } from '../utils/routeGenerator'
 
 import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
@@ -27,7 +26,7 @@ export interface ISkillsetTemplateProps {
 export default function SkillsetTemplate({
   data: {
     mdx: {
-      fileAbsolutePath,
+      generatedRoute,
       frontmatter: {
         skillColor = 'black',
         level = 0,
@@ -46,7 +45,7 @@ export default function SkillsetTemplate({
         title={`${title} · Tag`}
         description={description}
         siteMetadata={StaticDataManager.siteMetadata}
-        route={routeGenerator(fileAbsolutePath)}
+        route={generatedRoute}
       />
       <Layout>
         <ContentSeparator>
@@ -58,7 +57,7 @@ export default function SkillsetTemplate({
               description={description}
               time={time}
               index={0}
-              fileAbsolutePath={routeGenerator(fileAbsolutePath)}
+              generatedRoute={generatedRoute}
               icon={icon}
             />
           </CenteredBlock>
@@ -82,7 +81,7 @@ export const pageQuery: void = graphql`
     allMdx(filter: { frontmatter: { tags: { in: [$tag] } } }) {
       edges {
         node {
-          fileAbsolutePath
+          generatedRoute
           frontmatter {
             title
             excerpt
@@ -109,8 +108,8 @@ export const pageQuery: void = graphql`
       }
     }
 
-    mdx(fileAbsolutePath: { regex: $path }) {
-      fileAbsolutePath
+    mdx(generatedRoute: { eq: $path }) {
+      generatedRoute
       frontmatter {
         title
         excerpt

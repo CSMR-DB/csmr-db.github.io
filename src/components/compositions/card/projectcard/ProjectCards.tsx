@@ -4,7 +4,6 @@ import {
   ProjectsAllMarkdownRemark,
   ProjectMarkdownEdge,
 } from '../../../../types/graphql.types'
-import { routeGenerator } from '../../../../utils/routeGenerator'
 
 import { ProjectCard } from './ProjectCard'
 
@@ -15,7 +14,7 @@ export function ProjectCards({
     <>
       {edges.map(
         (
-          { node: { frontmatter, fileAbsolutePath } }: ProjectMarkdownEdge,
+          { node: { frontmatter, generatedRoute } }: ProjectMarkdownEdge,
           i: number
         ): JSX.Element => {
           return (
@@ -25,7 +24,7 @@ export function ProjectCards({
               video={frontmatter.featuredVideo}
               image={frontmatter.featuredImage}
               body={frontmatter.excerpt}
-              fileAbsolutePath={routeGenerator(fileAbsolutePath)}
+              generatedRoute={generatedRoute}
               date={frontmatter.date}
               key={i}
               index={i}

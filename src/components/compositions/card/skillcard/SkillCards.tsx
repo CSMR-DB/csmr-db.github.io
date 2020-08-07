@@ -4,7 +4,6 @@ import {
   SkillsetAllMarkdownRemark,
   SkillsetMarkdownEdge,
 } from '../../../../types/graphql.types'
-import { routeGenerator } from '../../../../utils/routeGenerator'
 
 import { SkillCard } from './SkillCard'
 
@@ -13,7 +12,7 @@ export function SkillCards({ edges }: SkillsetAllMarkdownRemark): JSX.Element {
     <>
       {edges.map(
         (
-          { node: { frontmatter, fileAbsolutePath } }: SkillsetMarkdownEdge,
+          { node: { frontmatter, generatedRoute } }: SkillsetMarkdownEdge,
           i: number
         ): JSX.Element => (
           <SkillCard
@@ -24,7 +23,7 @@ export function SkillCards({ edges }: SkillsetAllMarkdownRemark): JSX.Element {
             key={i}
             index={i}
             skillColor={frontmatter.skillColor || 'black'}
-            fileAbsolutePath={routeGenerator(fileAbsolutePath)}
+            generatedRoute={generatedRoute}
             icon={frontmatter.icon}
           />
         )

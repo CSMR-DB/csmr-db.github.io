@@ -22,7 +22,7 @@ interface IProjectCardProps {
   body?: StringOrUrlArray
   tags?: string[]
   date?: string
-  fileAbsolutePath: string
+  generatedRoute: string
 }
 
 export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
@@ -33,7 +33,7 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   body,
   tags,
   date,
-  fileAbsolutePath,
+  generatedRoute,
 }: IProjectCardProps): JSX.Element => (
   <Card index={index}>
     <CardHeader>
@@ -42,7 +42,7 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
       )}
       <CardHeaderText>
         <h1>
-          <StyledLink to={fileAbsolutePath}>{title}</StyledLink>
+          <StyledLink to={generatedRoute}>{title}</StyledLink>
         </h1>
         <h6>
           <DateFormatted dateString={date} />

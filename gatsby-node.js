@@ -26,7 +26,7 @@ exports.createPages = async ({
               tags
               title
             }
-            fileAbsolutePath
+            generatedRoute
           }
         }
       }
@@ -39,17 +39,13 @@ exports.createPages = async ({
     return
   }
 
-  data.allMdx.edges.forEach(({ node: { fileAbsolutePath } }) => {
-    let pageDirectory = fileAbsolutePath.match(
-      /(markdown-pages)\/(\w+\/)+/gi
-    )[0] // 'markdown-pages/blog/article/'
-    let subDirectory = pageDirectory.replace('markdown-pages/', '/') // '/blog/article/'
-    let templatePath = subDirectory.split('/')[1] // 'blog'
+  data.allMdx.edges.forEach(({ node: { generatedRoute } }) => {
+    let templatePath = generatedRoute.split('/')[1] // 'blog'
 
     const pagesToCreate = {
       projects: () =>
         createPage({
-          path: subDirectory,
+          path: generatedRoute,
           component: ProjectTemplate,
           context: {}, // additional data can be passed via context
         }),
@@ -64,8 +60,8 @@ exports.createPages = async ({
 
   const tagsArray = [
     ...data.allMdx.edges
-      .filter(({ node: { fileAbsolutePath } }) =>
-        fileAbsolutePath.includes('/projects/')
+      .filter(({ node: { generatedRoute } }) =>
+        generatedRoute.includes('/projects/')
       )
       .map(
         ({
@@ -75,8 +71,8 @@ exports.createPages = async ({
         }) => tags
       ),
     ...data.allMdx.edges
-      .filter(({ node: { fileAbsolutePath } }) =>
-        fileAbsolutePath.includes('/skillset/')
+      .filter(({ node: { generatedRoute } }) =>
+        generatedRoute.includes('/skillset/')
       )
       .map(
         ({
@@ -93,7 +89,7 @@ exports.createPages = async ({
   uniqueTags.map((tag) => {
     const subDirectory = `/skillset/${tag
       .toLocaleLowerCase()
-      .replace(/\s+/gi, '_')}/`
+      .replace(/\s+/gi, '_')}`
 
     createPage({
       path: subDirectory,
@@ -106,10 +102,33 @@ exports.createPages = async ({
 exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
   createTypes(`
     type Mdx implements Node {
+      generatedRoute: String
       frontmatter: MdxFrontmatter
     }
     type MdxFrontmatter {
       icon: String @mdx
     }
   `)
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    Mdx: {
+      generatedRoute: {
+        resolve(source, args, context, info) {
+          let markdownPagePath = source.fileAbsolutePath.match(
+            /(markdown-pages)\/(\w+\/)+/gi
+          )[0] // 'markdown-pages/blog/article/'
+          let relativeFolder = markdownPagePath.replace('markdown-pages/', '/') // '/blog/article/'
+          let generatedRoute = relativeFolder.substring(
+            0,
+            relativeFolder.length - 1
+          ) // '/blog/article'
+
+          return generatedRoute
+        },
+      },
+    },
+  }
+  createResolvers(resolvers)
 }

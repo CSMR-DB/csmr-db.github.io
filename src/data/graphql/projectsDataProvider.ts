@@ -15,7 +15,7 @@ export function projectsDataProvider(): ProjectsData {
     fragment ProjectsDataFragment on MdxConnection {
       edges {
         node {
-          fileAbsolutePath
+          generatedRoute
           frontmatter {
             favorite
             category
@@ -46,7 +46,7 @@ export function projectsDataProvider(): ProjectsData {
     query {
       top: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/projects/" }
+          generatedRoute: { regex: "/projects/" }
           frontmatter: { favorite: { eq: true } }
         }
         sort: { fields: frontmatter___date, order: DESC }
@@ -56,7 +56,7 @@ export function projectsDataProvider(): ProjectsData {
       }
 
       all: allMdx(
-        filter: { fileAbsolutePath: { regex: "/projects/" } }
+        filter: { generatedRoute: { regex: "/projects/" } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         ...ProjectsDataFragment
@@ -64,7 +64,7 @@ export function projectsDataProvider(): ProjectsData {
 
       allProgramming: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/projects/" }
+          generatedRoute: { regex: "/projects/" }
           frontmatter: { category: { eq: "Programming" } }
         }
         sort: { fields: frontmatter___date, order: DESC }
@@ -74,14 +74,14 @@ export function projectsDataProvider(): ProjectsData {
 
       allGraphicDesign: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/projects/" }
+          generatedRoute: { regex: "/projects/" }
           frontmatter: { category: { eq: "Graphic Design" } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
           node {
-            fileAbsolutePath
+            generatedRoute
             frontmatter {
               favorite
               category
