@@ -11,7 +11,7 @@ import { allMdxJsonLdGenerator } from '../utils/allMdxJsonLdGenerator'
 function IndexPage(): JSX.Element {
   const data: IIndexLayoutProps = {
     skillsetData: StaticDataManager.skillsetData.top,
-    programmingData: StaticDataManager.programmingData.top,
+    projectsData: StaticDataManager.projectsData.top,
   }
 
   return (

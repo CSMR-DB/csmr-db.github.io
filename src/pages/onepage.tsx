@@ -23,8 +23,8 @@ function Onepage(): JSX.Element {
   }
 
   const projectsData: IProjectsLayoutProps = {
-    ...StaticDataManager.graphicDesignData,
-    programmingData: StaticDataManager.programmingData.all,
+    programmingData: StaticDataManager.projectsData.allProgramming,
+    graphicDesignData: StaticDataManager.projectsData.allGraphicDesign
   }
 
   const contactData: IContactLayoutProps = {

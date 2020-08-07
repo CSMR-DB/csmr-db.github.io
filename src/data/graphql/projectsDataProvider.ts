@@ -3,14 +3,16 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { ProjectsAllMarkdownRemark } from '../../types/graphql.types'
 
-export type ProgrammingData = {
+export type ProjectsData = {
   all: ProjectsAllMarkdownRemark
   top: ProjectsAllMarkdownRemark
+  allProgramming: ProjectsAllMarkdownRemark
+  allGraphicDesign: ProjectsAllMarkdownRemark
 }
 
-export function programmingDataProvider(): ProgrammingData {
-  const data: ProgrammingData = useStaticQuery(graphql`
-    fragment ProgrammingDataFragment on MdxConnection {
+export function projectsDataProvider(): ProjectsData {
+  const data: ProjectsData = useStaticQuery(graphql`
+    fragment ProjectsDataFragment on MdxConnection {
       edges {
         node {
           fileAbsolutePath
@@ -46,24 +48,61 @@ export function programmingDataProvider(): ProgrammingData {
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
           frontmatter: {
-            category: { eq: "Programming" }
             favorite: { eq: true }
           }
         }
         sort: { fields: frontmatter___date, order: DESC }
         limit: 3
       ) {
-        ...ProgrammingDataFragment
+        ...ProjectsDataFragment
       }
 
       all: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/projects/" }
+        }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
+        ...ProjectsDataFragment
+      }
+
+      allProgramming: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
           frontmatter: { category: { eq: "Programming" } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
-        ...ProgrammingDataFragment
+        ...ProjectsDataFragment
+      }
+
+      allGraphicDesign: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/projects/" }
+          frontmatter: { category: { eq: "Graphic Design" } }
+        }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
+        edges {
+          node {
+            fileAbsolutePath
+            frontmatter {
+              favorite
+              category
+              title
+              excerpt
+              tags
+              date
+            }
+            wordCount {
+              words
+              sentences
+              paragraphs
+            }
+            excerpt
+            id
+          }
+        }
       }
     }
   `)

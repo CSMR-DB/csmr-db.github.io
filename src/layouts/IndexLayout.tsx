@@ -20,12 +20,12 @@ import { ReadMore } from '../components/compositions/ReadMore'
 
 export interface IIndexLayoutProps {
   skillsetData: SkillsetAllMarkdownRemark
-  programmingData: ProjectsAllMarkdownRemark
+  projectsData: ProjectsAllMarkdownRemark
 }
 
 export function IndexLayout({
   skillsetData,
-  programmingData,
+  projectsData,
 }: IIndexLayoutProps): JSX.Element {
   return (
     <Layout isLandingPage={true}>
@@ -86,7 +86,7 @@ export function IndexLayout({
                     title={'What I have made'}
                     link={{ path: '/projects', text: 'my work / experiments' }}
                   />
-                  <ProjectCards edges={programmingData.edges} />
+                  <ProjectCards edges={projectsData.edges} />
                 </Grid>
               </div>
             </Grid>

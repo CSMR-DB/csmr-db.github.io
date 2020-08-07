@@ -10,8 +10,8 @@ import { allMdxJsonLdGenerator } from '../utils/allMdxJsonLdGenerator'
 
 function ProjectsPage(): JSX.Element {
   const data: IProjectsLayoutProps = {
-    programmingData: StaticDataManager.programmingData.all,
-    ...StaticDataManager.graphicDesignData,
+    programmingData: StaticDataManager.projectsData.allProgramming,
+    graphicDesignData: StaticDataManager.projectsData.allGraphicDesign
   }
 
   return (

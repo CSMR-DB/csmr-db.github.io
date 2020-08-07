@@ -16,6 +16,7 @@ import {
   experienceDataProvider,
   ExperienceData,
 } from './graphql/experienceDataProvider'
+import { projectsDataProvider,ProjectsData } from './graphql/projectsDataProvider';
 import {
   gameWallpapersProvider,
   GameWallpapers,
@@ -31,17 +32,9 @@ import {
 } from './graphql/skillsetDataProvider'
 import { siteMetadataProvider } from './graphql/siteMetadataProvider'
 import {
-  GraphicDesignData,
-  graphicDesignDataProvider,
-} from './graphql/graphicDesignDataProvider'
-import {
   PhotographySquares,
   photographySquaresProvider,
 } from './graphql/photographySquaresProvider'
-import {
-  programmingDataProvider,
-  ProgrammingData,
-} from './graphql/programmingDataProvider'
 import {
   photographyDataProvider,
   PhotographyData,
@@ -55,9 +48,8 @@ export abstract class AStaticDataManager {
   static tools: Tool[]
   static siteMetadata: SiteMetadata
   static skillsetData: SkillsetData
+  static projectsData: ProjectsData
   static experienceData: ExperienceData
-  static programmingData: ProgrammingData
-  static graphicDesignData: GraphicDesignData
   static photographyData: PhotographyData
   static gameWallpapers: GameWallpapers
   static photographySquares: PhotographySquares
@@ -115,12 +107,8 @@ export class StaticDataManager implements AStaticDataManager {
     return experienceDataProvider()
   }
 
-  static get programmingData(): ProgrammingData {
-    return programmingDataProvider()
-  }
-
-  static get graphicDesignData(): GraphicDesignData {
-    return graphicDesignDataProvider()
+  static get projectsData(): ProjectsData {
+    return projectsDataProvider()
   }
 
   static get photographyData(): PhotographyData {
