@@ -16,7 +16,10 @@ import {
   experienceDataProvider,
   ExperienceData,
 } from './graphql/experienceDataProvider'
-import { projectsDataProvider,ProjectsData } from './graphql/projectsDataProvider';
+import {
+  projectsDataProvider,
+  ProjectsData,
+} from './graphql/projectsDataProvider'
 import {
   gameWallpapersProvider,
   GameWallpapers,

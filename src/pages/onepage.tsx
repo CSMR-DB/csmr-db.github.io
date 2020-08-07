@@ -24,7 +24,7 @@ function Onepage(): JSX.Element {
 
   const projectsData: IProjectsLayoutProps = {
     programmingData: StaticDataManager.projectsData.allProgramming,
-    graphicDesignData: StaticDataManager.projectsData.allGraphicDesign
+    graphicDesignData: StaticDataManager.projectsData.allGraphicDesign,
   }
 
   const contactData: IContactLayoutProps = {

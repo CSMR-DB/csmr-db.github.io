@@ -11,7 +11,7 @@ import { allMdxJsonLdGenerator } from '../utils/allMdxJsonLdGenerator'
 function ProjectsPage(): JSX.Element {
   const data: IProjectsLayoutProps = {
     programmingData: StaticDataManager.projectsData.allProgramming,
-    graphicDesignData: StaticDataManager.projectsData.allGraphicDesign
+    graphicDesignData: StaticDataManager.projectsData.allGraphicDesign,
   }
 
   return (

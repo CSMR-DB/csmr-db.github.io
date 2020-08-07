@@ -47,9 +47,7 @@ export function projectsDataProvider(): ProjectsData {
       top: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
-          frontmatter: {
-            favorite: { eq: true }
-          }
+          frontmatter: { favorite: { eq: true } }
         }
         sort: { fields: frontmatter___date, order: DESC }
         limit: 3
@@ -58,9 +56,7 @@ export function projectsDataProvider(): ProjectsData {
       }
 
       all: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/projects/" }
-        }
+        filter: { fileAbsolutePath: { regex: "/projects/" } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         ...ProjectsDataFragment
