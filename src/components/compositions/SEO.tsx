@@ -1,7 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { helmetJsonLdProp } from 'react-schemaorg'
+import { WebPage, WithContext } from 'schema-dts'
 
 import { SiteMetadata } from '../../types/graphql.types'
+import { breadCrumbJsonLdGenerator } from '../../utils/breadcrumbJsonLdGenerator'
 
 export interface ISEOProps {
   siteMetadata: SiteMetadata
@@ -10,6 +13,8 @@ export interface ISEOProps {
   route: string
   lang?: string
   image?: string
+  jsonLd?: any[]
+  webpageJsonLd?: Partial<WithContext<WebPage>>
 }
 
 export function SEO({
@@ -19,6 +24,8 @@ export function SEO({
   title,
   route,
   image,
+  jsonLd,
+  webpageJsonLd,
 }: ISEOProps): JSX.Element {
   const fullURL: string =
     route !== '/'
@@ -27,10 +34,28 @@ export function SEO({
         }`
       : siteMetadata.site.siteMetadata.url
 
+  const universalJsonLd: {
+    type: 'application/ld+json'
+    innerHTML: string
+  } = helmetJsonLdProp<WebPage>({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    ...webpageJsonLd,
+    url: fullURL,
+    name: title,
+    about: description,
+    image,
+    breadcrumb: breadCrumbJsonLdGenerator(
+      siteMetadata.site.siteMetadata.title,
+      route
+    ),
+  })
+
   return (
     <Helmet
       title={title}
       titleTemplate={`%s · ${siteMetadata.site.siteMetadata.title}`}
+      script={jsonLd ? [...jsonLd, universalJsonLd] : [universalJsonLd]}
     >
       <meta name="lang" content={lang} />
       <meta property="og:type" content="website" />

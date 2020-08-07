@@ -1,4 +1,6 @@
 import React from 'react'
+import { helmetJsonLdProp } from 'react-schemaorg'
+import { Person } from 'schema-dts'
 
 import { StaticDataManager } from '../data/DataManager'
 
@@ -17,6 +19,14 @@ function ContactPage(): JSX.Element {
         description="Get in touch via Mail, LinkedIn or Discord"
         siteMetadata={StaticDataManager.siteMetadata}
         route={'/contact'}
+        jsonLd={[
+          helmetJsonLdProp<Person>({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: StaticDataManager.siteMetadata.site.siteMetadata.author,
+            email: 'casimir.db@gmail.com',
+          }),
+        ]}
       />
       <ContactLayout {...data} />
     </>

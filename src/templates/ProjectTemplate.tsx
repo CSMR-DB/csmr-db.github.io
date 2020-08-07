@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { helmetJsonLdProp } from 'react-schemaorg'
+import { CreativeWork } from 'schema-dts'
 
 import { ProjectMarkdownRemark } from '../types/graphql.types'
 import { StaticDataManager } from '../data/DataManager'
@@ -37,6 +39,18 @@ export default function ProjectTemplate({
         description={excerpt}
         siteMetadata={StaticDataManager.siteMetadata}
         route={routeGenerator(fileAbsolutePath)}
+        jsonLd={[
+          helmetJsonLdProp<CreativeWork>({
+            '@context': 'https://schema.org',
+            '@type': 'CreativeWork',
+            author: StaticDataManager.siteMetadata.site.siteMetadata.author,
+            name: title,
+            about: excerpt,
+            keywords: tags,
+            dateCreated: date,
+            image: featuredImage?.childImageSharp.fluid.src,
+          }),
+        ]}
       />
       <Layout>
         <CenteredBlock>

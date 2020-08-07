@@ -1,4 +1,6 @@
 import React from 'react'
+import { helmetJsonLdProp } from 'react-schemaorg'
+import { Person } from 'schema-dts'
 
 import { StaticDataManager } from '../data/DataManager'
 
@@ -21,6 +23,15 @@ function AboutMe(): JSX.Element {
         description="A little backstory about how I got where I am"
         siteMetadata={StaticDataManager.siteMetadata}
         route={'/about'}
+        jsonLd={[
+          helmetJsonLdProp<Person>({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: StaticDataManager.siteMetadata.site.siteMetadata.author,
+            nationality: 'Dutch',
+            knowsLanguage: ['nl-NL', 'en-US'],
+          }),
+        ]}
       />
       <AboutLayout {...data} />
     </>
