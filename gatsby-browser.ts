@@ -12,8 +12,9 @@ require('typeface-fira-sans')
 require('firacode')
 require('typeface-holtwood-one-sc')
 require('typeface-inter')
+// tslint:disable-next-line: no-submodule-imports
 require('prismjs/themes/prism-tomorrow.css')
 
-exports.shouldUpdateScroll = () => {
+export function shouldUpdateScroll(): boolean {
   return false
 }
