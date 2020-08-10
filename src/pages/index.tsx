@@ -6,7 +6,7 @@ import { StaticDataManager } from '../data/DataManager'
 
 import { SEO } from '../components/compositions/SEO'
 import { IndexLayout, IIndexLayoutProps } from '../layouts/IndexLayout'
-import { allMdxJsonLdGenerator } from '../utils/allMdxJsonLdGenerator'
+import { allMdxProjectsJsonLdGenerator } from '../utils/allMdxProjectsJsonLdGenerator'
 
 function IndexPage(): JSX.Element {
   const data: IIndexLayoutProps = {
@@ -33,7 +33,7 @@ function IndexPage(): JSX.Element {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             description: 'Primary skills',
-            itemListElement: allMdxJsonLdGenerator({
+            itemListElement: allMdxProjectsJsonLdGenerator({
               projectsData: data.skillsetData,
               siteMetadata: StaticDataManager.siteMetadata,
             }),

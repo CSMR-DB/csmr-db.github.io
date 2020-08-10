@@ -6,7 +6,7 @@ import { StaticDataManager } from '../data/DataManager'
 
 import { SEO } from '../components/compositions/SEO'
 import { ProjectsLayout, IProjectsLayoutProps } from '../layouts/ProjectsLayout'
-import { allMdxJsonLdGenerator } from '../utils/allMdxJsonLdGenerator'
+import { allMdxProjectsJsonLdGenerator } from '../utils/allMdxProjectsJsonLdGenerator'
 
 function ProjectsPage(): JSX.Element {
   const data: IProjectsLayoutProps = {
@@ -26,7 +26,7 @@ function ProjectsPage(): JSX.Element {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             description: 'Software projects',
-            itemListElement: allMdxJsonLdGenerator({
+            itemListElement: allMdxProjectsJsonLdGenerator({
               projectsData: data.programmingData,
               siteMetadata: StaticDataManager.siteMetadata,
             }),
@@ -35,7 +35,7 @@ function ProjectsPage(): JSX.Element {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             description: 'Graphic design projects',
-            itemListElement: allMdxJsonLdGenerator({
+            itemListElement: allMdxProjectsJsonLdGenerator({
               projectsData: data.graphicDesignData,
               siteMetadata: StaticDataManager.siteMetadata,
             }),
