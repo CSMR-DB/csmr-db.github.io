@@ -4,7 +4,7 @@ import { helmetJsonLdProp } from 'react-schemaorg'
 import { CreativeWork } from 'schema-dts'
 
 import { ProjectMarkdownRemark } from '../types/graphql.types'
-import { StaticDataManager } from '../data/DataManager'
+import { StaticDataManager } from '../data/StaticDataManager'
 
 import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'

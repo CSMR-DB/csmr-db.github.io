@@ -9,7 +9,7 @@ import styled, {
 import {
   AStaticDataManager,
   StaticDataManager,
-} from '../../../data/DataManager'
+} from '../../../data/StaticDataManager'
 
 import { Filter } from '../../Filter'
 import { DynamicImage } from '../../DynamicImage'

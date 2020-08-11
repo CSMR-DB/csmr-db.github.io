@@ -8,7 +8,10 @@ import { IONavigator } from '../hooks/IONavigator'
 
 import { Header } from '../components/compositions/header/Header'
 import { Footer } from '../components/compositions/footer/Footer'
-import { StaticDataManager, AStaticDataManager } from '../data/DataManager'
+import {
+  StaticDataManager,
+  AStaticDataManager,
+} from '../data/StaticDataManager'
 
 interface ILayoutProps {
   children: ReactNode

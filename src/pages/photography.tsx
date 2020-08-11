@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StaticDataManager } from '../data/DataManager'
+import { StaticDataManager } from '../data/StaticDataManager'
 
 import { SEO } from '../components/compositions/SEO'
 import {

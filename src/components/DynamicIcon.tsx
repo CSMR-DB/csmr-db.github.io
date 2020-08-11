@@ -2,7 +2,10 @@ import React from 'react'
 import Image from 'gatsby-image'
 
 import { ImageSharpEdge } from '../types/graphql.types'
-import { AStaticDataManager, StaticDataManager } from '../data/DataManager'
+import {
+  AStaticDataManager,
+  StaticDataManager,
+} from '../data/StaticDataManager'
 
 export interface IDynamicIconProps {
   path: string

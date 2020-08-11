@@ -2,7 +2,7 @@ import React from 'react'
 import { helmetJsonLdProp } from 'react-schemaorg'
 import { Person } from 'schema-dts'
 
-import { StaticDataManager } from '../data/DataManager'
+import { StaticDataManager } from '../data/StaticDataManager'
 
 import { SEO } from '../components/compositions/SEO'
 import { ContactLayout, IContactLayoutProps } from '../layouts/ContactLayout'

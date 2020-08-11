@@ -2,7 +2,7 @@ import React from 'react'
 import { helmetJsonLdProp } from 'react-schemaorg'
 import { Person } from 'schema-dts'
 
-import { StaticDataManager } from '../data/DataManager'
+import { StaticDataManager } from '../data/StaticDataManager'
 import { MarkdownRemark, SkillsetFrontmatter } from '../types/graphql.types'
 
 import { SEO } from '../components/compositions/SEO'

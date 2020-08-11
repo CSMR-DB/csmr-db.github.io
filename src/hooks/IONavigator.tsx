@@ -1,7 +1,10 @@
 import React from 'react'
 import { navigate } from 'gatsby'
 
-import { AStaticDataManager, StaticDataManager } from '../data/DataManager'
+import {
+  AStaticDataManager,
+  StaticDataManager,
+} from '../data/StaticDataManager'
 import { RouteObject } from '../data/objects/routesProvider'
 import { useKeyPressNavigation } from './useKeyPressNavigation.hook'
 

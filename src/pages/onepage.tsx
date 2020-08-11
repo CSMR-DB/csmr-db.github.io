@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StaticDataManager } from '../data/DataManager'
+import { StaticDataManager } from '../data/StaticDataManager'
 
 import { AboutLayout, IAboutLayoutProps } from '../layouts/AboutLayout'
 import { ContactLayout, IContactLayoutProps } from '../layouts/ContactLayout'

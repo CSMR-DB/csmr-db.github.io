@@ -2,7 +2,7 @@ import React from 'react'
 import { helmetJsonLdProp } from 'react-schemaorg'
 import { WebSite, ItemList } from 'schema-dts'
 
-import { StaticDataManager } from '../data/DataManager'
+import { StaticDataManager } from '../data/StaticDataManager'
 
 import { SEO } from '../components/compositions/SEO'
 import { IndexLayout, IIndexLayoutProps } from '../layouts/IndexLayout'
