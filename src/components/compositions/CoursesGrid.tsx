@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ICourse } from '../../data/courses'
+import { Course } from '../../data/objects/coursesProvider'
 
 import { Flex } from '../Flex'
 import { Grid } from '../Grid'
@@ -12,7 +12,7 @@ import { CardBody } from './card/CardBody'
 import { Paddie } from '../Paddie'
 
 export interface ICoursesGridProps {
-  courses: [ICourse['category'], ICourse[]][]
+  courses: [Course['category'], Course[]][]
 }
 
 export function CoursesGrid({ courses }: ICoursesGridProps): JSX.Element {
@@ -21,7 +21,7 @@ export function CoursesGrid({ courses }: ICoursesGridProps): JSX.Element {
       <Grid $columns={6} $alignItems={'baseline'}>
         {courses.map(
           (
-            courseGroup: [ICourse['category'], ICourse[]],
+            courseGroup: [Course['category'], Course[]],
             i: number
           ): JSX.Element => (
             <Card key={i}>
@@ -34,7 +34,7 @@ export function CoursesGrid({ courses }: ICoursesGridProps): JSX.Element {
               </CardHeader>
               <CardBody>
                 {courseGroup[1].map(
-                  (course: ICourse, j: number): JSX.Element => (
+                  (course: Course, j: number): JSX.Element => (
                     <h5 key={j}>
                       <ColoredText
                         $color={
