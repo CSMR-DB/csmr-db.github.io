@@ -4,7 +4,7 @@ import { FileChildImageSharp } from '../../../../types/graphql.types'
 import { StringOrUrlArray } from '../../../../types/common.types'
 
 import { Card } from '../Card'
-import { ArticleBody } from '../../../ArticleBody'
+import { ArticleBody } from '../../ArticleBody'
 import { CardHeaderImageOrVideo } from '../CardHeaderImageOrVideo'
 import { ArticleTags } from '../../../ArticleTags'
 import { StyledLink } from '../../../StyledLink'

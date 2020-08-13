@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { StringOrUrlObject, StringOrUrlArray } from '../types/common.types'
+import { StringOrUrlObject, StringOrUrlArray } from '../../types/common.types'
 
-import { StyledA } from './StyledLink'
+import { StyledA } from '../StyledLink'
 
 interface IArticleBodyProps {
   body?: StringOrUrlArray

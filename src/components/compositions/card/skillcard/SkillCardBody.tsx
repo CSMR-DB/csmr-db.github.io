@@ -2,7 +2,7 @@ import React from 'react'
 
 import { StringOrUrlArray } from '../../../../types/common.types'
 
-import { ArticleBody } from '../../../ArticleBody'
+import { ArticleBody } from '../../ArticleBody'
 
 interface ISkillCardBodyProps {
   description: StringOrUrlArray
