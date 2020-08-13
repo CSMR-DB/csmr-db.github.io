@@ -2,9 +2,11 @@ import React from 'react'
 import { BackgroundColorProperty } from 'csstype'
 import { Reveal } from 'react-gsap'
 
+import { StaticDataManager } from '../../../../data/StaticDataManager'
+
 import { Card } from '../Card'
 import { Flex } from '../../../Flex'
-import { DynamicIcon } from '../../../DynamicIcon'
+import { DynamicIcon } from '../../DynamicIcon'
 import { DateFormatted } from '../../../DateFormatted'
 import { ExperienceCardHeader } from './ExperienceCardHeader'
 import { ExperienceCardHeaderText } from './ExperienceCardHeaderText'
@@ -36,7 +38,10 @@ export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
       <ExperienceCardHeader>
         <Flex $justifyContent="flex-start">
           <CardHeaderIconWrapper $backgroundColor={backgroundColor}>
-            <DynamicIcon path={icon} />
+            <DynamicIcon
+              path={icon}
+              dynamicIcons={StaticDataManager.dynamicIcons}
+            />
           </CardHeaderIconWrapper>
           <ExperienceCardHeaderText>
             <h1>

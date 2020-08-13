@@ -1,10 +1,12 @@
 import React from 'react'
 import { Tween } from 'react-gsap'
 
+import { StaticDataManager } from '../../../data/StaticDataManager'
+
 import { Excerpt } from '../../Excerpt'
 import { ImageDot } from '../../ImageDot'
 import { Filter } from '../../Filter'
-import { DynamicImage } from '../../DynamicImage'
+import { DynamicImage } from '../DynamicImage'
 
 export interface IHeyItsMeProps {
   author: string
@@ -28,7 +30,10 @@ export function HeyItsMe({ author, description }: IHeyItsMeProps): JSX.Element {
         >
           <ImageDot $width={'8rem'}>
             <Filter>
-              <DynamicImage path="wallpaper/me.jpg" />
+              <DynamicImage
+                path="wallpaper/me.jpg"
+                dynamicImages={StaticDataManager.dynamicImages}
+              />
             </Filter>
           </ImageDot>
         </Tween>

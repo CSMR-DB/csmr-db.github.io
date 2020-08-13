@@ -7,9 +7,10 @@ import {
   AnyExoticRefComponent,
   AnyExoticRefTargets,
 } from '../../../types/react.types'
+import { StaticDataManager } from '../../../data/StaticDataManager'
 
 import { CardHeaderFeaturedImage } from './CardHeaderFeaturedImage'
-import { DynamicImage } from '../../DynamicImage'
+import { DynamicImage } from '../DynamicImage'
 import { StyledYoutube } from '../../StyledYoutube'
 
 interface IImageOrVideo {
@@ -25,7 +26,10 @@ export const CardHeaderImageOrVideo: AnyExoticRefComponent<IImageOrVideo> = Reac
   ): JSX.Element => (
     <CardHeaderFeaturedImage $maxHeight={maxHeight} ref={ref}>
       {image && typeof image === 'string' ? (
-        <DynamicImage path={image} />
+        <DynamicImage
+          path={image}
+          dynamicImages={StaticDataManager.dynamicImages}
+        />
       ) : (
         (image && typeof image !== 'string' && (
           <Image fluid={image.childImageSharp.fluid} />

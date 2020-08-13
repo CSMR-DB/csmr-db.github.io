@@ -1,21 +1,18 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
-import { ImageSharpEdge } from '../types/graphql.types'
-import {
-  AStaticDataManager,
-  StaticDataManager,
-} from '../data/StaticDataManager'
+import { ImageSharpEdge } from '../../types/graphql.types'
+import { AStaticDataManager } from '../../data/StaticDataManager'
 
 export interface IDynamicImageProps {
   path: string
+  dynamicImages: typeof AStaticDataManager['dynamicImages']
 }
 
-export function DynamicImage({ path }: IDynamicImageProps): JSX.Element {
-  const {
-    dynamicImages: { dynamicImages },
-  }: typeof AStaticDataManager = StaticDataManager
-
+export function DynamicImage({
+  path,
+  dynamicImages: { dynamicImages },
+}: IDynamicImageProps): JSX.Element {
   /**
    * Refactored so I can get ALL images from a provided folder portion of 'relativePath'
    * Note: Don't even bother trying to use query variables in this way. Can apparently only be done for page queries.

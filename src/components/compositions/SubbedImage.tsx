@@ -1,7 +1,9 @@
 import React from 'react'
 
+import { StaticDataManager } from '../../data/StaticDataManager'
+
 import { Filter } from '../Filter'
-import { DynamicImage } from '../DynamicImage'
+import { DynamicImage } from './DynamicImage'
 import { ImageOverlay } from './ImageOverlay'
 import { ImageContainer } from './ImageContainer'
 
@@ -19,7 +21,10 @@ export function SubbedImage({ path, text }: ISubbedImage): JSX.Element {
       }}
     >
       <Filter>
-        <DynamicImage path={path} />
+        <DynamicImage
+          path={path}
+          dynamicImages={StaticDataManager.dynamicImages}
+        />
       </Filter>
     </ImageContainer>
   )

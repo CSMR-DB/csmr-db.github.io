@@ -1,21 +1,18 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
-import { ImageSharpEdge } from '../types/graphql.types'
-import {
-  AStaticDataManager,
-  StaticDataManager,
-} from '../data/StaticDataManager'
+import { ImageSharpEdge } from '../../types/graphql.types'
+import { AStaticDataManager } from '../../data/StaticDataManager'
 
 export interface IDynamicIconProps {
   path: string
+  dynamicIcons: typeof AStaticDataManager['dynamicIcons']
 }
 
-export function DynamicIcon({ path }: IDynamicIconProps): JSX.Element {
-  const {
-    dynamicIcons: { dynamicIcons },
-  }: typeof AStaticDataManager = StaticDataManager
-
+export function DynamicIcon({
+  path,
+  dynamicIcons: { dynamicIcons },
+}: IDynamicIconProps): JSX.Element {
   function renderImage(file: ImageSharpEdge | null = null): JSX.Element | null {
     return file && <Image fluid={file.node.childImageSharp.fluid} />
   }

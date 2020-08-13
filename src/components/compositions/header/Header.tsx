@@ -12,7 +12,7 @@ import {
 } from '../../../data/StaticDataManager'
 
 import { Filter } from '../../Filter'
-import { DynamicImage } from '../../DynamicImage'
+import { DynamicImage } from '../DynamicImage'
 import { Fixed } from '../../Fixed'
 import { Absolute } from '../../Absolute'
 import { Flex } from '../../Flex'
@@ -58,7 +58,10 @@ export function Header({
     <StyledHeader $height={height} isLandingPage={isLandingPage}>
       <Fixed $height={height} $zIndex={-1}>
         <Filter>
-          <DynamicImage path="wallpaper/wallpaper.jpg" />
+          <DynamicImage
+            path="wallpaper/wallpaper.jpg"
+            dynamicImages={StaticDataManager.dynamicImages}
+          />
         </Filter>
       </Fixed>
       <Absolute $height={height}>

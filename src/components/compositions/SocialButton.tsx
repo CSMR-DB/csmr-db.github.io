@@ -2,9 +2,11 @@ import React, { ReactNode } from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { ColorProperty, BackgroundColorProperty } from 'csstype'
 
+import { StaticDataManager } from '../../data/StaticDataManager'
+
 import { StyledA } from '../StyledLink'
 import { Relative } from '../Relative'
-import { DynamicIcon } from '../DynamicIcon'
+import { DynamicIcon } from './DynamicIcon'
 import { Absolute } from '../Absolute'
 import { ClippedBtn } from '../ClippedBtn'
 import { Flex } from '../Flex'
@@ -33,7 +35,10 @@ export function SocialButton({
     <StyledA href={href} target="blank">
       <Relative>
         <StyledSocialIcon>
-          <DynamicIcon path={iconPath} />
+          <DynamicIcon
+            path={iconPath}
+            dynamicIcons={StaticDataManager.dynamicIcons}
+          />
         </StyledSocialIcon>
         <Absolute>
           <ClippedBtn $background={background} $color={color}>
