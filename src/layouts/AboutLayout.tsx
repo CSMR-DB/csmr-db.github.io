@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ImageSharpAllFiles } from '../types/graphql.types'
-import { groupBy } from '../utils'
+import { groupBy } from '../utils/groupBy'
 import { Course } from '../data/objects/coursesProvider'
 import { Tool } from '../data/objects/toolsProvider'
 

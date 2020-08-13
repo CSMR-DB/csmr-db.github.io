@@ -3,7 +3,7 @@ import Image from 'gatsby-image'
 
 import { ImageSharpAllFiles, ImageSharpEdge } from '../../types/graphql.types'
 import { ImageContainer } from './ImageContainer'
-import { cleanAndCapitalize } from '../../utils'
+import { cleanAndCapitalize } from '../../utils/textTransformer'
 
 import { Blend } from '../Blend'
 import { Filter } from '../Filter'

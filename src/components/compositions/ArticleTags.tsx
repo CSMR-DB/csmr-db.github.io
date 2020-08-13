@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
 
-import { StyledLink } from './StyledLink'
+import { StyledLink } from '../StyledLink'
 
 const StyledArticleTags: StyledComponent<'p', any, {}, never> = styled.p`
   text-align: left !important;
