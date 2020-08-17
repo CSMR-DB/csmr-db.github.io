@@ -35,12 +35,12 @@ export const StyledCard: StyledComponent<
   }
 
   & h1 {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin: 0;
   }
 
   & h2 {
-    font-size: 1em;
+    font-size: 1rem;
     font-style: italic;
     margin: 0;
     color: #aaa;
