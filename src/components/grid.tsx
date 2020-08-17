@@ -38,17 +38,17 @@ const StyledGrid: StyledComponent<'div', any, IGridProps, never> = styled.div`
   }: IGridProps): FlattenSimpleInterpolation => css`
     height: ${height};
     max-width: ${maxWidth};
-    gap: calc(${gap}/2);
+    gap: calc(${gap} / 2);
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    grid-template-rows: ${
-      typeof rows === 'number' ? `repeat(${rows}, 1fr)` : rows
-    };
+    grid-template-rows: ${typeof rows === 'number'
+      ? `repeat(${rows}, 1fr)`
+      : rows};
     align-items: ${alignItems};
 
     @media ${theme!.breakpoints.min.smartphone} {
-      grid-template-columns: ${
-        typeof columns === 'number' ? `repeat(${columns}, 1fr)` : columns
-      };
+      grid-template-columns: ${typeof columns === 'number'
+        ? `repeat(${columns}, 1fr)`
+        : columns};
 
       gap: ${gap};
     }
