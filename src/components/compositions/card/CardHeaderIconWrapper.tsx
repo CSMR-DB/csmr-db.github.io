@@ -6,7 +6,7 @@ import styled, {
 import { BackgroundColorProperty } from 'csstype'
 
 interface ICardHeaderIconWrapperProps {
-  $backgroundColor: BackgroundColorProperty
+  $backgroundColor?: BackgroundColorProperty
 }
 
 export const CardHeaderIconWrapper: StyledComponent<
