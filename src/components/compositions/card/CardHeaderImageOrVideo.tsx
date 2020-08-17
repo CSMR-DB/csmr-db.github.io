@@ -16,12 +16,12 @@ import { StyledYoutube } from '../../StyledYoutube'
 interface IImageOrVideo {
   image?: string | FileChildImageSharp
   video?: string
-  maxHeight?: MaxHeightProperty<1>
+  $maxHeight?: MaxHeightProperty<1>
 }
 
 export const CardHeaderImageOrVideo: AnyExoticRefComponent<IImageOrVideo> = React.forwardRef(
   (
-    { image, video, maxHeight }: IImageOrVideo,
+    { image, video, $maxHeight: maxHeight }: IImageOrVideo,
     ref: AnyExoticRefTargets
   ): JSX.Element => (
     <CardHeaderFeaturedImage $maxHeight={maxHeight} ref={ref}>

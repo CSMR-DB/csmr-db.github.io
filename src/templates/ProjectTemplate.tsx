@@ -58,7 +58,7 @@ export default function ProjectTemplate({
               <CardHeaderImageOrVideo
                 video={featuredVideo}
                 image={featuredImage}
-                maxHeight="auto"
+                $maxHeight="auto"
               />
               <FullPageH1>{title}</FullPageH1>
               <h6>
