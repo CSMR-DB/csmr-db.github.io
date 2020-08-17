@@ -6,7 +6,7 @@ export const CardHeaderText: StyledComponent<
   {},
   never
 > = styled.div`
-  padding: 2em 2em 0 2em;
+  padding: 2rem 2rem 0 2rem;
 
   & > h6 {
     margin-bottom: 0;
