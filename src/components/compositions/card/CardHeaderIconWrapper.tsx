@@ -15,10 +15,10 @@ export const CardHeaderIconWrapper: StyledComponent<
   ICardHeaderIconWrapperProps,
   never
 > = styled.div`
-  border-radius: 999px;
+  border-radius: 999rem;
   overflow: hidden;
-  width: 4em;
-  padding: 0.5em;
+  width: 4rem;
+  padding: 0.5rem;
 
   ${({
     $backgroundColor: backgroundColor = '#DDD',
