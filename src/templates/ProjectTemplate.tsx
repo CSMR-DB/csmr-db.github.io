@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { helmetJsonLdProp } from 'react-schemaorg'
 import { CreativeWork } from 'schema-dts'
@@ -10,7 +11,6 @@ import { SEO } from '../components/compositions/SEO'
 import { Layout } from '../components/Layout'
 import { CenteredBlock } from '../components/CenteredBlock'
 import { ArticleTags } from '../components/compositions/ArticleTags'
-import { CardHeaderImageOrVideo } from '../components/compositions/card/CardHeaderImageOrVideo'
 import { DateFormatted } from '../components/DateFormatted'
 import { ReadingTime } from '../components/ReadingTime'
 import { FullPageH1 } from '../components/FullPageH1'
@@ -25,7 +25,7 @@ export default function ProjectTemplate({
   data: {
     mdx: {
       generatedRoute,
-      frontmatter: { featuredImage, featuredVideo, tags, date, title, excerpt },
+      frontmatter: { featuredImage, tags, date, title, excerpt },
       body,
       timeToRead,
     },
@@ -55,11 +55,9 @@ export default function ProjectTemplate({
         <CenteredBlock>
           <article>
             <header>
-              <CardHeaderImageOrVideo
-                video={featuredVideo}
-                image={featuredImage}
-                $maxHeight="auto"
-              />
+              {featuredImage && (
+                <Image fluid={featuredImage.childImageSharp.fluid} />
+              )}
               <FullPageH1>{title}</FullPageH1>
               <h6>
                 <DateFormatted dateString={date} /> ·{' '}

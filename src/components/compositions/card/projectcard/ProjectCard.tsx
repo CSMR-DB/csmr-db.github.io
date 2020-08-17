@@ -1,11 +1,11 @@
 import React from 'react'
+import Image from 'gatsby-image'
 
 import { FileChildImageSharp } from '../../../../types/graphql.types'
 import { StringOrUrlArray } from '../../../../types/common.types'
 
 import { Card } from '../Card'
 import { ArticleBody } from '../../ArticleBody'
-import { CardHeaderImageOrVideo } from '../CardHeaderImageOrVideo'
 import { ArticleTags } from '../../../compositions/ArticleTags'
 import { StyledLink } from '../../../StyledLink'
 import { DateFormatted } from '../../../DateFormatted'
@@ -16,8 +16,7 @@ import { CardHeaderText } from '../CardHeaderText'
 
 interface IProjectCardProps {
   index: number
-  image?: string | FileChildImageSharp
-  video?: string
+  image?: FileChildImageSharp
   title: string
   body?: StringOrUrlArray
   tags?: string[]
@@ -28,7 +27,6 @@ interface IProjectCardProps {
 export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
   index,
   image,
-  video,
   title,
   body,
   tags,
@@ -37,9 +35,7 @@ export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
 }: IProjectCardProps): JSX.Element => (
   <Card index={index}>
     <CardHeader>
-      {(video || image) && (
-        <CardHeaderImageOrVideo video={video} image={image} />
-      )}
+      {image && <Image fluid={image.childImageSharp.fluid} />}
       <CardHeaderText>
         <h1>
           <StyledLink to={generatedRoute}>{title}</StyledLink>
