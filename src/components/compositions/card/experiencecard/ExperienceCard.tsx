@@ -14,7 +14,6 @@ import { CardBody } from '../CardBody'
 import { CardHeaderIconWrapper } from '../CardHeaderIconWrapper'
 
 interface IExperienceCardProps {
-  index: number
   name: string
   type: string
   icon: string
@@ -24,7 +23,7 @@ interface IExperienceCardProps {
   backgroundColor: BackgroundColorProperty
 }
 
-export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
+export function ExperienceCard({
   name,
   type,
   icon,
@@ -32,33 +31,35 @@ export const ExperienceCard: (props: IExperienceCardProps) => JSX.Element = ({
   dateEnd,
   description,
   backgroundColor,
-}: IExperienceCardProps): JSX.Element => (
-  <Reveal>
-    <Card>
-      <ExperienceCardHeader>
-        <Flex $justifyContent="flex-start">
-          <CardHeaderIconWrapper $backgroundColor={backgroundColor}>
-            <DynamicIcon
-              path={icon}
-              dynamicIcons={StaticDataManager.dynamicIcons}
-            />
-          </CardHeaderIconWrapper>
-          <ExperienceCardHeaderText>
-            <h1>
-              {name} ({type})
-            </h1>
-            <h2>
-              <DateFormatted dateString={dateStart} /> -{' '}
-              <DateFormatted dateString={dateEnd} />
-            </h2>
-          </ExperienceCardHeaderText>
-        </Flex>
-      </ExperienceCardHeader>
-      <CardBody>
-        <main>
-          <p>{description}</p>
-        </main>
-      </CardBody>
-    </Card>
-  </Reveal>
-)
+}: IExperienceCardProps): JSX.Element {
+  return (
+    <Reveal>
+      <Card>
+        <ExperienceCardHeader>
+          <Flex $justifyContent="flex-start">
+            <CardHeaderIconWrapper $backgroundColor={backgroundColor}>
+              <DynamicIcon
+                path={icon}
+                dynamicIcons={StaticDataManager.dynamicIcons}
+              />
+            </CardHeaderIconWrapper>
+            <ExperienceCardHeaderText>
+              <h1>
+                {name} ({type})
+              </h1>
+              <h2>
+                <DateFormatted dateString={dateStart} /> -{' '}
+                <DateFormatted dateString={dateEnd} />
+              </h2>
+            </ExperienceCardHeaderText>
+          </Flex>
+        </ExperienceCardHeader>
+        <CardBody>
+          <main>
+            <p>{description}</p>
+          </main>
+        </CardBody>
+      </Card>
+    </Reveal>
+  )
+}

@@ -15,39 +15,41 @@ import { CardBody } from '../CardBody'
 import { CardHeaderText } from '../CardHeaderText'
 
 interface IProjectCardProps {
-  index: number
-  image?: FileChildImageSharp
   title: string
   body: StringOrUrlArray
   tags: string[]
   date: string
   generatedRoute: string
+  image?: FileChildImageSharp
+  index?: number
 }
 
-export const ProjectCard: (props: IProjectCardProps) => JSX.Element = ({
-  index,
-  image,
+export function ProjectCard({
   title,
   body,
   tags,
   date,
   generatedRoute,
-}: IProjectCardProps): JSX.Element => (
-  <Card index={index}>
-    <CardHeader>
-      {image && <Image fluid={image.childImageSharp.fluid} />}
-      <CardHeaderText>
-        <h1>
-          <StyledLink to={generatedRoute}>{title}</StyledLink>
-        </h1>
-        <h6>
-          <DateFormatted dateString={date} />
-        </h6>
-      </CardHeaderText>
-    </CardHeader>
-    <CardBody>{ArticleBody({ body })}</CardBody>
-    <CardFooter>
-      <ArticleTags tags={tags} />
-    </CardFooter>
-  </Card>
-)
+  image,
+  index = 0,
+}: IProjectCardProps): JSX.Element {
+  return (
+    <Card index={index}>
+      <CardHeader>
+        {image && <Image fluid={image.childImageSharp.fluid} />}
+        <CardHeaderText>
+          <h1>
+            <StyledLink to={generatedRoute}>{title}</StyledLink>
+          </h1>
+          <h6>
+            <DateFormatted dateString={date} />
+          </h6>
+        </CardHeaderText>
+      </CardHeader>
+      <CardBody>{ArticleBody({ body })}</CardBody>
+      <CardFooter>
+        <ArticleTags tags={tags} />
+      </CardFooter>
+    </Card>
+  )
+}

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { Tween } from 'react-gsap'
 import { ColorProperty } from 'csstype'
@@ -20,15 +20,13 @@ import { StyledLink } from '../../../StyledLink'
 import { Card } from '../Card'
 
 interface ISkillCardProps {
-  index: number
-  children?: ReactNode
-  level: number
   title: string
   description: StringOrUrlArray
   skillColor: ColorProperty
   time?: number
   generatedRoute: string
   icon?: string
+  index?: number
 }
 
 const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(
@@ -42,13 +40,13 @@ const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(
 `
 
 export function SkillCard({
-  index,
   title,
   description,
   skillColor,
-  time = 0,
   generatedRoute,
   icon,
+  time = 0,
+  index = 0,
 }: ISkillCardProps): JSX.Element {
   return (
     <MDXProvider components={CodeSVGs}>
