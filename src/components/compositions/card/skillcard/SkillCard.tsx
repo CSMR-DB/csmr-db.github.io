@@ -5,12 +5,10 @@ import { ColorProperty } from 'csstype'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
-import { StringOrUrlArray } from '../../../../types/common.types'
 import { CodeSVGs } from '../../CodeSVGs'
 
 import { SkillCardIndicator } from './SkillCardIndicator'
 import { SkillCardBackdrop } from './SkillCardBackdrop'
-import { SkillCardBody } from './SkillCardBody'
 import { SkillCardHeader } from './SkillCardHeader'
 import { CardFooter } from '../CardFooter'
 import { CardHeader } from '../CardHeader'
@@ -21,7 +19,7 @@ import { Card } from '../Card'
 
 interface ISkillCardProps {
   title: string
-  description: StringOrUrlArray
+  body: string
   skillColor: ColorProperty
   time?: number
   generatedRoute: string
@@ -41,7 +39,7 @@ const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(
 
 export function SkillCard({
   title,
-  description,
+  body,
   skillColor,
   generatedRoute,
   icon,
@@ -71,7 +69,7 @@ export function SkillCard({
           </SkillCardHeader>
         </CardHeader>
         <CardBody>
-          <SkillCardBody description={description} />
+          <p>{body}</p>
         </CardBody>
         <CardFooter>
           <p>

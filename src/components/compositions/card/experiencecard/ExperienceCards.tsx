@@ -19,8 +19,8 @@ export function ExperienceCards({
         ): JSX.Element => (
           <ExperienceCard
             name={frontmatter.title}
+            body={frontmatter.excerpt}
             type={frontmatter.type}
-            description={frontmatter.excerpt}
             icon={`icons/${frontmatter.title.toLocaleLowerCase()}_logo.png`}
             backgroundColor={frontmatter.backgroundColor}
             dateStart={frontmatter.dateStart}

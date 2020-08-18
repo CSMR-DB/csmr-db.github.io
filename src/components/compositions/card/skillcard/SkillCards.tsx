@@ -17,7 +17,7 @@ export function SkillCards({ edges }: SkillsetAllMarkdownRemark): JSX.Element {
         ): JSX.Element => (
           <SkillCard
             title={frontmatter.title}
-            description={frontmatter.excerpt}
+            body={frontmatter.excerpt}
             time={frontmatter.time}
             key={i}
             index={i}

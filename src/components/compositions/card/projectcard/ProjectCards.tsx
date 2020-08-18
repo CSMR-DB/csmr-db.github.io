@@ -20,9 +20,9 @@ export function ProjectCards({
           return (
             <ProjectCard
               title={frontmatter.title}
+              body={frontmatter.excerpt}
               tags={frontmatter.tags}
               image={frontmatter.featuredImage}
-              body={frontmatter.excerpt}
               generatedRoute={generatedRoute}
               date={frontmatter.date}
               key={i}

@@ -15,21 +15,21 @@ import { CardHeaderIconWrapper } from '../CardHeaderIconWrapper'
 
 interface IExperienceCardProps {
   name: string
+  body: string
   type: string
   icon: string
   dateStart: string
   dateEnd: string
-  description: string
   backgroundColor: BackgroundColorProperty
 }
 
 export function ExperienceCard({
   name,
+  body,
   type,
   icon,
   dateStart,
   dateEnd,
-  description,
   backgroundColor,
 }: IExperienceCardProps): JSX.Element {
   return (
@@ -55,9 +55,7 @@ export function ExperienceCard({
           </Flex>
         </ExperienceCardHeader>
         <CardBody>
-          <main>
-            <p>{description}</p>
-          </main>
+          <p>{body}</p>
         </CardBody>
       </Card>
     </Reveal>

@@ -2,10 +2,8 @@ import React from 'react'
 import Image from 'gatsby-image'
 
 import { FileChildImageSharp } from '../../../../types/graphql.types'
-import { StringOrUrlArray } from '../../../../types/common.types'
 
 import { Card } from '../Card'
-import { ArticleBody } from '../../ArticleBody'
 import { ArticleTags } from '../../../compositions/ArticleTags'
 import { StyledLink } from '../../../StyledLink'
 import { DateFormatted } from '../../../DateFormatted'
@@ -16,7 +14,7 @@ import { CardHeaderText } from '../CardHeaderText'
 
 interface IProjectCardProps {
   title: string
-  body: StringOrUrlArray
+  body: string
   tags: string[]
   date: string
   generatedRoute: string
@@ -46,7 +44,9 @@ export function ProjectCard({
           </h6>
         </CardHeaderText>
       </CardHeader>
-      <CardBody>{ArticleBody({ body })}</CardBody>
+      <CardBody>
+        <p>{body}</p>
+      </CardBody>
       <CardFooter>
         <ArticleTags tags={tags} />
       </CardFooter>
