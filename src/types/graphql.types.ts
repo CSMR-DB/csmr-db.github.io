@@ -44,12 +44,11 @@ export type FrontmatterCategories = 'Programming' | 'Graphic Design'
  */
 export type ExperienceFrontmatter = {
   title: string
+  excerpt: string
   dateStart: string
   dateEnd: string
-  description: string
   backgroundColor: string
   type: string
-  excerpt: string
 }
 
 export type ExperienceAllMarkdownRemark = AllMarkdownRemark<
@@ -64,9 +63,9 @@ export type ExperienceMarkdownRemark = MarkdownRemark<ExperienceFrontmatter>
 export type SkillsetFrontmatter = {
   favorite: boolean | null
   title: string
+  excerpt: string
   category: FrontmatterCategories
   date: string
-  excerpt: string
   time: number
   skillColor: ColorProperty
   icon: string
@@ -82,9 +81,9 @@ export type SkillsetMarkdownRemark = MarkdownRemark<SkillsetFrontmatter>
 export type ProjectFrontmatter = {
   favorite: boolean | null
   title: string
+  excerpt: string
   category: FrontmatterCategories
   date: string
-  excerpt: string
   tags: string[]
   featuredImage?: FileChildImageSharp
 }
