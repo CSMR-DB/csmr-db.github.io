@@ -15,7 +15,7 @@ export const ExperienceCardHeaderText: StyledComponent<
   IExperienceCardHeaderTextProps,
   never
 > = styled.div`
-  padding: 0 0 0 1em;
+  padding: 0 0 0 1rem;
 
   ${({
     theme,
