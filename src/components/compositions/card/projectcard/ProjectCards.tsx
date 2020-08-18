@@ -21,7 +21,6 @@ export function ProjectCards({
             <ProjectCard
               title={frontmatter.title}
               tags={frontmatter.tags}
-              video={frontmatter.featuredVideo}
               image={frontmatter.featuredImage}
               body={frontmatter.excerpt}
               generatedRoute={generatedRoute}
