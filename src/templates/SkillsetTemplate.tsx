@@ -92,7 +92,6 @@ export const pageQuery: void = graphql`
                 }
               }
             }
-            featuredVideo
             date
             tags
           }

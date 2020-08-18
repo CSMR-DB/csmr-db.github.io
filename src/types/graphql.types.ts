@@ -67,11 +67,9 @@ export type SkillsetFrontmatter = {
   category: FrontmatterCategories
   date: string
   excerpt: string
-  tags?: string[]
-  time?: number
-  level?: number
-  skillColor?: ColorProperty
-  icon?: string
+  time: number
+  skillColor: ColorProperty
+  icon: string
 }
 
 export type SkillsetAllMarkdownRemark = AllMarkdownRemark<SkillsetFrontmatter>
@@ -87,9 +85,8 @@ export type ProjectFrontmatter = {
   category: FrontmatterCategories
   date: string
   excerpt: string
+  tags: string[]
   featuredImage?: FileChildImageSharp
-  featuredVideo?: string
-  tags?: string[]
 }
 
 export type ProjectsAllMarkdownRemark = AllMarkdownRemark<ProjectFrontmatter>

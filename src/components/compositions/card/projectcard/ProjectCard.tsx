@@ -18,9 +18,9 @@ interface IProjectCardProps {
   index: number
   image?: FileChildImageSharp
   title: string
-  body?: StringOrUrlArray
-  tags?: string[]
-  date?: string
+  body: StringOrUrlArray
+  tags: string[]
+  date: string
   generatedRoute: string
 }
 

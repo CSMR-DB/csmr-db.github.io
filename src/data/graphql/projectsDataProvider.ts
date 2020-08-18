@@ -20,7 +20,6 @@ export function projectsDataProvider(): ProjectsData {
             favorite
             category
             title
-            featuredVideo
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 960, maxHeight: 540, cropFocus: CENTER) {

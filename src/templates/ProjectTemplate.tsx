@@ -88,7 +88,6 @@ export const pageQuery: void = graphql`
         title
         tags
         excerpt
-        featuredVideo
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 960) {
