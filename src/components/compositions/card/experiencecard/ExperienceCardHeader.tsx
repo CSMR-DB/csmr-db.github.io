@@ -6,7 +6,7 @@ export const ExperienceCardHeader: StyledComponent<
   {},
   never
 > = styled.header`
-  padding: 2em 2em 0em 2em;
+  padding: 2rem 2rem 0rem 2rem;
 
   h2 {
     margin: 0;
