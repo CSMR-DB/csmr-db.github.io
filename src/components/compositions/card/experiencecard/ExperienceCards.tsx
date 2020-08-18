@@ -26,7 +26,6 @@ export function ExperienceCards({
             dateStart={frontmatter.dateStart}
             dateEnd={frontmatter.dateEnd}
             key={i}
-            index={i}
           />
         )
       )}

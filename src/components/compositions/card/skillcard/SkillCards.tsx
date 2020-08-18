@@ -16,7 +16,6 @@ export function SkillCards({ edges }: SkillsetAllMarkdownRemark): JSX.Element {
           i: number
         ): JSX.Element => (
           <SkillCard
-            level={frontmatter.level || 0}
             title={frontmatter.title}
             description={frontmatter.excerpt}
             time={frontmatter.time}
