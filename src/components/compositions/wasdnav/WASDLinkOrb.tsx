@@ -49,11 +49,11 @@ export const WASDLinkOrb: StyledComponent<
         background: ${theme!.palette.first.hover};
         color: ${theme!.palette.light.hover};
       }
-
-      &.active {
-        background: ${theme!.palette.first.active};
-        color: ${theme!.palette.light.active};
-      }
+    }
+    
+    &.active {
+      background: ${theme!.palette.first.active};
+      color: ${theme!.palette.light.active};
     }
   `}
 `
