@@ -71,6 +71,7 @@ function TransitioningLayout({
           <Header
             $height={isLandingPage ? '100vh' : '24rem'}
             isLandingPage={isLandingPage}
+            staticDataManager={StaticDataManager}
           />
           <TransitionViews>{children}</TransitionViews>
           <Footer />

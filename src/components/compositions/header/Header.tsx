@@ -6,10 +6,7 @@ import styled, {
   DefaultTheme,
 } from 'styled-components'
 
-import {
-  AStaticDataManager,
-  StaticDataManager,
-} from '../../../data/StaticDataManager'
+import { AStaticDataManager } from '../../../data/StaticDataManager'
 
 import { Filter } from '../../Filter'
 import { DynamicImage } from '../DynamicImage'
@@ -22,15 +19,15 @@ import { HeyItsMe } from './HeyItsMe'
 
 interface IHeaderProps {
   theme?: DefaultTheme
-  siteTitle?: string
-  isLandingPage: boolean
-  $height: string
+  isLandingPage?: boolean
+  $height?: string
+  staticDataManager: typeof AStaticDataManager
 }
 
 const StyledHeader: StyledComponent<
   'header',
   any,
-  IHeaderProps,
+  Partial<IHeaderProps>,
   never
 > = styled.header`
   position: relative;
@@ -47,20 +44,16 @@ const StyledHeader: StyledComponent<
 
 export function Header({
   $height: height = '16rem',
-  isLandingPage,
+  isLandingPage = false,
+  staticDataManager,
 }: IHeaderProps): JSX.Element {
-  const {
-    siteMetadata,
-    routes: defaultRoutes,
-  }: typeof AStaticDataManager = StaticDataManager
-
   return (
     <StyledHeader $height={height} isLandingPage={isLandingPage}>
       <Fixed $height={height} $zIndex={-1}>
         <Filter>
           <DynamicImage
             path="wallpaper/wallpaper.jpg"
-            dynamicImages={StaticDataManager.dynamicImages}
+            dynamicImages={staticDataManager.dynamicImages}
           />
         </Filter>
       </Fixed>
@@ -68,12 +61,12 @@ export function Header({
         <Flex $justifyContent={'space-evenly'}>
           <Grid $gap={isLandingPage ? '2rem' : '1rem'}>
             <WASDNav
-              routes={defaultRoutes}
+              routes={staticDataManager.routes}
               background={'rgba(48, 48, 48, .96)'}
               gap={isLandingPage ? '4rem' : '2rem'}
               isLandingPage={isLandingPage}
             />
-            {isLandingPage && <HeyItsMe {...siteMetadata} />}
+            {isLandingPage && <HeyItsMe {...staticDataManager.siteMetadata} />}
           </Grid>
         </Flex>
       </Absolute>
