@@ -4,14 +4,12 @@ import styled, {
   FlattenSimpleInterpolation,
   DefaultTheme,
 } from 'styled-components'
-import { ColorProperty, GridAreaProperty } from 'csstype'
+import { GridAreaProperty } from 'csstype'
 import { Link } from 'gatsby'
 
 interface IWASDLinkOrbProps {
   theme?: DefaultTheme
   $area: GridAreaProperty
-  $color?: ColorProperty
-  $background?: string
 }
 
 export const WASDLinkOrb: StyledComponent<
@@ -30,14 +28,9 @@ export const WASDLinkOrb: StyledComponent<
   justify-content: space-evenly;
   border-radius: 256rem;
 
-  ${({
-    theme,
-    $background = theme!.palette.first.lens,
-    $color = theme!.palette.light.normal,
-    $area,
-  }: IWASDLinkOrbProps): FlattenSimpleInterpolation => css`
-    background: ${$background};
-    color: ${$color};
+  ${({ theme, $area }: IWASDLinkOrbProps): FlattenSimpleInterpolation => css`
+    background: ${theme!.palette.first.lens};
+    color: ${theme!.palette.light.normal};
     grid-area: ${$area};
 
     @media ${theme!.breakpoints.min.smartphone} {
@@ -50,7 +43,7 @@ export const WASDLinkOrb: StyledComponent<
         color: ${theme!.palette.light.hover};
       }
     }
-    
+
     &.active {
       background: ${theme!.palette.first.active};
       color: ${theme!.palette.light.active};

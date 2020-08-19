@@ -62,8 +62,6 @@ export function Header({
           <Grid $gap={isLandingPage ? '2rem' : '1rem'}>
             <WASDNav
               routes={staticDataManager.routes}
-              background={'rgba(48, 48, 48, .96)'}
-              gap={isLandingPage ? '4rem' : '2rem'}
               isLandingPage={isLandingPage}
             />
             {isLandingPage && <HeyItsMe {...staticDataManager.siteMetadata} />}

@@ -7,7 +7,6 @@ import styled, {
 
 export interface IWASDGridProps {
   theme?: DefaultTheme
-  gap: string
 }
 
 export const WASDGrid: StyledComponent<
@@ -31,9 +30,9 @@ export const WASDGrid: StyledComponent<
     justify-self: center;
   }
 
-  ${({ theme, gap }: IWASDGridProps): FlattenSimpleInterpolation => css`
+  ${({ theme }: IWASDGridProps): FlattenSimpleInterpolation => css`
     @media ${theme!.breakpoints.min.smartphone} {
-      gap: ${gap};
+      gap: 4rem;
     }
   `}
 `
