@@ -1,5 +1,5 @@
 import React from 'react'
-import { ColorProperty, BackgroundColorProperty } from 'csstype'
+import { BackgroundColorProperty } from 'csstype'
 import { Tween } from 'react-gsap'
 
 import { RouteObject } from '../../../data/objects/routesProvider'
@@ -11,7 +11,6 @@ import { WASDLinkOrbKey } from './WASDLinkOrbKey'
 
 interface IWASDNavProps {
   routes: RouteObject[]
-  color?: ColorProperty
   gap: string
   background: BackgroundColorProperty
   isLandingPage: boolean
@@ -19,7 +18,6 @@ interface IWASDNavProps {
 
 export function WASDNav({
   routes,
-  color = 'white',
   gap = '2rem',
   background = 'transparent',
   isLandingPage,
@@ -40,7 +38,6 @@ export function WASDNav({
               to={route.path}
               activeClassName="active"
               partiallyActive
-              $color={color}
               $background={background}
               $area={route.boundKeys[0].toLocaleLowerCase()}
             >

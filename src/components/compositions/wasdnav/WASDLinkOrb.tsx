@@ -9,8 +9,8 @@ import { Link } from 'gatsby'
 
 interface IWASDLinkOrbProps {
   theme?: DefaultTheme
-  $color: ColorProperty
   $area: GridAreaProperty
+  $color?: ColorProperty
   $background?: string
 }
 
