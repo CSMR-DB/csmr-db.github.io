@@ -16,7 +16,6 @@ export const WASDLinkOrbKey: StyledComponent<
   never
 > = styled.span`
   display: none;
-  border: 1px solid #ddd;
   border-radius: 4px;
   width: 2rem;
   height: 2rem;
@@ -24,6 +23,8 @@ export const WASDLinkOrbKey: StyledComponent<
   line-height: 2rem;
 
   ${({ theme }: IWASDLinkOrbKeyProps): FlattenSimpleInterpolation => css`
+    border: 1px solid ${theme!.palette.light.normal};
+
     @media ${theme!.breakpoints.min.smartphone} {
       display: initial;
     }
