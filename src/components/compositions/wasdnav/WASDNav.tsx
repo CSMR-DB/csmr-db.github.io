@@ -41,7 +41,6 @@ export function WASDNav({
               activeClassName="active"
               partiallyActive
               $color={color}
-              $bordercolor={background === 'transparent' ? color : background}
               $background={background}
               $area={route.boundKeys[0].toLocaleLowerCase()}
             >
