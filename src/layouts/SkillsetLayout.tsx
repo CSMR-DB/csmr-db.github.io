@@ -45,7 +45,7 @@ export function SkillsetLayout({
       </ContentSeparator>
       <CenteredBlock>
         <ContentSeparator>
-          <h1>I have also worked with graphic design</h1>
+          <h1>I have also worked with Graphic Design</h1>
         </ContentSeparator>
       </CenteredBlock>
       <ContentSeparator>
