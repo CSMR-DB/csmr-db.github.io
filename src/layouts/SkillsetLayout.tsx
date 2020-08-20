@@ -65,9 +65,8 @@ export function SkillsetLayout({
             icon="icons/hu_logo.jpg"
             dateStart="2015-09-05"
             dateEnd="2019-02-04"
-            description="This is where my interest in programming started, as well as my first steps into graphic design. I learned about marketing and doing user research. Halfway through my final year I decided to drop out due to lack of motivation as I wanted to pursue learning more about programming."
+            body="This is where my interest in programming started, as well as my first steps into graphic design. I learned about marketing and doing user research. Halfway through my final year I decided to drop out due to lack of motivation as I wanted to pursue learning more about programming."
             backgroundColor="#298CCD"
-            index={0}
           />
         </ContentSeparator>
         <ContentSeparator>
