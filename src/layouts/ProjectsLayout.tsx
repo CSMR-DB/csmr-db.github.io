@@ -29,7 +29,7 @@ export function ProjectsLayout({
           </p>
         </CenteredBlock>
         <Grid
-          $columns={'repeat(auto-fill, minmax(32rem,1fr))'}
+          $columns={'repeat(auto-fill, minmax(32rem, 1fr))'}
           $maxWidth={'100rem'}
         >
           <Reveal>
@@ -49,7 +49,7 @@ export function ProjectsLayout({
           </p>
         </CenteredBlock>
         <Grid
-          $columns={'repeat(auto-fill, minmax(32rem,1fr))'}
+          $columns={'repeat(auto-fill, minmax(32rem, 1fr))'}
           $maxWidth={'100rem'}
         >
           <Reveal>
