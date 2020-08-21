@@ -12,7 +12,7 @@ export type SiteMetadata = {
   url: string
 }
 
-type FrontmatterBase = {
+export type FrontmatterBase = {
   title: string
   excerpt: string
 }

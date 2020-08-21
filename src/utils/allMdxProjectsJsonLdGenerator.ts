@@ -1,13 +1,13 @@
+import { MarkdownEdge } from './../types/graphql.types'
 import {
   SiteMetadata,
   AllMarkdownRemark,
-  ProjectFrontmatter,
-  ProjectMarkdownEdge,
+  FrontmatterBase,
 } from '../types/graphql.types'
 import { ListItem, ItemList } from 'schema-dts'
 
 export type AllMdxProjectsJsonLdGenerator = {
-  projectsData: AllMarkdownRemark<ProjectFrontmatter>
+  projectsData: AllMarkdownRemark<FrontmatterBase>
   siteMetadata: SiteMetadata
 }
 
@@ -22,7 +22,7 @@ export function allMdxProjectsJsonLdGenerator({
           frontmatter: { title, excerpt },
           generatedRoute,
         },
-      }: ProjectMarkdownEdge,
+      }: MarkdownEdge<FrontmatterBase>,
       index: number
     ): ListItem => ({
       '@type': 'ListItem',
