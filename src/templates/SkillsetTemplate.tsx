@@ -29,7 +29,6 @@ export default function SkillsetTemplate({
       generatedRoute,
       frontmatter: {
         skillColor = 'black',
-        level = 0,
         title = 'Placeholder',
         excerpt: description = 'Description',
         time = 0,
@@ -52,9 +51,8 @@ export default function SkillsetTemplate({
           <CenteredBlock>
             <SkillCard
               skillColor={skillColor}
-              level={level}
               title={title}
-              description={description}
+              body={description}
               time={time}
               index={0}
               generatedRoute={generatedRoute}
@@ -87,7 +85,7 @@ export const pageQuery: void = graphql`
             excerpt
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 960) {
+                fluid(maxWidth: 960, maxHeight: 540, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
                 }
               }
