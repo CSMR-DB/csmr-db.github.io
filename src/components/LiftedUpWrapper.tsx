@@ -16,7 +16,6 @@ export const LiftedUpWrapper: StyledComponent<
   never
 > = styled.div`
   margin: 0 auto;
-  padding: 0 1rem;
 
   ${({ theme }: ILiftedUpWrapperProps): FlattenSimpleInterpolation => css`
     @media ${theme!.breakpoints.min.smartphone} {
