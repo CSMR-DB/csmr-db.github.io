@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGLogo should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    viewBox="0 0 16px 16px"
+  >
+    <g>
+      <circle
+        r={16}
+        x={8}
+        y={8}
+      />
+    </g>
+  </svg>
+</div>
+`;

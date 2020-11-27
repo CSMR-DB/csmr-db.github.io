@@ -1,0 +1,821 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexLayout should match snapshot 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.c11 {
+  grid-area: 'header';
+}
+
+.c8 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+.c12 {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.c12 > h6 {
+  margin-bottom: 0;
+}
+
+.c16 {
+  fill: red;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c19 {
+  fill: blue;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c13 {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+  max-width: 8rem;
+}
+
+.c14 {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.c14 h1 {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: right;
+  -webkit-align-self: normal;
+  -ms-flex-item-align: normal;
+  align-self: normal;
+}
+
+.c14 h2 {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+.c18 {
+  grid-area: 'footer';
+  padding: 0 2rem 2rem;
+}
+
+.c15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c10:hover {
+  color: #d00;
+}
+
+.c10.active {
+  color: #b00;
+}
+
+.c17 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: red !important;
+}
+
+.c17:hover {
+  color: #d00;
+}
+
+.c17.active {
+  color: #b00;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: blue !important;
+}
+
+.c20:hover {
+  color: #d00;
+}
+
+.c20.active {
+  color: #b00;
+}
+
+.c7 {
+  position: relative;
+  height: 100%;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-areas: 'header' 'body' 'footer';
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  box-shadow: 0 0.075rem 0.075rem rgba(0,0,0,0.1), 0 0.125rem 0.125rem rgba(0,0,0,0.25);
+  -webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  background: #fff;
+}
+
+.c7 header img {
+  -webkit-transition: all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.c7 h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.c7 h2 {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.c7 p {
+  text-align: left;
+}
+
+.c21 {
+  text-align: left !important;
+}
+
+.c2 {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.c3 {
+  padding-bottom: 4rem;
+}
+
+.c4 {
+  margin: 0 auto;
+  max-width: 110rem;
+}
+
+.c5 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c6 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c7 {
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c7:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.25), 0 0.25rem 0.25rem rgba(0,0,0,0.2);
+  }
+
+  .c7:hover header img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c2 {
+    margin: -8rem auto 0;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c5 {
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c6 {
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c9 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: baseline;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            <div>
+              <div
+                className="c6"
+              >
+                <article
+                  className="c7"
+                >
+                  <main
+                    className="c8"
+                  >
+                    <div
+                      className="c9"
+                    >
+                      <h1>
+                        Why I make things
+                      </h1>
+                      <a
+                        className="c10"
+                        href="/about"
+                      >
+                        my story
+                      </a>
+                    </div>
+                  </main>
+                </article>
+                <article
+                  className="c7"
+                >
+                  <header
+                    className="c11"
+                  >
+                    <div
+                      className="c12"
+                    >
+                      <h1>
+                        TL;WR
+                      </h1>
+                    </div>
+                  </header>
+                  <main
+                    className="c8"
+                  >
+                    <p>
+                      I find the ability to create something out of nothing but some text and symbols just absolutely fantastic.
+                    </p>
+                    <p>
+                      I learned about programming at college, where it was just part of the entire curriculum. During my time there, I taught myself mostly CSS & HTML, but also a decent amount of JavaScript. I played with React, Vue, MeteorJS, CSS preprocessors like Stylus and SASS.
+                    </p>
+                    <p>
+                      Post-college I started experimenting with Back-end NodeJS, GraphQL, MongoDB and, most importantly, TypeScript. I also dipped my toes in the Angular framework and messed with some Svelte. But whatever framework / library you want to work with honestly doesn't matter. You can learn to use & master a framework, yet understanding the underlying language is what matters most.
+                    </p>
+                  </main>
+                </article>
+              </div>
+            </div>
+            <div>
+              <div
+                className="c6"
+              >
+                <article
+                  className="c7"
+                >
+                  <main
+                    className="c8"
+                  >
+                    <div
+                      className="c9"
+                    >
+                      <h1>
+                        How I make things
+                      </h1>
+                      <a
+                        className="c10"
+                        href="/skillset"
+                      >
+                        my toolbelt
+                      </a>
+                    </div>
+                  </main>
+                </article>
+                <article
+                  className="c7"
+                >
+                  <div
+                    className="c13 backdrop"
+                  >
+                    
+                  </div>
+                  <header
+                    className="c11"
+                  >
+                    <div
+                      className="c14"
+                    >
+                      <div
+                        className="c15"
+                      >
+                        <svg
+                          className="c16"
+                          viewBox="0 0 315 342"
+                        >
+                          <g
+                            id="heart"
+                          >
+                            <path
+                              d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+                            />
+                          </g>
+                        </svg>
+                        <h1>
+                          <a
+                            className="c17"
+                            href="/skillset/react"
+                          >
+                            React
+                          </a>
+                        </h1>
+                      </div>
+                    </div>
+                  </header>
+                  <main
+                    className="c8"
+                  >
+                    <p>
+                      I love JSX
+                    </p>
+                  </main>
+                  <footer
+                    className="c18"
+                  >
+                    <p>
+                      (time spent:
+                       
+                      <span>
+                        0
+                      </span>
+                       
+                      hours)
+                    </p>
+                  </footer>
+                </article>
+                <article
+                  className="c7"
+                >
+                  <div
+                    className="c13 backdrop"
+                  >
+                    
+                  </div>
+                  <header
+                    className="c11"
+                  >
+                    <div
+                      className="c14"
+                    >
+                      <div
+                        className="c15"
+                      >
+                        <svg
+                          className="c19"
+                          viewBox="0 0 315 342"
+                        >
+                          <g
+                            id="heart"
+                          >
+                            <path
+                              d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+                            />
+                          </g>
+                        </svg>
+                        <h1>
+                          <a
+                            className="c20"
+                            href="/skillset/jest"
+                          >
+                            Jest
+                          </a>
+                        </h1>
+                      </div>
+                    </div>
+                  </header>
+                  <main
+                    className="c8"
+                  >
+                    <p>
+                      It Jest needs to be done
+                    </p>
+                  </main>
+                  <footer
+                    className="c18"
+                  >
+                    <p>
+                      (time spent:
+                       
+                      <span>
+                        0
+                      </span>
+                       
+                      hours)
+                    </p>
+                  </footer>
+                </article>
+              </div>
+            </div>
+            <div>
+              <div
+                className="c6"
+              >
+                <article
+                  className="c7"
+                >
+                  <main
+                    className="c8"
+                  >
+                    <div
+                      className="c9"
+                    >
+                      <h1>
+                        What I have made
+                      </h1>
+                      <a
+                        className="c10"
+                        href="/projects"
+                      >
+                        my work / experiments
+                      </a>
+                    </div>
+                  </main>
+                </article>
+                <article
+                  className="c7"
+                >
+                  <header
+                    className="c11"
+                  >
+                    <div
+                      className="c12"
+                    >
+                      <h1>
+                        <a
+                          className="c10"
+                          href="/projects/circle"
+                        >
+                          Circle
+                        </a>
+                      </h1>
+                      <h6>
+                        <span>
+                          08 Jan 1994
+                        </span>
+                      </h6>
+                    </div>
+                  </header>
+                  <main
+                    className="c8"
+                  >
+                    <p>
+                      I drew a fantastic circle once
+                    </p>
+                  </main>
+                  <footer
+                    className="c18"
+                  >
+                    <p
+                      className="c21"
+                    >
+                      Tags:
+                       
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/pencil"
+                        >
+                          Pencil
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/shapes"
+                        >
+                          Shapes
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/drawing"
+                        >
+                          Drawing
+                        </a>
+                        
+                      </span>
+                    </p>
+                  </footer>
+                </article>
+                <article
+                  className="c7"
+                >
+                  <header
+                    className="c11"
+                  >
+                    <div
+                      className="c12"
+                    >
+                      <h1>
+                        <a
+                          className="c10"
+                          href="/projects/portfolio"
+                        >
+                          Portfolio
+                        </a>
+                      </h1>
+                      <h6>
+                        <span>
+                          08 Jan 1994
+                        </span>
+                      </h6>
+                    </div>
+                  </header>
+                  <main
+                    className="c8"
+                  >
+                    <p>
+                      Gatsby, TypeScript, React, GraphQL, GSAP, Styled-Components, Jest, Enzyme
+                    </p>
+                  </main>
+                  <footer
+                    className="c18"
+                  >
+                    <p
+                      className="c21"
+                    >
+                      Tags:
+                       
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/gatsby"
+                        >
+                          Gatsby
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/typescript"
+                        >
+                          TypeScript
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/react"
+                        >
+                          React
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/graphql"
+                        >
+                          GraphQL
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/gsap"
+                        >
+                          GSAP
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/styled-components"
+                        >
+                          Styled-Components
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/jest"
+                        >
+                          Jest
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/enzyme"
+                        >
+                          Enzyme
+                        </a>
+                        
+                      </span>
+                    </p>
+                  </footer>
+                </article>
+                <article
+                  className="c7"
+                >
+                  <header
+                    className="c11"
+                  >
+                    <div
+                      className="c12"
+                    >
+                      <h1>
+                        <a
+                          className="c10"
+                          href="/projects/portfolio"
+                        >
+                          Loopy
+                        </a>
+                      </h1>
+                      <h6>
+                        <span>
+                          08 Jan 1994
+                        </span>
+                      </h6>
+                    </div>
+                  </header>
+                  <main
+                    className="c8"
+                  >
+                    <p>
+                      I made a fantastic hula-loop once
+                    </p>
+                  </main>
+                  <footer
+                    className="c18"
+                  >
+                    <p
+                      className="c21"
+                    >
+                      Tags:
+                       
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/hula"
+                        >
+                          Hula
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/loop"
+                        >
+                          Loop
+                        </a>
+                        , 
+                      </span>
+                      <span>
+                        <a
+                          className="c10"
+                          href="/skillset/perfection"
+                        >
+                          Perfection
+                        </a>
+                        
+                      </span>
+                    </p>
+                  </footer>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;

@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WASDNav should match snapshot 1`] = `
+.c0 {
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-template-areas: '. w .' 'a s d';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.c0 > * {
+  justify-self: center;
+}
+
+.c1 {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  border-radius: 256rem;
+  background: #900;
+  color: #fff;
+  grid-area: r;
+}
+
+.c1.active {
+  background: #b00;
+  color: #bbb;
+}
+
+.c3 {
+  line-height: inherit;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.c2 {
+  display: none;
+  border-radius: 4px;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  line-height: 2rem;
+  border: 1px solid #fff;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    gap: 4rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    -webkit-transition: background 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .c1:hover {
+    background: #d00;
+    color: #ddd;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c2 {
+    display: initial;
+  }
+}
+
+<nav
+  className="c0"
+>
+  <a
+    className="c1"
+    href="/route"
+  >
+    <span
+      className="c2"
+    >
+      01
+    </span>
+    <h1
+      className="c3"
+    >
+      Route
+    </h1>
+    <span
+      className="c2"
+    >
+      R
+    </span>
+  </a>
+</nav>
+`;

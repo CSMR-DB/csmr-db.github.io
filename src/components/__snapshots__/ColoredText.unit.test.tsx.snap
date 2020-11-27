@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColoredText should have the following configurable style rules 1`] = `
+.c0 {
+  color: black;
+}
+
+<span
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</span>
+`;
+
+exports[`ColoredText should have the following configurable style rules when configured 1`] = `
+.c0 {
+  color: red;
+}
+
+<span
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</span>
+`;

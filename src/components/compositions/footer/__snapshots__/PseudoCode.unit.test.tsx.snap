@@ -1,0 +1,571 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PseudoCode should have the following static style rules 1`] = `
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: white !important;
+}
+
+.c3:hover {
+  color: #d00;
+}
+
+.c3.active {
+  color: #b00;
+}
+
+.c0 {
+  margin-bottom: 1rem;
+}
+
+.c0 > p {
+  margin: 0;
+  text-align: left;
+}
+
+.c1 {
+  margin: 0 !important;
+  padding-left: 0rem;
+}
+
+.c2 {
+  margin: 0 !important;
+  padding-left: 1rem;
+}
+
+.c4 {
+  margin: 0 !important;
+  padding-left: 2rem;
+}
+
+.c5 {
+  margin: 0 !important;
+  padding-left: 3rem;
+}
+
+.c6 {
+  margin: 0 !important;
+  padding-left: 4rem;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  >
+    type Requirements = 
+    { essence: Emoji[] }
+  </p>
+  <p
+    className="c1"
+  >
+    type DevWebsite = 
+    { typescript: boolean }
+  </p>
+  <p
+    className="c1"
+  >
+    interface IWebsite 
+    {
+  </p>
+  <p
+    className="c2"
+  >
+    url: string
+  </p>
+  <p
+    className="c2"
+  >
+    visit: () =&gt; WebPage
+  </p>
+  <p
+    className="c1"
+  >
+    }
+  </p>
+  <br />
+  <p
+    className="c1"
+  >
+    async function websitePromise({ essence }: Requirements): Promise&lt;IWebsite&gt; {
+  </p>
+  <p
+    className="c2"
+  >
+    return await start(
+    <a
+      className="c3"
+      href="https://www.gatsbyjs.org"
+      target="blank"
+    >
+      Gatsby
+    </a>
+    )
+  </p>
+  <p
+    className="c4"
+  >
+    .then((dev: DevWebsite) =
+    &gt;
+     
+  </p>
+  <p
+    className="c5"
+  >
+    pipe(
+  </p>
+  <p
+    className="c6"
+  >
+    addStyle(
+    <a
+      className="c3"
+      href="https://www.styled-components.com/"
+      target="blank"
+    >
+      styled-components
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    useFont(
+    <a
+      className="c3"
+      href="https://www.npmjs.com/package/firacode"
+      target="blank"
+    >
+      Fira Code
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    addCodeIcons(
+    <a
+      className="c3"
+      href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
+      target="blank"
+    >
+      vscode-icons
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    addAdobeIcons(
+    <a
+      className="c3"
+      href="https://www.iconfinder.com/graphiqa"
+      target="blank"
+    >
+      Graphiqa Studio
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    prettifyCodeUsing(
+    <a
+      className="c3"
+      href="https://prettier.io/"
+      target="blank"
+    >
+      Prettier
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    makeCodeImagesUsing(
+    <a
+      className="c3"
+      href="https://carbon.now.sh/"
+      target="blank"
+    >
+      Carbon
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    useAnimationLibraries(
+    <a
+      className="c3"
+      href="https://greensock.com/gsap/"
+      target="blank"
+    >
+      GSAP
+    </a>
+    , 
+    <a
+      className="c3"
+      href="https://www.npmjs.com/package/react-gsap"
+      target="blank"
+    >
+      react-gsap
+    </a>
+    ,
+     
+    <a
+      className="c3"
+      href="https://www.gatsbyjs.org/packages/gatsby-plugin-transitions/"
+      target="blank"
+    >
+      gatsby-plugin-transitions
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    sprinkleWith(essence),
+  </p>
+  <p
+    className="c6"
+  >
+    deployUsing(
+    <a
+      className="c3"
+      href="https://www.npmjs.com/package/gh-pages"
+      target="blank"
+    >
+      gh-pages
+    </a>
+    )
+  </p>
+  <p
+    className="c5"
+  >
+    )(dev)
+  </p>
+  <p
+    className="c4"
+  >
+    )
+  </p>
+  <p
+    className="c1"
+  >
+    }
+  </p>
+  <br />
+  <p
+    className="c1"
+  >
+    websitePromise(
+    { essence: [ ❤️, ✨, 🎆 ] }
+    )
+  </p>
+  <p
+    className="c2"
+  >
+    .then((website: IWebsite) =
+    &gt;
+  </p>
+  <p
+    className="c4"
+  >
+    website.visit())
+  </p>
+  <p
+    className="c2"
+  >
+    )
+  </p>
+</div>
+`;
+
+exports[`PseudoCode should match snapshot 1`] = `
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: white !important;
+}
+
+.c3:hover {
+  color: #d00;
+}
+
+.c3.active {
+  color: #b00;
+}
+
+.c0 {
+  margin-bottom: 1rem;
+}
+
+.c0 > p {
+  margin: 0;
+  text-align: left;
+}
+
+.c1 {
+  margin: 0 !important;
+  padding-left: 0rem;
+}
+
+.c2 {
+  margin: 0 !important;
+  padding-left: 1rem;
+}
+
+.c4 {
+  margin: 0 !important;
+  padding-left: 2rem;
+}
+
+.c5 {
+  margin: 0 !important;
+  padding-left: 3rem;
+}
+
+.c6 {
+  margin: 0 !important;
+  padding-left: 4rem;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  >
+    type Requirements = 
+    { essence: Emoji[] }
+  </p>
+  <p
+    className="c1"
+  >
+    type DevWebsite = 
+    { typescript: boolean }
+  </p>
+  <p
+    className="c1"
+  >
+    interface IWebsite 
+    {
+  </p>
+  <p
+    className="c2"
+  >
+    url: string
+  </p>
+  <p
+    className="c2"
+  >
+    visit: () =&gt; WebPage
+  </p>
+  <p
+    className="c1"
+  >
+    }
+  </p>
+  <br />
+  <p
+    className="c1"
+  >
+    async function websitePromise({ essence }: Requirements): Promise&lt;IWebsite&gt; {
+  </p>
+  <p
+    className="c2"
+  >
+    return await start(
+    <a
+      className="c3"
+      href="https://www.gatsbyjs.org"
+      target="blank"
+    >
+      Gatsby
+    </a>
+    )
+  </p>
+  <p
+    className="c4"
+  >
+    .then((dev: DevWebsite) =
+    &gt;
+     
+  </p>
+  <p
+    className="c5"
+  >
+    pipe(
+  </p>
+  <p
+    className="c6"
+  >
+    addStyle(
+    <a
+      className="c3"
+      href="https://www.styled-components.com/"
+      target="blank"
+    >
+      styled-components
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    useFont(
+    <a
+      className="c3"
+      href="https://www.npmjs.com/package/firacode"
+      target="blank"
+    >
+      Fira Code
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    addCodeIcons(
+    <a
+      className="c3"
+      href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
+      target="blank"
+    >
+      vscode-icons
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    addAdobeIcons(
+    <a
+      className="c3"
+      href="https://www.iconfinder.com/graphiqa"
+      target="blank"
+    >
+      Graphiqa Studio
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    prettifyCodeUsing(
+    <a
+      className="c3"
+      href="https://prettier.io/"
+      target="blank"
+    >
+      Prettier
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    makeCodeImagesUsing(
+    <a
+      className="c3"
+      href="https://carbon.now.sh/"
+      target="blank"
+    >
+      Carbon
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    useAnimationLibraries(
+    <a
+      className="c3"
+      href="https://greensock.com/gsap/"
+      target="blank"
+    >
+      GSAP
+    </a>
+    , 
+    <a
+      className="c3"
+      href="https://www.npmjs.com/package/react-gsap"
+      target="blank"
+    >
+      react-gsap
+    </a>
+    ,
+     
+    <a
+      className="c3"
+      href="https://www.gatsbyjs.org/packages/gatsby-plugin-transitions/"
+      target="blank"
+    >
+      gatsby-plugin-transitions
+    </a>
+    ),
+  </p>
+  <p
+    className="c6"
+  >
+    sprinkleWith(essence),
+  </p>
+  <p
+    className="c6"
+  >
+    deployUsing(
+    <a
+      className="c3"
+      href="https://www.npmjs.com/package/gh-pages"
+      target="blank"
+    >
+      gh-pages
+    </a>
+    )
+  </p>
+  <p
+    className="c5"
+  >
+    )(dev)
+  </p>
+  <p
+    className="c4"
+  >
+    )
+  </p>
+  <p
+    className="c1"
+  >
+    }
+  </p>
+  <br />
+  <p
+    className="c1"
+  >
+    websitePromise(
+    { essence: [ ❤️, ✨, 🎆 ] }
+    )
+  </p>
+  <p
+    className="c2"
+  >
+    .then((website: IWebsite) =
+    &gt;
+  </p>
+  <p
+    className="c4"
+  >
+    website.visit())
+  </p>
+  <p
+    className="c2"
+  >
+    )
+  </p>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WASDLinkOrbTitle should match snapshot 1`] = `
+.c0 {
+  line-height: inherit;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    font-size: 1.25rem;
+  }
+}
+
+<h1
+  className="c0"
+>
+  A
+</h1>
+`;

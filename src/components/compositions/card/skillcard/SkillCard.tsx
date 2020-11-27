@@ -1,5 +1,4 @@
 import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
 import { Tween } from 'react-gsap'
 import { ColorProperty } from 'csstype'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -27,16 +26,6 @@ interface ISkillCardProps {
   index?: number
 }
 
-const StyledSkillCard: StyledComponent<typeof Card, any, {}, never> = styled(
-  Card
-)`
-  &:hover {
-    .backdrop {
-      opacity: 0.75 !important;
-    }
-  }
-`
-
 export function SkillCard({
   title,
   body,
@@ -48,7 +37,7 @@ export function SkillCard({
 }: ISkillCardProps): JSX.Element {
   return (
     <MDXProvider components={CodeSVGs}>
-      <StyledSkillCard index={index}>
+      <Card index={index} $_testid={'SkillCard'}>
         <SkillCardBackdrop index={index}>
           {icon && <MDXRenderer>{icon}</MDXRenderer>}
         </SkillCardBackdrop>
@@ -61,7 +50,11 @@ export function SkillCard({
                 litColor={skillColor}
               ></SkillCardIndicator>
               <h1>
-                <StyledLink to={generatedRoute} $color={skillColor}>
+                <StyledLink
+                  to={generatedRoute}
+                  $color={skillColor}
+                  $_testid={'SkillPageLink'}
+                >
                   {title}
                 </StyledLink>
               </h1>
@@ -84,7 +77,7 @@ export function SkillCard({
             hours)
           </p>
         </CardFooter>
-      </StyledSkillCard>
+      </Card>
     </MDXProvider>
   )
 }

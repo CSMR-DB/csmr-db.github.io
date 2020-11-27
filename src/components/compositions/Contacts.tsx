@@ -21,6 +21,7 @@ export function Contacts({ contacts }: IContactsProps): JSX.Element {
             iconPath={iconPath}
             href={href}
             key={key}
+            $_testid={`SocialButton${text}`}
           >
             {text}
           </SocialButton>

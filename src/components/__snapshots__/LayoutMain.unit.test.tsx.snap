@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutMain should have the following style rules 1`] = `
+.c0 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c0 a:hover {
+  color: #d00;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    padding: 4rem 1rem;
+  }
+}
+
+<main
+  className="c0"
+/>
+`;

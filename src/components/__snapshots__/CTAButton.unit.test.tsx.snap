@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CTAButton should have the following configurable style rules 1`] = `
+.c0 {
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 1.5rem;
+  max-width: 24rem;
+  border-radius: 999rem;
+  background: #0f0;
+  color: #fff !important;
+  margin: 0 auto;
+}
+
+.c0:hover {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    font-size: 1.25rem;
+  }
+}
+
+<a
+  className="c0"
+  href="/"
+>
+  <p>
+    Hello World
+  </p>
+</a>
+`;
+
+exports[`CTAButton should have the following configurable style rules when configured 1`] = `
+.c0 {
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 1.5rem;
+  max-width: 24rem;
+  border-radius: 999rem;
+  background: #0f0;
+  color: #fff !important;
+  margin: 0 auto 8rem;
+}
+
+.c0:hover {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    font-size: 1.25rem;
+  }
+}
+
+<a
+  className="c0"
+  href="/"
+>
+  <p>
+    Hello World
+  </p>
+</a>
+`;
+
+exports[`CTAButton should have the following static style rules 1`] = `
+.c0 {
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 1.5rem;
+  max-width: 24rem;
+  border-radius: 999rem;
+  background: #0f0;
+  color: #fff !important;
+  margin: 0 auto;
+}
+
+.c0:hover {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    font-size: 1.25rem;
+  }
+}
+
+<a
+  className="c0"
+  href="/"
+>
+  <p>
+    Hello World
+  </p>
+</a>
+`;

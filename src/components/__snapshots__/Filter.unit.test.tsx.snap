@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should have the following configurable style rules by default 1`] = `
+.c0 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #900;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`Filter should have the following configurable style rules when configured 1`] = `
+.c0 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(8) brightness(0.5);
+  filter: saturation(8) brightness(0.5);
+}
+
+.c0:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: blue;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`Filter should have the following static style rules 1`] = `
+.c0 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #900;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;

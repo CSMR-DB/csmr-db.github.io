@@ -12,6 +12,7 @@ interface ICTAButtonProps {
   children: ReactNode
   to: string
   $margin?: string
+  $_testid?: string
 }
 
 export const CTAButton: StyledComponent<
@@ -19,7 +20,9 @@ export const CTAButton: StyledComponent<
   any,
   ICTAButtonProps,
   never
-> = styled(Link)`
+> = styled(Link).attrs((props: ICTAButtonProps): {} => ({
+  'data-testid': props.$_testid,
+}))`
   display: block;
   font-size: 1rem;
   cursor: pointer;

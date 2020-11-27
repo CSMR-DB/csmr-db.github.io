@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillCardBackdrop should have the following static style rules 1`] = `
+.c0 {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+  max-width: 8rem;
+}
+
+<div
+  className="c0 backdrop"
+>
+  <h1>
+    Hello World
+  </h1>
+</div>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader should have the following static style rules 1`] = `
+.c0 {
+  grid-area: 'header';
+}
+
+<header
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</header>
+`;
+
+exports[`CardHeader should match snapshot 1`] = `
+.c0 {
+  grid-area: 'header';
+}
+
+<header
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</header>
+`;

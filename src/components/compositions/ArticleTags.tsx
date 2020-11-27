@@ -21,6 +21,7 @@ export function ArticleTags({ tags }: IArticleTagsProps): JSX.Element {
             <span key={i}>
               <StyledLink
                 to={`/skillset/${tag.toLocaleLowerCase().replace(/\s/gi, '_')}`}
+                $_testid={'SkillPageLink'}
               >
                 {tag}
               </StyledLink>

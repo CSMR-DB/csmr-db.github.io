@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubbedImages should match snapshot 1`] = `
+.c0 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: repeat(1,1fr);
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c2 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c2:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #900;
+}
+
+.c5 {
+  position: relative;
+  overflow: hidden;
+  isolation: auto;
+}
+
+.c5 > :first-child {
+  position: relative !important;
+}
+
+.c5 > * {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  mix-blend-mode: lighten;
+}
+
+.c5 > *:hover {
+  mix-blend-mode: lighten;
+}
+
+.c6 {
+  padding: 1rem;
+  border-radius: 999rem;
+  background: #fff;
+}
+
+.c3 {
+  position: absolute;
+  width: auto;
+  min-height: auto;
+  top: 1rem;
+  left: 0;
+  bottom: 1rem;
+  right: 0;
+}
+
+.c4 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.c1 > div:first-child {
+  position: relative;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  transform: scale(1.01);
+}
+
+.c1:hover > div:first-child {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c1:hover > div:first-child > * {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.c1 h1,
+.c1 h2,
+.c1 h3,
+.c1 h4,
+.c1 h5,
+.c1 h6 {
+  margin: 0;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    grid-template-columns: repeat(1,1fr);
+    gap: 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="children"
+    >
+      <div
+        className="c2"
+      >
+        /photo.jpg
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div
+            className="c6"
+          >
+            <h6>
+              Photo
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

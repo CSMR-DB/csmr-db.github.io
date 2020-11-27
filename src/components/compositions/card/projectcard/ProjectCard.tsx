@@ -32,12 +32,14 @@ export function ProjectCard({
   index = 0,
 }: IProjectCardProps): JSX.Element {
   return (
-    <Card index={index}>
+    <Card index={index} $_testid={'ProjectCard'}>
       <CardHeader>
         {image && <Image fluid={image.childImageSharp.fluid} />}
         <CardHeaderText>
           <h1>
-            <StyledLink to={generatedRoute}>{title}</StyledLink>
+            <StyledLink to={generatedRoute} $_testid={'ProjectPageLink'}>
+              {title}
+            </StyledLink>
           </h1>
           <h6>
             <DateFormatted dateString={date} />

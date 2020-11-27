@@ -5,11 +5,15 @@ import styled, {
   DefaultTheme,
 } from 'styled-components'
 import { GridAreaProperty } from 'csstype'
+
+import { TestAttrs } from '../../../types/jest.types'
+
 import { Link } from 'gatsby'
 
 interface IWASDLinkOrbProps {
   theme?: DefaultTheme
   $area: GridAreaProperty
+  $_testid: string
 }
 
 export const WASDLinkOrb: StyledComponent<
@@ -17,7 +21,9 @@ export const WASDLinkOrb: StyledComponent<
   any,
   IWASDLinkOrbProps,
   never
-> = styled(Link)`
+> = styled(Link).attrs(
+  (props: IWASDLinkOrbProps): TestAttrs => ({ 'data-testid': props.$_testid })
+)`
   width: 4rem;
   height: 4rem;
   margin: 0 auto;

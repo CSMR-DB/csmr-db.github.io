@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGLogos should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: repeat(2,1fr);
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c2 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c2:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    grid-template-columns: repeat(8,1fr);
+    gap: 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <svg
+        viewBox="0 0 16px 16px"
+      >
+        <g>
+          <circle
+            r={16}
+            x={8}
+            y={8}
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      className="c2"
+    >
+      <svg
+        viewBox="0 0 16px 16px"
+      >
+        <g>
+          <circle
+            r={16}
+            x={8}
+            y={8}
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      className="c2"
+    >
+      <svg
+        viewBox="0 0 16px 16px"
+      >
+        <g>
+          <circle
+            r={16}
+            x={8}
+            y={8}
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;

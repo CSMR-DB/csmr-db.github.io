@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CenteredBlock should have the following configurable style rules 1`] = `
+.c0 {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`CenteredBlock should have the following configurable style rules when configured 1`] = `
+.c0 {
+  margin: 0 auto;
+  max-width: 16rem;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`CenteredBlock should have the following static style rules 1`] = `
+.c0 {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;

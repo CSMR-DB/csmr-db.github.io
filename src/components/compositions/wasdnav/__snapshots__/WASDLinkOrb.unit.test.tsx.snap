@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WASDLinkOrb should match snapshot 1`] = `
+.c0 {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  border-radius: 256rem;
+  background: #900;
+  color: #fff;
+  grid-area: a;
+}
+
+.c0.active {
+  background: #b00;
+  color: #bbb;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    -webkit-transition: background 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .c0:hover {
+    background: #d00;
+    color: #ddd;
+  }
+}
+
+<a
+  className="c0"
+  href="/jest"
+>
+  <p>
+    Hello World
+  </p>
+</a>
+`;

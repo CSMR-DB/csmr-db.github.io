@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactLayout should match snapshot 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.c3 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: repeat(1,1fr);
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c2 {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+.c4 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c4:hover {
+  color: #d00;
+}
+
+.c4.active {
+  color: #b00;
+}
+
+.c5 {
+  position: relative;
+}
+
+.c7 {
+  position: absolute;
+  width: auto;
+  min-height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c8 {
+  height: 100%;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.1s ease-in 0.1s;
+  transition: color 0.1s ease-in 0.1s;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  font-size: 1rem;
+  color: white;
+  background: red;
+}
+
+.c9 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 4rem;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c3 {
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c8 {
+    -webkit-clip-path: circle(16em at 50% 50%);
+    clip-path: circle(16em at 50% 50%);
+  }
+}
+
+@media only screen and (min-width:960px) {
+  .c8 {
+    -webkit-clip-path: circle(1em at 50% 50%);
+    clip-path: circle(1em at 50% 50%);
+    font-size: 2rem;
+  }
+
+  .c8:hover {
+    -webkit-clip-path: circle(8em at 50% 50%);
+    clip-path: circle(8em at 50% 50%);
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <h1>
+        Get in touch!
+      </h1>
+      <p>
+        I don't do Twitter and I don't really use Facebook other than checking it about twice a year. However, there are other ways to get in touch with me. I don't have a fancy form (yet), but that shouldn't be a dealbreaker. I check my mail at least once a day, LinkedIn weekly and I'm pretty much always available on Discord. You just do whatever feels right 😉.
+      </p>
+      <div
+        className="c3"
+      >
+        <a
+          className="c4"
+          href="https://mock.test.nowhere"
+          target="blank"
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+            <div
+              className="c7"
+            >
+              <div
+                className="c8"
+              >
+                <div
+                  className="c9"
+                >
+                  <span>
+                    Mock Option
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+`;

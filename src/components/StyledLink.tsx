@@ -9,9 +9,12 @@ import styled, {
 import { Link } from 'gatsby'
 import { ColorProperty } from 'csstype'
 
+import { TestAttrs } from '../types/jest.types'
+
 interface IStyledALinkProps {
   theme?: DefaultTheme
   $color?: ColorProperty
+  $_testid?: string
 }
 
 const LinkStyles: FlattenInterpolation<ThemedStyledProps<
@@ -41,7 +44,9 @@ export const StyledLink: StyledComponent<
   any,
   IStyledALinkProps,
   never
-> = styled(Link)`
+> = styled(Link).attrs(
+  (props: IStyledALinkProps): TestAttrs => ({ 'data-testid': props.$_testid })
+)`
   ${LinkStyles}
 `
 
@@ -50,6 +55,8 @@ export const StyledA: StyledComponent<
   any,
   IStyledALinkProps,
   never
-> = styled.a`
+> = styled.a.attrs(
+  (props: IStyledALinkProps): TestAttrs => ({ 'data-testid': props.$_testid })
+)`
   ${LinkStyles}
 `

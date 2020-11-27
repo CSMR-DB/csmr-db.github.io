@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardBody should have the following static style rules 1`] = `
+.c0 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+<main
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</main>
+`;
+
+exports[`CardBody should match snapshot 1`] = `
+.c0 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+<main
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</main>
+`;

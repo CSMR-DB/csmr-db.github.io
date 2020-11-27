@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectCard should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  height: 100%;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-areas: 'header' 'body' 'footer';
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  box-shadow: 0 0.075rem 0.075rem rgba(0,0,0,0.1), 0 0.125rem 0.125rem rgba(0,0,0,0.25);
+  -webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  background: #fff;
+}
+
+.c0 header img {
+  -webkit-transition: all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.c0 h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.c0 h2 {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.c0 p {
+  text-align: left;
+}
+
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c3:hover {
+  color: #d00;
+}
+
+.c3.active {
+  color: #b00;
+}
+
+.c6 {
+  text-align: left !important;
+}
+
+.c1 {
+  grid-area: 'header';
+}
+
+.c5 {
+  grid-area: 'footer';
+  padding: 0 2rem 2rem;
+}
+
+.c4 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+.c2 {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.c2 > h6 {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c0:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.25), 0 0.25rem 0.25rem rgba(0,0,0,0.2);
+  }
+
+  .c0:hover header img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+<article
+  className="c0"
+>
+  <header
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <h1>
+        <a
+          className="c3"
+          href="/projects/jest_a_project"
+        >
+          Jest a Project
+        </a>
+      </h1>
+      <h6>
+        <span>
+          08 Jan 1994
+        </span>
+      </h6>
+    </div>
+  </header>
+  <main
+    className="c4"
+  >
+    <p>
+      What more is there to say, really?
+    </p>
+  </main>
+  <footer
+    className="c5"
+  >
+    <p
+      className="c6"
+    >
+      Tags:
+       
+      <span>
+        <a
+          className="c3"
+          href="/skillset/jest"
+        >
+          Jest
+        </a>
+        , 
+      </span>
+      <span>
+        <a
+          className="c3"
+          href="/skillset/enzyme"
+        >
+          Enzyme
+        </a>
+        
+      </span>
+    </p>
+  </footer>
+</article>
+`;

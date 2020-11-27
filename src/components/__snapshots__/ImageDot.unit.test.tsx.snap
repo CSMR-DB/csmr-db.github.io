@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageDot should have the following configurable style rules when configured 1`] = `
+.c0 {
+  margin: 0 auto 1rem;
+  border-radius: 256rem;
+  overflow: hidden;
+  width: calc(4rem / 2);
+  height: calc(4rem / 2);
+}
+
+.c0 .gatsby-image-wrapper {
+  max-width: calc(4rem / 2);
+  max-height: calc(4rem / 2);
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    margin: 0 auto 8rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .c0 .gatsby-image-wrapper {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`ImageDot should have the following static style rules 1`] = `
+.c0 {
+  margin: 0 auto 1rem;
+  border-radius: 256rem;
+  overflow: hidden;
+  width: calc(4rem / 2);
+  height: calc(4rem / 2);
+}
+
+.c0 .gatsby-image-wrapper {
+  max-width: calc(4rem / 2);
+  max-height: calc(4rem / 2);
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    margin: 0 auto 8rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .c0 .gatsby-image-wrapper {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;

@@ -29,7 +29,7 @@ const StyledHeader: StyledComponent<
   any,
   Partial<IHeaderProps>,
   never
-> = styled.header`
+> = styled.header.attrs({ 'data-testid': 'SiteHeader' })`
   position: relative;
   height: auto;
 

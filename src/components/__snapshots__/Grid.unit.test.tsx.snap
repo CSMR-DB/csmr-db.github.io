@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should have the following style rules by default 1`] = `
+.c0 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    Test
+  </div>
+  <div>
+    These
+  </div>
+  <div>
+    Divs
+  </div>
+</div>
+`;
+
+exports[`Layout should have the following style rules on screen sizes tablet and up 1`] = `
+.c0 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(2rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: repeat(3,1fr);
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    Test
+  </div>
+  <div>
+    These
+  </div>
+  <div>
+    Divs
+  </div>
+</div>
+`;

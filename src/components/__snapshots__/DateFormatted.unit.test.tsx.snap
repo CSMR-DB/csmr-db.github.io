@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateFormatted should return a formatted string when provided with a dateString 1`] = `
+<span>
+  08 Jan 1994
+</span>
+`;
+
+exports[`DateFormatted should return null when no dateString is provided 1`] = `null`;

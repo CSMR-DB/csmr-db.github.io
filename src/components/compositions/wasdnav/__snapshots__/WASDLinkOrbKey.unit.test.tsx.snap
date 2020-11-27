@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WASDLinkOrbKey should match snapshot 1`] = `
+.c0 {
+  display: none;
+  border-radius: 4px;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  line-height: 2rem;
+  border: 1px solid #fff;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    display: initial;
+  }
+}
+
+<span
+  className="c0"
+>
+  A
+</span>
+`;

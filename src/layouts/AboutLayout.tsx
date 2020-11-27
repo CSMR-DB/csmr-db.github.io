@@ -108,7 +108,11 @@ export function AboutLayout({
       </CenteredBlock>
       <WideBoi>
         <CoursesGrid courses={groupedCourses} />
-        <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>
+        <CTAButton
+          to={'/skillset'}
+          $margin={'4rem auto 0'}
+          $_testid={'CTAToSkillset'}
+        >
           I can do this
         </CTAButton>
       </WideBoi>
@@ -154,7 +158,11 @@ export function AboutLayout({
       </CenteredBlock>
       <WideBoi>
         <SVGLogos svgs={tools} />
-        <CTAButton to={'/skillset'} $margin={'4rem auto 0'}>
+        <CTAButton
+          to={'/skillset'}
+          $margin={'4rem auto 0'}
+          $_testid={'CTAToSkillset'}
+        >
           Find out more
         </CTAButton>
       </WideBoi>
@@ -214,8 +222,10 @@ export function AboutLayout({
       <CenteredBlock>
         <p>
           PS: I also like{' '}
-          <StyledLink to={'/photography'}>photography</StyledLink>, although I
-          don't shoot often.
+          <StyledLink to={'/photography'} $_testid={'PhotographyPageLink'}>
+            photography
+          </StyledLink>
+          , although I don't shoot often.
         </p>
       </CenteredBlock>
     </Layout>

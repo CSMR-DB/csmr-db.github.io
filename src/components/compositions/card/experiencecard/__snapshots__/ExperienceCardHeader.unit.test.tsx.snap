@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExperienceCardHeader should have the following static style rules 1`] = `
+.c0 {
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.c0 h2 {
+  margin: 0;
+}
+
+<header
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</header>
+`;

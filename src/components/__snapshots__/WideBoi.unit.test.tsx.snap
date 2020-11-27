@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WideBoi should have the following configurable style rules default 1`] = `
+.c0 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: blue;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`WideBoi should have the following configurable style rules when configured 1`] = `
+.c0 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: #00f;
+  max-width: 50vw;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`WideBoi should have the following static style rules 1`] = `
+.c0 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: #00f;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;

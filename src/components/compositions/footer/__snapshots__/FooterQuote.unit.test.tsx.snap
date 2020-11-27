@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterQuote should match snapshot 1`] = `
+.c0 {
+  padding: 1rem;
+  line-height: 1.2rem !important;
+  color: #fff;
+}
+
+<h6
+  className="c0"
+>
+  Hello World
+</h6>
+`;

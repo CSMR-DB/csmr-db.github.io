@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExperienceCardHeaderText should have the following static style rules 1`] = `
+.c0 {
+  padding: 0 0 0 1rem;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    padding: 0 2rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</div>
+`;

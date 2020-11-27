@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeyItsMe should match snapshot 1`] = `
+.c0 {
+  margin: auto 1rem;
+  border-radius: 0.25rem;
+  max-width: 36rem;
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+}
+
+.c0 > h1 {
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+}
+
+.c0 > p {
+  font-family: 'Fira Code';
+  font-size: 1rem;
+  line-height: initial;
+  font-style: italic;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.c1 {
+  margin: 0 auto 1rem;
+  border-radius: 256rem;
+  overflow: hidden;
+  width: calc(8rem / 2);
+  height: calc(8rem / 2);
+}
+
+.c1 .gatsby-image-wrapper {
+  max-width: calc(8rem / 2);
+  max-height: calc(8rem / 2);
+}
+
+.c2 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c2:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #900;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    padding: 2rem;
+    margin: auto;
+  }
+
+  .c0 > h1 {
+    margin: 0 auto 2rem;
+    font-size: 1.5rem;
+  }
+
+  .c0 > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    margin: 0 auto 8rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .c1 .gatsby-image-wrapper {
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+}
+
+<article
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    />
+  </div>
+  <h1>
+    Hey, I'm 
+    Jester
+  </h1>
+  <p>
+    I run far and wide
+  </p>
+</article>
+`;

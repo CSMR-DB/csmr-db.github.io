@@ -19,7 +19,7 @@ export const StyledLayout: StyledComponent<
   any,
   ILayoutProps,
   never
-> = styled.div`
+> = styled.div.attrs({ 'data-testid': 'Layout' })`
   min-height: 100vh;
 
   ${({ theme, isLandingPage }: ILayoutProps): FlattenSimpleInterpolation => css`

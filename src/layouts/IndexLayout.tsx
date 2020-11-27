@@ -32,12 +32,13 @@ export function IndexLayout({
       <LiftedUpWrapper>
         <ContentSeparator>
           <CenteredBlock $maxWidth={'110rem'}>
-            <Grid $columns={3}>
+            <Grid $columns={3} data-testid="MainGrid">
               <div>
                 <Grid>
                   <ReadMore
                     title={'Why I make things'}
                     link={{ path: '/about', text: 'my story' }}
+                    $_testid={'ReadMoreAbout'}
                   />
                   <Card>
                     <CardHeader>
@@ -72,19 +73,21 @@ export function IndexLayout({
                 </Grid>
               </div>
               <div>
-                <Grid>
+                <Grid data-testid="IndexSkillCardsGrid">
                   <ReadMore
                     title={'How I make things'}
                     link={{ path: '/skillset', text: 'my toolbelt' }}
+                    $_testid={'ReadMoreSkillset'}
                   />
                   <SkillCards edges={skillsetData.edges} />
                 </Grid>
               </div>
               <div>
-                <Grid>
+                <Grid data-testid="IndexProjectCardsGrid">
                   <ReadMore
                     title={'What I have made'}
                     link={{ path: '/projects', text: 'my work / experiments' }}
+                    $_testid={'ReadMoreProjects'}
                   />
                   <ProjectCards edges={projectsData.edges} />
                 </Grid>

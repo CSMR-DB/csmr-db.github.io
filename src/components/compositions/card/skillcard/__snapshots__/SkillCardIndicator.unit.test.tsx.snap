@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillCardIndicator should match snapshot 1`] = `
+.c0 {
+  fill: red;
+  width: 1rem;
+  height: 1rem;
+}
+
+<svg
+  className="c0"
+  viewBox="0 0 315 342"
+>
+  <g
+    id="heart"
+  >
+    <path
+      d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+    />
+  </g>
+</svg>
+`;

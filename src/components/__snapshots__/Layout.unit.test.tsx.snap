@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should have the following style rules 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: #fff;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Layout should have the following style rules when isLandingPage === true 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: transparent;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  />
+</div>
+`;

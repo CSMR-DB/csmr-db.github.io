@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillCard should match snapshot 1`] = `
+.c5 {
+  fill: orange;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c1 {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+  max-width: 8rem;
+}
+
+.c3 {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.c3 h1 {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: right;
+  -webkit-align-self: normal;
+  -ms-flex-item-align: normal;
+  align-self: normal;
+}
+
+.c3 h2 {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+.c8 {
+  grid-area: 'footer';
+  padding: 0 2rem 2rem;
+}
+
+.c2 {
+  grid-area: 'header';
+}
+
+.c7 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+.c4 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: orange !important;
+}
+
+.c6:hover {
+  color: #d00;
+}
+
+.c6.active {
+  color: #b00;
+}
+
+.c0 {
+  position: relative;
+  height: 100%;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-areas: 'header' 'body' 'footer';
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  box-shadow: 0 0.075rem 0.075rem rgba(0,0,0,0.1), 0 0.125rem 0.125rem rgba(0,0,0,0.25);
+  -webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  background: #fff;
+}
+
+.c0 header img {
+  -webkit-transition: all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.c0 h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.c0 h2 {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.c0 p {
+  text-align: left;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c0:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.25), 0 0.25rem 0.25rem rgba(0,0,0,0.2);
+  }
+
+  .c0:hover header img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+<article
+  className="c0"
+>
+  <div
+    className="c1 backdrop"
+  />
+  <header
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <svg
+          className="c5"
+          viewBox="0 0 315 342"
+        >
+          <g
+            id="heart"
+          >
+            <path
+              d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+            />
+          </g>
+        </svg>
+        <h1>
+          <a
+            className="c6"
+            href="/skillset/jest"
+          >
+            Jest
+          </a>
+        </h1>
+      </div>
+    </div>
+  </header>
+  <main
+    className="c7"
+  >
+    <p>
+      Automated testing is sweet
+    </p>
+  </main>
+  <footer
+    className="c8"
+  >
+    <p>
+      (time spent:
+       
+      <span>
+        0
+      </span>
+       
+      hours)
+    </p>
+  </footer>
+</article>
+`;

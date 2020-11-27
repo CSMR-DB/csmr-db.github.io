@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageOverlay should render a grid of "posters" 1`] = `
+.c0 {
+  position: relative;
+  overflow: hidden;
+  isolation: auto;
+}
+
+.c0 > :first-child {
+  position: relative !important;
+}
+
+.c0 > * {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  mix-blend-mode: lighten;
+}
+
+.c0 > *:hover {
+  mix-blend-mode: lighten;
+}
+
+.c1 {
+  padding: 1rem;
+  border-radius: 999rem;
+  background: #fff;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h6>
+      Hello
+    </h6>
+  </div>
+</div>
+`;

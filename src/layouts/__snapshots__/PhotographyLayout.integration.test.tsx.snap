@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotographyLayout should match snapshot 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.c2 {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+.c3 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c3 {
+    grid-template-columns: repeat(auto-fill,minmax(32rem,1fr));
+    gap: 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <article>
+        <h1>
+          Photography
+        </h1>
+        <p>
+          Something I also enjoy doing, but don't do that often.
+        </p>
+      </article>
+    </div>
+    <div
+      className="c3"
+    >
+      /photo.jpg
+    </div>
+  </main>
+</div>
+`;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleTags should render a list of tags linking to routes starting with /skillset 1`] = `
+.c1 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c1:hover {
+  color: #d00;
+}
+
+.c1.active {
+  color: #b00;
+}
+
+.c0 {
+  text-align: left !important;
+}
+
+<p
+  className="c0"
+>
+  Tags:
+   
+  <span>
+    <a
+      className="c1"
+      href="/skillset/hello"
+    >
+      Hello
+    </a>
+    , 
+  </span>
+  <span>
+    <a
+      className="c1"
+      href="/skillset/world"
+    >
+      World
+    </a>
+    
+  </span>
+</p>
+`;

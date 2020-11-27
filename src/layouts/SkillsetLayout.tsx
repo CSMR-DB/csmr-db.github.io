@@ -39,6 +39,7 @@ export function SkillsetLayout({
         <Grid
           $columns="repeat(auto-fill, minmax(25rem, 1fr))"
           $maxWidth="160rem"
+          data-testid="ProgrammingSkillCards"
         >
           <SkillCards edges={programmingData.edges} />
         </Grid>
@@ -52,6 +53,7 @@ export function SkillsetLayout({
         <Grid
           $columns="repeat(auto-fill, minmax(25rem, 1fr))"
           $maxWidth="160rem"
+          data-testid="GraphicDesignSkillCards"
         >
           <SkillCards edges={graphicDesignData.edges} />
         </Grid>

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillCardHeader should have the following static style rules 1`] = `
+.c0 {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.c0 h1 {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: right;
+  -webkit-align-self: normal;
+  -ms-flex-item-align: normal;
+  align-self: normal;
+}
+
+.c0 h2 {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+<div
+  className="c0"
+>
+  <h1>
+    Hello World
+  </h1>
+</div>
+`;

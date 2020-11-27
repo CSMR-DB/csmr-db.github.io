@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReadingTime should render the following string when timeToRead === 1 1`] = `
+<span>
+  Reading time: ~
+  1
+   minute
+  
+</span>
+`;
+
+exports[`ReadingTime should render the following string when timeToRead >= 1 1`] = `
+<span>
+  Reading time: ~
+  3
+   minute
+  s
+</span>
+`;
+
+exports[`ReadingTime should return null when timeToRead is falsy 1`] = `null`;

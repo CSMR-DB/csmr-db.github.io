@@ -1,0 +1,721 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillsetLayout should match snapshot 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.c2 {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+.c4 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: 160rem;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c22 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c3 {
+  padding-bottom: 4rem;
+}
+
+.c10 {
+  fill: red;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c14 {
+  fill: blue;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c16 {
+  fill: green;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c6 {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+  max-width: 8rem;
+}
+
+.c8 {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.c8 h1 {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: right;
+  -webkit-align-self: normal;
+  -ms-flex-item-align: normal;
+  align-self: normal;
+}
+
+.c8 h2 {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+.c13 {
+  grid-area: 'footer';
+  padding: 0 2rem 2rem;
+}
+
+.c7 {
+  grid-area: 'header';
+}
+
+.c12 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+.c9 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c19 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c11 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: red !important;
+}
+
+.c11:hover {
+  color: #d00;
+}
+
+.c11.active {
+  color: #b00;
+}
+
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: blue !important;
+}
+
+.c15:hover {
+  color: #d00;
+}
+
+.c15.active {
+  color: #b00;
+}
+
+.c17 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: green !important;
+}
+
+.c17:hover {
+  color: #d00;
+}
+
+.c17.active {
+  color: #b00;
+}
+
+.c5 {
+  position: relative;
+  height: 100%;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-areas: 'header' 'body' 'footer';
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  box-shadow: 0 0.075rem 0.075rem rgba(0,0,0,0.1), 0 0.125rem 0.125rem rgba(0,0,0,0.25);
+  -webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  background: #fff;
+}
+
+.c5 header img {
+  -webkit-transition: all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.c5 h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.c5 h2 {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.c5 p {
+  text-align: left;
+}
+
+.c18 {
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.c18 h2 {
+  margin: 0;
+}
+
+.c21 {
+  padding: 0 0 0 1rem;
+}
+
+.c20 {
+  border-radius: 999rem;
+  overflow: hidden;
+  width: 4rem;
+  padding: 0.5rem;
+  background: #298CCD;
+}
+
+.c23 {
+  border-radius: 999rem;
+  overflow: hidden;
+  width: 4rem;
+  padding: 0.5rem;
+  background: blue;
+}
+
+.c24 {
+  border-radius: 999rem;
+  overflow: hidden;
+  width: 4rem;
+  padding: 0.5rem;
+  background: red;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c4 {
+    grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c22 {
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c5 {
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c5:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.25), 0 0.25rem 0.25rem rgba(0,0,0,0.2);
+  }
+
+  .c5:hover header img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c21 {
+    padding: 0 2rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h1>
+          This is what I have developed with
+        </h1>
+        <p>
+          A rough estimation of the total time I've spent on everything is included.
+        </p>
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <article
+          className="c5"
+        >
+          <div
+            className="c6 backdrop"
+          >
+            
+          </div>
+          <header
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              <div
+                className="c9"
+              >
+                <svg
+                  className="c10"
+                  viewBox="0 0 315 342"
+                >
+                  <g
+                    id="heart"
+                  >
+                    <path
+                      d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+                    />
+                  </g>
+                </svg>
+                <h1>
+                  <a
+                    className="c11"
+                    href="/skillset/react"
+                  >
+                    React
+                  </a>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <main
+            className="c12"
+          >
+            <p>
+              I love JSX
+            </p>
+          </main>
+          <footer
+            className="c13"
+          >
+            <p>
+              (time spent:
+               
+              <span>
+                0
+              </span>
+               
+              hours)
+            </p>
+          </footer>
+        </article>
+        <article
+          className="c5"
+        >
+          <div
+            className="c6 backdrop"
+          >
+            
+          </div>
+          <header
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              <div
+                className="c9"
+              >
+                <svg
+                  className="c14"
+                  viewBox="0 0 315 342"
+                >
+                  <g
+                    id="heart"
+                  >
+                    <path
+                      d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+                    />
+                  </g>
+                </svg>
+                <h1>
+                  <a
+                    className="c15"
+                    href="/skillset/jest"
+                  >
+                    Jest
+                  </a>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <main
+            className="c12"
+          >
+            <p>
+              It Jest needs to be done
+            </p>
+          </main>
+          <footer
+            className="c13"
+          >
+            <p>
+              (time spent:
+               
+              <span>
+                0
+              </span>
+               
+              hours)
+            </p>
+          </footer>
+        </article>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h1>
+          I have also worked with Graphic Design
+        </h1>
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <article
+          className="c5"
+        >
+          <div
+            className="c6 backdrop"
+          >
+            
+          </div>
+          <header
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              <div
+                className="c9"
+              >
+                <svg
+                  className="c16"
+                  viewBox="0 0 315 342"
+                >
+                  <g
+                    id="heart"
+                  >
+                    <path
+                      d="M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
+                    />
+                  </g>
+                </svg>
+                <h1>
+                  <a
+                    className="c17"
+                    href="/skillset/affinity_designer"
+                  >
+                    Affinity Designer
+                  </a>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <main
+            className="c12"
+          >
+            <p>
+              It has no proper geometry operations
+            </p>
+          </main>
+          <footer
+            className="c13"
+          >
+            <p>
+              (time spent:
+               
+              <span>
+                0
+              </span>
+               
+              hours)
+            </p>
+          </footer>
+        </article>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h1>
+          Education
+        </h1>
+        <article
+          className="c5"
+        >
+          <header
+            className="c18"
+          >
+            <div
+              className="c19"
+            >
+              <div
+                className="c20"
+              />
+              <div
+                className="c21"
+              >
+                <h1>
+                  Digital Media & Communication
+                   (
+                  HBO
+                  )
+                </h1>
+                <h2>
+                  <span>
+                    05 Sep 2015
+                  </span>
+                   -
+                   
+                  <span>
+                    04 Feb 2019
+                  </span>
+                </h2>
+              </div>
+            </div>
+          </header>
+          <main
+            className="c12"
+          >
+            <p>
+              This is where my interest in programming started, as well as my first steps into graphic design. I learned about marketing and doing user research. Halfway through my final year I decided to drop out due to lack of motivation as I wanted to pursue learning more about programming.
+            </p>
+          </main>
+        </article>
+      </div>
+      <div
+        className="c3"
+      >
+        <h1>
+          Professional experience
+        </h1>
+        <div
+          className="c22"
+        >
+          <article
+            className="c5"
+          >
+            <header
+              className="c18"
+            >
+              <div
+                className="c19"
+              >
+                <div
+                  className="c23"
+                />
+                <div
+                  className="c21"
+                >
+                  <h1>
+                    React
+                     (
+                    Reactor
+                    )
+                  </h1>
+                  <h2>
+                    <span>
+                      08 Jan 1994
+                    </span>
+                     -
+                     
+                    <span>
+                      09 Jan 1994
+                    </span>
+                  </h2>
+                </div>
+              </div>
+            </header>
+            <main
+              className="c12"
+            >
+              <p>
+                JSX is just fantastic
+              </p>
+            </main>
+          </article>
+          <article
+            className="c5"
+          >
+            <header
+              className="c18"
+            >
+              <div
+                className="c19"
+              >
+                <div
+                  className="c24"
+                />
+                <div
+                  className="c21"
+                >
+                  <h1>
+                    Jest
+                     (
+                    Jester
+                    )
+                  </h1>
+                  <h2>
+                    <span>
+                      08 Jan 1994
+                    </span>
+                     -
+                     
+                    <span>
+                      09 Jan 1994
+                    </span>
+                  </h2>
+                </div>
+              </div>
+            </header>
+            <main
+              className="c12"
+            >
+              <p>
+                Jest a test
+              </p>
+            </main>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;

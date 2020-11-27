@@ -7,9 +7,9 @@
     "noImplicitAny": true,
     // "allowJs": true,
     "module": "commonjs",
-    "target": "esnext",
-    "jsx": "preserve",
-    "lib": ["dom", "esnext"],
+    "target": "es2018",
+    "jsx": "react",
+    "lib": ["dom", "es2018"],
     "strict": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
@@ -23,6 +23,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/**/*"],
+  "include": [
+    "./src/**/*",
+    "e2e/index.e2e.test.tsx",
+    "e2e/getUncomputedStyle.unit.test.ts"
+  ],
   "exclude": ["node_modules"]
 }

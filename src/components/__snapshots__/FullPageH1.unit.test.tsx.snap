@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should have the following style rules 1`] = `
+.c0 {
+  margin-top: 4rem;
+}
+
+<h1
+  className="c0"
+>
+  I am a big H1
+</h1>
+`;

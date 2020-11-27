@@ -34,7 +34,7 @@ export function ExperienceCard({
 }: IExperienceCardProps): JSX.Element {
   return (
     <Reveal>
-      <Card>
+      <Card $_testid={'ExperienceCard'}>
         <ExperienceCardHeader>
           <Flex $justifyContent="flex-start">
             <CardHeaderIconWrapper $backgroundColor={backgroundColor}>

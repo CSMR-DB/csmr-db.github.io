@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClippedBtn should have the following configurable style rules 1`] = `
+.c0 {
+  height: 100%;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.1s ease-in 0.1s;
+  transition: color 0.1s ease-in 0.1s;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  font-size: 1rem;
+  color: white;
+  background: grey;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    -webkit-clip-path: circle(16em at 50% 50%);
+    clip-path: circle(16em at 50% 50%);
+  }
+}
+
+@media only screen and (min-width:960px) {
+  .c0 {
+    -webkit-clip-path: circle(1em at 50% 50%);
+    clip-path: circle(1em at 50% 50%);
+    font-size: 2rem;
+  }
+
+  .c0:hover {
+    -webkit-clip-path: circle(8em at 50% 50%);
+    clip-path: circle(8em at 50% 50%);
+  }
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`ClippedBtn should have the following configurable style rules when configured 1`] = `
+.c0 {
+  height: 100%;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.1s ease-in 0.1s;
+  transition: color 0.1s ease-in 0.1s;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  font-size: 1rem;
+  color: yellow;
+  background: red;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    -webkit-clip-path: circle(16em at 50% 50%);
+    clip-path: circle(16em at 50% 50%);
+  }
+}
+
+@media only screen and (min-width:960px) {
+  .c0 {
+    -webkit-clip-path: circle(1em at 50% 50%);
+    clip-path: circle(1em at 50% 50%);
+    font-size: 2rem;
+  }
+
+  .c0:hover {
+    -webkit-clip-path: circle(8em at 50% 50%);
+    clip-path: circle(8em at 50% 50%);
+  }
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`ClippedBtn should have the following static style rules 1`] = `
+.c0 {
+  height: 100%;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.1s ease-in 0.1s;
+  transition: color 0.1s ease-in 0.1s;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  font-size: 1rem;
+  color: white;
+  background: grey;
+}
+
+@media only screen and (min-width:600px) {
+  .c0 {
+    -webkit-clip-path: circle(16em at 50% 50%);
+    clip-path: circle(16em at 50% 50%);
+  }
+}
+
+@media only screen and (min-width:960px) {
+  .c0 {
+    -webkit-clip-path: circle(1em at 50% 50%);
+    clip-path: circle(1em at 50% 50%);
+    font-size: 2rem;
+  }
+
+  .c0:hover {
+    -webkit-clip-path: circle(8em at 50% 50%);
+    clip-path: circle(8em at 50% 50%);
+  }
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;

@@ -21,7 +21,7 @@ export function HeyItsMe({ author, description }: IHeyItsMeProps): JSX.Element {
       delay={0.5}
       ease={'back'}
     >
-      <Excerpt>
+      <Excerpt $_testid={'ProfileCard'}>
         <Tween
           from={{ opacity: 0, scale: 0 }}
           duration={1}

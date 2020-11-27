@@ -19,14 +19,11 @@ const StyledFooter: StyledComponent<
   any,
   IFooterProps,
   never
-> = styled.footer`
-  bottom: 0;
-  left: 0;
+> = styled.footer.attrs({ 'data-testid': 'SiteFooter' })`
   width: 100%;
   text-align: center;
   padding: 1rem;
   min-height: 100vh;
-  z-index: -1;
 
   & p,
   & a {

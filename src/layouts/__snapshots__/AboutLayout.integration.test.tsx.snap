@@ -1,0 +1,963 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutLayout should match snapshot 1`] = `
+.c1 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f00;
+}
+
+.c1 a:hover {
+  color: #d00;
+}
+
+.c0 {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.c7 {
+  position: absolute;
+  width: auto;
+  min-height: auto;
+  top: 1rem;
+  left: 0;
+  bottom: 1rem;
+  right: 0;
+}
+
+.c8 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c13 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c27 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c5 {
+  position: relative;
+  overflow: hidden;
+}
+
+.c5 > div:first-child {
+  position: relative;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  transform: scale(1.01);
+}
+
+.c5:hover > div:first-child {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c5:hover > div:first-child > * {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.c5 h1,
+.c5 h2,
+.c5 h3,
+.c5 h4,
+.c5 h5,
+.c5 h6 {
+  margin: 0;
+}
+
+.c9 {
+  position: relative;
+  overflow: hidden;
+  isolation: auto;
+}
+
+.c9 > :first-child {
+  position: relative !important;
+}
+
+.c9 > * {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  mix-blend-mode: lighten;
+}
+
+.c9 > *:hover {
+  mix-blend-mode: lighten;
+}
+
+.c28 {
+  position: relative;
+  overflow: hidden;
+  isolation: auto;
+}
+
+.c28 > :first-child {
+  position: relative !important;
+}
+
+.c28 > * {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+.c28 > *:hover {
+  mix-blend-mode: difference;
+}
+
+.c6 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c6:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c6::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #900;
+}
+
+.c24 {
+  position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c24:hover {
+  -webkit-filter: saturation(4);
+  filter: saturation(4);
+}
+
+.c24::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
+.c25 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(14,1fr);
+  grid-template-rows: repeat(2,1fr);
+}
+
+.c25 h1,
+.c25 h2,
+.c25 h3,
+.c25 h4,
+.c25 h5,
+.c25 h6 {
+  margin: 0;
+}
+
+.c26 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  grid-template-rows: repeat(2,1fr);
+}
+
+.c26 h1,
+.c26 h2,
+.c26 h3,
+.c26 h4,
+.c26 h5,
+.c26 h6 {
+  margin: 0;
+}
+
+.c30 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+}
+
+.c30 h1,
+.c30 h2,
+.c30 h3,
+.c30 h4,
+.c30 h5,
+.c30 h6 {
+  margin: 0;
+}
+
+.c3 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: #00f;
+  max-width: 1280px;
+}
+
+.c12 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: #00f;
+}
+
+.c22 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: #00f;
+  max-width: 32rem;
+}
+
+.c29 {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem auto;
+  background: #00f;
+  max-width: 64rem;
+}
+
+.c4 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: repeat(1,1fr);
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c14 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: auto;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.c23 {
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+  max-width: auto;
+  gap: calc(1rem / 2);
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-template-rows: repeat(2,1fr);
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c15 {
+  position: relative;
+  height: 100%;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-areas: 'header' 'body' 'footer';
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  box-shadow: 0 0.075rem 0.075rem rgba(0,0,0,0.1), 0 0.125rem 0.125rem rgba(0,0,0,0.25);
+  -webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+  background: #fff;
+}
+
+.c15 header img {
+  -webkit-transition: all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.c15 h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.c15 h2 {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.c15 p {
+  text-align: left;
+}
+
+.c16 {
+  grid-area: 'header';
+}
+
+.c18 {
+  width: 100%;
+  border-bottom: 1px dashed #ddd;
+}
+
+.c20 {
+  color: #000;
+}
+
+.c19 {
+  grid-area: 'body';
+  position: relative;
+  padding: 2rem;
+}
+
+.c17 {
+  padding: 2rem;
+}
+
+.c10 {
+  padding: 1rem;
+  border-radius: 999rem;
+  background: #fff;
+}
+
+.c11 {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+.c11 h1,
+.c11 h2,
+.c11 h3,
+.c11 h4,
+.c11 h5,
+.c11 h6 {
+  margin: 2rem;
+  font-weight: 300;
+}
+
+.c2 {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+.c21 {
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 1.5rem;
+  max-width: 24rem;
+  border-radius: 999rem;
+  background: #0f0;
+  color: #fff !important;
+  margin: 4rem auto 0;
+}
+
+.c21:hover {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+}
+
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c31:hover {
+  color: #d00;
+}
+
+.c31.active {
+  color: #b00;
+}
+
+@media only screen and (min-width:600px) {
+  .c1 {
+    padding: 4rem 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c4 {
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c14 {
+    grid-template-columns: repeat(6,1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c23 {
+    grid-template-columns: repeat(8,1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c15 {
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c15:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.25), 0 0.25rem 0.25rem rgba(0,0,0,0.2);
+  }
+
+  .c15:hover header img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .c21 {
+    font-size: 1.25rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <main
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <h1>
+        My name is Casimir
+      </h1>
+      <h2>
+        And this is my story
+      </h2>
+      <p>
+        I remember myself at a young(er) age (I believe I was about 10 ~ 11 years old) really encountering electronics for the first time. What I found was a bunch of little electrical components (capacitors, resistors, coils, the small stuff) that came out of dismantled old, broken, hardware and I just thought of them as these "funky little bits". I had no idea how they worked or what they did, but they seemed interesting nonetheless. Especially in the way they all fit together on a little board (it really is like a tiny city, and a work of art).
+      </p>
+      <p>
+        It would take a few years until I would build my very first computer, at around age 15. Ever since then I have been interested in pretty much anything with a circuit board. Aesthetics have also always mattered more than pure functionality, outside and in. I mean, form-over-function isn't really form-over-function if the form is so influential to the entirety of the UX.
+      </p>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div
+            className="children"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              <div
+                className="c9"
+              >
+                <div
+                  className="c10"
+                >
+                  <h6>
+                    HU Building #1
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c5"
+        >
+          <div
+            className="children"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              <div
+                className="c9"
+              >
+                <div
+                  className="c10"
+                >
+                  <h6>
+                    HU Building #2
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c5"
+        >
+          <div
+            className="children"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              <div
+                className="c9"
+              >
+                <div
+                  className="c10"
+                >
+                  <h6>
+                    HU Building #3
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <h2>
+        Starting College: DMC
+      </h2>
+      <p>
+        A couple more years later I first discovered "programming", in one of many courses taught in the Digital Media & Communications (DMC) program at UAS Utrecht. It wasn't really much more than elementary HTML, CSS and a bit of JavaScript* (we didn't do any automated testing, work on application architecture, version control or anything like that), but it was enough. I instantly fell in love.
+      </p>
+      <p>
+        Admittedly, the programming part really was only a few courses that made up for roughly 15% (if not less) of the entire curriculum. In everything else, primarily in group projects, I would have to find myself situations where I could use programming as a means to provide a solution. The overwhelming majority of all courses focussed on either marketing, graphic design or the field of research.
+      </p>
+      <div
+        className="c11"
+      >
+        <p>
+          * Mostly spaghetti. I like pasta just fine, but I'm more of a lasagna guy myself.
+        </p>
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+        >
+          <article
+            className="c15"
+          >
+            <header
+              className="c16"
+            >
+              <div
+                className="c17"
+              >
+                <div
+                  className="c18"
+                >
+                  <h2>
+                    Development
+                  </h2>
+                </div>
+              </div>
+            </header>
+            <main
+              className="c19"
+            >
+              <h5>
+                <span
+                  className="c20"
+                >
+                  ❭
+                   
+                  WebProgramming
+                </span>
+              </h5>
+            </main>
+          </article>
+        </div>
+        <div>
+          <p>
+            * Not intrinsically about programming, I just made it so. ** Not a full on course with credits, but a support course to provide extra knowledge about Adobe software.
+          </p>
+        </div>
+      </div>
+      <a
+        className="c21"
+        href="/skillset"
+      >
+        I can do this
+      </a>
+    </div>
+    <div
+      className="c2"
+    >
+      <p>
+        That was almost all just perfectly fine. I signed up not really knowing what I wanted to do, and I ended up learning a lot of interesting stuff. Graphic design is still one of my favorite things ever and I really, really love good marketing. On a positive note I'd say I can pretty much understand everyone's needs and wishes and communicate between those fields.
+      </p>
+      <h2>
+        The Internship
+      </h2>
+      <p>
+        But, fine is never enough, right? At least I knew I wanted more. So when I landed an internship in my third year of college, I signed up for a challenge. I ran my own project (with this very limited skill ceiling) working towards a data-visualization dashboard MVP, built on Meteor, React, GraphQL, MongoDB, styled-components & D3. My stack was not their stack: their stack was a back-end in C#, with a front-end in KnockoutJS. This was all fine, it really just meant more of a challenge. What's not to like?
+      </p>
+      <p>
+        During this internship however, I learned at least 2 things I still think about every single day.
+      </p>
+    </div>
+    <div
+      className="c22"
+    >
+      <div
+        className="c11"
+      >
+        <h3>
+          The benefits of TDD
+        </h3>
+        <h1>
+          &
+        </h1>
+        <h3>
+          The SOLID Principles
+        </h3>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <p>
+        Overall, I can say I have taught myself to work with these tools & frameworks and when it comes to JavaScript, I will always default to using TypeScript. I am also completely fine with picking up pretty much any other tool / framework or even language if needed.
+      </p>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        className="c13"
+      >
+        <div
+          className="c23"
+        >
+          <div
+            className="c24"
+          >
+            <svg
+              viewBox="0 0 16px 16px"
+            >
+              <g>
+                <circle
+                  r={16}
+                  x={8}
+                  y={8}
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <a
+        className="c21"
+        href="/skillset"
+      >
+        Find out more
+      </a>
+    </div>
+    <div
+      className="c2"
+    >
+      <p>
+        When it comes to programming: I enjoy joyful UI and feel extremely passionate about the little details. I prefer creating any style rules from scratch over just always reaching for some tried-and-tested UI Kit by default.
+      </p>
+      <h2>
+        Anything else?
+      </h2>
+      <p>
+        What else is there to say? Well, I am a Spotify-fanatic, Netflix-addict, relatively casual gamer and I, at times, enjoy making food. Here's a collection of games I like(d) to play and series I have watched or am currently watching.
+      </p>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        className="c25"
+      >
+        <div
+          className="c5"
+        >
+          <div
+            className="children"
+          >
+            <div
+              className="c6"
+            >
+              /photo.jpg
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <p>
+        I like a wide variety of games, from games that make you think to high-octane competitive shooters, from games that are just stunning to look at to games with very unique mechanics. I will only ever really care about any story if the game itself doesn't solely depend on it to be relevant. Give me modded Minecraft over pretty much any other title, any day of the week.
+      </p>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        className="c26"
+      >
+        <div
+          className="c5"
+        >
+          <div
+            className="children"
+          >
+            <div
+              className="c6"
+            >
+              /photo.jpg
+            </div>
+          </div>
+          <div
+            className="c7"
+          >
+            <div
+              className="c27"
+            >
+              <div
+                className="c28"
+              >
+                <h3
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                >
+                  Photo
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <h2>
+        Anything else?
+      </h2>
+      <p>
+        I like nature, yet I would decline any offer to go camping. I prefer cold over heat, but like the seasons in the order summer 
+        &gt;
+         winter
+         
+        &gt;
+         fall 
+        &gt;
+         spring. I like the sun, and light environments in general. That includes preferring "light" over "dark" mode in some apps (like Discord), except in my code editor. When I want to take notes or draw quick sketches, I still prefer paper and pen over anything else.
+      </p>
+      <p>
+        You'll always find me wearing mismatching socks. Be it with a different color, pattern, or both. The only thing that matters is that the socks are of the same brand. I'm not (completely) crazy. I keep my hair short so that I never have to worry about having a bad hair day. And finally, you'll never see me wear anything with a print on it.
+      </p>
+    </div>
+    <div
+      className="c29"
+    >
+      <div
+        className="c30"
+      >
+        <div
+          className="c5"
+        >
+          <div
+            className="children"
+          >
+            <div
+              className="c6"
+            >
+              /photo.jpg
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <p>
+        PS: I also like
+         
+        <a
+          className="c31"
+          href="/photography"
+        >
+          photography
+        </a>
+        , although I don't shoot often.
+      </p>
+    </div>
+  </main>
+</div>
+`;

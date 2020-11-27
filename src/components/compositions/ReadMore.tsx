@@ -17,6 +17,7 @@ export interface IReadMoreProps {
     path: string
     text: string
   }
+  $_testid?: string
 }
 
 export const StyledReadMore: StyledComponent<
@@ -39,13 +40,19 @@ export const StyledReadMore: StyledComponent<
   `}
 `
 
-export function ReadMore({ title, link }: IReadMoreProps): JSX.Element {
+export function ReadMore({
+  title,
+  link,
+  $_testid,
+}: IReadMoreProps): JSX.Element {
   return (
-    <Card>
+    <Card $_testid={$_testid}>
       <CardBody>
         <StyledReadMore>
           <h1>{title}</h1>
-          <StyledLink to={link.path}>{link.text}</StyledLink>
+          <StyledLink to={link.path} $_testid={'ReadMoreLink'}>
+            {link.text}
+          </StyledLink>
         </StyledReadMore>
       </CardBody>
     </Card>

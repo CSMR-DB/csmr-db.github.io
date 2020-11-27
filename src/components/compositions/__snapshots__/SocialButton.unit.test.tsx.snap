@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialButton should render a colorful button 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c0:hover {
+  color: #d00;
+}
+
+.c0.active {
+  color: #b00;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  position: absolute;
+  width: auto;
+  min-height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c4 {
+  height: 100%;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.1s ease-in 0.1s;
+  transition: color 0.1s ease-in 0.1s;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  font-size: 1rem;
+  color: white;
+  background: red;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c2 {
+  margin: 0 auto;
+  max-width: 4rem;
+}
+
+@media only screen and (min-width:600px) {
+  .c4 {
+    -webkit-clip-path: circle(16em at 50% 50%);
+    clip-path: circle(16em at 50% 50%);
+  }
+}
+
+@media only screen and (min-width:960px) {
+  .c4 {
+    -webkit-clip-path: circle(1em at 50% 50%);
+    clip-path: circle(1em at 50% 50%);
+    font-size: 2rem;
+  }
+
+  .c4:hover {
+    -webkit-clip-path: circle(8em at 50% 50%);
+    clip-path: circle(8em at 50% 50%);
+  }
+}
+
+<a
+  className="c0"
+  href="/"
+  target="blank"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    />
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <span>
+            Hello
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+`;

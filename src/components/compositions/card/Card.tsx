@@ -11,6 +11,7 @@ export interface ICardProps {
   theme?: DefaultTheme
   children: ReactNode
   index?: number
+  $_testid?: string
 }
 
 export const StyledCard: StyledComponent<
@@ -66,12 +67,20 @@ export const StyledCard: StyledComponent<
         & header img {
           transform: scale(1.1);
         }
+
+        & .backdrop {
+          opacity: 0.75 !important;
+        }
       }
     }
   `}
 `
 
-export function Card({ children, index = 0 }: ICardProps): JSX.Element {
+export function Card({
+  children,
+  index = 0,
+  $_testid,
+}: ICardProps): JSX.Element {
   return (
     <Tween
       from={{ scale: 0.95, opacity: 0 }}
@@ -79,7 +88,7 @@ export function Card({ children, index = 0 }: ICardProps): JSX.Element {
       delay={0.25 + index * 0.125}
       ease="back"
     >
-      <StyledCard>{children}</StyledCard>
+      <StyledCard data-testid={$_testid}>{children}</StyledCard>
     </Tween>
   )
 }

@@ -23,7 +23,7 @@ const CONTACTS: Contact[] = [
   {
     background: '#8C9EFF',
     iconPath: 'icons/discord.png',
-    href: 'https://discordapp.com/users/187303558599671808',
+    href: 'https://discord.com/users/187303558599671808',
     text: 'Discord',
   },
 ]

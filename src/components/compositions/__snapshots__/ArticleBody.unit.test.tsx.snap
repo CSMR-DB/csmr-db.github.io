@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleBody should render strings and url objects 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #f00 !important;
+}
+
+.c0:hover {
+  color: #d00;
+}
+
+.c0.active {
+  color: #b00;
+}
+
+<p>
+  Hello everyone
+  <a
+    className="c0"
+    href="https://lorem.ipsum"
+    target="blank"
+  >
+    Lorem ipsum
+  </a>
+</p>
+`;

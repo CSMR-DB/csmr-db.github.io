@@ -53,7 +53,7 @@ export default function ProjectTemplate({
       />
       <Layout>
         <CenteredBlock>
-          <article>
+          <article data-testid="ProjectTemplateArticle">
             <header>
               {featuredImage && (
                 <Image fluid={featuredImage.childImageSharp.fluid} />

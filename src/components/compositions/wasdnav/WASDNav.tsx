@@ -2,6 +2,7 @@ import React from 'react'
 import { Tween } from 'react-gsap'
 
 import { RouteObject } from '../../../data/objects/routesProvider'
+import { capitalizeString } from '../../../utils/textTransformer'
 
 import { WASDGrid } from './WASDGrid'
 import { WASDLinkOrb } from './WASDLinkOrb'
@@ -34,6 +35,7 @@ export function WASDNav({
               activeClassName="active"
               partiallyActive
               $area={route.boundKeys[0].toLocaleLowerCase()}
+              $_testid={`NavTo${capitalizeString(route.title)}`}
             >
               <WASDLinkOrbKey>{`0${route.boundKeys[1]}`}</WASDLinkOrbKey>
               <WASDLinkOrbTitle>{route.title}</WASDLinkOrbTitle>

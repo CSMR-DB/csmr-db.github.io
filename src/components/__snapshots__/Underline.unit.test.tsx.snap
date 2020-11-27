@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Underline should have the following static style rules 1`] = `
+.c0 {
+  width: 100%;
+  border-bottom: 1px dashed #ddd;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    Hello World
+  </p>
+</div>
+`;

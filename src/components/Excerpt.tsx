@@ -4,9 +4,11 @@ import styled, {
   FlattenSimpleInterpolation,
   css,
 } from 'styled-components'
+import { TestAttrs } from '../types/jest.types'
 
 export interface IExcerptProps {
   theme?: DefaultTheme
+  $_testid?: string
 }
 
 export const Excerpt: StyledComponent<
@@ -14,7 +16,9 @@ export const Excerpt: StyledComponent<
   any,
   IExcerptProps,
   never
-> = styled.article`
+> = styled.article.attrs(
+  (props: IExcerptProps): TestAttrs => ({ 'data-testid': props.$_testid })
+)`
   margin: auto 1rem;
   border-radius: 0.25rem;
   max-width: 36rem;

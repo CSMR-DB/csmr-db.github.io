@@ -17,6 +17,7 @@ interface ISocialButtonsProps {
   iconPath: string
   $color?: ColorProperty
   $background?: BackgroundColorProperty
+  $_testid?: string
 }
 
 const StyledSocialIcon: StyledComponent<'div', any, {}, never> = styled.div`
@@ -30,9 +31,10 @@ export function SocialButton({
   $background: background,
   href,
   iconPath,
+  $_testid,
 }: ISocialButtonsProps): JSX.Element {
   return (
-    <StyledA href={href} target="blank">
+    <StyledA href={href} target="blank" $_testid={$_testid}>
       <Relative>
         <StyledSocialIcon>
           <DynamicIcon
